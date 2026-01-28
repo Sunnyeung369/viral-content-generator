@@ -115,7 +115,7 @@
 
 1. **下载Skill文件**
    ```bash
-   git clone https://github.com/your-username/viral-content-generator.git
+   git clone https://github.com/Sunnyeung369/viral-content-generator.git
    cd viral-content-generator
    ```
 
@@ -365,13 +365,13 @@ cp skill_v3.0.md .cursorrules
 
 ### 问题反馈
 
-- **GitHub Issues：** [提交问题](https://github.com/your-username/viral-content-generator/issues)
-- **GitHub Discussions：** [参与讨论](https://github.com/your-username/viral-content-generator/discussions)
+- **GitHub Issues：** [提交问题](https://github.com/Sunnyeung369/viral-content-generator/issues)
+- **GitHub Discussions：** [参与讨论](https://github.com/Sunnyeung369/viral-content-generator/discussions)
 
 ### 社区
 
-- **GitHub：** [项目主页](https://github.com/your-username/viral-content-generator)
-- **文档：** [在线文档](https://github.com/your-username/viral-content-generator/wiki)
+- **GitHub：** [项目主页](https://github.com/Sunnyeung369/viral-content-generator)
+- **文档：** [在线文档](https://github.com/Sunnyeung369/viral-content-generator/wiki)
 
 ---
 
@@ -379,19 +379,19 @@ cp skill_v3.0.md .cursorrules
 
 如果这个项目对你有帮助，请给我们一个Star！⭐
 
-[![Star History Chart](https://api.star-history.com/svg?repos=your-username/viral-content-generator&type=Date)](https://star-history.com/#your-username/viral-content-generator&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=Sunnyeung369/viral-content-generator&type=Date)](https://star-history.com/#Sunnyeung369/viral-content-generator&Date)
 
 ---
 
 ## 📊 项目统计
 
-![GitHub stars](https://img.shields.io/github/stars/your-username/viral-content-generator?style=social)
-![GitHub forks](https://img.shields.io/github/forks/your-username/viral-content-generator?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/your-username/viral-content-generator?style=social)
+![GitHub stars](https://img.shields.io/github/stars/Sunnyeung369/viral-content-generator?style=social)
+![GitHub forks](https://img.shields.io/github/forks/Sunnyeung369/viral-content-generator?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/Sunnyeung369/viral-content-generator?style=social)
 
-![GitHub issues](https://img.shields.io/github/issues/your-username/viral-content-generator)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/your-username/viral-content-generator)
-![GitHub last commit](https://img.shields.io/github/last-commit/your-username/viral-content-generator)
+![GitHub issues](https://img.shields.io/github/issues/Sunnyeung369/viral-content-generator)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/Sunnyeung369/viral-content-generator)
+![GitHub last commit](https://img.shields.io/github/last-commit/Sunnyeung369/viral-content-generator)
 
 ---
 
@@ -480,8 +480,8 @@ cp skill_v3.0.md .cursorrules
 
 **步骤：**
 1. 查看[使用手册](./使用手册.md)
-2. 搜索[已有Issues](https://github.com/your-username/viral-content-generator/issues)
-3. 在[Discussions](https://github.com/your-username/viral-content-generator/discussions)提问
+2. 搜索[已有Issues](https://github.com/Sunnyeung369/viral-content-generator/issues)
+3. 在[Discussions](https://github.com/Sunnyeung369/viral-content-generator/discussions)提问
 4. 创建新的Issue
 
 ---
@@ -503,7 +503,7 @@ cp skill_v3.0.md .cursorrules
 
 <div align="center">
 
-Made with ❤️ by [StepFun AI Team](https://github.com/stepfun-ai)
+Made with ❤️ by [Sunnyeung](https://github.com/Sunnyeung369)
 
 [⬆ 回到顶部](#-爆款内容生成器-v30)
 

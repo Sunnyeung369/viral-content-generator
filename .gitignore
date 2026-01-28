@@ -20,6 +20,8 @@ wheels/
 .installed.cfg
 *.egg
 MANIFEST
+pip-log.txt
+pip-delete-this-directory.txt
 
 # Virtual Environment
 venv/
@@ -27,6 +29,7 @@ env/
 ENV/
 env.bak/
 venv.bak/
+.venv/
 
 # IDE
 .vscode/
@@ -35,16 +38,24 @@ venv.bak/
 *.swo
 *~
 .DS_Store
+.project
+.pydevproject
+.settings/
+*.sublime-project
+*.sublime-workspace
 
 # API Keys & Config
 .env
 *.key
 config.yaml
 secrets.yaml
+*.pem
+credentials.json
 
 # Output
 output/
 articles/
+out/
 *.log
 *.tmp
 
@@ -52,12 +63,19 @@ articles/
 Thumbs.db
 .DS_Store
 desktop.ini
+Spotlight-V100
+.Trashes
 
 # Test
 .pytest_cache/
 .coverage
+.coverage.*
 htmlcov/
 .tox/
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
 
 # Jupyter
 .ipynb_checkpoints/
@@ -66,13 +84,33 @@ htmlcov/
 # Node (if needed)
 node_modules/
 package-lock.json
+package-lock.json
+yarn.lock
 
 # Backup
 *.bak
 *.backup
 *~
+*.orig
 
 # User generated content
 user_data/
 cache/
 temp/
+tmp/
+
+# Package managers
+.Python
+pip-selfcheck.json
+
+# macOS
+.AppleDouble
+.LSOverride
+
+# Windows
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk

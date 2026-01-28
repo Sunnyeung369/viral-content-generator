@@ -165,16 +165,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 感谢所有为这个项目做出贡献的人！
 
-- [@StepFun-AI](https://github.com/stepfun-ai) - 核心开发
+- [@Sunnyeung369](https://github.com/Sunnyeung369) - 核心开发
 - 以及所有提供反馈和建议的用户
 
 ---
 
 ## 链接
 
-- [GitHub仓库](https://github.com/your-username/viral-content-generator)
-- [问题反馈](https://github.com/your-username/viral-content-generator/issues)
-- [讨论区](https://github.com/your-username/viral-content-generator/discussions)
+- [GitHub仓库](https://github.com/Sunnyeung369/viral-content-generator)
+- [问题反馈](https://github.com/Sunnyeung369/viral-content-generator/issues)
+- [讨论区](https://github.com/Sunnyeung369/viral-content-generator/discussions)
 
 ---
 

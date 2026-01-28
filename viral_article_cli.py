@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """
-爆款内容生成器 - 命令行工具 v2.0
+爆款内容生成器 - 命令行工具 v3.0
 支持多个AI平台：OpenAI, Claude, Gemini
 
-作者: StepFun AI Team
-版本: 2.0.0
+作者: Sunnyeung
+版本: 3.0.0
 许可: MIT License
+GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
 import os
@@ -167,13 +168,13 @@ def generate_with_openai(
         logger.info(f"开始调用OpenAI API...")
         
         response = client.chat.completions.create(
-            model="gpt-4",
+            model="gpt-4o",
             messages=[
                 {"role": "system", "content": skill_content},
                 {"role": "user", "content": prompt}
             ],
             temperature=0.7,
-            max_tokens=4096
+            max_tokens=16384
         )
         
         content = response.choices[0].message.content
@@ -231,8 +232,8 @@ def generate_with_claude(
         logger.info(f"开始调用Claude API...")
         
         message = client.messages.create(
-            model="claude-3-opus-20240229",
-            max_tokens=4096,
+            model="claude-sonnet-4-20250514",
+            max_tokens=16384,
             system=skill_content,
             messages=[
                 {"role": "user", "content": prompt}
@@ -282,7 +283,7 @@ def generate_with_gemini(
         skill_content = load_skill()
         
         model = genai.GenerativeModel(
-            model_name='gemini-pro',
+            model_name='gemini-2.0-flash-exp',
             system_instruction=skill_content
         )
         
@@ -364,7 +365,7 @@ def main() -> int:
         int: 退出码（0表示成功，非0表示失败）
     """
     parser = argparse.ArgumentParser(
-        description='爆款内容生成器 - 命令行工具 v2.0',
+        description='爆款内容生成器 - 命令行工具 v3.0',
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 示例:
@@ -430,7 +431,7 @@ def main() -> int:
     parser.add_argument(
         '--version',
         action='version',
-        version='%(prog)s 2.0.0'
+        version='%(prog)s 3.0.0'
     )
     parser.add_argument(
         '--verbose', '-v',
@@ -446,7 +447,7 @@ def main() -> int:
     
     try:
         logger.info("=" * 60)
-        logger.info("爆款内容生成器 v2.0 启动")
+        logger.info("爆款内容生成器 v3.0 启动")
         logger.info("=" * 60)
         
         # 验证参数

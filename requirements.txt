@@ -1,17 +1,17 @@
-# Python Dependencies for Viral Content Generator CLI
+# Python Dependencies for Viral Content Generator CLI v3.0
 
 # Core AI Libraries
-openai>=1.0.0              # OpenAI GPT API
-anthropic>=0.18.0          # Claude API
-google-generativeai>=0.3.0 # Gemini API
+openai>=1.50.0             # OpenAI GPT API (gpt-4o support)
+anthropic>=0.40.0          # Claude API (claude-sonnet-4 support)
+google-generativeai>=0.8.0 # Gemini API (gemini-2.0 support)
 
 # Utilities
 python-dotenv>=1.0.0       # Environment variable management
 pyyaml>=6.0                # YAML configuration support
 
 # Development Dependencies (optional, for testing)
-# pytest>=7.0.0            # Testing framework
-# pytest-cov>=4.0.0        # Code coverage
-# black>=23.0.0            # Code formatter
-# flake8>=6.0.0            # Linter
-# mypy>=1.0.0              # Type checker
+# pytest>=8.0.0            # Testing framework
+# pytest-cov>=5.0.0        # Code coverage
+# black>=24.0.0            # Code formatter
+# flake8>=7.0.0            # Linter
+# mypy>=1.10.0             # Type checker
