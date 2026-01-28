@@ -7,6 +7,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [3.1.2] - 2026-01-28
+
+### 📚 Content Update - 通用性优化
+
+#### Added
+
+**通用性设计：**
+- ✨ 强调SKILL的独立性和通用性
+- ✨ 明确可配合任何AI工具使用（Claude、ChatGPT、Gemini、DeepSeek等）
+- ✨ 添加适用范围说明（AI创作、人工创作、团队协作、内容复盘）
+- ✨ 新增"通用型"标签
+
+**核心理念：**
+- 本SKILL是纯粹的创作方法论，不绑定任何AI模型
+- 可平移到任何AI平台完美运行
+- 提供的是"如何创作爆款内容"的方法论，而不是"如何使用AI"的技术教程
+
+#### Changed
+
+- 🔄 版本号：3.1.1 → 3.1.2
+- 🔄 README.md优化使用方式分类（SKILL文件 vs CLI工具）
+
+---
+
 ## [3.1.1] - 2026-01-28
 
 ### 📚 Content Update - 整合高级创作模型

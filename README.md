@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Version](https://img.shields.io/badge/version-3.1.1-blue)
+![Version](https://img.shields.io/badge/version-3.1.2-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Python](https://img.shields.io/badge/python-3.8+-blue)
 ![Platform](https://img.shields.io/badge/platform-全平台-orange)
@@ -111,7 +111,21 @@
 
 ## 🚀 快速开始
 
-### 方式1：直接使用Skill文件
+### ️⃣ 重要说明
+
+本项目包含两个独立部分：
+
+1. **skill_v3.0.md** - 纯粹的创作方法论（通用，不依赖任何AI）
+2. **viral_article_cli.py** - CLI工具（辅助工具，方便调用AI）
+
+**SKILL可以独立使用于：**
+- 任何AI创作工具（Claude、ChatGPT、Gemini、DeepSeek等）
+- 人工创作
+- 团队协作标准
+
+---
+
+### 方式1：直接使用Skill文件（通用）
 
 1. **下载Skill文件**
    ```bash
@@ -120,18 +134,49 @@
    ```
 
 2. **阅读核心文档**
-   - 📖 [skill_v3.0.md](./skill_v3.0.md) - 核心方法论
+   - 📖 [skill_v3.0.md](./skill_v3.0.md) - 核心方法论（通用，可配合任何AI使用）
    - 📚 [使用手册.md](./使用手册.md) - 详细教程
    - 🎨 [风格配置模板.md](./风格配置模板.md) - 风格定制
 
-3. **开始创作**
-   - 选择一个场景（短视频/长文/图文）
-   - 使用对应的模板
-   - 按照4次判断模型创作
+3. **使用SKILL进行创作**
+
+   **配合AI工具（推荐）：**
+   - 复制 skill_v3.0.md 的内容
+   - 粘贴到任意AI工具（Claude、ChatGPT、Gemini、DeepSeek等）的系统提示词
+   - 开始创作
+
+   **人工创作：**
+   - 按照6次判断模型创作
+   - 使用评分工具自我评估
+   - 按照检查清单优化内容
 
 ---
 
-### 方式2：使用CLI工具
+### 方式2：使用CLI工具（辅助）
+
+CLI工具是一个**辅助工具**，方便你配合AI使用：
+
+**安装依赖**
+```bash
+pip install -r requirements.txt
+```
+
+**基本使用**
+```bash
+# 使用默认模型生成
+python viral_article_cli.py "AI工具使用技巧"
+
+# 指定AI平台
+python viral_article_cli.py "AI工具使用技巧" --platform claude
+
+# 流式输出（实时显示生成过程）
+python viral_article_cli.py "AI工具使用技巧" --stream
+
+# 自定义模型
+python viral_article_cli.py "AI工具使用技巧" --platform claude --model claude-3-5-sonnet-20241022
+```
+
+**注意：** CLI工具只是调用AI的便捷方式，SKILL方法论可以配合任何AI工具使用。
 
 1. **安装依赖**
    ```bash
@@ -161,7 +206,7 @@
 
 ---
 
-### 方式3：在AI工具中使用
+### 方式3：在AI工具中使用（通用）
 
 #### Claude Desktop
 ```bash
@@ -172,7 +217,22 @@ cp skill_v3.0.md ~/.claude/skills/viral-content.md
 在Claude中输入：用爆款内容生成器帮我创作...
 ```
 
-#### Cursor/VSCode
+#### 任何AI平台使用（通用方法）
+```
+1. 复制 skill_v3.0.md 的全部内容
+2. 粘贴到AI工具的系统提示词（System Prompt）
+3. 开始创作
+
+支持的AI工具（不限于）：
+- Claude Desktop / Claude.ai
+- ChatGPT / OpenAI
+- Gemini / Google AI
+- DeepSeek
+- 文心一言
+- Kimi 月之暗面
+- 等等...
+
+#### Cursor/VSCode（开发者）
 ```bash
 # 创建.cursorrules文件
 cp skill_v3.0.md .cursorrules
@@ -303,7 +363,15 @@ cp skill_v3.0.md .cursorrules
 
 ## 📈 版本历史
 
-### v3.1.1 (2026-01-28) - 当前版本
+### v3.1.2 (2026-01-28) - 当前版本
+
+**通用性优化：**
+- ✨ 强调SKILL的独立性和通用性
+- ✨ 明确可配合任何AI工具使用
+- ✨ 添加适用范围说明
+- ✨ 优化使用方式分类
+
+### v3.1.1 (2026-01-28)
 
 **高级创作模型：**
 - ✨ 用户决策6次判断模型（扩展4次为6次）
