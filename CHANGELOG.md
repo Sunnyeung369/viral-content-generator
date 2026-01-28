@@ -7,6 +7,60 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [3.1.0] - 2026-01-28
+
+### 🚀 Feature Release - 代码重构 + 内容完善
+
+#### Added
+
+**代码优化（重大重构）：**
+- ✨ 重构代码架构（抽象基类 ContentGenerator）
+- ✨ 工厂模式生成器（GENERATOR_MAP）
+- ✨ Skill缓存机制（SkillLoader 单例模式）
+- ✨ 流式输出支持（--stream 参数）
+- ✨ API重试机制（指数退避，最多3次）
+- ✨ 配置文件支持（config.yaml）
+- ✨ 数据类配置（GenerationConfig、GenerationResult）
+- ✨ 新增命令行参数：--model, --stream, --max-tokens, --temperature
+- ✨ 新增 '自定义风格' 选项
+
+**内容优化：**
+- 📝 补充完整的8种风格详细描述（风格3-8）
+- 📝 添加统一评分工具模板
+- 📝 添加快速检查清单模板
+- 📝 添加标题吸引力评分工具
+- 🐛 修复内容错误（中文→中图文文）
+
+#### Changed
+
+**代码变更：**
+- 🔄 版本号：3.0.0 → 3.1.0
+- 🔄 代码行数：538行 → 872行（+62%）
+- 🔄 异常类统一（ViralContentError 基类）
+- 🔄 生成结果返回详细信息（tokens_used、duration、truncated）
+
+**文档变更：**
+- 🔄 skill_v3.0.md 版本升级到 v3.1
+- 🔄 新增实用工具模板章节
+
+#### Technical Details
+
+**新增类：**
+- `SkillLoader` - 单例模式，支持缓存和热重载
+- `ContentGenerator` - 抽象基类
+- `OpenAIGenerator` / `ClaudeGenerator` / `GeminiGenerator` - 具体实现
+- `GenerationConfig` - 配置数据类
+- `GenerationResult` - 结果数据类
+
+**新增功能：**
+- 流式输出（OpenAI、Claude）
+- 自动重试（指数退避）
+- Token统计
+- 截断检测
+- 元数据注入（生成时间、工具版本）
+
+---
+
 ## [3.0.0] - 2026-01-28
 
 ### 🎉 Major Update - 全平台内容创作系统
@@ -110,14 +164,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 版本对比
 
-| 功能 | v1.0 | v2.0 | v3.0 |
-|------|------|------|------|
-| 核心模块 | 3个 | 4个 | 10个 |
-| 风格系统 | 基础 | 8种 | 8种+优化 |
-| 平台支持 | 图文 | 图文 | 全平台 |
-| 场景模板 | 无 | 5个 | 8个 |
-| 数据分析 | 无 | 无 | 完整 |
-| 文件大小 | 8KB | 16KB | 45KB |
+| 功能 | v1.0 | v2.0 | v3.0 | v3.1 |
+|------|------|------|------|------|
+| 核心模块 | 3个 | 4个 | 10个 | 10个+优化 |
+| 风格系统 | 基础 | 8种 | 8种 | 8种完整 |
+| 平台支持 | 图文 | 图文 | 全平台 | 全平台 |
+| 场景模板 | 无 | 5个 | 8个 | 8个 |
+| 数据分析 | 无 | 无 | 完整 | 完整 |
+| 代码架构 | 简单 | 简单 | 简单 | 重构 |
+| 流式输出 | 无 | 无 | 无 | ✅ |
+| 重试机制 | 无 | 无 | 无 | ✅ |
+| 文件大小 | 8KB | 16KB | 45KB | 48KB |
 
 ---
 

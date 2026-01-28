@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "viral-content-generator"
-version = "3.0.0"
+version = "3.1.0"
 description = "全平台内容创作系统 - 支持图文、短视频、长视频创作"
 readme = "README.md"
 license = {text = "MIT"}
