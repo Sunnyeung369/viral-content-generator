@@ -251,7 +251,7 @@ def test_hot_topic_input():
     print("=" * 60)
 
     try:
-        from viral_content_cli_v4 import HotTopicInput
+        from viral_content_cli import HotTopicInput
 
         # 测试文本输入
         text_input = HotTopicInput.from_text("马斯克2026访谈")
