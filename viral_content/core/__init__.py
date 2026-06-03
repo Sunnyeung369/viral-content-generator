@@ -17,6 +17,13 @@ from .conversion_funnel import (
     ContentStructure,
     create_conversion_funnel,
 )
+from .platform_adapter import (
+    PlatformAdapter,
+    ContentPlatform,
+    PlatformSpec,
+    PlatformPackage,
+    get_platform_adapter,
+)
 
 __all__ = [
     # Prompt Compiler
@@ -33,4 +40,10 @@ __all__ = [
     "ConversionGoal",
     "ContentStructure",
     "create_conversion_funnel",
+    # Platform Adapter
+    "PlatformAdapter",
+    "ContentPlatform",
+    "PlatformSpec",
+    "PlatformPackage",
+    "get_platform_adapter",
 ]

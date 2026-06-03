@@ -1,0 +1,277 @@
+"""
+热点引擎基类
+v4.0 - 热点情报引擎
+
+作者: Sunnyeung
+版本: 4.0.0
+许可: MIT License
+GitHub: https://github.com/Sunnyeung369/viral-content-generator
+"""
+
+from abc import ABC, abstractmethod
+from typing import Dict, Any, List, Optional
+from dataclasses import dataclass, field
+from datetime import datetime
+from enum import Enum
+
+
+class TrendCategory(Enum):
+    """热点分类"""
+    TECH = "tech"  # 科技
+    BUSINESS = "business"  # 商业
+    ENTERTAINMENT = "entertainment"  # 娱乐
+    SPORTS = "sports"  # 体育
+    POLITICAL = "political"  # 政治
+    SOCIAL = "social"  # 社会
+    LIFESTYLE = "lifestyle"  # 生活
+    UNKNOWN = "unknown"  # 未知
+
+
+@dataclass
+class TrendMetrics:
+    """热点指标"""
+    heat: int = 0  # 热度 (0-100)
+    discussion_count: int = 0  # 讨论量
+    growth_rate: float = 0.0  # 增长率
+    timestamp: Optional[datetime] = None  # 时间戳
+
+    def to_dict(self) -> Dict[str, Any]:
+        """转换为字典"""
+        return {
+            "热度": self.heat,
+            "讨论量": self.discussion_count,
+            "增长率": self.growth_rate,
+            "时间戳": self.timestamp.isoformat() if self.timestamp else None,
+        }
+
+
+@dataclass
+class Trend:
+    """热点数据"""
+    id: str  # 唯一标识
+    topic: str  # 话题标题
+    description: str = ""  # 描述
+    source: str = ""  # 来源平台
+    url: str = ""  # 原始链接
+    category: TrendCategory = TrendCategory.UNKNOWN  # 分类
+    keywords: List[str] = field(default_factory=list)  # 关键词
+    metrics: Optional[TrendMetrics] = None  # 热度指标
+    content_snippet: Optional[str] = None  # 内容片段
+    related_topics: List[str] = field(default_factory=list)  # 相关话题
+    created_at: datetime = field(default_factory=datetime.now)  # 抓取时间
+
+    def to_dict(self) -> Dict[str, Any]:
+        """转换为字典"""
+        return {
+            "id": self.id,
+            "topic": self.topic,
+            "description": self.description,
+            "source": self.source,
+            "url": self.url,
+            "category": self.category.value if isinstance(self.category, TrendCategory) else self.category,
+            "keywords": self.keywords,
+            "metrics": self.metrics.to_dict() if self.metrics else None,
+            "content_snippet": self.content_snippet,
+            "related_topics": self.related_topics,
+            "created_at": self.created_at.isoformat(),
+        }
+
+    @classmethod
+    def from_dict(cls, data: Dict[str, Any]) -> "Trend":
+        """从字典创建
+
+        Args:
+            data: 字典数据
+
+        Returns:
+            Trend实例
+        """
+        # 处理category
+        category = data.get("category", "unknown")
+        if isinstance(category, str):
+            try:
+                category = TrendCategory(category)
+            except ValueError:
+                category = TrendCategory.UNKNOWN
+
+        # 处理metrics
+        metrics_data = data.get("metrics")
+        metrics = None
+        if metrics_data:
+            metrics = TrendMetrics(
+                heat=metrics_data.get("热度", 0),
+                discussion_count=metrics_data.get("讨论量", 0),
+                growth_rate=metrics_data.get("增长率", 0.0),
+            )
+
+        return cls(
+            id=data.get("id", ""),
+            topic=data.get("topic", ""),
+            description=data.get("description", ""),
+            source=data.get("source", ""),
+            url=data.get("url", ""),
+            category=category,
+            keywords=data.get("keywords", []),
+            metrics=metrics,
+            content_snippet=data.get("content_snippet"),
+            related_topics=data.get("related_topics", []),
+        )
+
+
+class BaseTrendSource(ABC):
+    """热点来源基类
+
+    所有热点来源必须实现：
+    - fetch(): 获取热点列表
+    - normalize(): 标准化热点数据
+    """
+
+    def __init__(self, name: str, config: Optional[Dict[str, Any]] = None):
+        """初始化热点来源
+
+        Args:
+            name: 来源名称
+            config: 配置参数（API密钥等）
+        """
+        self.name = name
+        self.config = config or {}
+
+    @abstractmethod
+    def fetch(self, limit: int = 20, category: Optional[str] = None) -> List[Trend]:
+        """获取热点列表
+
+        Args:
+            limit: 返回数量限制
+            category: 分类过滤（可选）
+
+        Returns:
+            热点列表
+        """
+        pass
+
+    def normalize(self, raw_data: Any) -> Trend:
+        """标准化原始数据为Trend对象
+
+        Args:
+            raw_data: 原始数据
+
+        Returns:
+            标准化的Trend对象
+        """
+        # 子类可以覆盖此方法实现特定转换
+        pass
+
+    def get_source_name(self) -> str:
+        """获取来源名称"""
+        return self.name
+
+    def is_available(self) -> bool:
+        """检查来源是否可用"""
+        return True
+
+
+class TrendAggregator:
+    """热点聚合器
+
+    从多个来源聚合热点数据
+    """
+
+    def __init__(self, sources: List[BaseTrendSource]):
+        """初始化聚合器
+
+        Args:
+            sources: 热点来源列表
+        """
+        self.sources = sources
+
+    def fetch_all(
+        self,
+        limit_per_source: int = 10,
+        category: Optional[str] = None
+    ) -> Dict[str, List[Trend]]:
+        """从所有来源获取热点
+
+        Args:
+            limit_per_source: 每个来源的限制
+            category: 分类过滤
+
+        Returns:
+            按来源分组的热点字典
+        """
+        results = {}
+
+        for source in self.sources:
+            try:
+                if source.is_available():
+                    trends = source.fetch(limit=limit_per_source, category=category)
+                    results[source.get_source_name()] = trends
+                else:
+                    results[source.get_source_name()] = []
+            except Exception as e:
+                print(f"获取{source.get_source_name()}热点失败: {e}")
+                results[source.get_source_name()] = []
+
+        return results
+
+    def merge_and_rank(
+        self,
+        all_trends: Dict[str, List[Trend]],
+        limit: int = 50
+    ) -> List[Trend]:
+        """合并并排序所有热点
+
+        Args:
+            all_trends: 按来源分组的热点
+            limit: 返回数量限制
+
+        Returns:
+            合并排序后的热点列表
+        """
+        # 收集所有热点
+        merged = []
+
+        for source_name, trends in all_trends.items():
+            for trend in trends:
+                # 添加来源标记
+                trend.source = source_name
+                merged.append(trend)
+
+        # 按热度排序
+        merged.sort(
+            key=lambda t: t.metrics.heat if t.metrics else 0,
+            reverse=True
+        )
+
+        # 去重（按话题相似度）
+        unique = []
+        seen_topics = set()
+
+        for trend in merged:
+            # 简单去重：完全相同的标题
+            if trend.topic not in seen_topics:
+                unique.append(trend)
+                seen_topics.add(trend.topic)
+
+            if len(unique) >= limit:
+                break
+
+        return unique
+
+    def fetch_merged(
+        self,
+        limit_per_source: int = 10,
+        final_limit: int = 50,
+        category: Optional[str] = None
+    ) -> List[Trend]:
+        """获取并合并热点（便捷方法）
+
+        Args:
+            limit_per_source: 每个来源的限制
+            final_limit: 最终返回数量
+            category: 分类过滤
+
+        Returns:
+            合并排序后的热点列表
+        """
+        all_trends = self.fetch_all(limit_per_source, category)
+        return self.merge_and_rank(all_trends, final_limit)
