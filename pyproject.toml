@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "viral-content-generator"
-version = "3.1.2"
-description = "全平台内容创作系统 - 支持图文、短视频、长视频创作"
+version = "4.0.0"
+description = "热点风格成交引擎 - 155+风格基因卡 × 账号定位 × 成交目标 × 多平台适配"
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.8"
@@ -16,9 +16,12 @@ keywords = [
     "content-creation",
     "viral-content",
     "writing-assistant",
-    "short-video",
+    "style-engine",
     "ai-content",
-    "chinese-writing"
+    "chinese-writing",
+    "conversion-funnel",
+    "hot-trends",
+    "multi-platform"
 ]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
@@ -61,14 +64,15 @@ Repository = "https://github.com/Sunnyeung369/viral-content-generator.git"
 Issues = "https://github.com/Sunnyeung369/viral-content-generator/issues"
 
 [project.scripts]
-viral-content = "viral_article_cli:main"
+viral-content = "viral_content_cli_v4:main"
+viral-content-v4 = "viral_content_cli_v4:main"
 
 [tool.setuptools]
-py-modules = ["viral_article_cli"]
+py-modules = ["viral_content_cli_v4"]
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["*"]
+include = ["viral_content*"]
 
 [tool.black]
 line-length = 100

@@ -1,0 +1,104 @@
+"""
+内容生成器抽象基类
+
+作者: Sunnyeung
+版本: 4.0.0
+许可: MIT License
+GitHub: https://github.com/Sunnyeung369/viral-content-generator
+"""
+
+import logging
+import time
+from abc import ABC, abstractmethod
+from typing import Optional
+
+from viral_content.models.generation import GenerationConfig, GenerationResult
+from viral_content.utils.skill_loader import load_skill
+from viral_content.config.constants import MAX_RETRIES, RETRY_DELAY
+from viral_content.exceptions.custom import APIError
+
+logger = logging.getLogger(__name__)
+
+
+class ContentGenerator(ABC):
+    """内容生成器抽象基类"""
+
+    # 平台默认模型
+    DEFAULT_MODEL: str = ""
+    # 平台名称
+    PLATFORM_NAME: str = ""
+
+    def __init__(self, config: GenerationConfig):
+        self.config = config
+        self.skill_content = load_skill()
+        self._client = None
+        self._setup_client()
+
+    @abstractmethod
+    def _setup_client(self) -> None:
+        """设置API客户端"""
+        pass
+
+    @abstractmethod
+    def _generate_internal(self, prompt: str) -> GenerationResult:
+        """内部生成方法"""
+        pass
+
+    @property
+    def model(self) -> str:
+        """获取使用的模型名称"""
+        return self.config.model or self.DEFAULT_MODEL
+
+    def build_prompt(self) -> str:
+        """构建提示词（基础版本，v4.0 将由 PromptCompiler 替代）"""
+        return f"""请用{self.config.style}风格，写一篇关于"{self.config.topic}"的文章，目标字数：{self.config.word_count}字。
+
+要求：
+1. 严格按照Skill中的方法论创作
+2. 应用用户决策4次判断模型
+3. 确保内容质量达到HKR评分标准
+4. 字数控制在{self.config.word_count}字左右（误差±10%）
+5. 前句建立相关性，前20行建立信任
+6. 完整内容提供真价值，结尾展示利用价值
+
+请直接输出文章内容，不需要额外的解释或说明。"""
+
+    def generate(self) -> GenerationResult:
+        """
+        生成内容（带重试机制）
+
+        Returns:
+            GenerationResult: 生成结果
+
+        Raises:
+            APIError: 当API调用失败时
+        """
+        last_error = None
+        prompt = self.build_prompt()
+
+        for attempt in range(MAX_RETRIES):
+            try:
+                logger.info(f"调用 {self.PLATFORM_NAME} API (尝试 {attempt + 1}/{MAX_RETRIES})...")
+
+                start_time = time.time()
+                result = self._generate_internal(prompt)
+                result.duration_seconds = time.time() - start_time
+
+                logger.info(
+                    f"{self.PLATFORM_NAME} API调用成功，"
+                    f"生成内容长度: {len(result.content)}字，"
+                    f"耗时: {result.duration_seconds:.2f}秒"
+                )
+
+                return result
+
+            except Exception as e:
+                last_error = e
+                if attempt < MAX_RETRIES - 1:
+                    wait_time = RETRY_DELAY * (2 ** attempt)  # 指数退避
+                    logger.warning(f"API调用失败，{wait_time}秒后重试: {e}")
+                    time.sleep(wait_time)
+                else:
+                    logger.error(f"API调用失败，已达最大重试次数: {e}")
+
+        raise APIError(f"{self.PLATFORM_NAME} API调用失败: {last_error}")

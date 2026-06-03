@@ -1,0 +1,1015 @@
+# 全球写作者风格基因库
+# v4.0 - 全球Newsletter/写作者风格卡 (30个)
+#
+# 每个风格描述可观察的风格特征，而非具体作者的复刻
+# 遵守：仅描述可公开观察的风格特征
+
+styles:
+  # ==================== 科技/商业Newsletter (10个) ====================
+
+  - id: tech_newsletter_daily
+    label: "日常科技Newsletter"
+    category: "tech_newsletter"
+    region: "global"
+    platform: "newsletter"
+    reference_level: "publicly observable style traits only"
+
+    style_dna:
+      tone: "清晰、实用、每日必读"
+      structure: "今日头条 -> 深度分析 -> 工具推荐 -> 行业动态"
+      length_preference: "800-1200字"
+      frequency: "每日"
+
+    hook_patterns:
+      - "今天最重要的科技新闻"
+      - "Tech行业正在发生什么"
+      - "Daily briefing"
+
+    logic_patterns:
+      - "新闻摘要 -> 深度解读 -> 启示分析"
+
+    emotion_curve:
+      opening: "获取信息"
+      middle: "深度理解"
+      ending: "获得行动洞察"
+
+    avoid:
+      - "过度冗长"
+      - "失去时效性"
+
+    conversion_fit:
+      best_for: ["科技产品", "开发者工具", "SaaS服务"]
+      cta_style: "每日价值 + 产品推荐"
+
+  - id: business_strategy_insights
+    label: "商业战略洞见"
+    category: "business_newsletter"
+    region: "global"
+    platform: "newsletter"
+
+    style_dna:
+      tone: "战略性、深度、前瞻"
+      structure: "商业观察 -> 战略分析 -> 案例研究 -> 行动建议"
+      length_preference: "1500-2500字"
+      frequency: "每周"
+
+    hook_patterns:
+      - "这个战略思维改变了我的商业认知"
+      - "从顶级公司学到的战略"
+      - "战略思维的深度解析"
+
+    logic_patterns:
+      - "商业现象 -> 战略框架 -> 实战应用"
+
+    emotion_curve:
+      opening: "认知升级"
+      middle: "深度理解"
+      ending: "想立刻应用"
+
+    avoid:
+      - "过度理论化"
+      - "脱离实战"
+
+    conversion_fit:
+      best_for: ["战略咨询", "高管培训", "商业课程"]
+      cta_style: "战略深度 + 咨询服务"
+
+  - id: product_management_weekly
+    label: "产品管理周刊"
+    category: "tech_newsletter"
+    region: "global"
+    platform: "newsletter"
+
+    style_dna:
+      tone: "实战、可执行、同行交流"
+      structure: "PM话题 -> 方法论分享 -> 工具推荐 -> 职场建议"
+      length_preference: "1000-1500字"
+      frequency: "每周"
+
+    hook_patterns:
+      - "本周PM最值得关注的话题"
+      - "这个方法论帮我解决了产品难题"
+      - "PM必读"
+
+    logic_patterns:
+      - "产品挑战 -> 解决方法 -> 经验总结"
+
+    emotion_curve:
+      opening: "共鸣痛点"
+      middle: "获得方法"
+      ending: "想立刻实践"
+
+    avoid:
+      - "空泛理论"
+      - "过度技术化"
+
+    conversion_fit:
+      best_for: ["PM培训", "产品工具", "职场社群"]
+      cta_style: "实战价值 + 课程推荐"
+
+  - id: startup_newsletter
+    label: "创业Newsletter"
+    category: "business_newsletter"
+    region: "global"
+    platform: "newsletter"
+
+    style_dna:
+      tone: "真实、透明、创业前线"
+      structure: "创业日记 -> 经验教训 -> 数据分享 -> 资源推荐"
+      length_preference: "1200-2000字"
+      frequency: "每周"
+
+    hook_patterns:
+      - "本周创业最真实的记录"
+      - "这些错误我替你犯了"
+      - "创业维稳，不是理想主义"
+
+    logic_patterns:
+      - "创业现实 -> 经验总结 -> 避坑指南"
+
+    emotion_curve:
+      opening: "共鸣现实"
+      middle: "获得启发"
+      ending: "受到鼓舞"
+
+    avoid:
+      - "过度美化"
+      - "贩卖焦虑"
+
+    conversion_fit:
+      best_for: ["创业服务", "SaaS工具", "创业社群"]
+      cta_style: "真实分享 + 服务推荐"
+
+  - id: crypto_analysis_detailed
+    label: "详细加密分析"
+    category: "tech_newsletter"
+    region: "global"
+    platform: "newsletter"
+
+    style_dna:
+      tone: "专业、数据驱动、风险意识"
+      structure: "市场动态 -> 技术分析 -> 风险提示 -> 投资思考"
+      length_preference: "1500-2500字"
+      frequency: "每周"
+
+    hook_patterns:
+      - "本周加密市场深度分析"
+      - "数据告诉你真相"
+      - "理性看待市场波动"
+
+    logic_patterns:
+      - "市场现象 -> 数据分析 -> 理性判断"
+
+    emotion_curve:
+      opening: "获取信息"
+      middle: "理性分析"
+      ending: "做出决策"
+
+    avoid:
+      - "过度乐观"
+      - "投资建议"
+
+    conversion_fit:
+      best_for: ["加密服务", "分析工具", "投资社群"]
+      cta_style: "专业分析 + 工具推荐"
+
+  - id: saas_trends
+    label: "SaaS趋势"
+    category: "business_newsletter"
+    region: "global"
+    platform: "newsletter"
+
+    style_dna:
+      tone: "行业观察、数据支撑、趋势预判"
+      structure: "行业动态 -> 数据分析 -> 趋势判断 -> 机会分析"
+      length_preference: "1200-1800字"
+      frequency: "每周"
+
+    hook_patterns:
+      - "SaaS行业正在发生什么"
+      - "从数据看SaaS趋势"
+      - "下一个增长点在哪里"
+
+    logic_patterns:
+      - "行业现象 -> 数据验证 -> 趋势预判"
+
+    emotion_curve:
+      opening: "获得认知"
+      middle: "深度理解"
+      ending: "把握机会"
+
+    avoid:
+      - "过度预测"
+      - "缺乏数据支撑"
+
+    conversion_fit:
+      best_for: ["SaaS产品", "行业报告", "咨询服务"]
+      cta_style: "趋势洞察 + 专业服务"
+
+  - id: future_of_work
+    label: "工作未来"
+    category: "business_newsletter"
+    region: "global"
+    platform: "newsletter"
+
+    style_dna:
+      tone: "前瞻、以人为本、有温度"
+      structure: "工作趋势 -> 职场建议 -> 技能发展 -> 资源推荐"
+      length_preference: "1000-1500字"
+      frequency: "每周"
+
+    hook_patterns:
+      - "未来工作的样子"
+      - "职场人最该关注的趋势"
+      - "你的技能够用吗"
+
+    logic_patterns:
+      - "工作趋势 -> 技能分析 -> 发展建议"
+
+    emotion_curve:
+      opening: "关注未来"
+      middle: "理解趋势"
+      ending: "准备行动"
+
+    avoid:
+      - "制造焦虑"
+      - "过度乐观"
+
+    conversion_fit:
+      best_for: ["职场服务", "技能培训", "职业社群"]
+      cta_style: "前瞻价值 + 职业服务"
+
+  - id: innovation_newsletter
+    label: "创新Newsletter"
+    category: "tech_newsletter"
+    region: "global"
+    platform: "newsletter"
+
+    style_dna:
+      tone: "好奇、跨界、启发思维"
+      structure: "创新案例 -> 方法论 -> 跨界启发 -> 资源推荐"
+      length_preference: "1200-2000字"
+      frequency: "每周"
+
+    hook_patterns:
+      - "这个创新模式值得学习"
+      - "跨界创新的秘密"
+      - "创新者的思维方式"
+
+    logic_patterns:
+      - "创新现象 -> 方法分析 -> 启发应用"
+
+    emotion_curve:
+      opening: "好奇"
+      middle: "获得启发"
+      ending: "想立刻创新"
+
+    avoid:
+      - "过度理论化"
+      - "脱离实际"
+
+    conversion_fit:
+      best_for: ["创新咨询", "设计服务", "创新社群"]
+      cta_style: "创新启发 + 服务推荐"
+
+  - id: business_model_analysis
+    label: "商业模式分析"
+    category: "business_newsletter"
+    region: "global"
+    platform: "newsletter"
+
+    style_dna:
+      tone: "分析型、结构化、可复用"
+      structure: "商业模式介绍 -> 框架分析 -> 成功案例 -> 应用建议"
+      length_preference: "1500-2500字"
+      frequency: "每周"
+
+    hook_patterns:
+      - "这个商业模式为什么成功"
+      - "拆解顶级公司的商业模式"
+      - "商业模式深度解析"
+
+    logic_patterns:
+      - "商业模式 -> 框架拆解 -> 可复制经验"
+
+    emotion_curve:
+      opening: "认知升级"
+      middle: "深度理解"
+      ending: "想应用"
+
+    avoid:
+      - "表面分析"
+      - "过度复杂化"
+
+    conversion_fit:
+      best_for: ["商业咨询", "企业服务", "商业课程"]
+      cta_style: "分析深度 + 咨询服务"
+
+  - id: tech_ethics_newsletter
+    label: "科技伦理Newsletter"
+    category: "tech_newsletter"
+    region: "global"
+    platform: "newsletter"
+
+    style_dna:
+      tone: "批判性、深思熟虑、人文关怀"
+      structure: "伦理议题 -> 多维分析 -> 社会影响 -> 反思建议"
+      length_preference: "1500-2500字"
+      frequency: "每周"
+
+    hook_patterns:
+      - "我们需要警惕这个技术趋势"
+      - "科技背后的人文思考"
+      - "技术发展的伦理边界"
+
+    logic_patterns:
+      - "技术现象 -> 伦理分析 -> 社会反思"
+
+    emotion_curve:
+      opening: "警醒"
+      middle: "深度思考"
+      ending: "形成判断"
+
+    avoid:
+      - "过度批判"
+      - "失去平衡"
+
+    conversion_fit:
+      best_for: ["伦理咨询", "政策服务", "思想社群"]
+      cta_style: "思想深度 + 专业服务"
+
+  # ==================== 宏观/文化评论 (10个) ====================
+
+  - id: economics_global
+    label: "全球经济"
+    category: "macro_commentary"
+    region: "global"
+    platform: "newsletter"
+
+    style_dna:
+      tone: "专业、数据驱动、宏观视角"
+      structure: "经济动态 -> 数据分析 -> 趋势预判 -> 投资思考"
+      length_preference: "1500-2500字"
+      frequency: "每周"
+
+    hook_patterns:
+      - "全球经济正在发生什么"
+      - "从数据看经济趋势"
+      - "宏观经济深度分析"
+
+    logic_patterns:
+      - "经济现象 -> 数据验证 -> 趋势判断"
+
+    emotion_curve:
+      opening: "获取信息"
+      middle: "深度理解"
+      ending: "做出决策"
+
+    avoid:
+      - "过度预测"
+      - "投资建议"
+
+    conversion_fit:
+      best_for: ["投资服务", "经济咨询", "高端社群"]
+      cta_style: "专业深度 + 咨询服务"
+
+  - id: politics_explained
+    label: "政治解释"
+    category: "macro_commentary"
+    region: "global"
+    platform: "newsletter"
+
+    style_dna:
+      tone: "客观、教育性、保持平衡"
+      structure: "政治事件 -> 背景分析 -> 影响评估 -> 历史对比"
+      length_preference: "1500-2500字"
+      frequency: "每周"
+
+    hook_patterns:
+      - "你需要了解的政治动态"
+      - "从历史角度看当前政治"
+      - "政治背后的逻辑"
+
+    logic_patterns:
+      - "政治现象 -> 背景分析 -> 理性解读"
+
+    emotion_curve:
+      opening: "获取信息"
+      middle: "理性理解"
+      ending: "形成观点"
+
+    avoid:
+      - "站队"
+      - "情绪化表达"
+
+    conversion_fit:
+      best_for: ["新闻分析", "政治咨询", "知识服务"]
+      cta_style: "客观分析 + 知识服务"
+
+  - id: cultural_analysis
+    label: "文化分析"
+    category: "macro_commentary"
+    region: "global"
+    platform: "newsletter"
+
+    style_dna:
+      tone: "批判性、有深度、多维视角"
+      structure: "文化现象 -> 理论框架 -> 社会分析 -> 价值反思"
+      length_preference: "1500-2500字"
+      frequency: "每周"
+
+    hook_patterns:
+      - "这个文化现象值得深思"
+      - "从社会学角度看文化"
+      - "文化背后的社会逻辑"
+
+    logic_patterns:
+      - "文化现象 -> 理论分析 -> 社会意义"
+
+    emotion_curve:
+      opening: "思考"
+      middle: "深度理解"
+      ending: "形成观点"
+
+    avoid:
+      - "过度学术化"
+      - "脱离大众"
+
+    conversion_fit:
+      best_for: ["文化内容", "学术服务", "知识社群"]
+      cta_style: "思想深度 + 内容推荐"
+
+  - id: media_criticism
+    label: "媒体批评"
+    category: "macro_commentary"
+    region: "global"
+    platform: "newsletter"
+
+    style_dna:
+      tone: "批判性、媒体素养、批判思维"
+      structure: "媒体报道 -> 真相分析 -> 媒体生态 -> 素养建议"
+      length_preference: "1200-2000字"
+      frequency: "每周"
+
+    hook_patterns:
+      - "媒体没有告诉你真相"
+      - "从新闻中看到什么"
+      - "提升媒体素养"
+
+    logic_patterns:
+      - "媒体报道 -> 真相验证 -> 媒体分析"
+
+    emotion_curve:
+      opening: "警醒"
+      middle: "批判思考"
+      ending: "提升素养"
+
+    avoid:
+      - "过度批判"
+      - "失去平衡"
+
+    conversion_fit:
+      best_for: ["媒体服务", "素养培训", "知识社群"]
+      cta_style: "批判思维 + 教育服务"
+
+  - id: society_trends
+    label: "社会趋势"
+    category: "macro_commentary"
+    region: "global"
+    platform: "newsletter"
+
+    style_dna:
+      tone: "观察性、数据支撑、前瞻性"
+      structure: "社会现象 -> 趋势分析 -> 影响评估 -> 应对建议"
+      length_preference: "1500-2500字"
+      frequency: "每周"
+
+    hook_patterns:
+      - "社会正在发生什么变化"
+      - "从数据看社会趋势"
+      - "未来社会是什么样子"
+
+    logic_patterns:
+      - "社会现象 -> 趋势验证 -> 未来预判"
+
+    emotion_curve:
+      opening: "关注"
+      middle: "深度理解"
+      ending: "做好准备"
+
+    avoid:
+      - "过度预测"
+      - "缺乏数据支撑"
+
+    conversion_fit:
+      best_for: ["社会研究", "趋势报告", "咨询服务"]
+      cta_style: "趋势洞察 + 专业服务"
+
+  - id: philosophy_modern
+    label: "现代哲学"
+    category: "macro_commentary"
+    region: "global"
+    platform: "newsletter"
+
+    style_dna:
+      tone: "深邃但通俗、反思性、启发性"
+      structure: "哲学问题 -> 思想实验 -> 现代应用 -> 反思建议"
+      length_preference: "1500-2500字"
+      frequency: "每周"
+
+    hook_patterns:
+      - "这个哲学问题困扰我多年"
+      - "哲学如何指导现代生活"
+      - "思想的深度探索"
+
+    logic_patterns:
+      - "哲学问题 -> 思想分析 -> 现实应用"
+
+    emotion_curve:
+      opening: "思考"
+      middle: "深度反思"
+      ending: "获得智慧"
+
+    avoid:
+      - "过度学术化"
+      - "脱离实际"
+
+    conversion_fit:
+      best_for: ["哲学内容", "思想社群", "教育服务"]
+      cta_style: "思想深度 + 内容推荐"
+
+  - id: history_contextual
+    label: "历史背景"
+    category: "macro_commentary"
+    region: "global"
+    platform: "newsletter"
+
+    style_dna:
+      tone: "历史视角、深度分析、以史为鉴"
+      structure: "当前事件 -> 历史对比 -> 历史教训 -> 现代启示"
+      length_preference: "1500-2500字"
+      frequency: "每周"
+
+    hook_patterns:
+      - "历史告诉你真相"
+      - "从历史角度看今天"
+      - "历史总是惊人相似"
+
+    logic_patterns:
+      - "当前事件 -> 历史对比 -> 获得智慧"
+
+    emotion_curve:
+      opening: "好奇"
+      middle: "深度理解"
+      ending: "获得历史智慧"
+
+    avoid:
+      - "过度简化"
+      - "断章取义"
+
+    conversion_fit:
+      best_for: ["历史内容", "教育服务", "知识社群"]
+      cta_style: "历史深度 + 内容推荐"
+
+  - id: literature_review
+    label: "文学评论"
+    category: "macro_commentary"
+    region: "global"
+    platform: "newsletter"
+
+    style_dna:
+      tone: "文学性、有深度、审美取向"
+      structure: "作品介绍 -> 深度分析 -> 价值判断 -> 阅读建议"
+      length_preference: "1500-2500字"
+      frequency: "每周"
+
+    hook_patterns:
+      - "这本小说改变了我的认知"
+      - "从文学角度看人性"
+      - "值得深度阅读的作品"
+
+    logic_patterns:
+      - "文学作品 -> 深度分析 -> 价值判断"
+
+    emotion_curve:
+      opening: "审美愉悦"
+      middle: "深度理解"
+      ending: "想立刻阅读"
+
+    avoid:
+      - "剧透过度"
+      - "过度学术化"
+
+    conversion_fit:
+      best_for: ["图书推广", "文学社群", "教育服务"]
+      cta_style: "文学深度 + 图书推荐"
+
+  - id: art_market_insights
+    label: "艺术市场洞见"
+    category: "macro_commentary"
+    region: "global"
+    platform: "newsletter"
+
+    style_dna:
+      tone: "专业、市场洞察、艺术价值"
+      structure: "艺术市场 -> 趋势分析 -> 价值评估 -> 投资思考"
+      length_preference: "1500-2500字"
+      frequency: "每周"
+
+    hook_patterns:
+      - "艺术市场正在发生什么"
+      - "从市场看艺术价值"
+      - "艺术投资深度分析"
+
+    logic_patterns:
+      - "艺术现象 -> 市场分析 -> 价值判断"
+
+    emotion_curve:
+      opening: "获得信息"
+      middle: "深度理解"
+      ending: "做出决策"
+
+    avoid:
+      - "过度预测"
+      - "投资建议"
+
+    conversion_fit:
+      best_for: ["艺术服务", "市场咨询", "高端社群"]
+      cta_style: "专业深度 + 咨询服务"
+
+  - id: future_studies
+    label: "未来研究"
+    category: "macro_commentary"
+    region: "global"
+    platform: "newsletter"
+
+    style_dna:
+      tone: "前瞻、数据驱动、谨慎乐观"
+      structure: "当前趋势 -> 数据分析 -> 未来场景 -> 应对建议"
+      length_preference: "1500-2500字"
+      frequency: "每周"
+
+    hook_patterns:
+      - "未来可能是什么样子"
+      - "从趋势看未来"
+      - "为未来做好准备"
+
+    logic_patterns:
+      - "当前趋势 -> 数据验证 -> 未来预判"
+
+    emotion_curve:
+      opening: "好奇"
+      middle: "理性认知"
+      ending: "做好准备"
+
+    avoid:
+      - "过度乐观"
+      - "不负责任的预测"
+
+    conversion_fit:
+      best_for: ["未来研究", "战略咨询", "高端社群"]
+      cta_style: "前瞻价值 + 咨询服务"
+
+  # ==================== 个人成长/工具类 (10个) ====================
+
+  - id: productivity_newsletter
+    label: "效率Newsletter"
+    category: "productivity"
+    region: "global"
+    platform: "newsletter"
+
+    style_dna:
+      tone: "实用、可执行、极简主义"
+      structure: "效率挑战 -> 解决方案 -> 工具推荐 -> 行动建议"
+      length_preference: "800-1200字"
+      frequency: "每周"
+
+    hook_patterns:
+      - "这个方法让我效率翻倍"
+      - "极简但有效的效率技巧"
+      - "告别时间管理困境"
+
+    logic_patterns:
+      - "效率挑战 -> 解决方法 -> 立刻行动"
+
+    emotion_curve:
+      opening: "共鸣痛点"
+      middle: "获得方法"
+      ending: "想立刻实践"
+
+    avoid:
+      - "过度复杂"
+      - "不切实际"
+
+    conversion_fit:
+      best_for: ["效率工具", "生产力课程", "效率社群"]
+      cta_style: "实用价值 + 工具推荐"
+
+  - id: personal_development
+    label: "个人发展"
+    category: "productivity"
+    region: "global"
+    platform: "newsletter"
+
+    style_dna:
+      tone: "成长导向、温暖、有方法"
+      structure: "成长话题 -> 方法论 -> 行动计划 -> 资源推荐"
+      length_preference: "1000-1500字"
+      frequency: "每周"
+
+    hook_patterns:
+      - "这个思维改变了我的人生"
+      - "个人成长的本质"
+      - "成为更好的自己"
+
+    logic_patterns:
+      - "成长挑战 -> 思维方法 -> 行动改变"
+
+    emotion_curve:
+      opening: "共鸣需求"
+      middle: "获得启发"
+      ending: "想立刻改变"
+
+    avoid:
+      - "鸡汤式"
+      - "缺乏方法论"
+
+    conversion_fit:
+      best_for: ["成长课程", "教练服务", "成长社群"]
+      cta_style: "成长价值 + 服务推荐"
+
+  - id: career_advice_practical
+    label: "实用职业建议"
+    category: "productivity"
+    region: "global"
+    platform: "newsletter"
+
+    style_dna:
+      tone: "实战、真诚、可执行"
+      structure: "职场挑战 -> 解决方案 -> 职业规划 -> 资源推荐"
+      length_preference: "1000-1500字"
+      frequency: "每周"
+
+    hook_patterns:
+      - "职场人最需要知道的真相"
+      - "职业晋升的关键"
+      - "少走弯路的职业建议"
+
+    logic_patterns:
+      - "职场困境 -> 解决方案 -> 行动建议"
+
+    emotion_curve:
+      opening: "共鸣痛点"
+      middle: "获得方法"
+      ending: "想立刻应用"
+
+    avoid:
+      - "空泛激励"
+      - "脱离实际"
+
+    conversion_fit:
+      best_for: ["职业咨询", "职场培训", "职业社群"]
+      cta_style: "实战价值 + 服务推荐"
+
+  - id: learning_hacks
+    label: "学习技巧"
+    category: "productivity"
+    region: "global"
+    platform: "newsletter"
+
+    style_dna:
+      tone: "科学、可验证、极简"
+      structure: "学习挑战 -> 科学方法 -> 效果验证 -> 行动建议"
+      length_preference: "800-1200字"
+      frequency: "每周"
+
+    hook_patterns:
+      - "这个学习方法让我事半功倍"
+      - "科学告诉你如何高效学习"
+      - "学习其实有方法"
+
+    logic_patterns:
+      - "学习困境 -> 科学方法 -> 效果验证"
+
+    emotion_curve:
+      opening: "共鸣痛点"
+      middle: "获得方法"
+      ending: "想立刻实践"
+
+    avoid:
+      - "伪科学"
+      - "过度复杂"
+
+    conversion_fit:
+      best_for: ["学习工具", "教育服务", "学习社群"]
+      cta_style: "科学方法 + 工具推荐"
+
+  - id: creativity_methods
+    label: "创造力方法"
+    category: "productivity"
+    region: "global"
+    platform: "newsletter"
+
+    style_dna:
+      tone: "启发、实验性、不设限"
+      structure: "创意挑战 -> 方法分享 -> 案例展示 -> 行动建议"
+      length_preference: "1000-1500字"
+      frequency: "每周"
+
+    hook_patterns:
+      - "这个方法让我创意无限"
+      - "创造力是可以培养的"
+      - "突破创意瓶颈"
+
+    logic_patterns:
+      - "创意困境 -> 解决方法 -> 创意实践"
+
+    emotion_curve:
+      opening: "共鸣瓶颈"
+      middle: "获得启发"
+      ending: "想立刻创作"
+
+    avoid:
+      - "过度神秘化"
+      - "缺乏方法论"
+
+    conversion_fit:
+      best_for: ["创意工具", "设计服务", "创意社群"]
+      cta_style: "创意启发 + 工具推荐"
+
+  - id: writing_craft
+    label: "写作技艺"
+    category: "productivity"
+    region: "global"
+    platform: "newsletter"
+
+    style_dna:
+      tone: "专业、有深度、可执行"
+      structure: "写作话题 -> 方法论 -> 案例分析 -> 练习建议"
+      length_preference: "1000-1500字"
+      frequency: "每周"
+
+    hook_patterns:
+      - "这个写作技巧改变了我的表达"
+      - "好文章是有方法的"
+      - "写作是一门手艺"
+
+    logic_patterns:
+      - "写作挑战 -> 方法分析 -> 立刻练习"
+
+    emotion_curve:
+      opening: "共鸣困境"
+      middle: "获得方法"
+      ending: "想立刻写作"
+
+    avoid:
+      - "过度理论化"
+      - "脱离实战"
+
+    conversion_fit:
+      best_for: ["写作课程", "编辑服务", "写作社群"]
+      cta_style: "技艺价值 + 课程推荐"
+
+  - id: reading_recommendations
+    label: "阅读推荐"
+    category: "productivity"
+    region: "global"
+    platform: "newsletter"
+
+    style_dna:
+      tone: "真诚、有深度、分类清晰"
+      structure: "书籍推荐 -> 核心观点 -> 个人感悟 -> 阅读建议"
+      length_preference: "1000-1500字"
+      frequency: "每周"
+
+    hook_patterns:
+      - "本周最值得读的书"
+      - "这本书改变了我的思考"
+      - "为你的阅读精选"
+
+    logic_patterns:
+      - "书籍介绍 -> 核心价值 -> 阅读建议"
+
+    emotion_curve:
+      opening: "好奇"
+      middle: "被种草"
+      ending: "想立刻阅读"
+
+    avoid:
+      - "剧透过度"
+      - "失真推荐"
+
+    conversion_fit:
+      best_for: ["图书推广", "阅读社群", "知识服务"]
+      cta_style: "真诚推荐 + 购买引导"
+
+  - id: tool_reviews
+    label: "工具测评"
+    category: "productivity"
+    region: "global"
+    platform: "newsletter"
+
+    style_dna:
+      tone: "客观、实用、可执行"
+      structure: "工具介绍 -> 功能分析 -> 优缺点对比 -> 购买建议"
+      length_preference: "800-1200字"
+      frequency: "每周"
+
+    hook_patterns:
+      - "这个工具让我效率翻倍"
+      - "深度测评：XXX工具"
+      - "值得购买的工具"
+
+    logic_patterns:
+      - "工具需求 -> 功能分析 -> 购买决策"
+
+    emotion_curve:
+      opening: "好奇"
+      middle: "了解详情"
+      ending: "做出购买决策"
+
+    avoid:
+      - "硬广感"
+      - "不客观的评价"
+
+    conversion_fit:
+      best_for: ["工具推广", "SaaS服务", "效率社群"]
+      cta_style: "客观测评 + 购买引导"
+
+  - id: life_experiments
+    label: "生活实验"
+    category: "productivity"
+    region: "global"
+    platform: "newsletter"
+
+    style_dna:
+      tone: "实验性、真实、有反思"
+      structure: "实验设定 -> 执行过程 -> 结果分析 -> 反思总结"
+      length_preference: "1000-1500字"
+      frequency: "每周"
+
+    hook_patterns:
+      - "我做了这个30天实验"
+      - "生活可以有不同的可能"
+      - "实验告诉你真相"
+
+    logic_patterns:
+      - "生活假设 -> 实验验证 -> 反思应用"
+
+    emotion_curve:
+      opening: "好奇"
+      middle: "跟随过程"
+      ending: "获得启发"
+
+    avoid:
+      - "过度实验"
+      - "不健康的实验"
+
+    conversion_fit:
+      best_for: ["生活方式", "个人成长", "社群内容"]
+      cta_style: "实验价值 + 生活启发"
+
+  - id: habit_formation
+    label: "习惯养成"
+    category: "productivity"
+    region: "global"
+    platform: "newsletter"
+
+    style_dna:
+      tone: "科学、可执行、有温度"
+      structure: "习惯挑战 -> 科学方法 -> 执行策略 -> 效果验证"
+      length_preference: "800-1200字"
+      frequency: "每周"
+
+    hook_patterns:
+      - "这个方法让我成功养成习惯"
+      - "科学告诉你如何建立习惯"
+      - "习惯改变人生"
+
+    logic_patterns:
+      - "习惯困境 -> 科学方法 -> 立刻行动"
+
+    emotion_curve:
+      opening: "共鸣痛点"
+      middle: "获得方法"
+      ending: "想立刻开始"
+
+    avoid:
+      - "鸡汤式"
+      - "缺乏科学依据"
+
+    conversion_fit:
+      best_for: ["习惯工具", "教练服务", "成长社群"]
+      cta_style: "科学方法 + 工具推荐"
+
+# 文件元数据
+metadata:
+  version: "4.0.0"
+  total_styles: 30
+  region: "global"
+  last_updated: "2026-06-03"
+  categories:
+    - tech_newsletter: 5
+    - business_newsletter: 5
+    - macro_commentary: 10
+    - productivity: 10

@@ -1,13 +1,13 @@
-# 🚀 爆款内容生成器 v3.1
+# 🚀 热点风格成交引擎 v4.0
 
 <div align="center">
 
-![Version](https://img.shields.io/badge/version-3.1.2-blue)
+![Version](https://img.shields.io/badge/version-4.0.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Python](https://img.shields.io/badge/python-3.8+-blue)
 ![Platform](https://img.shields.io/badge/platform-全平台-orange)
 
-**全平台内容创作系统 - 让爆款内容创作变得简单**
+**全球热点 × 风格基因 × 账号定位 × 成交目标 = 高赞、高互动、高成交内容包**
 
 [快速开始](#快速开始) • [核心功能](#核心功能) • [使用文档](#使用文档) • [更新日志](./CHANGELOG.md) • [贡献指南](./CONTRIBUTING.md)
 
@@ -17,144 +17,144 @@
 
 ## 📖 简介
 
-爆款内容生成器是一个基于深度研究的全平台内容创作系统，整合了50+现象级创作者的方法论，支持图文、短视频、长视频、音频等多种内容形式的创作。
+热点风格成交引擎是一个基于深度研究的**热点风格成交系统**，整合了 **155+ 风格基因卡**，支持热点情报、账号指纹、成交目标、多平台适配的全流程内容作战系统。
 
-### 💡 核心理念
+### 核心公式
 
-> **所有优质短视频的底层都是爆款文案**  
-> **所有爆款内容的本质都是注意力管理**
+```
+任何热点话题 + 任意账号定位 + 任意业务目标 + 任意平台格式 + 可组合风格基因 = 高赞、高互动、高成交内容包
+```
 
-### ✨ 为什么选择我们？
+### 从 v3.1 到 v4.0 的重大升级
 
-- 🎯 **科学方法论**：基于用户决策的4次判断模型
-- 🌐 **全平台支持**：一套系统，适配8大主流平台
-- 📊 **数据驱动**：完整的数据分析与优化体系
-- 🎨 **灵活定制**：8种预设风格 + 自定义风格系统
-- 📚 **详尽文档**：10+文档文件，126KB+内容
-- 🔧 **开箱即用**：提供CLI工具和完整模板
+| 特性 | v3.1.2 | v4.0 |
+|------|--------|------|
+| 定位 | 爆款内容生成器 | 热点风格成交引擎 |
+| 风格库 | 8种硬编码风格 | 155+ 外置风格基因卡 |
+| 账号配置 | 无 | YAML 账号指纹系统 |
+| 成交目标 | 无 | 4种成交目标模式 |
+| 热点输入 | 无 | 支持热点情报导入 |
+| 平台适配 | 硬编码 | 动态模板系统 |
+| 系统提示词 | 单文件 | 模块化编译系统 |
 
 ---
 
 ## 🎯 核心功能
 
-### 1. 用户决策4次判断模型 ⭐⭐⭐⭐⭐
+### 1. 风格基因库（155+ 风格卡）⭐⭐⭐⭐⭐
 
-```
-判断1：前3秒/前3句 → 跟我有关吗？（相关性）
-判断2：前20秒/前20行 → 值不值得继续？（信任度）
-判断3：看完整条内容 → 有没有真价值？（价值感）
-判断4：看完之后 → 要不要关注你？（利用价值）
-```
+**分层架构：**
+- **A类 - 全球创作者风格（40个）**：科技解释型、商业播客主持、创业Vlog、科技测评等
+- **B类 - 国内创作者风格（40个）**：商业毒舌博主、小红书种草、B站知识UP主等
+- **C类 - 全球写作者风格（30个）**：科技Newsletter、商业战略洞见、文化评论等
+- **D类 - 中文写作者风格（20个）**：商业评论、股市分析、文化随笔等
+- **E类 - 成交文案风格（20个）**：AIDA、PAS、故事销售等经典框架
 
-**适用于：** 所有平台的内容创作
-
----
-
-### 2. 全平台内容矩阵 🌐
-
-| 平台 | 形式 | 时长/字数 | 核心要素 | 优化重点 |
-|------|------|----------|---------|---------|
-| 抖音/快手 | 短视频 | 30-60秒 | 前3秒钩子 | 完播率 |
-| 视频号 | 短视频 | 1-3分钟 | 传播价值 | 转发率 |
-| B站 | 长视频 | 5-15分钟 | 章节设计 | 播放时长 |
-| 小红书 | 图文/短视频 | 500-1000字 | 实用价值 | 收藏率 |
-| 知乎 | 长文 | 3000-8000字 | 深度价值 | 点赞+收藏 |
-| 公众号 | 长文 | 3000-10000字 | 系统价值 | 转发+在看 |
-| 微博 | 短文 | 200-500字 | 观点鲜明 | 转发+评论 |
-| 播客 | 音频 | 30-60分钟 | 深度对话 | 完播率 |
+**每个风格基因卡包含：**
+- `style_dna`: 语气、句式节奏、词汇偏好
+- `hook_patterns`: 钩子模式列表
+- `logic_patterns`: 逻辑模式
+- `emotion_curve`: 情绪曲线
+- `avoid`: 避免事项
+- `conversion_fit`: 成交适配性
 
 ---
 
-### 3. 8种预设风格 🎨
+### 2. 账号指纹系统
 
-1. **老司机风格** - 接地气、犀利、反常识
-2. **专业导师风格** - 系统化、有深度、温和
-3. **故事叙述风格** - 情节丰富、画面感强
-4. **数据分析风格** - 客观理性、数据驱动
-5. **反常识风格** - 颠覆认知、引发思考
-6. **清单工具风格** - 条理清晰、易于扫读
-7. **对话问答风格** - 互动感强、针对性强
-8. **诗意哲思风格** - 文笔优美、意境深远
+**账号配置文件结构：**
+```yaml
+account:
+  name: "账号名称"
+  identity: "专业定位"
+  target_audience: ["目标用户1", "目标用户2"]
+  pain_points: ["痛点1", "痛点2"]
+  authority_assets: ["权威资产1", "权威资产2"]
+  business_goal:
+    primary: "主要目标"
+    secondary: "次要目标"
+  offer_ladder:
+    free: "免费诱饵"
+    low_ticket: "低价产品"
+    mid_ticket: "中价产品"
+    high_ticket: "高价服务"
+```
+
+**功能：**
+- 理解账号定位和目标用户
+- 匹配内容风格与账号人设
+- 支持多级产品阶梯
+- 自动生成账号提示词上下文
 
 ---
 
-### 4. 完整的创作流程 📝
+### 3. 成交目标系统
 
-```
-选题分析（平台适配）
-  ↓
-大纲生成（4次判断检查）
-  ↓
-内容创作（简化原则）
-  ↓
-质量检查（综合评分）
-  ↓
-优化迭代（数据驱动）
-```
+**4种成交目标模式：**
+
+| 目标 | 适用场景 | 结构特点 | CTA 风格 |
+|------|---------|---------|----------|
+| **likes** | 高赞内容 | 观点冲击 + 情绪共鸣 | 认同的点个赞 |
+| **comments** | 高互动内容 | 争议问题 + 讨论空间 | 评论区留下观点 |
+| **leads** | 高线索内容 | 痛点诊断 + 解决方案预告 | 评论「咨询」获取方案 |
+| **sales** | 高成交内容 | 问题放大 + 稀缺性紧迫感 | 限时优惠，仅剩X名额 |
+
+**每种目标包含：**
+- 内容结构建议（开头/主体/结尾字数分配）
+- CTA 建议列表
+- 质量标准检查清单
 
 ---
 
-### 5. 数据分析与优化 📊
+### 4. 多平台适配系统
 
-**核心指标：**
-- 完播率/阅读完成率
-- 平均播放时长/阅读时长
-- 互动率（点赞+评论+转发）
-- 关注转化率
+**支持平台：**
+- 公众号、视频号、小红书、知乎、抖音、B站、微博
 
-**优化策略：**
-- 冷启动优化
-- 完播率优化
-- 互动率优化
+**平台适配特点：**
+- 字数/时长自动调整
+- 特定平台钩子建议
+- 互动方式优化
+
+---
+
+### 5. 风格混合引擎
+
+**功能：**
+- 支持 1-3 个风格混合
+- 自动兼容性检查
+- 权重可配置
+- 生成混合风格提示词上下文
+
+---
+
+### 6. 热点情报输入
+
+**支持方式：**
+- 手动文本输入
+- JSON/YAML 文件导入
+- 批量热点处理
+
+**热点数据结构：**
+```json
+{
+  "trends": [
+    {
+      "id": "trend_001",
+      "topic": "AI Agent Runtime 崩溃问题",
+      "description": "详细描述",
+      "source": "来源",
+      "metrics": {"热度": 86, "讨论量": 50000}
+    }
+  ]
+}
+```
 
 ---
 
 ## 🚀 快速开始
 
-### ️⃣ 重要说明
-
-本项目包含两个独立部分：
-
-1. **skill_v3.0.md** - 纯粹的创作方法论（通用，不依赖任何AI）
-2. **viral_article_cli.py** - CLI工具（辅助工具，方便调用AI）
-
-**SKILL可以独立使用于：**
-- 任何AI创作工具（Claude、ChatGPT、Gemini、DeepSeek等）
-- 人工创作
-- 团队协作标准
-
----
-
-### 方式1：直接使用Skill文件（通用）
-
-1. **下载Skill文件**
-   ```bash
-   git clone https://github.com/Sunnyeung369/viral-content-generator.git
-   cd viral-content-generator
-   ```
-
-2. **阅读核心文档**
-   - 📖 [skill_v3.0.md](./skill_v3.0.md) - 核心方法论（通用，可配合任何AI使用）
-   - 📚 [使用手册.md](./使用手册.md) - 详细教程
-   - 🎨 [风格配置模板.md](./风格配置模板.md) - 风格定制
-
-3. **使用SKILL进行创作**
-
-   **配合AI工具（推荐）：**
-   - 复制 skill_v3.0.md 的内容
-   - 粘贴到任意AI工具（Claude、ChatGPT、Gemini、DeepSeek等）的系统提示词
-   - 开始创作
-
-   **人工创作：**
-   - 按照6次判断模型创作
-   - 使用评分工具自我评估
-   - 按照检查清单优化内容
-
----
-
-### 方式2：使用CLI工具（辅助）
-
-CLI工具是一个**辅助工具**，方便你配合AI使用：
+### 方式1：使用 CLI 工具
 
 **安装依赖**
 ```bash
@@ -163,84 +163,68 @@ pip install -r requirements.txt
 
 **基本使用**
 ```bash
-# 使用默认模型生成
-python viral_article_cli.py "AI工具使用技巧"
+# 列出所有可用风格
+python viral_content_cli_v4.py --list-styles
 
-# 指定AI平台
-python viral_article_cli.py "AI工具使用技巧" --platform claude
+# 基础用法（向后兼容 v3.1）
+python viral_content_cli_v4.py "AI Agent Runtime崩溃" --style tech_explainer_global
 
-# 流式输出（实时显示生成过程）
-python viral_article_cli.py "AI工具使用技巧" --stream
-
-# 自定义模型
-python viral_article_cli.py "AI工具使用技巧" --platform claude --model claude-3-5-sonnet-20241022
+# v4.0 完整用法
+python viral_content_cli_v4.py \
+  --topic "AI Agent Runtime崩溃" \
+  --account data/accounts/ai_consultant.yaml \
+  --offer data/offers/consulting.yaml \
+  --goal leads \
+  --platform xiaohongshu \
+  --style-mix "tech_explainer_global,business_savage_china" \
+  --output outputs/
 ```
 
-**注意：** CLI工具只是调用AI的便捷方式，SKILL方法论可以配合任何AI工具使用。
-
-1. **安装依赖**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-2. **设置API Key**
-   ```bash
-   # Windows (PowerShell)
-   $env:OPENAI_API_KEY="your-key"
-   
-   # Mac/Linux
-   export OPENAI_API_KEY="your-key"
-   ```
-
-3. **生成内容**
-   ```bash
-   # 基本使用
-   python viral_article_cli.py "AI工具使用技巧"
-   
-   # 指定风格和字数
-   python viral_article_cli.py "AI工具使用技巧" \
-     --style 老司机风格 \
-     --words 6000 \
-     --output article.md
-   ```
+**批量生成**
+```bash
+python viral_content_cli_v4.py \
+  --trends-file hot_topics.json \
+  --account data/accounts/ai_consultant.yaml \
+  --goal leads \
+  --output outputs/
+```
 
 ---
 
-### 方式3：在AI工具中使用（通用）
+### 方式2：作为 Python 库使用
 
-#### Claude Desktop
-```bash
-# 复制到Skills目录
-cp skill_v3.0.md ~/.claude/skills/viral-content.md
+```python
+from viral_content.core import (
+    PromptCompiler,
+    StyleMixer,
+    AccountFingerprint,
+    ConversionFunnel,
+    ConversionGoal,
+)
 
-# 使用
-在Claude中输入：用爆款内容生成器帮我创作...
+# 初始化组件
+compiler = PromptCompiler()
+mixer = StyleMixer()
+account = AccountFingerprint.load_default()
+funnel = ConversionFunnel(ConversionGoal.LEADS)
+
+# 混合风格
+mixed_style = mixer.mix_styles([
+    "tech_explainer_global",
+    "business_savage_china"
+])
+
+# 构建系统提示词
+system_prompt = compiler.build_system_prompt(
+    topic="2026年AI行业最大趋势",
+    style_config=mixed_style,
+    account_config=account.to_dict(),
+    goal="leads",
+    platform="xiaohongshu",
+)
+
+print(system_prompt)
 ```
-
-#### 任何AI平台使用（通用方法）
-```
-1. 复制 skill_v3.0.md 的全部内容
-2. 粘贴到AI工具的系统提示词（System Prompt）
-3. 开始创作
-
-支持的AI工具（不限于）：
-- Claude Desktop / Claude.ai
-- ChatGPT / OpenAI
-- Gemini / Google AI
-- DeepSeek
-- 文心一言
-- Kimi 月之暗面
-- 等等...
-
-#### Cursor/VSCode（开发者）
-```bash
-# 创建.cursorrules文件
-cp skill_v3.0.md .cursorrules
-
-# Cursor会自动加载
-```
-
-详见：[跨平台使用指南](./跨平台使用指南.md)
 
 ---
 
@@ -250,163 +234,147 @@ cp skill_v3.0.md .cursorrules
 
 | 文档 | 说明 | 适合人群 |
 |------|------|---------|
-| [skill_v3.0.md](./skill_v3.0.md) | 核心方法论（45KB） | 所有人 |
-| [使用手册.md](./使用手册.md) | 详细教程（15KB） | 新手 |
-| [快速参考卡.md](./快速参考卡.md) | 速查卡片（9KB） | 进阶者 |
-| [风格配置模板.md](./风格配置模板.md) | 风格定制（11KB） | 高手 |
-| [跨平台使用指南.md](./跨平台使用指南.md) | 跨平台教程（11KB） | 开发者 |
+| [README.md](./README.md) | 项目说明 | 所有人 |
+| [CHANGELOG.md](./CHANGELOG.md) | 版本历史 | 所有用户 |
+| [data/styles/README.md](./data/styles/README.md) | 风格库说明 | 高手 |
+| [data/accounts/README.md](./data/accounts/README.md) | 账号配置指南 | 运营者 |
+| [data/offers/README.md](./data/offers/README.md) | 产品配置指南 | 商业用户 |
 
-### 辅助文档
+### 数据文件
 
-- [v3.0升级说明.md](./v3.0升级说明.md) - 升级详情
-- [CHANGELOG.md](./CHANGELOG.md) - 版本历史
-- [CONTRIBUTING.md](./CONTRIBUTING.md) - 贡献指南
-- [GitHub发布指南.md](./GitHub发布指南.md) - 发布教程
+- `data/styles/` - 155+ 风格基因卡
+- `data/accounts/` - 账号指纹模板
+- `data/offers/` - 产品服务模板
+- `prompts/` - 提示词模板库
 
 ---
 
 ## 🎓 使用示例
 
-### 示例1：创作短视频脚本
+### 示例1：生成高线索内容
 
 **输入：**
-```
-主题：短视频不爆的原因
-平台：抖音
-时长：60秒
-风格：老司机风格
+```bash
+python viral_content_cli_v4.py \
+  --topic "AI Agent Runtime崩溃问题" \
+  --account data/accounts/ai_consultant.yaml \
+  --offer data/offers/consulting.yaml \
+  --goal leads \
+  --platform xiaohongshu \
+  --style-mix "tech_explainer_global,business_savage_china"
 ```
 
 **输出：**
-完整的60秒短视频脚本，包含：
-- 0-3秒：相关性建立
-- 3-20秒：信任度建立
-- 20-55秒：3个价值点
-- 55-60秒：引导关注
-
-详见：[examples/短视频脚本示例.md](./examples/短视频脚本示例.md)
+- 完整的小红书风格内容
+- 优化后的 CTA：「评论「AI资料」获取诊断清单」
+- 符合 AI 咨询师账号定位
+- 针对线索成交目标优化
 
 ---
 
-### 示例2：创作长文
+### 示例2：批量生成多平台内容
 
 **输入：**
-```
-主题：马斯克2026访谈解读
-平台：公众号
-字数：10000字
-风格：老司机风格
-目标用户：打工人+老板
+```bash
+python viral_content_cli_v4.py \
+  --topic "马斯克2026访谈" \
+  --platforms douyin,xiaohongshu,wechat \
+  --goal likes \
+  --style podcast_host
 ```
 
 **输出：**
-10,847字的深度长文，包含：
-- 12个脑洞金句
-- 双视角解读
-- 实用建议
-
-详见：[examples/长文创作示例.md](./examples/长文创作示例.md)
+- 抖音短视频脚本（60秒）
+- 小红书图文（500-1000字）
+- 公众号长文（3000+字）
 
 ---
 
-## 📊 效果展示
+### 示例3：风格混合
 
-### 实战案例
+```python
+from viral_content.core import StyleMixer
 
-**案例1：马斯克访谈解读**
-- 字数：10,847字
-- 金句：12个
-- 阅读时长：35分钟
-- 评分：9.5/10
+mixer = StyleMixer()
 
-**案例2：短视频爆款真相**
-- 字数：8,234字
-- 金句：12个
-- 阅读时长：25分钟
-- 评分：9.0/10
+# 检查兼容性
+compat = mixer.check_compatibility("tech_explainer_global", "business_podcast_host")
+print(f"兼容性: {compat}")
 
----
+# 混合风格
+mixed = mixer.mix_styles([
+    "tech_explainer_global",
+    "business_podcast_host"
+], weights={"tech_explainer_global": 0.6, "business_podcast_host": 0.4})
 
-## 🎯 适用场景
-
-### 内容创作者
-
-- ✅ 提升内容质量
-- ✅ 提高创作效率
-- ✅ 增加爆款概率
-- ✅ 建立个人品牌
-
-### 企业/团队
-
-- ✅ 标准化创作流程
-- ✅ 培训新人
-- ✅ 提升团队产出
-- ✅ 优化内容策略
-
-### 个人IP
-
-- ✅ 快速起号
-- ✅ 稳定输出
-- ✅ 多平台分发
-- ✅ 商业变现
+# 获取提示词上下文
+context = mixer.get_prompt_context(mixed)
+print(context)
+```
 
 ---
 
-## 🔧 技术栈
+## 🔧 架构设计
 
-- **语言：** Markdown + Python
-- **AI支持：** OpenAI, Claude, Gemini
-- **平台：** 全平台通用
-- **许可证：** MIT License
+### 核心模块
+
+```
+viral_content/
+├── core/              # 核心引擎
+│   ├── prompt_compiler.py      # 提示词编译器
+│   ├── style_mixer.py          # 风格混合器
+│   ├── account_fingerprint.py  # 账号指纹引擎
+│   └── conversion_funnel.py    # 成交漏斗写作器
+├── models/            # 数据模型
+├── generators/        # AI 生成器
+└── utils/             # 工具函数
+```
+
+### 数据文件
+
+```
+data/
+├── styles/            # 155+ 风格基因卡
+├── accounts/          # 账号指纹模板
+└── offers/            # 产品服务模板
+```
 
 ---
 
-## 📈 版本历史
+## 📊 版本历史
 
-### v3.1.2 (2026-01-28) - 当前版本
+### v4.0.0 (2026-06-03) - 重大升级
 
-**通用性优化：**
-- ✨ 强调SKILL的独立性和通用性
-- ✨ 明确可配合任何AI工具使用
-- ✨ 添加适用范围说明
-- ✨ 优化使用方式分类
+**架构重构：**
+- ✨ 从 v3.1.2 升级到 v4.0
+- ✨ 重定位：爆款内容生成器 → 热点风格成交引擎
+- ✨ 新增模块化架构（8个核心模块）
 
-### v3.1.1 (2026-01-28)
+**新功能：**
+- ✨ 155+ 外置风格基因卡系统
+- ✨ 账号指纹配置系统
+- ✨ 成交目标输出模式（4种）
+- ✨ 热点情报输入系统
+- ✨ 多平台动态适配
+- ✨ 风格混合引擎
+- ✨ 提示词编译器
 
-**高级创作模型：**
-- ✨ 用户决策6次判断模型（扩展4次为6次）
-- ✨ 私域转化模型（加微信/商业变现）
-- ✨ 平台推荐2阶段逻辑（互动者+完播者）
-- ✨ 泛粉 vs 精准粉丝策略
-- ✨ 高赞视频创作价值线路
-- ✨ 用户价值深层逻辑（3种反应+4个条件）
-- ✨ 轻松易理解的具体技巧
-- ✨ 直播/视频完整转化漏斗（8层）
-- ✨ 实战检查清单（完整版）
+**数据文件：**
+- 📦 5个风格库文件（155+ 风格卡）
+- 📦 账号配置模板
+- 📦 产品服务模板
+- 📦 提示词模板库
 
-### v3.1.0 (2026-01-28)
+**CLI 升级：**
+- ✨ 新参数：--account, --offer, --goal, --style-mix
+- ✨ 批量生成支持
+- ✨ 多平台输出
+- ✨ 向后兼容 v3.1 基本用法
 
-**代码重构：**
-- ✨ 代码架构重构（抽象基类、工厂模式）
-- ✨ Skill缓存机制（单例模式）
-- ✨ 流式输出支持（--stream）
-- ✨ API重试机制（指数退避）
-- ✨ 配置文件支持（config.yaml）
+### v3.1.2 (2026-01-28)
 
-**内容完善：**
-- 📝 补充完整的8种风格详细描述
-- 📝 添加统一评分工具模板
-- 📝 添加快速检查清单模板
-- 🐛 修复内容错误
-
-### v3.0.0 (2026-01-28)
-
-**重大更新：**
-- ✨ 新增用户决策4次判断模型
-- ✨ 新增全平台内容矩阵
-- ✨ 新增短视频创作模块
-- ✨ 新增数据分析系统
-- 📦 文件大小从16KB增加到45KB
+- ✨ 强调 SKILL 独立性和通用性
+- ✨ 明确可配合任何 AI 工具使用
 
 详见：[CHANGELOG.md](./CHANGELOG.md)
 
@@ -418,11 +386,11 @@ cp skill_v3.0.md .cursorrules
 
 ### 如何贡献
 
-1. Fork本项目
+1. Fork 本项目
 2. 创建你的分支 (`git checkout -b feature/AmazingFeature`)
 3. 提交你的修改 (`git commit -m 'feat: Add some AmazingFeature'`)
 4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 创建Pull Request
+5. 创建 Pull Request
 
 详见：[CONTRIBUTING.md](./CONTRIBUTING.md)
 
@@ -432,42 +400,20 @@ cp skill_v3.0.md .cursorrules
 
 本项目采用 [MIT License](./LICENSE)
 
-这意味着你可以：
-- ✅ 商业使用
-- ✅ 修改
-- ✅ 分发
-- ✅ 私人使用
-
-唯一要求：保留原作者信息
-
 ---
 
 ## 🙏 致谢
 
-### 感谢
-
-- 50+现象级内容创作者的实践经验
+- 155+ 风格基因卡基于全球顶级创作者的公开风格特征
 - 所有平台的算法公开信息
 - 所有使用和反馈的用户
-
-### 特别感谢
-
-- [@StepFun-AI](https://github.com/stepfun-ai) - 核心开发
-- 所有贡献者和支持者
 
 ---
 
 ## 📞 联系我们
 
-### 问题反馈
-
 - **GitHub Issues：** [提交问题](https://github.com/Sunnyeung369/viral-content-generator/issues)
 - **GitHub Discussions：** [参与讨论](https://github.com/Sunnyeung369/viral-content-generator/discussions)
-
-### 社区
-
-- **GitHub：** [项目主页](https://github.com/Sunnyeung369/viral-content-generator)
-- **文档：** [在线文档](https://github.com/Sunnyeung369/viral-content-generator/wiki)
 
 ---
 
@@ -479,128 +425,10 @@ cp skill_v3.0.md .cursorrules
 
 ---
 
-## 📊 项目统计
-
-![GitHub stars](https://img.shields.io/github/stars/Sunnyeung369/viral-content-generator?style=social)
-![GitHub forks](https://img.shields.io/github/forks/Sunnyeung369/viral-content-generator?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/Sunnyeung369/viral-content-generator?style=social)
-
-![GitHub issues](https://img.shields.io/github/issues/Sunnyeung369/viral-content-generator)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/Sunnyeung369/viral-content-generator)
-![GitHub last commit](https://img.shields.io/github/last-commit/Sunnyeung369/viral-content-generator)
-
----
-
-## 🎁 福利
-
-### 免费资源
-
-- 📚 完整的方法论文档（126KB+）
-- 🎨 8种预设风格模板
-- 📝 实战案例（2篇，19000+字）
-- 🔧 CLI工具源码
-- 📊 数据分析模板
-
-### 持续更新
-
-- 🔄 定期更新方法论
-- ✨ 新增更多平台支持
-- 📈 优化算法和模型
-- 🎓 更多实战案例
-
----
-
-## 🚀 路线图
-
-### v3.1.0（计划中）
-
-- 🤖 AI辅助创作功能
-- ⚙️ 自动化工具
-- 📊 数据看板
-
-### v3.2.0（计划中）
-
-- 👥 团队协作功能
-- 📁 内容管理系统
-- 🔐 权限管理
-
-### v3.3.0（计划中）
-
-- 💰 商业化模块
-- 📖 案例库（100+）
-- 🎓 在线课程
-
----
-
-## ❓ 常见问题
-
-### Q1：这个工具适合我吗？
-
-**适合：**
-- 内容创作者（个人/团队）
-- 短视频创作者
-- 自媒体运营者
-- 企业新媒体部门
-- 想做内容的任何人
-
-**不适合：**
-- 完全不做内容的人
-- 只想一夜暴富的人
-
----
-
-### Q2：需要付费吗？
-
-**完全免费！**
-- ✅ 所有文档免费
-- ✅ 所有模板免费
-- ✅ 所有工具免费
-- ✅ MIT开源协议
-
-**注意：** 如果使用CLI工具调用AI API，需要自己的API Key（需付费）
-
----
-
-### Q3：如何获得最佳效果？
-
-**建议：**
-1. 先完整阅读核心文档
-2. 从一个场景开始实践
-3. 严格按照4次判断模型
-4. 收集数据并优化
-5. 持续学习和迭代
-
----
-
-### Q4：遇到问题怎么办？
-
-**步骤：**
-1. 查看[使用手册](./使用手册.md)
-2. 搜索[已有Issues](https://github.com/Sunnyeung369/viral-content-generator/issues)
-3. 在[Discussions](https://github.com/Sunnyeung369/viral-content-generator/discussions)提问
-4. 创建新的Issue
-
----
-
-## 💪 开始使用
-
-**现在就开始创作你的爆款内容！**
-
-1. ⭐ Star本项目
-2. 📥 Clone到本地
-3. 📖 阅读文档
-4. ✍️ 开始创作
-5. 📊 收集数据
-6. 🔄 持续优化
-
-**祝你创作愉快！** 🎉
-
----
-
 <div align="center">
 
 Made with ❤️ by [Sunnyeung](https://github.com/Sunnyeung369)
 
-[⬆ 回到顶部](#-爆款内容生成器-v30)
+[⬆ 回到顶部](#-热点风格成交引擎-v40)
 
 </div>

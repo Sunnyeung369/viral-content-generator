@@ -1,0 +1,1549 @@
+# 全球创作者风格基因库 - 40个风格
+# Viral Content Generator v4.0
+# 每个风格描述的是可观察的风格特征，非具体创作者复刻
+
+styles:
+  # ==============================================================================
+  # 科技/商业/创业类（15个）
+  # ==============================================================================
+
+  - id: tech_explainer_global
+    label: "科技解释型创作者"
+    category: "tech_creator"
+    region: "global"
+    reference_level: "publicly observable style traits only"
+
+    style_dna:
+      tone: "清晰、兴奋、未来感、强类比"
+      sentence_rhythm: "短句开场，中句解释，结尾升维"
+      vocabulary: "科技词汇 + 日常类比"
+      emoji_usage: "少量（每100字1-2个）"
+
+    hook_patterns:
+      - "一个新技术正在改变普通人的工作方式"
+      - "多数人只看到工具，高手已经在重构流程"
+      - "这可能是近年来最重要的技术趋势"
+
+    logic_patterns:
+      - "现象 -> 案例 -> 机制 -> 商业机会"
+      - "旧方法低效 -> 新工具放大 -> 个体套利窗口"
+
+    emotion_curve:
+      opening: "惊讶"
+      middle: "恍然大悟"
+      ending: "立刻想行动"
+
+    avoid:
+      - "直接复刻具体创作者口头禅"
+      - "使用特定个人专属表达"
+
+    conversion_fit:
+      best_for:
+        - "AI工具推广"
+        - "咨询服务获客"
+        - "课程转化"
+      cta_style: "行动召唤 + 具体步骤"
+
+  - id: business_podcast_host
+    label: "商业播客主持人"
+    category: "podcast_host"
+    region: "global"
+
+    style_dna:
+      tone: "对话式、好奇、深入、不评判"
+      sentence_rhythm: "提问停顿，倾听回应，追问深挖"
+      conversation_flow: "闲聊开场 -> 核心问题 -> 深度探讨 -> 行动建议"
+
+    hook_patterns:
+      - "我今天特别想聊的话题是..."
+      - "这让我想起了一个故事..."
+      - "你怎么看这个问题？"
+
+    logic_patterns:
+      - "开场寒暄 -> 切入正题 -> 深度追问 -> 总结升华"
+
+    emotion_curve:
+      opening: "轻松"
+      middle: "投入"
+      ending: "启发"
+
+    avoid:
+      - "打断嘉宾"
+      - "过于强烈的个人观点"
+
+    conversion_fit:
+      best_for:
+        - "播客内容"
+        - "访谈节目"
+        - "知识分享"
+      cta_style: "邀请订阅 + 下期预告"
+
+  - id: startup_founder_vlogger
+    label: "创业公司Vlog博主"
+    category: "startup_creator"
+    region: "global"
+
+    style_dna:
+      tone: "真实、透明、起伏不定、成长记录"
+      sentence_rhythm: "日常叙述 + 关键时刻强调"
+      content_focus: "创业日常、团队会议、产品迭代"
+
+    hook_patterns:
+      - "今天是个大日子..."
+      - "这可能是个错误，但..."
+      - "创业第X天，我终于..."
+
+    logic_patterns:
+      - "日常场景 -> 问题出现 -> 解决过程 -> 反思总结"
+
+    emotion_curve:
+      opening: "日常"
+      middle: "起伏"
+      ending: "真实/希望"
+
+    avoid:
+      - "过度美化失败"
+      - "隐藏真实困难"
+
+    conversion_fit:
+      best_for:
+        - "创业故事"
+        - "团队展示"
+        - "产品发布"
+      cta_style: "关注创业旅程 + 加入社区"
+
+  - id: tech_reviewer_deep
+    label: "深度科技测评"
+    category: "tech_creator"
+    region: "global"
+
+    style_dna:
+      tone: "客观、专业、数据驱动、对比分析"
+      sentence_rhythm: "概述 -> 详细测试 -> 数据分析 -> 结论"
+      review_focus: "真实使用、优缺点、替代品对比"
+
+    hook_patterns:
+      - "我用了X周，终于可以说..."
+      - "这是最好的...吗？可能不是"
+      - "在购买之前，你需要知道..."
+
+    logic_patterns:
+      - "产品介绍 -> 实测数据 -> 竞品对比 -> 购买建议"
+
+    emotion_curve:
+      opening: "好奇"
+      middle: "理性"
+      ending: "明确结论"
+
+    avoid:
+      - "收厂商好处"
+      - "隐瞒明显缺陷"
+
+    conversion_fit:
+      best_for:
+        - "科技测评"
+        - "购买指南"
+        - "产品推荐"
+      cta_style: "链接 + 折扣码"
+
+  - id: business_analyst_data
+    label: "数据驱动商业分析师"
+    category: "business_creator"
+    region: "global"
+
+    style_dna:
+      tone: "严谨、数据化、趋势导向、预测性"
+      sentence_rhythm: "数据呈现 -> 趋势分析 -> 战略建议"
+      analysis_tools: "图表、统计数据、行业报告"
+
+    hook_patterns:
+      - "数据显示了一个清晰的信号..."
+      - "过去6个月的趋势告诉我们..."
+      - "这不是猜测，这是数据说话..."
+
+    logic_patterns:
+      - "数据收集 -> 趋势识别 -> 因果分析 -> 行动建议"
+
+    emotion_curve:
+      opening: "数据冲击"
+      middle: "理性分析"
+      ending: "战略方向"
+
+    avoid:
+      - "主观臆断"
+      - "选择性呈现数据"
+
+    conversion_fit:
+      best_for:
+        - "行业分析"
+        - "趋势报告"
+        - "战略咨询"
+      cta_style: "订阅报告 + 咨询服务"
+
+  - id: vc_investor_perspective
+    label: "VC投资人视角"
+    category: "business_creator"
+    region: "global"
+
+    style_dna:
+      tone: "投资视角、市场判断、规模思维、退出导向"
+      sentence_rhythm: "市场机会 -> 商业模式 -> 增长潜力 -> 投资决策"
+      focus: "商业模式、增长策略、团队、退出"
+
+    hook_patterns:
+      - "我见过几百个项目，这是唯一..."
+      - "这个赛道太小了，但..."
+      - "作为投资人，我最看重的是..."
+
+    logic_patterns:
+      - "市场分析 -> 商业模式评估 -> 团队判断 -> 投资建议"
+
+    emotion_curve:
+      opening: "犀利"
+      middle: "分析"
+      ending: "投资判断"
+
+    avoid:
+      - "过于乐观"
+      - "忽略风险"
+
+    conversion_fit:
+      best_for:
+        - "创业建议"
+        - "融资准备"
+        - "商业计划"
+      cta_style: "关注 + 商业计划书投递"
+
+  - id: product_manager_insights
+    label: "产品经理洞见"
+    category: "tech_creator"
+    region: "global"
+
+    style_dna:
+      tone: "用户中心、数据驱动、迭代思维、优先级"
+      sentence_rhythm: "用户问题 -> 解决方案 -> 迭代过程"
+      frameworks: "用户故事、A/B测试、MVP"
+
+    hook_patterns:
+      - "用户真正需要的不是..."
+      - "我们测试了100个变体，发现..."
+      - "这个功能的决定性指标是..."
+
+    logic_patterns:
+      - "用户问题 -> 假设 -> 实验 -> 数据 -> 迭代"
+
+    emotion_curve:
+      opening: "用户痛点"
+      middle: "解决问题"
+      ending: "数据洞察"
+
+    avoid:
+      - "功能堆砌"
+      - "忽视数据"
+
+    conversion_fit:
+      best_for:
+        - "产品教程"
+        - "UX设计"
+        - "增长策略"
+      cta_style: "工具推荐 + 模板分享"
+
+  - id: saas_founder_storytelling
+    label: "SaaS创始人故事讲述"
+    category: "startup_creator"
+    region: "global"
+
+    style_dna:
+      tone: "创业叙事、指标透明、增长黑客、订阅经济"
+      sentence_rhythm: "问题发现 -> 产品构建 -> 增长过程"
+      metrics: "MRR、Churn、CAC、LTV"
+
+    hook_patterns:
+      - "从0到$X MRR，我们用了X个月"
+      - "差点倒闭的那一天，我决定..."
+      - "订阅制生意的秘密是..."
+
+    logic_patterns:
+      - "发现问题 -> 构建MVP -> 获取首批用户 -> 规模化增长"
+
+    emotion_curve:
+      opening: "创业低谷"
+      middle: "突破"
+      ending: "增长启发"
+
+    avoid:
+      - "粉饰数据"
+      - "隐藏失败"
+
+    conversion_fit:
+      best_for:
+        - "SaaS创业"
+        - "订阅业务"
+        - "B2B营销"
+      cta_style: "免费试用 + 社区加入"
+
+  - id: crypto_analyst_technical
+    label: "加密技术分析"
+    category: "tech_creator"
+    region: "global"
+
+    style_dna:
+      tone: "技术深度、链上分析、风险评估、长期视角"
+      sentence_rhythm: "技术分析 -> 市场情绪 -> 投资策略"
+      analysis: "链上数据、DeFi指标、NFT稀有度"
+
+    hook_patterns:
+      - "链上数据显示..."
+      - "这个指标意味着..."
+      - "大多数人没注意到的是..."
+
+    logic_patterns:
+      - "技术分析 -> 基本面评估 -> 风险提示 -> 投资建议"
+
+    emotion_curve:
+      opening: "数据冲击"
+      middle: "深度分析"
+      ending: "理性判断"
+
+    avoid:
+      - "财务建议"
+      - "保证收益"
+
+    conversion_fit:
+      best_for:
+        - "加密分析"
+        - "DeFi教程"
+        - "NFT评估"
+      cta_style: "关注分析 + 链接工具"
+
+  - id: futurism_trend_watcher
+    label: "未来趋势观察"
+    category: "tech_creator"
+    region: "global"
+
+    style_dna:
+      tone: "前瞻性、跨学科、模式识别、10年视角"
+      sentence_rhythm: "当下信号 -> 趋势外推 -> 未来场景"
+      methods: "信号收集、模式匹配、情景规划"
+
+    hook_patterns:
+      - "5年后，X将变得..."
+      - "这些看似不相关的信号指向..."
+      - "我追踪了3年，这个趋势终于..."
+
+    logic_patterns:
+      - "弱信号识别 -> 模式匹配 -> 趋势验证 -> 未来推演"
+
+    emotion_curve:
+      opening: "好奇"
+      middle: "洞察"
+      ending: "未来想象"
+
+    avoid:
+      - "确定预测"
+      - "单一视角"
+
+    conversion_fit:
+      best_for:
+        - "趋势分析"
+        - "战略规划"
+        - "创新思维"
+      cta_style: "订阅趋势报告 + 工作坊"
+
+  - id: productivity_hacker
+    label: "效率黑客"
+    category: "lifestyle_creator"
+    region: "global"
+
+    style_dna:
+      tone: "实用、工具密集、流程优化、时间管理"
+      sentence_rhythm: "痛点 -> 工具 -> 工作流"
+      focus: "软件工具、自动化、快捷键"
+
+    hook_patterns:
+      - "这个工具让我每天节省2小时"
+      - "99%的人都没有发现的效率技巧..."
+      - "如果你还在这样做，你是在浪费时间..."
+
+    logic_patterns:
+      - "效率问题 -> 传统方法 -> 更好工具 -> 新工作流"
+
+    emotion_curve:
+      opening: "痛点共鸣"
+      middle: "解决方案"
+      ending: "效率提升"
+
+    avoid:
+      - "过度复杂"
+      - "工具堆砌"
+
+    conversion_fit:
+      best_for:
+        - "工具推荐"
+        - "效率教程"
+        - "工作流分享"
+      cta_style: "工具链接 + 工作流模板"
+
+  - id: indie_maker_journal
+    label: "独立开发者日记"
+    category: "startup_creator"
+    region: "global"
+
+    style_dna:
+      tone: "真实、透明、收入公开、技术分享"
+      sentence_rhythm: "开发进度 + 营销实验 + 收入更新"
+      transparency: "MRR、用户数、转化率、失败教训"
+
+    hook_patterns:
+      - "独立第X个月，我的收入是..."
+      - "这个产品失败了，这是原因..."
+      - "我终于找到了第一个付费用户..."
+
+    logic_patterns:
+      - "产品想法 -> 开发过程 -> 营销实验 -> 结果复盘"
+
+    emotion_curve:
+      opening: "真实数据"
+      middle: "过程起伏"
+      ending: "反思总结"
+
+    avoid:
+      - "粉饰失败"
+      - "隐藏收入"
+
+    conversion_fit:
+      best_for:
+        - "独立开发"
+        - "产品构建"
+        - "副业创业"
+      cta_style: "产品试用 + 开发者社区"
+
+  - id: tech_ethicist
+    label: "科技伦理学者"
+    category: "tech_creator"
+    region: "global"
+
+    style_dna:
+      tone: "批判性、哲学性、社会影响、长期思考"
+      sentence_rhythm: "技术现象 -> 社会影响 -> 伦理反思"
+      frameworks: "隐私、公平、问责、透明"
+
+    hook_patterns:
+      - "这个技术的代价是..."
+      - "便利性的另一面是..."
+      - "我们在没有考虑后果的情况下..."
+
+    logic_patterns:
+      - "技术能力 -> 社会影响 -> 伦理问题 -> 应对策略"
+
+    emotion_curve:
+      opening: "警醒"
+      middle: "深度思考"
+      ending: "行动呼吁"
+
+    avoid:
+      - "过度批判"
+      - "忽视技术价值"
+
+    conversion_fit:
+      best_for:
+        - "技术评论"
+        - "政策讨论"
+        - "社会议题"
+      cta_style: "讨论参与 + 资源分享"
+
+  - id: business_news_short
+    label: "商业新闻快讯"
+    category: "business_creator"
+    region: "global"
+
+    style_dna:
+      tone: "快速、简洁、事实优先、每日更新"
+      sentence_rhythm: "头条摘要 -> 关键数据 -> 快速分析"
+      format: "3-5分钟阅读"
+
+    hook_patterns:
+      - "今天你需要知道的是..."
+      - "突发：X公司宣布..."
+      - "市场反应：Y%"
+
+    logic_patterns:
+      - "核心新闻 -> 数据支撑 -> 快速解读 -> 一句话总结"
+
+    emotion_curve:
+      opening: "信息冲击"
+      middle: "数据呈现"
+      ending: "快速结论"
+
+    avoid:
+      - "过度解读"
+      - "个人观点"
+
+    conversion_fit:
+      best_for:
+        - "商业新闻"
+        - "市场更新"
+        - "投资信息"
+      cta_style: "订阅早报 + 完整阅读"
+
+  - id: management_consultant
+    label: "管理顾问"
+    category: "business_creator"
+    region: "global"
+
+    style_dna:
+      tone: "专业、结构化、框架导向、可执行"
+      sentence_rhythm: "问题诊断 -> 框架应用 -> 实施建议"
+      methodologies: "SWOT、波特五力、敏捷、精益"
+
+    hook_patterns:
+      - "这个CEO犯的3个错误..."
+      - "如何用框架解决X问题..."
+      - "我见过太多公司在这个问题上..."
+
+    logic_patterns:
+      - "管理挑战 -> 理论框架 -> 实施步骤 -> 成功案例"
+
+    emotion_curve:
+      opening: "问题识别"
+      middle: "解决方案"
+      ending: "行动信心"
+
+    avoid:
+      - "过于学术"
+      - "忽视执行难度"
+
+    conversion_fit:
+      best_for:
+        - "管理培训"
+        - "企业咨询"
+        - "领导力发展"
+      cta_style: "免费评估 + 咨询预约"
+
+  # ==============================================================================
+  # 生活方式/娱乐类（15个）
+  # ==============================================================================
+
+  - id: lifestyle_minimalist
+    label: "极简生活方式"
+    category: "lifestyle_creator"
+    region: "global"
+
+    style_dna:
+      tone: "平静、选择性强、质量重于数量、空间感"
+      sentence_rhythm: "减法思维 -> 留下精华 -> 生活品质"
+      focus: "物品、关系、时间管理"
+
+    hook_patterns:
+      - "我扔掉了90%的东西，发现..."
+      - "极简生活不是关于..."
+      - "拥有更少，体验更多..."
+
+    logic_patterns:
+      - "过度状态 -> 减法过程 -> 精选结果 -> 生活改善"
+
+    emotion_curve:
+      opening: "共鸣痛点"
+      middle: "减法方法"
+      ending: "轻松自由"
+
+    avoid:
+      - "过度批判"
+      - "强迫他人极简"
+
+    conversion_fit:
+      best_for:
+        - "生活方式"
+        - "收纳整理"
+        - "消费建议"
+      cta_style: "清单分享 + 社区加入"
+
+  - id: travel_cinematic
+    label: "电影感旅行"
+    category: "lifestyle_creator"
+    region: "global"
+
+    style_dna:
+      tone: "沉浸、视觉优先、故事化、慢节奏"
+      sentence_rhythm: "画面描述 -> 当地感受 -> 旅行哲学"
+      visual: "高质量摄影、电影感剪辑"
+
+    hook_patterns:
+      - "这个地方改变了我的..."
+      - "我找了X年，终于发现..."
+      - "不是在旅游，是在生活..."
+
+    logic_patterns:
+      - "抵达 -> 沉浸 -> 发现 -> 反思"
+
+    emotion_curve:
+      opening: "视觉吸引"
+      middle: "沉浸体验"
+      ending: "内心改变"
+
+    avoid:
+      - "景点打卡"
+      - "匆忙行程"
+
+    conversion_fit:
+      best_for:
+        - "旅行灵感"
+        - "摄影教学"
+        - "目的地推广"
+      cta_style: "旅行指南 + 摄影教程"
+
+  - id: fitness_science_based
+    label: "科学健身"
+    category: "lifestyle_creator"
+    region: "global"
+
+    style_dna:
+      tone: "科学、数据驱动、可验证、长期视角"
+      sentence_rhythm: "迷思破解 -> 科学证据 -> 实用建议"
+      focus: "训练、营养、恢复"
+
+    hook_patterns:
+      - "最常见的健身误区是..."
+      - "研究证实，这个方法..."
+      - "我试验了12周，结果是..."
+
+    logic_patterns:
+      - "常见问题 -> 科学解释 -> 实践建议 -> 进展追踪"
+
+    emotion_curve:
+      opening: "迷思打破"
+      middle: "科学解释"
+      ending: "行动信心"
+
+    avoid:
+      - "速成承诺"
+      - "极端方法"
+
+    conversion_fit:
+      best_for:
+        - "健身教程"
+        - "营养建议"
+        - "生活方式"
+      cta_style: "训练计划 + 营养指南"
+
+  - id: cooking_experiment
+    label: "烹饪实验"
+    category: "lifestyle_creator"
+    region: "global"
+
+    style_dna:
+      tone: "实验性、好奇、失败包容、学习导向"
+      sentence_rhythm: "想法假设 -> 烹饪过程 -> 结果评价"
+      style: "不一定完美，真实实验"
+
+    hook_patterns:
+      - "我能不能用X做Y？"
+      - "这是个疯狂的想法，但..."
+      - "实验失败第X次，今天我..."
+
+    logic_patterns:
+      - "好奇想法 -> 实验设计 -> 执行过程 -> 结果复盘"
+
+    emotion_curve:
+      opening: "好奇"
+      middle: "实验"
+      ending: "学习总结"
+
+    avoid:
+      - "假装完美"
+      - "隐藏失败"
+
+    conversion_fit:
+      best_for:
+        - "烹饪教学"
+        - "食谱分享"
+        - "厨房实验"
+      cta_style: "食谱卡片 + 失败集锦"
+
+  - id: fashion_aesthetic
+    label: "时尚美学"
+    category: "lifestyle_creator"
+    region: "global"
+
+    style_dna:
+      tone: "美学、视觉、自我表达、文化敏感"
+      sentence_rhythm: "造型展示 -> 风格分析 -> 搭配原理"
+      elements: "色彩、质感、廓形、配饰"
+
+    hook_patterns:
+      - "这个搭配的秘诀是..."
+      - "如何用基本款穿出高级感..."
+      - "你衣橱里必须有的一件..."
+
+    logic_patterns:
+      - "单品展示 -> 搭配思路 -> 风格原理 -> 购物建议"
+
+    emotion_curve:
+      opening: "视觉吸引"
+      middle: "风格解析"
+      ending: "自我表达信心"
+
+    avoid:
+      - "过度消费"
+      - "身材焦虑"
+
+    conversion_fit:
+      best_for:
+        - "时尚搭配"
+        - "购物指南"
+        - "风格养成"
+      cta_style: "单品推荐 + 搭配模板"
+
+  - id: gaming_entertainment
+    label: "游戏娱乐"
+    category: "entertainment_creator"
+    region: "global"
+
+    style_dna:
+      tone: "幽默、激情、专业、娱乐至上"
+      sentence_rhythm: "游戏高光 + 幕后花絮 + 社区互动"
+      focus: "精彩时刻、搞笑片段、技巧分享"
+
+    hook_patterns:
+      - "你绝对不会相信这招..."
+      - "我花了100小时练成的操作..."
+      - "这个游戏的隐藏秘密..."
+
+    logic_patterns:
+      - "游戏时刻 -> 技巧解析 -> 社区反应 -> 延伸内容"
+
+    emotion_curve:
+      opening: "娱乐"
+      middle: "投入"
+      ending: "共鸣"
+
+    avoid:
+      - "剧透未标记"
+      - "毒性言论"
+
+    conversion_fit:
+      best_for:
+        - "游戏内容"
+        - "电竞教学"
+        - "社区互动"
+      cta_style: "关注 + 社区加入"
+
+  - id: music_curation
+    label: "音乐策展"
+    category: "lifestyle_creator"
+    region: "global"
+
+    style_dna:
+      tone: "品味、情绪化、故事化、发现导向"
+      sentence_rhythm: "音乐氛围 -> 艺人故事 -> 情绪场景"
+      curation: "小众音乐、情绪歌单、现场演出"
+
+    hook_patterns:
+      - "这首歌改变了我对X的看法..."
+      - "你可能没听过，但..."
+      - "当我感到X时，我只听..."
+
+    logic_patterns:
+      - "音乐选择 -> 艺人背景 -> 情绪关联 -> 场景建议"
+
+    emotion_curve:
+      opening: "情绪共鸣"
+      middle: "音乐体验"
+      ending: "探索欲望"
+
+    avoid:
+      - "主流歌单"
+      - "缺乏个人特色"
+
+    conversion_fit:
+      best_for:
+        - "音乐发现"
+        - "歌单分享"
+        - "现场演出"
+      cta_style: "歌单链接 + 艺人推荐"
+
+  - id: book_reviewer_deep
+    label: "深度书评"
+    category: "knowledge_creator"
+    region: "global"
+
+    style_dna:
+      tone: "知识分子、思考性、跨学科、阅读驱动"
+      sentence_rhythm: "书籍背景 -> 核心观点 -> 个人反思"
+      depth: "不只是摘要，是深度解读"
+
+    hook_patterns:
+      - "这本书改变了我对..."
+      - "你可能错过了这本书最重要的观点..."
+      - "读完这本书，我意识到..."
+
+    logic_patterns:
+      - "书籍介绍 -> 核心论点 -> 交叉印证 -> 个人延伸"
+
+    emotion_curve:
+      opening: "知识好奇"
+      middle: "思维激荡"
+      ending: "行动改变"
+
+    avoid:
+      - "剧透全书"
+      - "过度学术"
+
+    conversion_fit:
+      best_for:
+        - "书籍推荐"
+        - "知识分享"
+        - "阅读社群"
+      cta_style: "阅读笔记 + 读书会"
+
+  - id: diy_hands_on
+    label: "动手DIY"
+    category: "lifestyle_creator"
+    region: "global"
+
+    style_dna:
+      tone: "实用、动手、省钱、创造乐趣"
+      sentence_rhythm: "问题 -> DIY方案 -> 过程展示"
+      style: "真实拍摄、不完美但实用"
+
+    hook_patterns:
+      - "为什么要买X，我可以教你做..."
+      - "这个DIY让我省了$XXX..."
+      - "你不会相信，这个原来这么简单..."
+
+    logic_patterns:
+      - "需求识别 -> 材料准备 -> 制作过程 -> 使用效果"
+
+    emotion_curve:
+      opening: "省钱/实用"
+      middle: "动手乐趣"
+      ending: "成就感"
+
+    avoid:
+      - "过于复杂"
+      - "专业工具依赖"
+
+    conversion_fit:
+      best_for:
+        - "手工教程"
+        - "省钱技巧"
+        - "家居改造"
+      cta_style: "材料清单 + 分步指南"
+
+  - id: personal_finance_practical
+    label: "实用个人理财"
+    category: "knowledge_creator"
+    region: "global"
+
+    style_dna:
+      tone: "接地气、可执行、长期主义、反消费主义"
+      sentence_rhythm: "理财误区 -> 正确方法 -> 行动步骤"
+      focus: "预算、投资、债务、消费"
+
+    hook_patterns:
+      - "我后悔这3个理财决定..."
+      - "普通人也能用的投资策略..."
+      - "你不需要很富才能开始..."
+
+    logic_patterns:
+      - "理财痛点 -> 方法解释 -> 执行步骤 -> 长期效果"
+
+    emotion_curve:
+      opening: "痛点共鸣"
+      middle: "方法清晰"
+      ending: "行动信心"
+
+    avoid:
+      - "一夜暴富"
+      - "高风险投机"
+
+    conversion_fit:
+      best_for:
+        - "理财教育"
+        - "投资入门"
+        - "债务管理"
+      cta_style: "预算模板 + 订阅专栏"
+
+  - id: relationship_advice
+    label: "情感建议"
+    category: "lifestyle_creator"
+    region: "global"
+
+    style_dna:
+      tone: "同理心、实用、不评判、双向视角"
+      sentence_rhythm: "关系问题 -> 心理分析 -> 沟通建议"
+      style: "保护隐私，关注模式"
+
+    hook_patterns:
+      - "90%的关系问题都源于..."
+      - "我学到的这个沟通技巧改变了..."
+      - "你可能以为问题在对方，但..."
+
+    logic_patterns:
+      - "关系挑战 -> 心理机制 -> 沟通策略 -> 改善方法"
+
+    emotion_curve:
+      opening: "共鸣痛点"
+      middle: "洞察理解"
+      ending: "改善希望"
+
+    avoid:
+      - "绝对化建议"
+      - "评判对错"
+
+    conversion_fit:
+      best_for:
+        - "关系建议"
+        - "沟通技巧"
+        - "个人成长"
+      cta_style: "沟通指南 + 咨询预约"
+
+  - id: parenting_realistic
+    label: "现实育儿"
+    category: "lifestyle_creator"
+    region: "global"
+
+    style_dna:
+      tone: "诚实、不完美、幽默、互相支持"
+      sentence_rhythm: "育儿挑战 -> 真实反应 -> 实用建议"
+      style: "不是专家，是同行者"
+
+    hook_patterns:
+      - "我是个失败的家长，今天..."
+      - "没人告诉我育儿会..."
+      - "完美的家长是不存在的..."
+
+    logic_patterns:
+      - "育儿场景 -> 挣扎时刻 -> 真实感受 - 成长学习"
+
+    emotion_curve:
+      opening: "共鸣挣扎"
+      middle: "真实分享"
+      ending: "不是孤独的"
+
+    avoid:
+      - "专家姿态"
+      - "完美主义"
+
+    conversion_fit:
+      best_for:
+        - "育儿支持"
+        - "家庭生活"
+        - "心理健康"
+      cta_style: "社群加入 + 资源分享"
+
+  - id: mental_health_advocate
+    label: "心理健康倡导"
+    category: "knowledge_creator"
+    region: "global"
+
+    style_dna:
+      tone: "温暖、专业、去污名化、资源导向"
+      sentence_rhythm: "个人经历 -> 专业解释 -> 求助资源"
+      mission: "心理健康不是弱点"
+
+    hook_patterns:
+      - "我沉默了X年，今天我想分享..."
+      - "寻求帮助是..."
+      - "你可能没意识到，这也算..."
+
+    logic_patterns:
+      - "症状识别 - 专业解释 - 去污名化 - 求助资源"
+
+    emotion_curve:
+      opening: "共鸣/安全"
+      middle: "理解"
+      ending: "行动希望"
+
+    avoid:
+      - "医疗诊断"
+      - "轻描淡写"
+
+    conversion_fit:
+      best_for:
+        - "心理健康教育"
+        - "去污名化"
+        - "资源分享"
+      cta_style: "求助资源 + 社群支持"
+
+  - id: sustainability_lifestyle
+    label: "可持续生活"
+    category: "lifestyle_creator"
+    region: "global"
+
+    style_dna:
+      tone: "温和、系统性、可执行、希望驱动"
+      sentence_rhythm: "问题展示 -> 系统原因 -> 个人行动"
+      focus: "消费、能源、废物、社区"
+
+    hook_patterns:
+      - "小改变，大影响..."
+      - "你不知道X的环境代价是..."
+      - "可持续不是关于..."
+
+    logic_patterns:
+      - "环境影响 -> 系统分析 -> 个人行动 - 集体影响"
+
+    emotion_curve:
+      opening: "意识唤醒"
+      middle: "方法实用"
+      ending: "希望赋能"
+
+    avoid:
+      - "道德审判"
+      - "过度极端"
+
+    conversion_fit:
+      best_for:
+        - "环保教育"
+        - "可持续生活"
+        - "零废物"
+      cta_style: "行动指南 + 社区挑战"
+
+  - id: art_creative_process
+    label: "艺术创作过程"
+    category: "lifestyle_creator"
+    region: "global"
+
+    style_dna:
+      tone: "内省、过程透明、技术分享、社区感"
+      sentence_rhythm: "灵感 -> 创作 -> 技术细节 -> 作品展示"
+      focus: "技法、材料、创意过程"
+
+    hook_patterns:
+      - "这个作品的起点是..."
+      - "我尝试了X种方法，最后..."
+      - "创作中最难的部分是..."
+
+    logic_patterns:
+      - "创作挑战 -> 技术方案 -> 执行过程 -> 作品展示"
+
+    emotion_curve:
+      opening: "创作瓶颈"
+      middle: "突破"
+      ending: "作品满足"
+
+    avoid:
+      - "只展示结果"
+      - "隐藏挣扎"
+
+    conversion_fit:
+      best_for:
+        - "艺术教程"
+        - "创作灵感"
+        - "艺术市场"
+      cta_style: "作品售卖 + 工作坊"
+
+  - id: comedy_reaction
+    label: "喜剧反应"
+    category: "entertainment_creator"
+    region: "global"
+
+    style_dna:
+      tone: "夸张、幽默、即时反应、娱乐"
+      sentence_rhythm: "反应 -> 幽默评论 -> 后续"
+      style: "表情丰富、声音变化"
+
+    hook_patterns:
+      - "我的天，这太..."
+      - "等等，等等，等等..."
+      - "你必须看到这个..."
+
+    logic_patterns:
+      - "内容反应 - 幽默解读 - 延伸互动"
+
+    emotion_curve:
+      opening: "惊喜/震惊"
+      middle: "娱乐"
+      ending: "共鸣笑点"
+
+    avoid:
+      - "恶意嘲讽"
+      - "刻板印象"
+
+    conversion_fit:
+      best_for:
+        - "娱乐内容"
+        - "反应视频"
+        - "社区互动"
+      cta_style: "关注 + 下一期预告"
+
+  - id: interview_deep_dive
+    label: "深度访谈"
+    category: "podcast_host"
+    region: "global"
+
+    style_dna:
+      tone: "尊重、好奇、深度、时间充足"
+      sentence_rhythm: "建立关系 -> 核心问题 -> 深度挖掘"
+      format: "长形式、60-120分钟"
+
+    hook_patterns:
+      - "我和X聊了3小时，关于..."
+      - "这段对话改变了我的..."
+      - "我们聊到了一些他从未公开的..."
+
+    logic_patterns:
+      - "开场寒暄 -> 建立信任 -> 深度探讨 -> 个人故事"
+
+    emotion_curve:
+      opening: "轻松"
+      middle: "投入"
+      ending: "启示/感动"
+
+    avoid:
+      - "赶时间"
+      - "表面问题"
+
+    conversion_fit:
+      best_for:
+        - "深度访谈"
+        - "传记内容"
+        - "知识分享"
+      cta_style: "订阅 + 完整版本"
+
+  - id: challenge_creator
+    label: "挑战创作者"
+    category: "entertainment_creator"
+    region: "global"
+
+    style_dna:
+      tone: "挑战、成长、真实、纪录"
+      sentence_rhythm: "挑战设定 -> 日常过程 -> 成长反思"
+      format: "30天、100天、年度挑战"
+
+    hook_patterns:
+      - "我决定挑战自己X天..."
+      - "第X天，我差点放弃..."
+      - "这个挑战教会我的是..."
+
+    logic_patterns:
+      - "挑战设定 - 日常执行 - 挣扎突破 - 成长总结"
+
+    emotion_curve:
+      opening: "兴奋/紧张"
+      middle: "起伏"
+      ending: "成长/转变"
+
+    avoid:
+      - "不安全的挑战"
+      - "粉饰困难"
+
+    conversion_fit:
+      best_for:
+        - "个人成长"
+        - "挑战活动"
+        - "社区互动"
+      cta_style: "加入挑战 + 分享进度"
+
+  - id: daily_vlog_authentic
+    label: "真实日常Vlog"
+    category: "lifestyle_creator"
+    region: "global"
+
+    style_dna:
+      tone: "日常、真实、不表演、陪伴感"
+      sentence_rhythm: "早晨开始 -> 日常活动 -> 晚上反思"
+      style: "低制作成本、高真实感"
+
+    hook_patterns:
+      - "跟我一起过一天..."
+      - "今天的计划是..."
+      - "这一天比预期..."
+
+    logic_patterns:
+      - "早晨 -> 白天活动 -> 晚上 -> 睡前反思"
+
+    emotion_curve:
+      opening: "陪伴开始"
+      middle: "日常共鸣"
+      ending: "晚安总结"
+
+    avoid:
+      - "过度表演"
+      - "隐藏真实情绪"
+
+    conversion_fit:
+      best_for:
+        - "日常分享"
+        - "陪伴内容"
+        - "社区建设"
+      cta_style: "关注 + 第二天预告"
+
+  - id: reaction_commentary
+    label: "反应评论"
+    category: "entertainment_creator"
+    region: "global"
+
+    style_dna:
+      tone: "即时、自然、讨论式、互动导向"
+      sentence_rhythm: "观看反应 -> 即时评论 -> 延伸讨论"
+      format: "边看边评、真实反应"
+
+    hook_patterns:
+      - "让我先看，然后我们一起讨论..."
+      - "到这部分的时候，我..."
+      - "你怎么看这个..."
+
+    logic_patterns:
+      - "内容展示 -> 真实反应 -> 观点讨论 -> 互动引导"
+
+    emotion_curve:
+      opening: "好奇"
+      middle: "投入/惊讶"
+      ending: "讨论/共鸣"
+
+    avoid:
+      - "过度表演"
+      - "忽略观众意见"
+
+    conversion_fit:
+      best_for:
+        - "内容评论"
+        - "社区讨论"
+        - "互动内容"
+      cta_style: "评论互动 + 下期内容"
+
+  # ==============================================================================
+  # 知识科普类（10个）
+  # ==============================================================================
+
+  - id: science_explainer_visual
+    label: "视觉化科学解释"
+    category: "knowledge_creator"
+    region: "global"
+
+    style_dna:
+      tone: "好奇、清晰、视觉化、易懂"
+      sentence_rhythm: "现象提问 -> 科学解释 -> 类比理解"
+      visual: "动画、图表、实验演示"
+
+    hook_patterns:
+      - "为什么X会Y？"
+      - "你可能不知道，X竟然..."
+      - "这个实验会让你惊讶..."
+
+    logic_patterns:
+      - "日常现象 -> 科学原理 -> 实验验证 -> 实际应用"
+
+    emotion_curve:
+      opening: "好奇激发"
+      middle: "恍然大悟"
+      ending: "科学敬畏"
+
+    avoid:
+      - "过于复杂"
+      - "缺乏视觉"
+
+    conversion_fit:
+      best_for:
+        - "科学科普"
+        - "教育内容"
+        - "知识分享"
+      cta_style: "订阅课程 + 资源下载"
+
+  - id: history_storyteller
+    label: "历史讲述者"
+    category: "knowledge_creator"
+    region: "global"
+
+    style_dna:
+      tone: "叙事性、人物化、时空穿越、历史细节"
+      sentence_rhythm: "人物开场 -> 时代背景 -> 事件叙述"
+      method: "不只事件，更是故事"
+
+    hook_patterns:
+      - "你可能不知道，历史上的这一天..."
+      - "X这个人改变了世界，但..."
+      - "历史课本没告诉你的是..."
+
+    logic_patterns:
+      - "人物 -> 时代 -> 事件 -> 影响 -> 现代启示"
+
+    emotion_curve:
+      opening: "穿越好奇"
+      middle: "历史沉浸"
+      ending: "现代反思"
+
+    avoid:
+      - "枯燥年份"
+      - "过度简化"
+
+    conversion_fit:
+      best_for:
+        - "历史教育"
+        - "人物传记"
+        - "文化传承"
+      cta_style: "推荐书籍 + 历史旅行"
+
+  - id: psychology_insights
+    label: "心理学洞见"
+    category: "knowledge_creator"
+    region: "global"
+
+    style_dna:
+      tone: "洞察、同理心、实验支持、实用建议"
+      sentence_rhythm: "日常现象 -> 心理机制 -> 应用建议"
+      focus: "认知偏差、行为改变、心理健康"
+
+    hook_patterns:
+      - "为什么我们会X？"
+      - "这个研究表明，你其实..."
+      - "你以为是Y，其实是Z..."
+
+    logic_patterns:
+      - "行为现象 -> 心理机制 -> 研究支持 -> 实用技巧"
+
+    emotion_curve:
+      opening: "自我发现"
+      middle: "科学理解"
+      ending: "改变工具"
+
+    avoid:
+      - "过度诊断"
+      - "保证效果"
+
+    conversion_fit:
+      best_for:
+        - "心理教育"
+        - "自我提升"
+        - "关系改善"
+      cta_style: "技巧清单 + 课程推荐"
+
+  - id: philosophy_accessibility
+    label: "通俗哲学"
+    category: "knowledge_creator"
+    region: "global"
+
+    style_dna:
+      tone: "思考性、深度但易懂、日常关联、启发性"
+      sentence_rhythm: "日常问题 -> 哲学概念 -> 人生应用"
+      focus: "存在主义、伦理学、生活哲学"
+
+    hook_patterns:
+      - "你在地铁上遇到的这个问题..."
+      - "X哲学家是这样思考的..."
+      - "这个哲学问题其实关乎你的..."
+
+    logic_patterns:
+      - "生活困惑 -> 哲学概念 -> 思考框架 -> 人生应用"
+
+    emotion_curve:
+      opening: "困惑共鸣"
+      middle: "思维扩展"
+      ending: "启发/方向"
+
+    avoid:
+      - "过于学术"
+      - "答案绝对"
+
+    conversion_fit:
+      best_for:
+        - "哲学普及"
+        - "思维训练"
+        - "人生指导"
+      cta_style: "思考问题 + 书籍推荐"
+
+  - id: economics_everyday
+    label: "日常经济学"
+    category: "knowledge_creator"
+    region: "global"
+
+    style_dna:
+      tone: "实用、生活化、现象分析、决策优化"
+      sentence_rhythm: "日常选择 -> 经济学解释 -> 更好决策"
+      focus: "机会成本、边际效用、行为经济学"
+
+    hook_patterns:
+      - "为什么你总是买X？"
+      - "免费其实是最贵的..."
+      - "这个选择的经济学逻辑..."
+
+    logic_patterns:
+      - "日常现象 -> 经济原理 -> 优化建议 -> 真实改变"
+
+    emotion_curve:
+      opening: "现象发现"
+      middle: "经济逻辑"
+      ending: "决策优化"
+
+    avoid:
+      - "过度理论"
+      - "数学化"
+
+    conversion_fit:
+      best_for:
+        - "决策优化"
+        - "消费建议"
+        - "理财教育"
+      cta_style: "决策模板 + 订阅专栏"
+
+  - id: language_learning
+    label: "语言学习"
+    category: "knowledge_creator"
+    region: "global"
+
+    style_dna:
+      tone: "鼓励、实用、文化连接、方法多样"
+      sentence_rhythm: "学习挑战 -> 方法分享 -> 文化洞察"
+      focus: "听说读写、文化背景、学习策略"
+
+    hook_patterns:
+      - "我学了X年，才发现..."
+      - "这个方法让我的口语突飞..."
+      - "语言不只是工具，它是..."
+
+    logic_patterns:
+      - "学习瓶颈 -> 新方法 -> 练习过程 -> 进展突破"
+
+    emotion_curve:
+      opening: "学习挫折"
+      middle: "方法清晰"
+      ending: "进步信心"
+
+    avoid:
+      - "速成承诺"
+      - "单一方法"
+
+    conversion_fit:
+      best_for:
+        - "语言教学"
+        - "文化分享"
+        - "学习社群"
+      cta_style: "资源推荐 + 学习计划"
+
+  - id: nature_documentary
+    label: "自然纪录片"
+    category: "knowledge_creator"
+    region: "global"
+
+    style_dna:
+      tone: "敬畏、观察、保护、科学性"
+      sentence_rhythm: "物种介绍 -> 栖息环境 -> 保护现状"
+      visual: "高质量影像、自然声音"
+
+    hook_patterns:
+      - "你可能没见过这样的..."
+      - "这个物种的秘密生活..."
+      - "在人类之前，它们..."
+
+    logic_patterns:
+      - "物种特征 -> 生存策略 -> 生态关系 -> 保护现状"
+
+    emotion_curve:
+      opening: "好奇敬畏"
+      middle: "沉浸观察"
+      ending: "保护意识"
+
+    avoid:
+      - "过度干预"
+      - "娱乐化"
+
+    conversion_fit:
+      best_for:
+        - "自然教育"
+        - "环保倡导"
+        - "科普内容"
+      cta_style: "保护行动 + 捐款链接"
+
+  - id: space_enthusiast
+    label: "航天爱好者"
+    category: "knowledge_creator"
+    region: "global"
+
+    style_dna:
+      tone: "兴奋、专业、远见、人类梦想"
+      sentence_rhythm: "太空新闻 -> 技术分析 -> 未来展望"
+      focus: "火箭、卫星、载人航天、太空探索"
+
+    hook_patterns:
+      - "人类终于抵达..."
+      - "这个发射改变了..."
+      - "你不知道的是，太空中有..."
+
+    logic_patterns:
+      - "航天事件 -> 技术解读 -> 人类意义 -> 未来展望"
+
+    emotion_curve:
+      opening: "震撼"
+      middle: "科技理解"
+      ending: "未来向往"
+
+    avoid:
+      - "过于政治"
+      - "技术错误"
+
+    conversion_fit:
+      best_for:
+        - "航天科普"
+        - "科技新闻"
+        - "未来讨论"
+      cta_style: "关注发射 + 资源链接"
+
+  - id: medicine_health_pop
+    label: "大众医学健康"
+    category: "knowledge_creator"
+    region: "global"
+
+    style_dna:
+      tone: "专业但易懂、预防导向、科学支持"
+      sentence_rhythm: "症状描述 -> 医学解释 -> 预防建议"
+      disclaimer: "非专业医疗建议"
+
+    hook_patterns:
+      - "这个症状可能意味着..."
+      - "90%的人都误解了..."
+      - "预防X最好的方法是..."
+
+    logic_patterns:
+      - "健康问题 -> 医学机制 -> 预防行动 -> 就医建议"
+
+    emotion_curve:
+      opening: "健康焦虑"
+      middle: "科学安心"
+      ending: "行动方向"
+
+    avoid:
+      - "诊断疾病"
+      - "保证疗效"
+
+    conversion_fit:
+      best_for:
+        - "健康教育"
+        - "预防医学"
+        - "生活方式"
+      cta_style: "健康指南 + 就医提醒"
+
+  - id: learning_educator
+    label: "学习教育"
+    category: "knowledge_creator"
+    region: "global"
+
+    style_dna:
+      tone: "科学、实用、脑科学、成长思维"
+      sentence_rhythm: "学习问题 -> 科学解释 -> 方法应用"
+      focus: "认知科学、学习策略、考试技巧"
+
+    hook_patterns:
+      - "你记不住是因为..."
+      - "这个学习技巧节省了我50%的时间..."
+      - "大脑其实最喜欢..."
+
+    logic_patterns:
+      - "学习困难 -> 脑科学解释 -> 新方法 -> 效果验证"
+
+    emotion_curve:
+      opening: "学习挫折"
+      middle: "科学理解"
+      ending: "方法信心"
+
+    avoid:
+      - "速成承诺"
+      - "一刀切方法"
+
+    conversion_fit:
+      best_for:
+        - "学习教育"
+        - "学习方法"
+        - "学生支持"
+      cta_style: "学习工具 + 课程推荐"

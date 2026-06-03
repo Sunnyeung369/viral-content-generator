@@ -7,6 +7,156 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [4.0.0] - 2026-06-03
+
+### 🎉 Major Release - 热点风格成交引擎
+
+**从「爆款内容生成器」升级为「热点风格成交引擎」**
+
+#### Added
+
+**核心架构重构：**
+- ✨ 模块化架构（8个核心模块）
+- ✨ 抽象基类设计（ContentGenerator、StyleMixer、PromptCompiler等）
+- ✨ 工厂模式（GENERATOR_MAP）
+- ✨ 单例模式（SkillLoader、PromptCompiler）
+- ✨ 数据类系统（GenerationConfig、Account、Offer、Style、Trend）
+
+**风格基因库（155+ 风格卡）：**
+- ✨ A类 - 全球创作者风格（40个）：科技解释型、商业播客主持、创业Vlog等
+- ✨ B类 - 国内创作者风格（40个）：商业毒舌博主、小红书种草、B站知识UP主等
+- ✨ C类 - 全球写作者风格（30个）：科技Newsletter、商业战略洞见、文化评论等
+- ✨ D类 - 中文写作者风格（20个）：商业评论、股市分析、文化随笔等
+- ✨ E类 - 成交文案风格（20个）：AIDA、PAS、故事销售等经典框架
+- ✨ 每个风格基因卡包含：style_dna、hook_patterns、logic_patterns、emotion_curve、avoid、conversion_fit
+
+**账号指纹系统：**
+- ✨ 账号配置文件系统（YAML格式）
+- ✨ 目标用户画像
+- ✨ 用户痛点分析
+- ✨ 权威资产管理
+- ✨ 商业目标配置
+- ✨ 产品阶梯设计
+- ✨ 语气/内容限制
+
+**成交目标系统：**
+- ✨ 4种成交目标模式：likes（高赞）、comments（高互动）、leads（高线索）、sales（高成交）
+- ✨ 每种目标包含：内容结构建议、CTA建议、质量标准
+- ✨ ConversionFunnel 类支持动态策略生成
+
+**热点情报系统：**
+- ✨ HotTopicInput 类支持文本/文件输入
+- ✨ JSON/YAML 格式支持
+- ✨ 热点数据结构：topic、description、source、metrics、keywords、category
+- ✨ 批量热点处理
+
+**多平台适配系统：**
+- ✨ 7个平台支持：公众号、视频号、小红书、知乎、抖音、B站、微博
+- ✨ 平台适配提示词模板
+- ✨ 字数/时长自动调整
+
+**提示词编译系统：**
+- ✨ PromptCompiler 类支持动态编译
+- ✨ 模块化模板系统（base_system、style_mixer、conversion_goal、platform_adapter等）
+- ✨ 变量注入支持
+- ✨ 模板组合功能
+
+**风格混合引擎：**
+- ✨ StyleMixer 类支持1-3个风格混合
+- ✨ 兼容性检查（check_compatibility）
+- ✨ 权重可配置
+- ✨ 混合风格提示词上下文生成
+
+**CLI 升级：**
+- ✨ 新参数：--account、--offer、--goal、--style-mix、--platforms
+- ✨ 批量生成支持（--trends-file）
+- ✨ 多平台输出（--platforms）
+- ✨ 风格列表（--list-styles）
+- ✨ 向后兼容 v3.1 基本用法
+
+**数据文件：**
+- 📦 data/styles/ - 5个风格库文件（155+ 风格卡）
+- 📦 data/accounts/ - 账号指纹模板
+- 📦 data/offers/ - 产品服务模板
+- 📦 prompts/ - 5个提示词模板
+
+**测试系统：**
+- ✨ MVP 功能测试（8个测试用例）
+- ✨ 数据文件完整性测试
+- ✨ 风格加载/混合测试
+- ✨ 账号/产品配置测试
+- ✨ 提示词编译测试
+- ✨ 成交漏斗测试
+- ✨ 集成测试
+
+#### Changed
+
+**架构变更：**
+- 🔄 单文件 CLI → 模块化包结构
+- 🔄 硬编码风格 → 外置 YAML 风格库
+- 🔄 单一系统提示词 → 模块化模板系统
+- 🔄 简单生成流程 → 完整内容作战系统
+
+**CLI 文件：**
+- 🔄 viral_article_cli.py → viral_content_cli_v4.py
+- 🔄 新增包结构：viral_content/
+
+**依赖管理：**
+- 🔄 添加 pyyaml>=6.0
+
+**配置文件：**
+- 🔄 pyproject.toml 版本更新到 4.0.0
+- 🔄 requirements.txt 添加 pyyaml
+
+#### Technical Details
+
+**新增核心类：**
+- `PromptCompiler` - 提示词编译器
+- `StyleMixer` - 风格混合器
+- `AccountFingerprint` - 账号指纹引擎
+- `ConversionFunnel` - 成交漏斗写作器
+- `HotTopicInput` - 热点输入处理器
+- `ViralContentCLI` - CLI 主类
+
+**数据模型：**
+- `GenerationConfig` - 生成配置（扩展）
+- `GenerationResult` - 生成结果
+- `Account` - 账号数据类
+- `Offer` - 产品服务数据类
+- `Style` - 风格基因数据类
+- `Trend` - 热点数据类
+
+**枚举类型：**
+- `ConversionGoal` - 成交目标枚举（LIKES、COMMENTS、LEADS、SALES）
+- `ContentPlatform` - 内容平台枚举
+
+**文件统计：**
+- 代码行数：~870行 → ~3000行+
+- 数据文件：0 → 155+ 风格卡 + 账号/产品模板
+- 提示词模板：单文件 → 5个模块化模板
+
+#### Breaking Changes
+
+**CLI 用法变更：**
+- 旧：`python viral_article_cli.py "topic" --style xxx`
+- 新：`python viral_content_cli_v4.py --topic "topic" --style-mix xxx`
+
+**配置方式变更：**
+- 风格从硬编码改为外置 YAML
+- 新增账号和产品配置文件
+
+**迁移指南：**
+详见 README.md v4.0 升级说明
+
+#### Bug Fixes
+
+- ✨ 修复 factory.py 导入错误（type → Type）
+- ✨ 修复 factory.py 缺少 Optional 导入
+- ✨ 修复 prompt_compiler.py 话题未注入问题
+- ✨ 修复测试文件 ConversionGoal 导入问题
+
+---
+
 ## [3.1.2] - 2026-01-28
 
 ### 📚 Content Update - 通用性优化

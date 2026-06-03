@@ -1,0 +1,1323 @@
+# 中国平台创作者风格基因库
+# v4.0 - 国内平台创作者风格卡 (40个)
+#
+# 每个风格描述可观察的风格特征，而非具体创作者的复刻
+# 遵守：仅描述可公开观察的风格特征
+
+styles:
+  # ==================== 抖音/视频号商业博主 (15个) ====================
+
+  - id: business_savage_china
+    label: "商业毒舌博主"
+    category: "business_commentator"
+    region: "china"
+    platform: "douyin"
+    reference_level: "publicly observable style traits only"
+
+    style_dna:
+      tone: "犀利、直接、讽刺但有干货"
+      sentence_rhythm: "金句密集，短促有力"
+      slang_usage: "适度网络热词"
+      emoji_usage: "每50字1个"
+      delivery: "语速快、停顿短"
+
+    hook_patterns:
+      - "让我说句难听的..."
+      - "这个道理90%的人都不懂"
+      - "你可能不爱听，但..."
+      - "扎心了，但这就是现实"
+
+    logic_patterns:
+      - "现象犀利点评 -> 逻辑支撑 -> 给出解决方案"
+      - "反面教材分析 -> 正面建议 -> 行动召唤"
+
+    emotion_curve:
+      opening: "刺痛点"
+      middle: "恍然大悟"
+      ending: "立刻想行动"
+
+    avoid:
+      - "人身攻击"
+      - "过度负面"
+      - "无干货的纯吐槽"
+
+    conversion_fit:
+      best_for: ["B2B服务", "高端咨询", "知识付费"]
+      cta_style: "犀利观点 + 私信咨询"
+
+  - id: boss_lessons_practical
+    label: "实用老板课"
+    category: "business_commentator"
+    region: "china"
+    platform: "douyin"
+
+    style_dna:
+      tone: "实战、接地气、老炮经验"
+      sentence_rhythm: "案例开场 -> 核心教训 -> 落地建议"
+      vocabulary: "商业实战词汇 + 通俗表达"
+      emoji_usage: "少量点缀"
+
+    hook_patterns:
+      - "我十年创业踩过的坑..."
+      - "老板最容易犯的错误..."
+      - "这节课价值几十万"
+
+    logic_patterns:
+      - "失败案例 -> 关键教训 -> 正确做法"
+      - "困惑场景 -> 拆解分析 -> 实操方法"
+
+    emotion_curve:
+      opening: "共鸣痛点"
+      middle: "学习收获"
+      ending: "避免踩坑的安心"
+
+    avoid:
+      - "空洞理论"
+      - "过度包装"
+
+    conversion_fit:
+      best_for: ["企业培训", "管理咨询", "老板社群"]
+      cta_style: "干货分享 + 社群邀请"
+
+  - id: industry_insider_reveal
+    label: "行业内幕揭秘"
+    category: "business_commentator"
+    region: "china"
+    platform: "douyin"
+
+    style_dna:
+      tone: "揭秘、爆料、内部视角"
+      sentence_rhythm: "悬念开场 -> 内幕披露 -> 行业洞见"
+      delivery: "神秘感 + 专业性"
+
+    hook_patterns:
+      - "行业内从来不敢说的..."
+      - "作为内部人，我来告诉你..."
+      - "这个门道很少有人知道"
+
+    logic_patterns:
+      - "外部认知 vs 内部真相 -> 差异分析 -> 普通人如何利用"
+
+    emotion_curve:
+      opening: "好奇心"
+      middle: "恍然大悟"
+      ending: "获得信息优势"
+
+    avoid:
+      - "泄露商业机密"
+      - "无根据的阴谋论"
+
+    conversion_fit:
+      best_for: ["行业咨询", "信息差服务", "高端社群"]
+      cta_style: "内幕信息 + 私密社群"
+
+  - id: entrepreneurship_reality
+    label: "创业现实"
+    category: "business_commentator"
+    region: "china"
+    platform: "douyin"
+
+    style_dna:
+      tone: "真实、不美化、残酷但有希望"
+      sentence_rhythm: "现实打击 -> 数据分析 -> 理性建议"
+      emoji_usage: "极少，严肃主题"
+
+    hook_patterns:
+      - "创业维稳，不是盲目开始"
+      - "90%的创业死于..."
+      - "说句泼冷水的话"
+
+    logic_patterns:
+      - "创业理想 vs 现实数据 -> 风险警示 -> 正确路径"
+
+    emotion_curve:
+      opening: "警醒"
+      middle: "理性认知"
+      ending: "做好准备"
+
+    avoid:
+      - "贩卖焦虑"
+      - "过度打击积极性"
+
+    conversion_fit:
+      best_for: ["创业咨询", "商业计划服务", "投资对接"]
+      cta_style: "理性分析 + 专业咨询"
+
+  - id: sales_training_direct
+    label: "直接销售培训"
+    category: "business_commentator"
+    region: "china"
+    platform: "douyin"
+
+    style_dna:
+      tone: "直接、命令式、实战导向"
+      sentence_rhythm: "问题 -> 方法 -> 立刻执行"
+      delivery: "强能量、快节奏"
+
+    hook_patterns:
+      - "成交就这三句话"
+      - "别搞那些虚的，直接..."
+      - "我教你，你照做"
+
+    logic_patterns:
+      - "销售痛点 -> 直接话术 -> 现场演示"
+
+    emotion_curve:
+      opening: "刺激痛点"
+      middle: "学习技巧"
+      ending: "立刻能用"
+
+    avoid:
+      - "复杂理论"
+      - "冗长铺垫"
+
+    conversion_fit:
+      best_for: ["销售培训", "话术课程", "成交系统"]
+      cta_style: "立竿见影 + 课程购买"
+
+  - id: negotiation_master
+    label: "谈判大师"
+    category: "business_commentator"
+    region: "china"
+    platform: "douyin"
+
+    style_dna:
+      tone: "智慧、从容、以退为进"
+      sentence_rhythm: "场景设定 -> 谈判技巧 -> 结果反转"
+      vocabulary: "心理学 + 商务词汇"
+
+    hook_patterns:
+      - "谈判高手从不这样开局"
+      - "让对方自己说Yes的技巧"
+      - "一句话省下几十万"
+
+    logic_patterns:
+      - "常见谈判错误 -> 正确策略 -> 实战案例"
+
+    emotion_curve:
+      opening: "好奇心"
+      middle: "学习技巧"
+      ending: "获得掌控感"
+
+    avoid:
+      - "操纵式谈判"
+      - "损害关系的技巧"
+
+    conversion_fit:
+      best_for: ["商务谈判培训", "职场技能", "高管咨询"]
+      cta_style: "智慧展现 + 系统学习"
+
+  - id: management_practical_tips
+    label: "实用管理技巧"
+    category: "business_commentator"
+    region: "china"
+    platform: "douyin"
+
+    style_dna:
+      tone: "经验丰富、具体、可执行"
+      sentence_rhythm: "管理场景 -> 具体方法 -> 效果展示"
+      emoji_usage: "适中"
+
+    hook_patterns:
+      - "管理者最头疼的问题..."
+      - "这样带团队，效率翻倍"
+      - "新人管理者必修"
+
+    logic_patterns:
+      - "管理困境 -> 方法拆解 -> 实操步骤"
+
+    emotion_curve:
+      opening: "共鸣困境"
+      middle: "获得方案"
+      ending: "信心提升"
+
+    avoid:
+      - "空泛的大道理"
+      - "脱离实际"
+
+    conversion_fit:
+      best_for: ["管理培训", "团队咨询", "领导力课程"]
+      cta_style: "实用价值 + 系统学习"
+
+  - id: marketing_trends_china
+    label: "营销趋势中国"
+    category: "business_commentator"
+    region: "china"
+    platform: "douyin"
+
+    style_dna:
+      tone: "敏锐、前瞻、数据驱动"
+      sentence_rhythm: "趋势观察 -> 数据支撑 -> 机会分析"
+      vocabulary: "营销专业术语 + 行业黑话"
+
+    hook_patterns:
+      - "2026年最大的营销机会在这里"
+      - "这个趋势普通人也能抓住"
+      - "品牌都在悄悄布局"
+
+    logic_patterns:
+      - "市场现象 -> 趋势判断 -> 普通人如何利用"
+
+    emotion_curve:
+      opening: "发现机会"
+      middle: "理解趋势"
+      ending: "想立刻行动"
+
+    avoid:
+      - "过度炒作"
+      - "虚假趋势"
+
+    conversion_fit:
+      best_for: ["营销咨询", "品牌服务", "趋势课程"]
+      cta_style: "前瞻价值 + 专业服务"
+
+  - id: wealth_mindset_practical
+    label: "实用财富思维"
+    category: "business_commentator"
+    region: "china"
+    platform: "douyin"
+
+    style_dna:
+      tone: "接地气、反常识、实战导向"
+      sentence_rhythm: "认知误区 -> 正确思维 -> 行动建议"
+      delivery: "亲和、像朋友聊天"
+
+    hook_patterns:
+      - "普通人最大的财富误区"
+      - "这样存钱永远富不了"
+      - "富人从不这样想"
+
+    logic_patterns:
+      - "穷人思维 vs 富人思维 -> 差异分析 -> 改变方法"
+
+    emotion_curve:
+      opening: "认知冲击"
+      middle: "思维升级"
+      ending: "行动改变"
+
+    avoid:
+      - "贩卖暴富"
+      - "风险投资建议"
+
+    conversion_fit:
+      best_for: ["财商教育", "理财课程", "投资社群"]
+      cta_style: "认知升级 + 课程转化"
+
+  - id: workplace_survival
+    label: "职场生存"
+    category: "business_commentator"
+    region: "china"
+    platform: "douyin"
+
+    style_dna:
+      tone: "真实、不讲空话、保护自己"
+      sentence_rhythm: "职场困境 -> 生存法则 -> 具体话术"
+      emoji_usage: "适中，缓解严肃"
+
+    hook_patterns:
+      - "职场老实人最容易吃亏"
+      - "这三种人注定被淘汰"
+      - "领导潜台词你听懂了吗"
+
+    logic_patterns:
+      - "职场陷阱 -> 识别方法 -> 应对策略"
+
+    emotion_curve:
+      opening: "共鸣痛点"
+      middle: "学会保护"
+      ending: "获得安全感"
+
+    avoid:
+      - "教人作假"
+      - "过度权谋"
+
+    conversion_fit:
+      best_for: ["职场课程", "个人品牌", "副业指导"]
+      cta_style: "生存智慧 + 技能提升"
+
+  - id: leadership_storytelling
+    label: "领导力故事"
+    category: "business_commentator"
+    region: "china"
+    platform: "douyin"
+
+    style_dna:
+      tone: "故事化、启发、温暖有力"
+      sentence_rhythm: "人物故事 -> 领导力时刻 -> 普慧启发"
+      delivery: "情感充沛、有感染力"
+
+    hook_patterns:
+      - "这个领导的做法让我记一辈子"
+      - "真正的领导力不是职位"
+      - "他做对了一件事"
+
+    logic_patterns:
+      - "故事场景 -> 领导力行为 -> 可复制原则"
+
+    emotion_curve:
+      opening: "情感共鸣"
+      middle: "受到启发"
+      ending: "想成为这样的人"
+
+    avoid:
+      - "说教式"
+      - "脱离情感"
+
+    conversion_fit:
+      best_for: ["领导力培训", "高管教练", "企业文化"]
+      cta_style: "情感共鸣 + 深度学习"
+
+  - id: business_case_studies
+    label: "商业案例研究"
+    category: "business_commentator"
+    region: "china"
+    platform: "douyin"
+
+    style_dna:
+      tone: "分析型、客观、深度"
+      sentence_rhythm: "案例背景 -> 关键决策 -> 结果分析 + 启示"
+      vocabulary: "商业分析术语"
+
+    hook_patterns:
+      - "这个品牌做对了什么"
+      - "从失败中看商业本质"
+      - "案例背后的商业逻辑"
+
+    logic_patterns:
+      - "企业案例 -> 关键决策分析 -> 可复用经验"
+
+    emotion_curve:
+      opening: "好奇"
+      middle: "深度理解"
+      ending: "获得启发"
+
+    avoid:
+      - "表面分析"
+      - "过度解读"
+
+    conversion_fit:
+      best_for: ["商业咨询", "案例分析课程", "企业培训"]
+      cta_style: "深度分析 + 专业服务"
+
+  - id: startup_mistakes
+    label: "创业避坑"
+    category: "business_commentator"
+    region: "china"
+    platform: "douyin"
+
+    style_dna:
+      tone: "警示、保护、经验之谈"
+      sentence_rhythm: "常见错误 -> 后果展示 -> 正确做法"
+      delivery: "真诚、不想让你踩坑"
+
+    hook_patterns:
+      - "新手创业最容易死的坑"
+      - "我见过太多人犯这个错误"
+      - "避过这3个坑少亏50万"
+
+    logic_patterns:
+      - "创业陷阱 -> 风险分析 -> 避坑指南"
+
+    emotion_curve:
+      opening: "警醒"
+      middle: "认清风险"
+      ending: "知道如何避免"
+
+    avoid:
+      - "过度吓人"
+      - "阻碍合理冒险"
+
+    conversion_fit:
+      best_for: ["创业咨询", "商业计划", "风险评估"]
+      cta_style: "避坑指南 + 专业咨询"
+
+  - id: industry_analysis_china
+    label: "行业分析中国"
+    category: "business_commentator"
+    region: "china"
+    platform: "douyin"
+
+    style_dna:
+      tone: "专业、数据驱动、趋势预判"
+      sentence_rhythm: "行业现状 -> 数据支撑 -> 未来趋势"
+      vocabulary: "行业专业术语"
+
+    hook_patterns:
+      - "这个行业正在发生什么"
+      - "未来三年行业格局"
+      - "数据告诉你真相"
+
+    logic_patterns:
+      - "行业现象 -> 数据验证 -> 趋势预判 + 机会"
+
+    emotion_curve:
+      opening: "获得认知"
+      middle: "深度理解"
+      ending: "把握机会"
+
+    avoid:
+      - "浅尝辄止"
+      - "无数据支撑"
+
+    conversion_fit:
+      best_for: ["行业报告", "投资咨询", "企业战略"]
+      cta_style: "专业深度 + 高端服务"
+
+  - id: team_building_practical
+    label: "实用团队建设"
+    category: "business_commentator"
+    region: "china"
+    platform: "douyin"
+
+    style_dna:
+      tone: "实战、具体、可落地"
+      sentence_rhythm: "团队问题 -> 具体方法 -> 立竿见影"
+      delivery: "像老主管传授经验"
+
+    hook_patterns:
+      - "团队散沙怎么治"
+      - "这样带团队，谁都不愿离职"
+      - "建立团队信任只需做对这件事"
+
+    logic_patterns:
+      - "团队困境 -> 实操方法 -> 效果展示"
+
+    emotion_curve:
+      opening: "共鸣痛点"
+      middle: "获得方法"
+      ending: "立刻能用"
+
+    avoid:
+      - "空泛激励"
+      - "脱离实际"
+
+    conversion_fit:
+      best_for: ["团队培训", "管理咨询", "人力资源"]
+      cta_style: "实用价值 + 服务转化"
+
+  # ==================== 小红书种草博主 (10个) ====================
+
+  - id: lifestyle_aesthetic_xhs
+    label: "小红书生活美学"
+    category: "lifestyle_blogger"
+    region: "china"
+    platform: "xiaohongshu"
+
+    style_dna:
+      tone: "精致、分享、姐妹感"
+      sentence_rhythm: "场景描述 + 个人体验 + 购买建议"
+      emoji_usage: "丰富且恰当"
+      formatting: "分段清晰、有emoji小标题"
+
+    hook_patterns:
+      - "最近发现的宝藏..."
+      - "这个真的绝绝子"
+      - "姐妹们必须冲"
+
+    logic_patterns:
+      - "使用场景 -> 个人体验 -> 推荐理由"
+
+    emotion_curve:
+      opening: "向往美好"
+      middle: "被种草"
+      ending: "想购买/尝试"
+
+    avoid:
+      - "硬广感"
+      - "失真的过度美颜"
+
+    conversion_fit:
+      best_for: ["生活方式产品", "美妆个护", "家居用品"]
+      cta_style: "真诚分享 + 购买链接"
+
+  - id: beauty_skincare_science
+    label: "美妆护肤科学"
+    category: "lifestyle_blogger"
+    region: "china"
+    platform: "xiaohongshu"
+
+    style_dna:
+      tone: "专业、科普、避坑导向"
+      sentence_rhythm: "成分分析 -> 功效说明 -> 适用肤质"
+      vocabulary: "护肤成分术语 + 通俗解释"
+
+    hook_patterns:
+      - "这三种成分千万别一起用"
+      - "贵妇护肤品智商税揭秘"
+      - "成分党告诉你真相"
+
+    logic_patterns:
+      - "护肤误区 -> 成分科普 -> 正确护肤方案"
+
+    emotion_curve:
+      opening: "认清误区"
+      middle: "获得知识"
+      ending: "理性消费"
+
+    avoid:
+      - "制造焦虑"
+      - "过度专业化"
+
+    conversion_fit:
+      best_for: ["护肤品牌", "成分科普", "理性消费社群"]
+      cta_style: "科学种草 + 理性购买"
+
+  - id: fashion_ootd_daily
+    label: "时尚穿搭日常"
+    category: "lifestyle_blogger"
+    region: "china"
+    platform: "xiaohongshu"
+
+    style_dna:
+      tone: "亲和、日常、可复制"
+      sentence_rhythm: "穿搭场景 -> 单品拆解 -> 穿搭技巧"
+      emoji_usage: "适中点缀"
+      visual_style: "真实、非过度修图"
+
+    hook_patterns:
+      - "小个子这样穿显高"
+      - "上班族通勤穿搭公式"
+      - "百元内穿出千元质感"
+
+    logic_patterns:
+      - "穿搭需求 -> 单品组合 -> 技巧总结"
+
+    emotion_curve:
+      opening: "共鸣需求"
+      middle: "学习技巧"
+      ending: "想立刻尝试"
+
+    avoid:
+      - "过度昂贵单品"
+      - "不日常的夸张穿搭"
+
+    conversion_fit:
+      best_for: ["服装品牌", "穿搭课程", "时尚电商"]
+      cta_style: "日常实用 + 购买引导"
+
+  - id: food_home_cooking
+    label: "美食家常菜"
+    category: "lifestyle_blogger"
+    region: "china"
+    platform: "xiaohongshu"
+
+    style_dna:
+      tone: "温暖、家常、零基础友好"
+      sentence_rhythm: "菜品介绍 -> 食材准备 -> 详细步骤"
+      emoji_usage: "美食相关emoji点缀"
+      visual_style: "诱人、真实过程"
+
+    hook_patterns:
+      - "十分钟搞定的晚餐"
+      - "比外面好吃的零失败方子"
+      - "厨房小白也能做"
+
+    logic_patterns:
+      - "菜品需求 -> 制作过程 -> 成品展示 + 贴士"
+
+    emotion_curve:
+      opening: "食欲被激发"
+      middle: "学习制作"
+      ending: "想立刻做饭"
+
+    avoid:
+      - "过于复杂"
+      - "专业设备要求"
+
+    conversion_fit:
+      best_for: ["厨具品牌", "食材电商", "美食课程"]
+      cta_style: "温暖分享 + 工具推荐"
+
+  - id: travel_hidden_gems
+    label: "小众旅行地"
+    category: "lifestyle_blogger"
+    region: "china"
+    platform: "xiaohongshu"
+
+    style_dna:
+      tone: "探索、分享、避坑导向"
+      sentence_rhythm: "目的地介绍 -> 行程安排 -> 实用贴士"
+      emoji_usage: "旅行相关emoji"
+      visual_style: "真实美景、非过度滤镜"
+
+    hook_patterns:
+      - "人少景美的神仙地方"
+      - "这地方99%的人不知道"
+      - "比热门景点好太多"
+
+    logic_patterns:
+      - "目的地亮点 -> 行程建议 -> 避坑提醒"
+
+    emotion_curve:
+      opening: "向往"
+      middle: "规划冲动"
+      ending: "想立刻出发"
+
+    avoid:
+      - "过度网红化"
+      - "不实宣传"
+
+    conversion_fit:
+      best_for: ["旅行产品", "民宿预订", "旅行社群"]
+      cta_style: "真实分享 + 服务引导"
+
+  - id: home_organization
+    label: "家居整理"
+    category: "lifestyle_blogger"
+    region: "china"
+    platform: "xiaohongshu"
+
+    style_dna:
+      tone: "治愈、实用、强迫症友好"
+      sentence_rhythm: "整理前 -> 整理过程 -> 整理后 + 心得"
+      visual_style: "前后对比、治愈系"
+
+    hook_patterns:
+      - "强迫症表示很舒适"
+      - "这整理前后对比太治愈了"
+      - "小空间也能井井有条"
+
+    logic_patterns:
+      - "整理需求 -> 方法展示 -> 效果呈现"
+
+    emotion_curve:
+      opening: "治愈感"
+      middle: "学习方法"
+      ending: "想立刻整理"
+
+    avoid:
+      - "过度昂贵收纳用品"
+      - "不适合小户型"
+
+    conversion_fit:
+      best_for: ["收纳用品", "家政服务", "整理课程"]
+      cta_style: "治愈分享 + 工具推荐"
+
+  - id: fitness_body_positive
+    label: "健身身材正面"
+    category: "lifestyle_blogger"
+    region: "china"
+    platform: "xiaohongshu"
+
+    style_dna:
+      tone: "鼓励、正面、健康优先"
+      sentence_rhythm: "健身目标 -> 训练计划 -> 营养建议"
+      emoji_usage: "健身相关emoji"
+      delivery: "正能量、不制造焦虑"
+
+    hook_patterns:
+      - "不需要瘦也能很美"
+      - "这样练不痛苦还高效"
+      - "健身是为了健康"
+
+    logic_patterns:
+      - "健身误区 -> 正确方法 -> 健康心态"
+
+    emotion_curve:
+      opening: "建立信心"
+      middle: "获得知识"
+      ending: "想立刻开始"
+
+    avoid:
+      - "身材焦虑"
+      - "过度苛刻"
+
+    conversion_fit:
+      best_for: ["健身品牌", "在线课程", "营养产品"]
+      cta_style: "正面引导 + 健康服务"
+
+  - id: parenting_tips_real
+    label: "真实育儿技巧"
+    category: "lifestyle_blogger"
+    region: "china"
+    platform: "xiaohongshu"
+
+    style_dna:
+      tone: "真实、互助、经验分享"
+      sentence_rhythm: "育儿问题 -> 解决方法 -> 实用技巧"
+      delivery: "像妈妈朋友聊天"
+
+    hook_patterns:
+      - "新手妈妈最容易犯的错"
+      - "这个方法亲测有效"
+      - "带娃其实可以轻松点"
+
+    logic_patterns:
+      - "育儿困境 -> 解决方案 -> 效果展示"
+
+    emotion_curve:
+      opening: "共鸣痛点"
+      middle: "获得方法"
+      ending: "信心提升"
+
+    avoid:
+      - "制造育儿焦虑"
+      - "不切实际的要求"
+
+    conversion_fit:
+      best_for: ["母婴产品", "育儿课程", "亲子社群"]
+      cta_style: "真实分享 + 产品推荐"
+
+  - id: book_reading_sharing
+    label: "读书分享"
+    category: "lifestyle_blogger"
+    region: "china"
+    platform: "xiaohongshu"
+
+    style_dna:
+      tone: "真诚、有深度、不装"
+      sentence_rhythm: "书籍介绍 -> 核心观点 -> 个人感悟"
+      emoji_usage: "书相关emoji点缀"
+
+    hook_patterns:
+      - "这本书改变了我的思维方式"
+      - "读完这本书我终于明白..."
+      - "年度最值得读的书"
+
+    logic_patterns:
+      - "书籍背景 -> 核心内容 -> 个人收获 + 推荐"
+
+    emotion_curve:
+      opening: "好奇心"
+      middle: "获得启发"
+      ending: "想立刻阅读"
+
+    avoid:
+      - "剧透过度"
+      - "装深沉"
+
+    conversion_fit:
+      best_for: ["图书推广", "知识付费", "读书社群"]
+      cta_style: "真诚推荐 + 购买引导"
+
+  - id: daily_vlog_cozy
+    label: "温馨日常Vlog"
+    category: "lifestyle_blogger"
+    region: "china"
+    platform: "xiaohongshu"
+
+    style_dna:
+      tone: "治愈、安静、有质感"
+      sentence_rhythm: "场景描述 -> 日常小事 -> 情感表达"
+      visual_style: "温暖色调、慢节奏"
+      emoji_usage: "少量点缀"
+
+    hook_patterns:
+      - "普通但美好的一天"
+      - "生活中的小确幸"
+      - "治愈系的日常"
+
+    logic_patterns:
+      - "日常场景 -> 细节捕捉 -> 情感共鸣"
+
+    emotion_curve:
+      opening: "放松"
+      middle: "治愈感"
+      ending: "向往这样的生活"
+
+    avoid:
+      - "过度摆拍"
+      - "商业痕迹太重"
+
+    conversion_fit:
+      best_for: ["生活好物", "家居品牌", "生活方式产品"]
+      cta_style: "自然融入 + 产品露出"
+
+  # ==================== B站知识UP主 (10个) ====================
+
+  - id: tech_explainer_detailed
+    label: "详细科技解释"
+    category: "knowledge_up"
+    region: "china"
+    platform: "bilibili"
+
+    style_dna:
+      tone: "专业、深入、易懂"
+      sentence_rhythm: "技术背景 -> 核心原理 -> 应用场景"
+      vocabulary: "技术术语 + 通俗解释"
+      delivery: "逻辑严密、有数据支撑"
+
+    hook_patterns:
+      - "这个技术为什么重要"
+      - "三分钟看懂XXX"
+      - "从原理到应用，全面解析"
+
+    logic_patterns:
+      - "技术现象 -> 原理拆解 -> 趋势预测"
+
+    emotion_curve:
+      opening: "好奇心"
+      middle: "深度理解"
+      ending: "获得知识优势"
+
+    avoid:
+      - "过度简化"
+      - "错误科普"
+
+    conversion_fit:
+      best_for: ["技术课程", "科技产品", "技术咨询"]
+      cta_style: "专业深度 + 知识服务"
+
+  - id: history_deep_dive
+    label: "深度历史"
+    category: "knowledge_up"
+    region: "china"
+    platform: "bilibili"
+
+    style_dna:
+      tone: "严肃、有深度、多角度"
+      sentence_rhythm: "历史背景 -> 事件脉络 -> 深度分析"
+      vocabulary: "历史学术词汇 + 故事化表达"
+      delivery: "娓娓道来、有学术感"
+
+    hook_patterns:
+      - "历史书没告诉你的真相"
+      - "换个角度看这段历史"
+      - "这个细节改变了我对历史的认知"
+
+    logic_patterns:
+      - "历史事件 -> 多重证据 -> 历史启示"
+
+    emotion_curve:
+      opening: "求知欲"
+      middle: "深度理解"
+      ending: "获得历史智慧"
+
+    avoid:
+      - "戏说历史"
+      - "过度娱乐化"
+
+    conversion_fit:
+      best_for: ["历史课程", "文化产品", "知识付费"]
+      cta_style: "知识深度 + 系统学习"
+
+  - id: science_visual_pop
+    label: "大众科学可视化"
+    category: "knowledge_up"
+    region: "china"
+    platform: "bilibili"
+
+    style_dna:
+      tone: "有趣、硬核、可视化强"
+      sentence_rhythm: "科学现象 -> 实验演示 -> 原理解释"
+      visual_style: "实验、动画、图表丰富"
+
+    hook_patterns:
+      - "这个实验太神奇了"
+      - "教科书没讲这么清楚"
+      - "硬核科普来了"
+
+    logic_patterns:
+      - "科学问题 -> 实验验证 -> 理论解释"
+
+    emotion_curve:
+      opening: "惊叹"
+      middle: "理解原理"
+      ending: "获得科学思维"
+
+    avoid:
+      - "过度娱乐化"
+      - "不准确的科普"
+
+    conversion_fit:
+      best_for: ["科学课程", "教育产品", "科普内容"]
+      cta_style: "硬核科普 + 知识服务"
+
+  - id: gaming_review_analytical
+    label: "分析性游戏评测"
+    category: "knowledge_up"
+    region: "china"
+    platform: "bilibili"
+
+    style_dna:
+      tone: "专业、客观、有数据"
+      sentence_rhythm: "游戏介绍 -> 核心分析 -> 结论建议"
+      vocabulary: "游戏专业术语"
+      delivery: "理性分析、不带情绪"
+
+    hook_patterns:
+      - "这游戏值得买吗"
+      - "从设计角度看这款游戏"
+      - "数据告诉你游戏的真实表现"
+
+    logic_patterns:
+      - "游戏现象 -> 设计分析 -> 价值判断"
+
+    emotion_curve:
+      opening: "求知欲"
+      middle: "理性认知"
+      ending: "做出决策"
+
+    avoid:
+      - "粉丝滤镜"
+      - "过度情绪化"
+
+    conversion_fit:
+      best_for: ["游戏推荐", "电竞产品", "游戏课程"]
+      cta_style: "理性分析 + 购买建议"
+
+  - id: anime_review_cultural
+    label: "文化向动漫评论"
+    category: "knowledge_up"
+    region: "china"
+    platform: "bilibili"
+
+    style_dna:
+      tone: "深度、文化视角、有情怀"
+      sentence_rhythm: "动漫作品 -> 文化分析 -> 情感共鸣"
+      vocabulary: "动漫术语 + 文化词汇"
+
+    hook_patterns:
+      - "这部动漫的文化隐喻"
+      - "从社会角度看这部作品"
+      - "为什么这部作品能成为经典"
+
+    logic_patterns:
+      - "动漫内容 -> 文化解读 -> 社会意义"
+
+    emotion_curve:
+      opening: "共鸣"
+      middle: "深度理解"
+      ending: "获得文化视角"
+
+    avoid:
+      - "过度解读"
+      - "脱离作品本身"
+
+    conversion_fit:
+      best_for: ["文化内容", "动漫产品", "知识社群"]
+      cta_style: "文化深度 + 内容推荐"
+
+  - id: movie_analysis_deep
+    label: "深度电影分析"
+    category: "knowledge_up"
+    region: "china"
+    platform: "bilibili"
+
+    style_dna:
+      tone: "专业、有深度、视听语言"
+      sentence_rhythm: "电影介绍 -> 镜头分析 -> 主题探讨"
+      vocabulary: "电影学术术语 + 通俗表达"
+
+    hook_patterns:
+      - "这个镜头的深意"
+      - "从导演角度看这部电影"
+      - "教科书级别的镜头语言"
+
+    logic_patterns:
+      - "电影片段 -> 技法分析 -> 主题表达"
+
+    emotion_curve:
+      opening: "审美愉悦"
+      middle: "理解深意"
+      ending: "提升电影品味"
+
+    avoid:
+      - "剧透过度"
+      - "过度学术化"
+
+    conversion_fit:
+      best_for: ["电影内容", "影视课程", "文化产品"]
+      cta_style: "专业深度 + 内容推荐"
+
+  - id: music_production
+    label: "音乐制作"
+    category: "knowledge_up"
+    region: "china"
+    platform: "bilibili"
+
+    style_dna:
+      tone: "专业、技术流、有干货"
+      sentence_rhythm: "音乐作品 -> 技术拆解 -> 制作技巧"
+      vocabulary: "音乐技术术语"
+
+    hook_patterns:
+      - "这首歌为什么好听"
+      - "制作人视角看这首歌"
+      - "学会这个技巧你也能写"
+
+    logic_patterns:
+      - "音乐现象 -> 技术分析 -> 制作方法"
+
+    emotion_curve:
+      opening: "好奇"
+      middle: "学习技巧"
+      ending: "想立刻创作"
+
+    avoid:
+      - "过度简化"
+      - "错误的技术指导"
+
+    conversion_fit:
+      best_for: ["音乐课程", "音乐产品", "制作服务"]
+      cta_style: "技术干货 + 课程转化"
+
+  - id: programming_tutorial
+    label: "编程教程"
+    category: "knowledge_up"
+    region: "china"
+    platform: "bilibili"
+
+    style_dna:
+      tone: "耐心、细致、可执行"
+      sentence_rhythm: "问题场景 -> 代码演示 -> 效果展示"
+      vocabulary: "编程术语 + 注释清晰"
+
+    hook_patterns:
+      - "十分钟学会XXX"
+      - "这个功能原来这么简单"
+      - "从零开始学编程"
+
+    logic_patterns:
+      - "编程需求 -> 代码实现 -> 效果验证"
+
+    emotion_curve:
+      opening: "学习欲望"
+      middle: "获得技能"
+      ending: "想立刻练习"
+
+    avoid:
+      - "跳过基础"
+      - "代码错误"
+
+    conversion_fit:
+      best_for: ["编程课程", "技术社群", "开发工具"]
+      cta_style: "实用价值 + 课程转化"
+
+  - id: economics_theory_simple
+    label: "简单经济理论"
+    category: "knowledge_up"
+    region: "china"
+    platform: "bilibili"
+
+    style_dna:
+      tone: "深入浅出、有趣、贴近生活"
+      sentence_rhythm: "经济现象 -> 理论解释 -> 现实应用"
+      vocabulary: "经济学术语 + 通俗解释"
+
+    hook_patterns:
+      - "用经济学看日常现象"
+      - "这个理论解释了为什么..."
+      - "经济学其实很有趣"
+
+    logic_patterns:
+      - "日常现象 -> 经济学原理 -> 理性决策"
+
+    emotion_curve:
+      opening: "好奇"
+      middle: "理解理论"
+      ending: "学会理性思考"
+
+    avoid:
+      - "过度数学化"
+      - "脱离实际"
+
+    conversion_fit:
+      best_for: ["经济课程", "知识付费", "理财服务"]
+      cta_style: "知识趣味 + 课程转化"
+
+  - id: culture_commentary
+    label: "文化评论"
+    category: "knowledge_up"
+    region: "china"
+    platform: "bilibili"
+
+    style_dna:
+      tone: "批判性、有深度、多角度"
+      sentence_rhythm: "文化现象 -> 多维分析 -> 价值判断"
+      vocabulary: "文化学术词汇 + 网络热词"
+
+    hook_patterns:
+      - "这个文化现象值得深思"
+      - "从社会学角度看..."
+      - "这背后反映了什么"
+
+    logic_patterns:
+      - "文化现象 -> 社会分析 -> 价值反思"
+
+    emotion_curve:
+      opening: "思考"
+      middle: "深度理解"
+      ending: "形成观点"
+
+    avoid:
+      - "过度批判"
+      - "价值绑架"
+
+    conversion_fit:
+      best_for: ["文化内容", "知识社群", "思想课程"]
+      cta_style: "思想深度 + 内容推荐"
+
+  # ==================== 微博/知乎观点类 (5个) ====================
+
+  - id: current_events_snark
+    label: "时事锐评"
+    category: "opinion_writer"
+    region: "china"
+    platform: "weibo"
+
+    style_dna:
+      tone: "犀利、幽默、一针见血"
+      sentence_rhythm: "新闻事件 -> 犀利点评 -> 金句收尾"
+      emoji_usage: "少量、点到为止"
+
+    hook_patterns:
+      - "这事儿说来话长但值得一说"
+      - "让我说句大实话"
+      - "这个角度你没想到"
+
+    logic_patterns:
+      - "新闻事件 -> 独特角度 -> 观点总结"
+
+    emotion_curve:
+      opening: "好奇"
+      middle: "认同/思考"
+      ending: "想转发/讨论"
+
+    avoid:
+      - "过度讽刺"
+      - "触碰红线"
+
+    conversion_fit:
+      best_for: ["个人品牌", "知识服务", "高端社群"]
+      cta_style: "观点犀利 + 私信咨询"
+
+  - id: social_commentary_hot
+    label: "热点社会评论"
+    category: "opinion_writer"
+    region: "china"
+    platform: "weibo"
+
+    style_dna:
+      tone: "理性、多维、有温度"
+      sentence_rhythm: "热点事件 -> 多维分析 -> 人文关怀"
+      vocabulary: "社会学术语 + 日常表达"
+
+    hook_patterns:
+      - "这个热点背后更值得关注的是..."
+      - "换个角度看这件事"
+      - "我们需要理性的讨论"
+
+    logic_patterns:
+      - "社会热点 -> 结构分析 -> 人性反思"
+
+    emotion_curve:
+      opening: "关注"
+      middle: "理性思考"
+      ending: "获得启发"
+
+    avoid:
+      - "情绪化站队"
+      - "过度批判"
+
+    conversion_fit:
+      best_for: ["知识付费", "咨询服务", "思想社群"]
+      cta_style: "理性深度 + 内容推荐"
+
+  - id: tech_industry_opinion
+    label: "科技行业观点"
+    category: "opinion_writer"
+    region: "china"
+    platform: "zhihu"
+
+    style_dna:
+      tone: "专业、前瞻、有数据"
+      sentence_rhythm: "行业动态 -> 趋势分析 -> 战略建议"
+      vocabulary: "科技行业术语"
+
+    hook_patterns:
+      - "这个行业正在发生什么"
+      - "从这波变化看未来趋势"
+      - "行业老兵告诉你真相"
+
+    logic_patterns:
+      - "行业现象 -> 趋势预判 -> 机会分析"
+
+    emotion_curve:
+      opening: "求知欲"
+      middle: "获得认知"
+      ending: "把握机会"
+
+    avoid:
+      - "过度预测"
+      - "不负责任的判断"
+
+    conversion_fit:
+      best_for: ["科技咨询", "投资服务", "高端社群"]
+      cta_style: "行业洞察 + 专业服务"
+
+  - id: cultural_criticism
+    label: "文化批评"
+    category: "opinion_writer"
+    region: "china"
+    platform: "zhihu"
+
+    style_dna:
+      tone: "批判性、学术化、有深度"
+      sentence_rhythm: "文化现象 -> 理论分析 -> 价值反思"
+      vocabulary: "文化学术词汇"
+
+    hook_patterns:
+      - "这个现象值得反思"
+      - "从文化研究角度看..."
+      - "我们需要警惕这种趋势"
+
+    logic_patterns:
+      - "文化现象 -> 理论框架 -> 批判性反思"
+
+    emotion_curve:
+      opening: "思考"
+      middle: "深度理解"
+      ending: "形成判断"
+
+    avoid:
+      - "过度学术化"
+      - "脱离大众"
+
+    conversion_fit:
+      best_for: ["文化内容", "学术服务", "知识社群"]
+      cta_style: "思想深度 + 内容推荐"
+
+  - id: trend_forecasting
+    label: "趋势预测"
+    category: "opinion_writer"
+    region: "china"
+    platform: "zhihu"
+
+    style_dna:
+      tone: "前瞻、数据驱动、谨慎乐观"
+      sentence_rhythm: "当前现象 -> 数据分析 -> 未来趋势"
+      vocabulary: "趋势分析术语"
+
+    hook_patterns:
+      - "未来三年最大的机会在这里"
+      - "数据告诉你趋势走向"
+      - "普通人如何抓住下一个风口"
+
+    logic_patterns:
+      - "当前现象 -> 数据验证 -> 趋势预判 + 行动建议"
+
+    emotion_curve:
+      opening: "好奇"
+      middle: "理解趋势"
+      ending: "想提前布局"
+
+    avoid:
+      - "过度承诺"
+      - "不切实际的预测"
+
+    conversion_fit:
+      best_for: ["趋势报告", "投资服务", "战略咨询"]
+      cta_style: "前瞻价值 + 高端服务"
+
+# 文件元数据
+metadata:
+  version: "4.0.0"
+  total_styles: 40
+  region: "china"
+  last_updated: "2026-06-03"
+  categories:
+    - business_commentator: 15
+    - lifestyle_blogger: 10
+    - knowledge_up: 10
+    - opinion_writer: 5

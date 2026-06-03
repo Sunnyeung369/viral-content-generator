@@ -1,0 +1,53 @@
+"""
+Gemini 生成器
+
+作者: Sunnyeung
+版本: 4.0.0
+许可: MIT License
+GitHub: https://github.com/Sunnyeung369/viral-content-generator
+"""
+
+import logging
+
+from viral_content.generators.base import ContentGenerator
+from viral_content.models.generation import GenerationResult
+from viral_content.exceptions.custom import APIError
+
+logger = logging.getLogger(__name__)
+
+
+class GeminiGenerator(ContentGenerator):
+    """Gemini生成器"""
+
+    PLATFORM_NAME = "Gemini"
+    DEFAULT_MODEL = "gemini-2.0-flash-exp"
+
+    def _setup_client(self) -> None:
+        try:
+            import google.generativeai as genai
+            genai.configure(api_key=self.config.api_key)
+            self._genai = genai
+            self._model_client = genai.GenerativeModel(
+                model_name=self.model,
+                system_instruction=self.skill_content
+            )
+        except ImportError:
+            raise APIError("未安装google-generativeai库，请运行: pip install google-generativeai")
+
+    def _generate_internal(self, prompt: str) -> GenerationResult:
+        try:
+            response = self._model_client.generate_content(prompt)
+            content = response.text
+
+            # Gemini 不返回token使用情况，估算
+            tokens_used = len(content) // 2  # 粗略估算
+
+            return GenerationResult(
+                content=content,
+                platform="gemini",
+                model=self.model,
+                tokens_used=tokens_used
+            )
+
+        except Exception as e:
+            raise APIError(f"Gemini API调用失败: {e}")
