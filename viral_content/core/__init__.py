@@ -24,6 +24,7 @@ from .platform_adapter import (
     PlatformPackage,
     get_platform_adapter,
 )
+from .pipeline import ViralContentPipeline, PipelineBuilder
 
 __all__ = [
     # Prompt Compiler
@@ -46,4 +47,7 @@ __all__ = [
     "PlatformSpec",
     "PlatformPackage",
     "get_platform_adapter",
+    # Pipeline
+    "ViralContentPipeline",
+    "PipelineBuilder",
 ]

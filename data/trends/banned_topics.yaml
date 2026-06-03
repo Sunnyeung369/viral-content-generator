@@ -1,0 +1,153 @@
+# 禁止话题配置
+# v4.0 - 用于内容合规检查
+
+# 绝对禁止话题（触碰即拒绝）
+absolutely_banned:
+  - 色情低俗
+  - 暴力恐怖
+  - 违法犯罪
+  - 毒品赌博
+  - 自残自杀
+  - 极端主义
+  - 恐怖主义
+
+# 高风险话题（需要人工审核）
+high_risk:
+  - category: 政治敏感
+    keywords:
+      - 政治人物
+      - 政治事件
+      - 政治立场
+      - 政治组织
+    note: "涉及政治敏感内容需谨慎处理"
+
+  - category: 宗教极端
+    keywords:
+      - 宗教冲突
+      - 宗教极端
+      - 宗教歧视
+    note: "避免涉及宗教极端内容"
+
+  - category: 民族矛盾
+    keywords:
+      - 民族冲突
+      - 民族歧视
+      - 地域黑
+    note: "避免涉及民族和地域矛盾"
+
+  - category: 群体对立
+    keywords:
+      - 职业歧视
+      - 阶级对立
+      - 群体攻击
+    note: "避免制造群体对立"
+
+# 需谨慎处理的话题（需要特定资质或风险提示）
+handle_with_care:
+  - category: 医疗健康
+    keywords:
+      - 疾病治疗
+      - 药品推荐
+      - 医疗建议
+    requirements:
+      - 需要相关专业资质
+      - 必须包含"仅供参考，不构成医疗建议"
+      - 不承诺治疗效果
+    risk_prompt: "必须包含风险提示"
+
+  - category: 金融投资
+    keywords:
+      - 股票推荐
+      - 投资建议
+      - 理财产品
+    requirements:
+      - 必须包含"投资有风险，入市需谨慎"
+      - 不承诺保本保收益
+      - 明确风险等级
+    risk_prompt: "必须包含风险提示"
+
+  - category: 教育培训
+    keywords:
+      - 课程销售
+      - 培训推广
+      - 教育产品
+    requirements:
+      - 不承诺100%就业/提分
+      - 不保证一定效果
+      - 避免制造焦虑
+    risk_prompt: "避免过度承诺"
+
+  - category: 法律咨询
+    keywords:
+      - 法律建议
+      - 案件分析
+    requirements:
+      - 建议咨询专业律师
+      - 不保证法律结果
+    risk_prompt: "必须包含专业建议提示"
+
+# 虚假宣传关键词
+false_advertising_keywords:
+  - 绝对有效
+  - 100%成功
+  - 包治百病
+  - 零风险
+  - 必赚不赔
+  - 立竿见影
+  - 永久有效
+  - 科学无法解释
+
+# 夸张宣传阈值
+exaggeration_thresholds:
+  max_percentage_claim: 95  # 超过95%的数字声明需谨慎
+  min_price_discount: 50    # 低于5折的折扣需谨慎
+  max_income_claim: 100000  # 超过10万的月收入声明需谨慎
+
+# 平台特定规则
+platform_specific:
+  wechat:
+    additional_banned:
+      - 引流到微信外的平台
+      - 包含其他社交平台联系方式
+    note: "微信不允许引流到其他平台"
+
+  douyin:
+    additional_banned:
+      - 硬广营销
+      - 联系方式直接展示
+    note: "抖音对营销内容严格限制"
+
+  xiaohongshu:
+    additional_banned:
+      - 过度营销
+      - 直接售卖
+    note: "小红书要求内容种草性质"
+
+  tiktok:
+    additional_banned:
+      - misleading_content
+      - spam
+    note: "TikTok对误导性内容零容忍"
+
+# 合规检查规则
+compliance_rules:
+  min_age_check: false  # 是否需要年龄验证
+  require_disclaimer:
+    financial: true     # 金融内容需要免责声明
+    medical: true       # 医疗内容需要免责声明
+    legal: true         # 法律内容需要免责声明
+  max_links: 3          # 单篇内容最大链接数
+  max_mentions: 5       # 单篇内容最大@数
+
+# 风险评分权重
+risk_weights:
+  absolutely_banned: 100     # 直接拒绝
+  high_risk: 50              # 高度警惕
+  handle_with_care: 20       # 需要提示
+  false_advertising: 30     # 虚假宣传风险
+  exaggeration: 10          # 夸张宣传风险
+
+# 更新记录
+version: "1.0.0"
+last_updated: "2026-06-03"
+notes: "初始版本"

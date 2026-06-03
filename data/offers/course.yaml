@@ -1,0 +1,118 @@
+# 课程产品配置模板
+# v4.0
+
+offer:
+  # 基本信息
+  name: "AI工具实战营"
+  type: "course"
+  category: "AI培训"
+
+  # 价格阶梯
+  pricing:
+    free: "¥0"
+    low_ticket: "¥199"
+    mid_ticket: "¥999"
+    high_ticket: "¥2999"
+
+  # 核心卖点
+  unique_value_proposition:
+    - "不只是教工具，更教AI工作流"
+    - "从0到1完整实战，跟着做就能出成果"
+    - "365天社群陪伴，持续更新新工具"
+    - "提供100+个实用提示词模板"
+
+  # 成交门槛
+  commitment_required:
+    time_investment: "每周3-5小时"
+    skill_level: "无需编程基础，会电脑操作即可"
+    tools_needed: "一台电脑+ChatGPT账号"
+    duration: "21天核心课程+365天社群"
+
+  # 目标客户匹配
+  ideal_customer_profile:
+    - "内容创作者（自媒体、博主）"
+    - "职场人士（想提升效率）"
+    - "自由职业者"
+    - "小团队负责人"
+    - "对AI感兴趣但不知道怎么用的人"
+
+  # 排除客户
+    - "只想赚快钱的人"
+    - "不愿意动手实践的人"
+    - "期待一夜暴富的人"
+
+  # 转化路径
+  conversion_path:
+    step1:
+      action: "加入免费社群"
+      incentive: "免费领取AI工具清单"
+      next_step: "群内定期分享"
+
+    step2:
+      action: "购买体验课"
+      product: "¥199 3天AI速成营"
+      next_step: "升级正课"
+
+    step3:
+      action: "购买正课"
+      product: "¥999 21天AI实战营"
+      next_step: "复购其他课程/推荐"
+
+    step4:
+      action: "成为推广合伙人"
+      product: "推广课程拿佣金"
+      next_step: "长期合作"
+
+  # 信任背书
+  social_proof:
+    testimonials:
+      - "学员A：通过AI工具，内容创作效率提升10倍"
+      - "学员B：21天学会了用AI做完整项目方案"
+      - "学员C：课程内容太实用，马上就能用到工作中"
+    case_studies:
+      - "某学员用课程方法做出爆款内容，涨粉10万+"
+      - "某团队引入AI工作流，人力成本降低50%"
+    student_count: "5000+学员"
+    completion_rate: "80%完课率"
+
+  # 课程大纲
+  course_outline:
+    module1:
+      title: "AI基础认知"
+      lessons: 5
+      duration: "2小时"
+    module2:
+      title: "ChatGPT实战应用"
+      lessons: 8
+      duration: "4小时"
+    module3:
+      title: "AI工作流设计"
+      lessons: 6
+      duration: "3小时"
+    module4:
+      title: "AI+自媒体实战"
+      lessons: 10
+      duration: "5小时"
+    module5:
+      title: "AI商业变现"
+      lessons: 7
+      duration: "3小时"
+
+  # 承诺和保障
+  guarantees:
+    - "7天无理由退款"
+    - "365天免费复训"
+    - "社群终身有效"
+    - "持续更新新内容"
+
+  # 稀缺性元素
+  scarcity:
+    - "每期限额500人"
+    - "本期优惠最后3天"
+    - "下期涨价至¥1299"
+
+  # 紧迫感元素
+  urgency:
+    - "AI时代，晚学一个月就落后一步"
+    - "现在入行还处于红利期"
+    - "工具快速迭代，需要持续学习"
