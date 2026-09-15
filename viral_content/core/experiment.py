@@ -2,6 +2,7 @@
 from dataclasses import dataclass, field
 from datetime import datetime
 from typing import Dict, List, Optional
+import json
 
 @dataclass
 class Candidate:
@@ -70,3 +71,15 @@ def summarize_feedback(records: List[FeedbackRecord], min_samples: int = 3) -> E
     reliable = len(records) >= min_samples
     note = "样本量达到最低建议值" if reliable else f"样本量不足，建议至少收集 {min_samples} 条记录"
     return ExperimentSummary(platform, len(records), winner, metrics, reliable, note)
+
+
+def export_feedback_report(records: List[FeedbackRecord], path: str, min_samples: int = 3) -> ExperimentSummary:
+    """Write a portable JSON report and return its summary."""
+    summary = summarize_feedback(records, min_samples=min_samples)
+    payload = {
+        "summary": {"platform": summary.platform, "sample_size": summary.sample_size, "winner_index": summary.winner_index, "metrics": summary.metrics, "reliable": summary.reliable, "note": summary.note},
+        "records": [r.to_dict() for r in records],
+    }
+    with open(path, "w", encoding="utf-8") as handle:
+        json.dump(payload, handle, ensure_ascii=False, indent=2)
+    return summary

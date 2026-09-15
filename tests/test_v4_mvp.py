@@ -444,3 +444,11 @@ def test_ranker_describes_weights():
     assert info['goal'] == 'leads'
     assert info['quality_weight'] + info['gate_weight'] == 1.0
 
+
+
+def test_feedback_report_exports_json(tmp_path):
+    from viral_content.core.experiment import FeedbackRecord, export_feedback_report
+    path = tmp_path / 'report.json'
+    export_feedback_report([FeedbackRecord(0, 'wechat', '2026-09-15', views=100)], str(path))
+    assert 'summary' in path.read_text(encoding='utf-8')
+
