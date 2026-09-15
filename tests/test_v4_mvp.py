@@ -392,3 +392,19 @@ def test_public_version_and_cli_entrypoint():
     from viral_content_cli import main
     assert callable(main)
 
+
+
+def test_quality_gate_blocks_risky_copy():
+    from viral_content.core.quality_gate import QualityGate
+    gate = QualityGate()
+    result = gate.check('保证爆款，点击领取 [优惠内容]', require_cta=True)
+    assert not result.passed
+    assert len(result.warnings) >= 2
+
+
+def test_quality_gate_accepts_reviewable_copy():
+    from viral_content.core.quality_gate import QualityGate
+    result = QualityGate().check('这是一段面向小企业主的具体说明，用一个真实场景解释问题、限制和可执行步骤。评论区留下你的问题，我会补充案例和适用条件，方便你判断是否值得尝试。', require_cta=True)
+    assert result.passed
+    assert result.warnings == []
+
