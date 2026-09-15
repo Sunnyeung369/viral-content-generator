@@ -350,10 +350,10 @@ def parse_arguments():
 示例用法:
 
   # 基础用法（向后兼容v3.1）
-  python viral_content_cli_v4.py "AI Agent Runtime崩溃" --style tech_explainer_global
+  python viral_content_cli.py "AI Agent Runtime崩溃" --style tech_explainer_global
 
   # v4.0 完整用法
-  python viral_content_cli_v4.py \\
+  python viral_content_cli.py \\
     --topic "AI Agent Runtime崩溃" \\
     --account data/accounts/ai_consultant.yaml \\
     --offer data/offers/consulting.yaml \\
@@ -363,13 +363,13 @@ def parse_arguments():
     --output outputs/
 
   # 批量生成
-  python viral_content_cli_v4.py \\
+  python viral_content_cli.py \\
     --trends-file hot_topics.json \\
     --account data/accounts/ai_consultant.yaml \\
     --goal leads
 
   # 多平台输出
-  python viral_content_cli_v4.py \\
+  python viral_content_cli.py \\
     --topic "AI工具使用技巧" \\
     --platforms douyin,xiaohongshu,wechat \\
     --goal likes

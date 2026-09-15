@@ -7,7 +7,7 @@
 ![Python](https://img.shields.io/badge/python-3.8+-blue)
 ![Platform](https://img.shields.io/badge/platform-全平台-orange)
 
-**全球热点 × 风格基因 × 账号定位 × 成交目标 = 高赞、高互动、高成交内容包**
+**热点与账号信息 × 风格约束 × 成交目标 = 可测试的内容草案**
 
 [快速开始](#快速开始) • [核心功能](#核心功能) • [使用文档](#使用文档) • [更新日志](./CHANGELOG.md) • [贡献指南](./CONTRIBUTING.md)
 
@@ -22,7 +22,7 @@
 ### 核心公式
 
 ```
-任何热点话题 + 任意账号定位 + 任意业务目标 + 任意平台格式 + 可组合风格基因 = 高赞、高互动、高成交内容包
+热点、账号、目标和平台约束可以组合生成草案；实际表现需要发布后验证
 ```
 
 ### 从 v3.1 到 v4.0 的重大升级
@@ -94,10 +94,10 @@ account:
 
 | 目标 | 适用场景 | 结构特点 | CTA 风格 |
 |------|---------|---------|----------|
-| **likes** | 高赞内容 | 观点冲击 + 情绪共鸣 | 认同的点个赞 |
+| **likes** | 互动目标内容 | 观点冲击 + 情绪共鸣 | 认同的点个赞 |
 | **comments** | 高互动内容 | 争议问题 + 讨论空间 | 评论区留下观点 |
 | **leads** | 高线索内容 | 痛点诊断 + 解决方案预告 | 评论「咨询」获取方案 |
-| **sales** | 高成交内容 | 问题放大 + 稀缺性紧迫感 | 限时优惠，仅剩X名额 |
+| **sales** | 转化目标内容 | 问题放大 + 稀缺性紧迫感 | 限时优惠，仅剩X名额 |
 
 **每种目标包含：**
 - 内容结构建议（开头/主体/结尾字数分配）
@@ -164,13 +164,13 @@ pip install -r requirements.txt
 **基本使用**
 ```bash
 # 列出所有可用风格
-python viral_content_cli_v4.py --list-styles
+python viral_content_cli.py --list-styles
 
 # 基础用法（向后兼容 v3.1）
-python viral_content_cli_v4.py "AI Agent Runtime崩溃" --style tech_explainer_global
+python viral_content_cli.py "AI Agent Runtime崩溃" --style tech_explainer_global
 
 # v4.0 完整用法
-python viral_content_cli_v4.py \
+python viral_content_cli.py \
   --topic "AI Agent Runtime崩溃" \
   --account data/accounts/ai_consultant.yaml \
   --offer data/offers/consulting.yaml \
@@ -182,7 +182,7 @@ python viral_content_cli_v4.py \
 
 **批量生成**
 ```bash
-python viral_content_cli_v4.py \
+python viral_content_cli.py \
   --trends-file hot_topics.json \
   --account data/accounts/ai_consultant.yaml \
   --goal leads \
@@ -255,7 +255,7 @@ print(system_prompt)
 
 **输入：**
 ```bash
-python viral_content_cli_v4.py \
+python viral_content_cli.py \
   --topic "AI Agent Runtime崩溃问题" \
   --account data/accounts/ai_consultant.yaml \
   --offer data/offers/consulting.yaml \
@@ -276,7 +276,7 @@ python viral_content_cli_v4.py \
 
 **输入：**
 ```bash
-python viral_content_cli_v4.py \
+python viral_content_cli.py \
   --topic "马斯克2026访谈" \
   --platforms douyin,xiaohongshu,wechat \
   --goal likes \
