@@ -49,5 +49,5 @@ class GeminiGenerator(ContentGenerator):
                 tokens_used=tokens_used
             )
 
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - SDK exception types vary by provider
             raise APIError(f"Gemini API调用失败: {e}")

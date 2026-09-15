@@ -55,7 +55,7 @@ class OpenAIGenerator(ContentGenerator):
                 truncated=response.choices[0].finish_reason != "stop"
             )
 
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - SDK exception types vary by provider
             raise APIError(f"OpenAI API调用失败: {e}")
 
     def _generate_stream(self, prompt: str) -> GenerationResult:

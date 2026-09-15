@@ -89,7 +89,7 @@ class ContentGenerator(ABC):
 
                 return result
 
-            except Exception as e:
+            except Exception as e:  # noqa: BLE001 - SDK exception types vary by provider
                 last_error = e
                 if attempt < MAX_RETRIES - 1:
                     wait_time = RETRY_DELAY * (2 ** attempt)  # 指数退避

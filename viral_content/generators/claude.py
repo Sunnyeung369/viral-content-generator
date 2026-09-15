@@ -53,7 +53,7 @@ class ClaudeGenerator(ContentGenerator):
                 tokens_used=tokens_used
             )
 
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - SDK exception types vary by provider
             raise APIError(f"Claude API调用失败: {e}")
 
     def _generate_stream(self, prompt: str) -> GenerationResult:
