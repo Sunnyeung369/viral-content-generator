@@ -436,3 +436,11 @@ def test_platform_bias_changes_ranker_weights():
     from viral_content.core.experiment import CandidateRanker
     assert CandidateRanker('likes', 'douyin').quality_weight > CandidateRanker('likes', 'zhihu').quality_weight
 
+
+
+def test_ranker_describes_weights():
+    from viral_content.core.experiment import CandidateRanker
+    info = CandidateRanker('leads', 'douyin').describe()
+    assert info['goal'] == 'leads'
+    assert info['quality_weight'] + info['gate_weight'] == 1.0
+

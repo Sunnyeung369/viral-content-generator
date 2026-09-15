@@ -36,6 +36,9 @@ class CandidateRanker:
         base_quality, base_gate = weights or self.DEFAULT_WEIGHTS.get(goal, (0.5, 0.5))
         self.quality_weight = min(0.8, max(0.2, base_quality + bias))
         self.gate_weight = 1.0 - self.quality_weight
+    def describe(self) -> Dict[str, object]:
+        return {"goal": self.goal, "quality_weight": self.quality_weight, "gate_weight": self.gate_weight}
+
     def rank(self, candidates: List[Candidate]) -> List[Candidate]:
         return sorted(candidates, key=lambda c: self.quality_weight * c.quality_score + self.gate_weight * (10.0 if c.passed_gate else 0.0), reverse=True)
 
