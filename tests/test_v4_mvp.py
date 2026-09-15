@@ -384,3 +384,11 @@ def main():
 
 if __name__ == '__main__':
     sys.exit(main())
+
+
+def test_public_version_and_cli_entrypoint():
+    import viral_content
+    assert viral_content.__version__ == '4.0.1'
+    from viral_content_cli import main
+    assert callable(main)
+
