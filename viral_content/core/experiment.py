@@ -29,9 +29,13 @@ class FeedbackRecord:
 class CandidateRanker:
     """Explainable ranking with goal-specific weights."""
     DEFAULT_WEIGHTS = {"likes": (0.55, 0.45), "comments": (0.50, 0.50), "leads": (0.40, 0.60), "sales": (0.35, 0.65)}
-    def __init__(self, goal: str = "leads", weights: Optional[tuple] = None):
+    PLATFORM_BIAS = {"douyin": 0.15, "xiaohongshu": 0.10, "bilibili": 0.05, "wechat": 0.0, "zhihu": -0.05}
+    def __init__(self, goal: str = "leads", platform: str = "wechat", weights: Optional[tuple] = None):
         self.goal = goal
-        self.quality_weight, self.gate_weight = weights or self.DEFAULT_WEIGHTS.get(goal, (0.5, 0.5))
+        bias = self.PLATFORM_BIAS.get(platform, 0.0)
+        base_quality, base_gate = weights or self.DEFAULT_WEIGHTS.get(goal, (0.5, 0.5))
+        self.quality_weight = min(0.8, max(0.2, base_quality + bias))
+        self.gate_weight = 1.0 - self.quality_weight
     def rank(self, candidates: List[Candidate]) -> List[Candidate]:
         return sorted(candidates, key=lambda c: self.quality_weight * c.quality_score + self.gate_weight * (10.0 if c.passed_gate else 0.0), reverse=True)
 

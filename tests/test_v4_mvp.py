@@ -430,3 +430,9 @@ def test_feedback_summary_warns_on_small_sample():
     assert not summary.reliable
     assert '样本量' in summary.note
 
+
+
+def test_platform_bias_changes_ranker_weights():
+    from viral_content.core.experiment import CandidateRanker
+    assert CandidateRanker('likes', 'douyin').quality_weight > CandidateRanker('likes', 'zhihu').quality_weight
+

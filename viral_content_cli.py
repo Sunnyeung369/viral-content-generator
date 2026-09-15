@@ -244,7 +244,7 @@ class ViralContentCLI:
             if gate.warnings:
                 logger.warning("候选 %d 发布前检查: %s", index + 1, "；".join(gate.warnings))
 
-        ranked = CandidateRanker(goal).rank([Candidate(content=c, quality_score=score, passed_gate=g.passed, index=i) for i, (score, c, g) in enumerate(candidates)])
+        ranked = CandidateRanker(goal, platform=content_platforms[0]).rank([Candidate(content=c, quality_score=score, passed_gate=g.passed, index=i) for i, (score, c, g) in enumerate(candidates)])
         content = ranked[0].content
         best_gate = next(g for _, c, g in candidates if c == content)
         logger.info("已从 %d 个候选中选择最佳版本（评分 %.1f/10）", candidate_count, candidates[0][0])
