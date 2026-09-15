@@ -52,7 +52,7 @@ class OpenAIGenerator(ContentGenerator):
                 platform="openai",
                 model=self.model,
                 tokens_used=tokens_used,
-                truncated=not response.choices[0].finish_reason == "stop"
+                truncated=response.choices[0].finish_reason != "stop"
             )
 
         except Exception as e:

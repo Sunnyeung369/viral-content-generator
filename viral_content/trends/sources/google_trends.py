@@ -162,8 +162,7 @@ class GoogleTrendsSource(BaseTrendSource):
             热点列表
         """
         try:
-            from pytrends.request import TrendReq
-
+            
             pytrends = TrendReq(hl=self.language, tz=480)
 
             # 获取实时搜索趋势
@@ -201,8 +200,7 @@ class GoogleTrendsSource(BaseTrendSource):
     def is_available(self) -> bool:
         """检查 Google Trends 是否可用"""
         try:
-            from pytrends.request import TrendReq
-            return True
+                        return True
         except ImportError:
             return True  # 降级到模拟数据
         except Exception:

@@ -33,7 +33,7 @@ class CandidateRanker:
     def __init__(self, goal: str = "leads", platform: str = "wechat", weights: tuple | None = None):
         self.goal = goal
         bias = self.PLATFORM_BIAS.get(platform, 0.0)
-        base_quality, base_gate = weights or self.DEFAULT_WEIGHTS.get(goal, (0.5, 0.5))
+        base_quality, _ = weights or self.DEFAULT_WEIGHTS.get(goal, (0.5, 0.5))
         self.quality_weight = min(0.8, max(0.2, base_quality + bias))
         self.gate_weight = 1.0 - self.quality_weight
     def describe(self) -> dict[str, object]:
