@@ -9,7 +9,13 @@ GitHub: https://github.com/Sunnyeung369/viral-content-generator
 
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Optional
+from typing import TYPE_CHECKING, Any
+
+if TYPE_CHECKING:
+    from ..trends.base import Trend
+    from .account import Account
+    from .offer import Offer
+    from .style import Style
 
 
 @dataclass
@@ -78,8 +84,8 @@ class GenerationResult:
 class GenerationRequest:
     """生成请求（用于 Pipeline）"""
     config: GenerationConfig
-    account: Optional['Account'] = None
-    offer: Optional['Offer'] = None
+    account: 'Account | None' = None
+    offer: 'Offer | None' = None
     styles: list['Style'] | None = None
     trends: list['Trend'] | None = None
 

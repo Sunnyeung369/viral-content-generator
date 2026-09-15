@@ -10,18 +10,17 @@
 GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
-import os
-import sys
 import argparse
 import logging
+import os
+import sys
+import threading
 import time
-from pathlib import Path
-from typing import Optional, Dict, Any, Callable, Protocol
-from datetime import datetime
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
-from functools import lru_cache
-import threading
+from datetime import datetime
+from pathlib import Path
+from typing import Any
 
 # 配置日志
 logging.basicConfig(
@@ -57,27 +56,22 @@ RETRY_DELAY = 1.0
 
 class ViralContentError(Exception):
     """基础异常类"""
-    pass
 
 
 class SkillLoadError(ViralContentError):
     """Skill文件加载错误"""
-    pass
 
 
 class APIError(ViralContentError):
     """API调用错误"""
-    pass
 
 
 class ValidationError(ViralContentError):
     """参数验证错误"""
-    pass
 
 
 class ConfigError(ViralContentError):
     """配置错误"""
-    pass
 
 
 # ============================================================================
@@ -91,12 +85,12 @@ class GenerationConfig:
     style: str = '老司机风格'
     word_count: int = 6000
     platform: str = 'openai'
-    api_key: Optional[str] = None
-    model: Optional[str] = None
+    api_key: str | None = None
+    model: str | None = None
     temperature: float = 0.7
     max_tokens: int = DEFAULT_MAX_TOKENS
     stream: bool = False
-    output_path: Optional[str] = None
+    output_path: str | None = None
 
 
 @dataclass
@@ -119,8 +113,8 @@ class SkillLoader:
 
     _instance = None
     _lock = threading.Lock()
-    _cached_content: Optional[str] = None
-    _cached_mtime: Optional[float] = None
+    _cached_content: str | None = None
+    _cached_mtime: float | None = None
 
     def __new__(cls):
         if cls._instance is None:
@@ -216,12 +210,10 @@ class ContentGenerator(ABC):
     @abstractmethod
     def _setup_client(self) -> None:
         """设置API客户端"""
-        pass
 
     @abstractmethod
     def _generate_internal(self, prompt: str) -> GenerationResult:
         """内部生成方法"""
-        pass
 
     @property
     def model(self) -> str:
@@ -475,7 +467,7 @@ class GeminiGenerator(ContentGenerator):
 # 生成器工厂
 # ============================================================================
 
-GENERATOR_MAP: Dict[str, type[ContentGenerator]] = {
+GENERATOR_MAP: dict[str, type[ContentGenerator]] = {
     'openai': OpenAIGenerator,
     'claude': ClaudeGenerator,
     'gemini': GeminiGenerator,
@@ -560,7 +552,7 @@ def validate_parameters(
 
 def save_output(
     content: str,
-    output_path: Optional[str] = None,
+    output_path: str | None = None,
     topic: str = "article"
 ) -> str:
     """
@@ -612,7 +604,7 @@ def save_output(
 # 配置文件支持
 # ============================================================================
 
-def load_config() -> Dict[str, Any]:
+def load_config() -> dict[str, Any]:
     """
     加载配置文件
 
