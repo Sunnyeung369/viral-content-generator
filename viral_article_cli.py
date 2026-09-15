@@ -160,7 +160,7 @@ class SkillLoader:
 
         except SkillLoadError:
             raise
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - normalize boundary errors for stable CLI/API behavior
             logger.error(f"加载Skill文件失败: {e}")
             raise SkillLoadError(f"加载Skill文件失败: {e}")
 
@@ -263,7 +263,7 @@ class ContentGenerator(ABC):
 
                 return result
 
-            except Exception as e:
+            except Exception as e:  # noqa: BLE001 - normalize boundary errors for stable CLI/API behavior
                 last_error = e
                 if attempt < MAX_RETRIES - 1:
                     wait_time = RETRY_DELAY * (2 ** attempt)  # 指数退避
@@ -318,7 +318,7 @@ class OpenAIGenerator(ContentGenerator):
                 truncated=response.choices[0].finish_reason != "stop"
             )
 
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - normalize boundary errors for stable CLI/API behavior
             raise APIError(f"OpenAI API调用失败: {e}")
 
     def _generate_stream(self, prompt: str) -> GenerationResult:
@@ -395,7 +395,7 @@ class ClaudeGenerator(ContentGenerator):
                 tokens_used=tokens_used
             )
 
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - normalize boundary errors for stable CLI/API behavior
             raise APIError(f"Claude API调用失败: {e}")
 
     def _generate_stream(self, prompt: str) -> GenerationResult:
@@ -459,7 +459,7 @@ class GeminiGenerator(ContentGenerator):
                 tokens_used=tokens_used
             )
 
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - normalize boundary errors for stable CLI/API behavior
             raise APIError(f"Gemini API调用失败: {e}")
 
 
@@ -595,7 +595,7 @@ def save_output(
         logger.info(f"内容已保存到: {file_path.absolute()}")
         return str(file_path.absolute())
 
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001 - normalize boundary errors for stable CLI/API behavior
         logger.error(f"保存文件失败: {e}")
         raise
 
@@ -623,7 +623,7 @@ def load_config() -> dict[str, Any]:
     except ImportError:
         logger.warning("未安装pyyaml，跳过配置文件加载")
         return {}
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001 - normalize boundary errors for stable CLI/API behavior
         logger.warning(f"加载配置文件失败: {e}")
         return {}
 
@@ -854,7 +854,7 @@ def main() -> int:
         print("\n\n⚠️  用户中断操作\n", file=sys.stderr)
         return 130
 
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001 - normalize boundary errors for stable CLI/API behavior
         logger.exception("未预期的错误")
         print(f"\n❌ 发生错误: {e}\n", file=sys.stderr)
         return 1
