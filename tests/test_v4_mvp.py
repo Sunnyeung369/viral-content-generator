@@ -408,3 +408,16 @@ def test_quality_gate_accepts_reviewable_copy():
     assert result.passed
     assert result.warnings == []
 
+
+
+def test_candidate_ranker_prefers_safe_candidate():
+    from viral_content.core.experiment import Candidate, CandidateRanker
+    ranked = CandidateRanker('leads').rank([Candidate('unsafe', 9, False), Candidate('safe', 7, True)])
+    assert ranked[0].content == 'safe'
+
+
+def test_feedback_record_serializes():
+    from viral_content.core.experiment import FeedbackRecord
+    record = FeedbackRecord(1, 'xiaohongshu', '2026-09-15', impressions=100)
+    assert record.to_dict()['impressions'] == 100
+

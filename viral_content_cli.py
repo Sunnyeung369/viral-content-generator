@@ -28,6 +28,7 @@ sys.path.insert(0, str(PROJECT_ROOT))
 
 # 导入核心引擎
 from viral_content.core.quality_gate import QualityGate
+from viral_content.core.experiment import Candidate, CandidateRanker
 
 from viral_content.core import (
     PromptCompiler,
@@ -243,8 +244,9 @@ class ViralContentCLI:
             if gate.warnings:
                 logger.warning("候选 %d 发布前检查: %s", index + 1, "；".join(gate.warnings))
 
-        candidates.sort(key=lambda item: item[0], reverse=True)
-        _, content, best_gate = candidates[0]
+        ranked = CandidateRanker(goal).rank([Candidate(content=c, quality_score=score, passed_gate=g.passed, index=i) for i, (score, c, g) in enumerate(candidates)])
+        content = ranked[0].content
+        best_gate = next(g for _, c, g in candidates if c == content)
         logger.info("已从 %d 个候选中选择最佳版本（评分 %.1f/10）", candidate_count, candidates[0][0])
 
         # 6. 可选评分
