@@ -18,7 +18,7 @@ import threading
 import time
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -571,7 +571,7 @@ def save_output(
             file_path = Path(output_path)
         else:
             # 自动生成文件名
-            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            timestamp = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
             safe_topic = "".join(c for c in topic if c.isalnum() or c in (' ', '-', '_'))[:30]
             filename = f"{safe_topic}_{timestamp}.md"
             file_path = Path(filename)
@@ -581,7 +581,7 @@ def save_output(
 
         # 添加元数据头部
         metadata = f"""---
-生成时间: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
+生成时间: {datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S")}
 工具: 爆款内容生成器 v3.1
 ---
 

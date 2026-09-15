@@ -17,7 +17,7 @@ import json
 import logging
 import sys
 import uuid
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -118,7 +118,7 @@ class HotTopicInput:
             热点列表
         """
         return [{
-            'id': f'trend_{int(datetime.now().timestamp())}',
+            'id': f'trend_{int(datetime.now(timezone.utc).timestamp())}',
             'topic': text.strip(),
             'description': text.strip(),
             'source': 'manual_input',
@@ -338,7 +338,7 @@ class ViralContentCLI:
 
         # 如果是目录，生成文件名
         if output_path.is_dir():
-            timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+            timestamp = datetime.now(timezone.utc).strftime('%Y%m%d_%H%M%S')
             filename = f"{goal}_{platform}_{timestamp}.md"
             output_path = output_path / filename
 
@@ -350,7 +350,7 @@ class ViralContentCLI:
             f.write(f"# {topic}\n\n")
             f.write(f"**实验 ID**: {experiment_id}\n")
             f.write(f"**候选数量**: {candidate_count}\n")
-            f.write(f"**生成时间**: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+            f.write(f"**生成时间**: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')}\n")
             f.write(f"**成交目标**: {goal}\n")
             f.write(f"**目标平台**: {platform}\n\n")
             f.write("---\n\n")
