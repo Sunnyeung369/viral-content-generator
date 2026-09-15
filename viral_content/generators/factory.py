@@ -7,18 +7,16 @@
 GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
-from typing import Dict, Type, Optional
 
+from viral_content.exceptions.custom import ValidationError
 from viral_content.generators.base import ContentGenerator
-from viral_content.generators.openai import OpenAIGenerator
 from viral_content.generators.claude import ClaudeGenerator
 from viral_content.generators.gemini import GeminiGenerator
+from viral_content.generators.openai import OpenAIGenerator
 from viral_content.models.generation import GenerationConfig
-from viral_content.exceptions.custom import ValidationError
-
 
 # 生成器映射表
-GENERATOR_MAP: Dict[str, Type[ContentGenerator]] = {
+GENERATOR_MAP: dict[str, type[ContentGenerator]] = {
     'openai': OpenAIGenerator,
     'claude': ClaudeGenerator,
     'gemini': GeminiGenerator,
@@ -27,11 +25,11 @@ GENERATOR_MAP: Dict[str, Type[ContentGenerator]] = {
 
 def create_generator(
     platform: str = 'claude',
-    api_key: Optional[str] = None,
-    model: Optional[str] = None,
+    api_key: str | None = None,
+    model: str | None = None,
     temperature: float = 0.7,
     max_tokens: int = 8192,
-    config: Optional[GenerationConfig] = None,
+    config: GenerationConfig | None = None,
     **kwargs
 ) -> ContentGenerator:
     """
@@ -90,7 +88,7 @@ def create_generator_from_config(config: GenerationConfig) -> ContentGenerator:
     return create_generator(config=config)
 
 
-def register_generator(platform: str, generator_class: Type[ContentGenerator]) -> None:
+def register_generator(platform: str, generator_class: type[ContentGenerator]) -> None:
     """
     注册新的生成器
 

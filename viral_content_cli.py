@@ -12,31 +12,29 @@
 GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
-import sys
 import argparse
-import uuid
 import json
 import logging
-import yaml
-from pathlib import Path
-from typing import Optional, Dict, Any, List
+import sys
+import uuid
 from datetime import datetime
+from pathlib import Path
+from typing import Any
+
+import yaml
 
 # 添加项目根目录到路径
 PROJECT_ROOT = Path(__file__).parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
 # 导入核心引擎
-from viral_content.core.quality_gate import QualityGate
-from viral_content.core.experiment import Candidate, CandidateRanker
-
 from viral_content.core import (
-    PromptCompiler,
     AccountFingerprint,
+    PromptCompiler,
     StyleMixer,
-    ConversionFunnel,
-    ConversionGoal,
 )
+from viral_content.core.experiment import Candidate, CandidateRanker
+from viral_content.core.quality_gate import QualityGate
 
 # 导入生成器（复用v3.1）
 from viral_content.generators.factory import create_generator
@@ -80,7 +78,7 @@ class HotTopicInput:
     """热点输入处理器"""
 
     @staticmethod
-    def from_file(file_path: Path) -> List[Dict[str, Any]]:
+    def from_file(file_path: Path) -> list[dict[str, Any]]:
         """从文件加载热点数据
 
         Args:
@@ -110,7 +108,7 @@ class HotTopicInput:
             raise ValueError("热点数据格式错误")
 
     @staticmethod
-    def from_text(text: str) -> List[Dict[str, Any]]:
+    def from_text(text: str) -> list[dict[str, Any]]:
         """从文本创建热点数据
 
         Args:
@@ -141,19 +139,19 @@ class ViralContentCLI:
     def generate(
         self,
         topic: str,
-        style: Optional[str] = None,
-        style_mix: Optional[str] = None,
-        account: Optional[Path] = None,
-        offer: Optional[Path] = None,
+        style: str | None = None,
+        style_mix: str | None = None,
+        account: Path | None = None,
+        offer: Path | None = None,
         goal: str = 'leads',
-        content_platforms: Optional[List[str]] = None,
+        content_platforms: list[str] | None = None,
         ai_platform: str = 'claude',
-        model: Optional[str] = None,
-        api_key: Optional[str] = None,
+        model: str | None = None,
+        api_key: str | None = None,
         temperature: float = DEFAULT_TEMPERATURE,
         max_tokens: int = DEFAULT_MAX_TOKENS,
         stream: bool = False,
-        output_path: Optional[Path] = None,
+        output_path: Path | None = None,
         variants: int = 1,
         enable_scoring: bool = False,
     ) -> str:
@@ -262,9 +260,9 @@ class ViralContentCLI:
 
     def batch_generate(
         self,
-        hot_topics: List[Dict[str, Any]],
+        hot_topics: list[dict[str, Any]],
         **kwargs
-    ) -> List[Dict[str, Any]]:
+    ) -> list[dict[str, Any]]:
         """批量生成内容
 
         Args:

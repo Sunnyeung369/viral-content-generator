@@ -10,14 +10,14 @@ GitHub: https://github.com/Sunnyeung369/viral-content-generator
 
 from .base import (
     BaseTrendSource,
-    TrendAggregator,
     Trend,
-    TrendMetrics,
+    TrendAggregator,
     TrendCategory,
+    TrendMetrics,
 )
+from .sources.douyin import DouyinTrendSource
 from .sources.google_trends import GoogleTrendsSource
 from .sources.tiktok import TikTokTrendSource
-from .sources.douyin import DouyinTrendSource
 from .sources.xiaohongshu import XiaohongshuTrendSource
 
 __all__ = [

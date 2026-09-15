@@ -8,9 +8,9 @@ v4.0 - 根据成交目标生成内容结构
 GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
-from enum import Enum
-from typing import Dict, Any, Optional, List
 from dataclasses import dataclass
+from enum import Enum
+from typing import Any
 
 
 class ConversionGoal(Enum):
@@ -47,7 +47,7 @@ class ConversionFunnel:
     """
 
     # 目标对应的配置
-    GOAL_CONFIGS: Dict[ConversionGoal, ContentStructure] = {
+    GOAL_CONFIGS: dict[ConversionGoal, ContentStructure] = {
         ConversionGoal.LIKES: ContentStructure(
             opening_ratio=0.15,
             body_ratio=0.70,
@@ -107,7 +107,7 @@ class ConversionFunnel:
         """
         return self.config
 
-    def get_cta_suggestions(self) -> List[str]:
+    def get_cta_suggestions(self) -> list[str]:
         """获取CTA建议列表
 
         Returns:
@@ -142,7 +142,7 @@ class ConversionFunnel:
 
         return base_ctas.get(self.goal, [])
 
-    def get_quality_standards(self) -> Dict[str, Any]:
+    def get_quality_standards(self) -> dict[str, Any]:
         """获取质量标准
 
         Returns:
@@ -177,7 +177,7 @@ class ConversionFunnel:
 
         return standards.get(self.goal, {})
 
-    def generate_content_outline(self, word_count: int = 1000) -> Dict[str, int]:
+    def generate_content_outline(self, word_count: int = 1000) -> dict[str, int]:
         """生成内容大纲字数分配
 
         Args:

@@ -9,13 +9,13 @@ GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
 import json
-import yaml
-from pathlib import Path
-from typing import Any, Dict, List, Optional, Union
 import logging
+from pathlib import Path
+from typing import Any
+
+import yaml
 
 from ..exceptions.custom import FileOperationError
-
 
 logger = logging.getLogger(__name__)
 
@@ -27,7 +27,7 @@ class FileHandler:
     SUPPORTED_FORMATS = {".yaml", ".yml", ".json", ".txt", ".md"}
 
     @staticmethod
-    def read_yaml(file_path: Union[str, Path]) -> Dict[str, Any]:
+    def read_yaml(file_path: str | Path) -> dict[str, Any]:
         """读取YAML文件
 
         Args:
@@ -56,8 +56,8 @@ class FileHandler:
 
     @staticmethod
     def write_yaml(
-        file_path: Union[str, Path],
-        data: Dict[str, Any],
+        file_path: str | Path,
+        data: dict[str, Any],
         create_dirs: bool = True
     ) -> None:
         """写入YAML文件
@@ -88,7 +88,7 @@ class FileHandler:
             raise FileOperationError(f"Failed to write {path}: {e}")
 
     @staticmethod
-    def read_json(file_path: Union[str, Path]) -> Dict[str, Any]:
+    def read_json(file_path: str | Path) -> dict[str, Any]:
         """读取JSON文件
 
         Args:
@@ -114,8 +114,8 @@ class FileHandler:
 
     @staticmethod
     def write_json(
-        file_path: Union[str, Path],
-        data: Dict[str, Any],
+        file_path: str | Path,
+        data: dict[str, Any],
         create_dirs: bool = True,
         indent: int = 2
     ) -> None:
@@ -142,7 +142,7 @@ class FileHandler:
             raise FileOperationError(f"Failed to write {path}: {e}")
 
     @staticmethod
-    def read_text(file_path: Union[str, Path]) -> str:
+    def read_text(file_path: str | Path) -> str:
         """读取文本文件
 
         Args:
@@ -166,7 +166,7 @@ class FileHandler:
 
     @staticmethod
     def write_text(
-        file_path: Union[str, Path],
+        file_path: str | Path,
         content: str,
         create_dirs: bool = True
     ) -> None:
@@ -192,7 +192,7 @@ class FileHandler:
             raise FileOperationError(f"Failed to write {path}: {e}")
 
     @staticmethod
-    def file_exists(file_path: Union[str, Path]) -> bool:
+    def file_exists(file_path: str | Path) -> bool:
         """检查文件是否存在
 
         Args:
@@ -204,7 +204,7 @@ class FileHandler:
         return Path(file_path).exists()
 
     @staticmethod
-    def ensure_dir(dir_path: Union[str, Path]) -> Path:
+    def ensure_dir(dir_path: str | Path) -> Path:
         """确保目录存在
 
         Args:
@@ -218,7 +218,7 @@ class FileHandler:
         return path
 
     @staticmethod
-    def get_file_extension(file_path: Union[str, Path]) -> str:
+    def get_file_extension(file_path: str | Path) -> str:
         """获取文件扩展名
 
         Args:
@@ -230,7 +230,7 @@ class FileHandler:
         return Path(file_path).suffix.lower()
 
     @staticmethod
-    def is_supported_format(file_path: Union[str, Path]) -> bool:
+    def is_supported_format(file_path: str | Path) -> bool:
         """检查文件格式是否支持
 
         Args:
@@ -245,7 +245,7 @@ class FileHandler:
 class YamlFileLoader:
     """YAML文件加载器（支持模块路径）"""
 
-    def __init__(self, base_dir: Optional[Union[str, Path]] = None):
+    def __init__(self, base_dir: str | Path | None = None):
         """初始化加载器
 
         Args:
@@ -253,7 +253,7 @@ class YamlFileLoader:
         """
         self.base_dir = Path(base_dir) if base_dir else Path.cwd()
 
-    def load(self, relative_path: str) -> Dict[str, Any]:
+    def load(self, relative_path: str) -> dict[str, Any]:
         """加载YAML文件
 
         Args:
@@ -265,7 +265,7 @@ class YamlFileLoader:
         file_path = self.base_dir / relative_path
         return FileHandler.read_yaml(file_path)
 
-    def load_all(self, directory: str, pattern: str = "*.yaml") -> List[Dict[str, Any]]:
+    def load_all(self, directory: str, pattern: str = "*.yaml") -> list[dict[str, Any]]:
         """加载目录下所有YAML文件
 
         Args:
@@ -292,7 +292,7 @@ class YamlFileLoader:
 class PromptTemplateLoader:
     """提示词模板加载器"""
 
-    def __init__(self, prompts_dir: Optional[Union[str, Path]] = None):
+    def __init__(self, prompts_dir: str | Path | None = None):
         """初始化加载器
 
         Args:
@@ -317,7 +317,7 @@ class PromptTemplateLoader:
 
         raise FileOperationError(f"Template not found: {template_name}")
 
-    def list_templates(self) -> List[str]:
+    def list_templates(self) -> list[str]:
         """列出所有模板
 
         Returns:
@@ -335,7 +335,7 @@ class PromptTemplateLoader:
 class OutputWriter:
     """输出文件写入器"""
 
-    def __init__(self, output_dir: Optional[Union[str, Path]] = None):
+    def __init__(self, output_dir: str | Path | None = None):
         """初始化写入器
 
         Args:
@@ -347,8 +347,8 @@ class OutputWriter:
         self,
         content: str,
         filename: str,
-        subfolder: Optional[str] = None,
-        metadata: Optional[Dict[str, Any]] = None
+        subfolder: str | None = None,
+        metadata: dict[str, Any] | None = None
     ) -> Path:
         """写入生成结果
 
@@ -380,9 +380,9 @@ class OutputWriter:
 
     def write_batch(
         self,
-        results: List[Dict[str, Any]],
+        results: list[dict[str, Any]],
         batch_name: str
-    ) -> List[Path]:
+    ) -> list[Path]:
         """批量写入结果
 
         Args:

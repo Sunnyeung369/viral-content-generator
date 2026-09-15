@@ -9,9 +9,9 @@ GitHub: https://github.com/Sunnyeung369/viral-content-generator
 
 import logging
 
+from viral_content.exceptions.custom import APIError
 from viral_content.generators.base import ContentGenerator
 from viral_content.models.generation import GenerationResult
-from viral_content.exceptions.custom import APIError
 
 logger = logging.getLogger(__name__)
 

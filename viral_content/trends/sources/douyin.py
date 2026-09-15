@@ -8,10 +8,10 @@ v4.0 - 从抖音获取热点话题
 GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
-from typing import Dict, Any, List, Optional
 from datetime import datetime
+from typing import Any
 
-from ..base import BaseTrendSource, Trend, TrendMetrics, TrendCategory
+from ..base import BaseTrendSource, Trend, TrendCategory, TrendMetrics
 
 
 class DouyinTrendSource(BaseTrendSource):
@@ -21,7 +21,7 @@ class DouyinTrendSource(BaseTrendSource):
     这里提供简化实现和模拟数据
     """
 
-    def __init__(self, config: Optional[Dict[str, Any]] = None):
+    def __init__(self, config: dict[str, Any] | None = None):
         """初始化抖音来源
 
         Args:
@@ -32,8 +32,8 @@ class DouyinTrendSource(BaseTrendSource):
     def fetch(
         self,
         limit: int = 20,
-        category: Optional[str] = None
-    ) -> List[Trend]:
+        category: str | None = None
+    ) -> list[Trend]:
         """获取抖音热点话题
 
         Args:
@@ -70,7 +70,7 @@ class DouyinTrendSource(BaseTrendSource):
 
         return trends
 
-    def _get_sample_trends(self) -> List[Dict[str, Any]]:
+    def _get_sample_trends(self) -> list[dict[str, Any]]:
         """获取示例抖音热点数据（模拟）"""
         return [
             {
@@ -130,7 +130,7 @@ class DouyinTrendSource(BaseTrendSource):
             },
         ]
 
-    def _infer_category(self, topic: str, hashtags: List[str]) -> TrendCategory:
+    def _infer_category(self, topic: str, hashtags: list[str]) -> TrendCategory:
         """根据话题和标签推断分类"""
         tech_keywords = ["AI", "科技", "数字化", "智能"]
         business_keywords = ["创业", "副业", "赚钱", "商业", "职场"]

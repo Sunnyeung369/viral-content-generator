@@ -8,11 +8,10 @@ v4.0 - 从 Google Trends 获取热点
 GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
-from typing import Dict, Any, List, Optional
-from datetime import datetime, timedelta
-import re
+from datetime import datetime
+from typing import Any
 
-from ..base import BaseTrendSource, Trend, TrendMetrics, TrendCategory
+from ..base import BaseTrendSource, Trend, TrendCategory, TrendMetrics
 
 
 class GoogleTrendsSource(BaseTrendSource):
@@ -23,7 +22,7 @@ class GoogleTrendsSource(BaseTrendSource):
     2. 或使用 Google Trends API
     """
 
-    def __init__(self, config: Optional[Dict[str, Any]] = None):
+    def __init__(self, config: dict[str, Any] | None = None):
         """初始化 Google Trends 来源
 
         Args:
@@ -36,8 +35,8 @@ class GoogleTrendsSource(BaseTrendSource):
     def fetch(
         self,
         limit: int = 20,
-        category: Optional[str] = None
-    ) -> List[Trend]:
+        category: str | None = None
+    ) -> list[Trend]:
         """获取 Google Trends 热点
 
         Args:
@@ -75,7 +74,7 @@ class GoogleTrendsSource(BaseTrendSource):
 
         return trends
 
-    def _get_sample_trends(self) -> List[Dict[str, Any]]:
+    def _get_sample_trends(self) -> list[dict[str, Any]]:
         """获取示例热点数据（模拟）"""
         # 模拟当前热点
         return [
@@ -149,8 +148,8 @@ class GoogleTrendsSource(BaseTrendSource):
     def fetch_real_trends(
         self,
         limit: int = 20,
-        category: Optional[str] = None
-    ) -> List[Trend]:
+        category: str | None = None
+    ) -> list[Trend]:
         """获取真实 Google Trends 热点（需要 pytrends）
 
         此方法需要安装 pytrends: pip install pytrends
@@ -175,7 +174,7 @@ class GoogleTrendsSource(BaseTrendSource):
                 trend = Trend(
                     id=f"gt_real_{datetime.now().strftime('%Y%m%d')}_{i}",
                     topic=topic,
-                    description=f"Google Trends 搜索趋势",
+                    description="Google Trends 搜索趋势",
                     source="Google Trends (Real)",
                     url=f"https://trends.google.com/trends/explore?q={topic}",
                     category=TrendCategory.UNKNOWN,

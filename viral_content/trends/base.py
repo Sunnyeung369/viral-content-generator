@@ -9,10 +9,10 @@ GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
 from abc import ABC, abstractmethod
-from typing import Dict, Any, List, Optional
 from dataclasses import dataclass, field
 from datetime import datetime
 from enum import Enum
+from typing import Any
 
 
 class TrendCategory(Enum):
@@ -33,9 +33,9 @@ class TrendMetrics:
     heat: int = 0  # 热度 (0-100)
     discussion_count: int = 0  # 讨论量
     growth_rate: float = 0.0  # 增长率
-    timestamp: Optional[datetime] = None  # 时间戳
+    timestamp: datetime | None = None  # 时间戳
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         """转换为字典"""
         return {
             "热度": self.heat,
@@ -54,13 +54,13 @@ class Trend:
     source: str = ""  # 来源平台
     url: str = ""  # 原始链接
     category: TrendCategory = TrendCategory.UNKNOWN  # 分类
-    keywords: List[str] = field(default_factory=list)  # 关键词
-    metrics: Optional[TrendMetrics] = None  # 热度指标
-    content_snippet: Optional[str] = None  # 内容片段
-    related_topics: List[str] = field(default_factory=list)  # 相关话题
+    keywords: list[str] = field(default_factory=list)  # 关键词
+    metrics: TrendMetrics | None = None  # 热度指标
+    content_snippet: str | None = None  # 内容片段
+    related_topics: list[str] = field(default_factory=list)  # 相关话题
     created_at: datetime = field(default_factory=datetime.now)  # 抓取时间
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         """转换为字典"""
         return {
             "id": self.id,
@@ -77,7 +77,7 @@ class Trend:
         }
 
     @classmethod
-    def from_dict(cls, data: Dict[str, Any]) -> "Trend":
+    def from_dict(cls, data: dict[str, Any]) -> "Trend":
         """从字典创建
 
         Args:
@@ -126,7 +126,7 @@ class BaseTrendSource(ABC):
     - normalize(): 标准化热点数据
     """
 
-    def __init__(self, name: str, config: Optional[Dict[str, Any]] = None):
+    def __init__(self, name: str, config: dict[str, Any] | None = None):
         """初始化热点来源
 
         Args:
@@ -137,7 +137,7 @@ class BaseTrendSource(ABC):
         self.config = config or {}
 
     @abstractmethod
-    def fetch(self, limit: int = 20, category: Optional[str] = None) -> List[Trend]:
+    def fetch(self, limit: int = 20, category: str | None = None) -> list[Trend]:
         """获取热点列表
 
         Args:
@@ -147,7 +147,6 @@ class BaseTrendSource(ABC):
         Returns:
             热点列表
         """
-        pass
 
     def normalize(self, raw_data: Any) -> Trend:
         """标准化原始数据为Trend对象
@@ -159,7 +158,6 @@ class BaseTrendSource(ABC):
             标准化的Trend对象
         """
         # 子类可以覆盖此方法实现特定转换
-        pass
 
     def get_source_name(self) -> str:
         """获取来源名称"""
@@ -176,7 +174,7 @@ class TrendAggregator:
     从多个来源聚合热点数据
     """
 
-    def __init__(self, sources: Optional[List[BaseTrendSource]] = None):
+    def __init__(self, sources: list[BaseTrendSource] | None = None):
         """初始化聚合器
 
         Args:
@@ -187,8 +185,8 @@ class TrendAggregator:
     def fetch_all(
         self,
         limit_per_source: int = 10,
-        category: Optional[str] = None
-    ) -> Dict[str, List[Trend]]:
+        category: str | None = None
+    ) -> dict[str, list[Trend]]:
         """从所有来源获取热点
 
         Args:
@@ -215,9 +213,9 @@ class TrendAggregator:
 
     def merge_and_rank(
         self,
-        all_trends: Dict[str, List[Trend]],
+        all_trends: dict[str, list[Trend]],
         limit: int = 50
-    ) -> List[Trend]:
+    ) -> list[Trend]:
         """合并并排序所有热点
 
         Args:
@@ -261,8 +259,8 @@ class TrendAggregator:
         self,
         limit_per_source: int = 10,
         final_limit: int = 50,
-        category: Optional[str] = None
-    ) -> List[Trend]:
+        category: str | None = None
+    ) -> list[Trend]:
         """获取并合并热点（便捷方法）
 
         Args:

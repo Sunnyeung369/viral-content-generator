@@ -9,8 +9,9 @@ GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
 import re
-from typing import Dict, Any, List, Optional
-from .base import BaseScorer, ScoreResult, ScoreLevel
+from typing import Any
+
+from .base import BaseScorer, ScoreResult
 
 
 class InteractionScorer(BaseScorer):
@@ -54,7 +55,7 @@ class InteractionScorer(BaseScorer):
         """初始化互动评分器"""
         super().__init__(threshold)
 
-    def score(self, content: str, context: Optional[Dict[str, Any]] = None) -> ScoreResult:
+    def score(self, content: str, context: dict[str, Any] | None = None) -> ScoreResult:
         """评分互动潜力
 
         Args:
@@ -189,7 +190,7 @@ class InteractionScorer(BaseScorer):
         else:
             return 3.0
 
-    def _generate_interaction_suggestions(self, scores: Dict[str, float]) -> List[str]:
+    def _generate_interaction_suggestions(self, scores: dict[str, float]) -> list[str]:
         """生成互动改进建议"""
         suggestions = []
 

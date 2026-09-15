@@ -8,8 +8,8 @@ GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
 from dataclasses import dataclass, field
-from typing import Optional, List, Dict, Any
 from pathlib import Path
+from typing import Any, Optional
 
 
 @dataclass
@@ -20,24 +20,24 @@ class GenerationConfig:
     style: str = '老司机风格'
     word_count: int = 6000
     platform: str = 'openai'  # AI 平台
-    api_key: Optional[str] = None
-    model: Optional[str] = None
+    api_key: str | None = None
+    model: str | None = None
     temperature: float = 0.7
     max_tokens: int = 16384
     stream: bool = False
-    output_path: Optional[str] = None
+    output_path: str | None = None
 
     # v4.0 新增参数
-    account_path: Optional[str] = None  # 账号配置文件路径
-    offer_path: Optional[str] = None  # 产品配置文件路径
+    account_path: str | None = None  # 账号配置文件路径
+    offer_path: str | None = None  # 产品配置文件路径
     goal: str = 'likes'  # 成交目标: likes, comments, leads, sales, consult
-    content_platforms: List[str] = field(default_factory=list)  # 内容输出平台
-    style_mix: Optional[str] = None  # 风格混合 (如: "global:tech_explainer,china:business_savage")
+    content_platforms: list[str] = field(default_factory=list)  # 内容输出平台
+    style_mix: str | None = None  # 风格混合 (如: "global:tech_explainer,china:business_savage")
     variants: int = 1  # 生成变体数量
 
     # 热点输入（手动或自动）
-    trend_input: Optional[str] = None  # 热点输入（JSON/YAML 字符串）
-    trend_file: Optional[str] = None  # 热点文件路径
+    trend_input: str | None = None  # 热点输入（JSON/YAML 字符串）
+    trend_file: str | None = None  # 热点文件路径
 
     # 评分选项
     enable_scoring: bool = False  # 是否启用自动评分
@@ -60,18 +60,18 @@ class GenerationResult:
 
     # v4.0 新增字段
     variant_index: int = 0  # 变体索引
-    content_platform: Optional[str] = None  # 内容输出平台
-    goal: Optional[str] = None  # 成交目标
+    content_platform: str | None = None  # 内容输出平台
+    goal: str | None = None  # 成交目标
 
     # 评分结果
-    scores: Optional[Dict[str, float]] = None
-    revision_advice: Optional[List[str]] = None
+    scores: dict[str, float] | None = None
+    revision_advice: list[str] | None = None
 
     # 元数据
-    metadata: Dict[str, Any] = field(default_factory=dict)
+    metadata: dict[str, Any] = field(default_factory=dict)
 
     # 保存路径
-    saved_path: Optional[str] = None
+    saved_path: str | None = None
 
 
 @dataclass
@@ -80,18 +80,18 @@ class GenerationRequest:
     config: GenerationConfig
     account: Optional['Account'] = None
     offer: Optional['Offer'] = None
-    styles: Optional[List['Style']] = None
-    trends: Optional[List['Trend']] = None
+    styles: list['Style'] | None = None
+    trends: list['Trend'] | None = None
 
     # 编译后的提示词
-    compiled_prompt: Optional[str] = None
+    compiled_prompt: str | None = None
 
 
 @dataclass
 class GenerationOutput:
     """生成输出（多平台/多变体）"""
     request: GenerationRequest
-    results: List[GenerationResult]
+    results: list[GenerationResult]
 
     # 汇总信息
     total_tokens_used: int = 0
@@ -99,4 +99,4 @@ class GenerationOutput:
     average_score: float = 0.0
 
     # 输出目录
-    output_dir: Optional[Path] = None
+    output_dir: Path | None = None

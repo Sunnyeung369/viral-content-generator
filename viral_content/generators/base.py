@@ -10,12 +10,11 @@ GitHub: https://github.com/Sunnyeung369/viral-content-generator
 import logging
 import time
 from abc import ABC, abstractmethod
-from typing import Optional
 
-from viral_content.models.generation import GenerationConfig, GenerationResult
-from viral_content.utils.skill_loader import load_skill
 from viral_content.config.constants import MAX_RETRIES, RETRY_DELAY
 from viral_content.exceptions.custom import APIError
+from viral_content.models.generation import GenerationConfig, GenerationResult
+from viral_content.utils.skill_loader import load_skill
 
 logger = logging.getLogger(__name__)
 
@@ -37,12 +36,10 @@ class ContentGenerator(ABC):
     @abstractmethod
     def _setup_client(self) -> None:
         """设置API客户端"""
-        pass
 
     @abstractmethod
     def _generate_internal(self, prompt: str) -> GenerationResult:
         """内部生成方法"""
-        pass
 
     @property
     def model(self) -> str:

@@ -8,7 +8,7 @@ GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
 from dataclasses import dataclass, field
-from typing import Optional, List, Dict, Any
+from typing import Any
 
 
 @dataclass
@@ -22,33 +22,33 @@ class StyleDNA:
     reference_level: str = "publicly observable style traits only"
 
     # 风格 DNA 核心
-    style_dna: Dict[str, Any] = field(default_factory=dict)
+    style_dna: dict[str, Any] = field(default_factory=dict)
 
     # 钩子模式
-    hook_patterns: List[str] = field(default_factory=list)
+    hook_patterns: list[str] = field(default_factory=list)
 
     # 逻辑模式
-    logic_patterns: List[str] = field(default_factory=list)
+    logic_patterns: list[str] = field(default_factory=list)
 
     # 情绪曲线
-    emotion_curve: Dict[str, str] = field(default_factory=dict)
+    emotion_curve: dict[str, str] = field(default_factory=dict)
 
     # 避免事项
-    avoid: List[str] = field(default_factory=list)
+    avoid: list[str] = field(default_factory=list)
 
     # 转化适配
-    conversion_fit: Dict[str, Any] = field(default_factory=dict)
+    conversion_fit: dict[str, Any] = field(default_factory=dict)
 
     # 元数据
-    metadata: Dict[str, Any] = field(default_factory=dict)
+    metadata: dict[str, Any] = field(default_factory=dict)
 
 
 @dataclass
 class StyleMix:
     """风格混合配置"""
-    styles: List[StyleDNA] = field(default_factory=list)
-    weights: Dict[str, float] = field(default_factory=dict)
-    combination_rules: Dict[str, Any] = field(default_factory=dict)
+    styles: list[StyleDNA] = field(default_factory=list)
+    weights: dict[str, float] = field(default_factory=dict)
+    combination_rules: dict[str, Any] = field(default_factory=dict)
 
 
 # 简化别名（兼容旧版与流水线类型名）

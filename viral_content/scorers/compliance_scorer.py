@@ -8,9 +8,9 @@ v4.0 - 评估内容的合规性
 GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
-import re
-from typing import Dict, Any, List, Optional, Set
-from .base import BaseScorer, ScoreResult, ScoreLevel
+from typing import Any
+
+from .base import BaseScorer, ScoreResult
 
 
 class ComplianceScorer(BaseScorer):
@@ -68,7 +68,7 @@ class ComplianceScorer(BaseScorer):
         """
         super().__init__(threshold)
 
-    def score(self, content: str, context: Optional[Dict[str, Any]] = None) -> ScoreResult:
+    def score(self, content: str, context: dict[str, Any] | None = None) -> ScoreResult:
         """评分合规性
 
         Args:
@@ -204,7 +204,7 @@ class ComplianceScorer(BaseScorer):
 
         return score, issues
 
-    def get_banned_topics(self) -> Dict[str, List[str]]:
+    def get_banned_topics(self) -> dict[str, list[str]]:
         """获取禁止话题列表
 
         Returns:

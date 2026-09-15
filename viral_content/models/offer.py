@@ -8,7 +8,7 @@ GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
 from dataclasses import dataclass, field
-from typing import Optional, List, Dict, Any
+from typing import Any
 
 
 @dataclass
@@ -20,25 +20,25 @@ class OfferConfig:
     category: str = ""
 
     # 价格阶梯
-    pricing: Dict[str, str] = field(default_factory=dict)
+    pricing: dict[str, str] = field(default_factory=dict)
 
     # 核心卖点
-    unique_value_proposition: List[str] = field(default_factory=list)
+    unique_value_proposition: list[str] = field(default_factory=list)
 
     # 成交门槛
-    commitment_required: Dict[str, str] = field(default_factory=dict)
+    commitment_required: dict[str, str] = field(default_factory=dict)
 
     # 目标客户匹配
-    ideal_customer_profile: List[str] = field(default_factory=list)
+    ideal_customer_profile: list[str] = field(default_factory=list)
 
     # 转化路径
-    conversion_path: Dict[str, Any] = field(default_factory=dict)
+    conversion_path: dict[str, Any] = field(default_factory=dict)
 
     # 信任背书
-    social_proof: Dict[str, List] = field(default_factory=dict)
+    social_proof: dict[str, list] = field(default_factory=dict)
 
     # 元数据
-    metadata: Dict[str, Any] = field(default_factory=dict)
+    metadata: dict[str, Any] = field(default_factory=dict)
 
 
 # 简化别名

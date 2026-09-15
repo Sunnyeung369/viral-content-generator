@@ -9,8 +9,9 @@ GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
 import re
-from typing import Dict, Any, List, Optional
-from .base import BaseScorer, ScoreResult, ScoreLevel
+from typing import Any
+
+from .base import BaseScorer, ScoreResult
 
 
 class HookScorer(BaseScorer):
@@ -39,7 +40,7 @@ class HookScorer(BaseScorer):
         super().__init__(threshold)
         self.ideal_hook_length = (20, 60)  # 理想钩子长度范围（字符数）
 
-    def score(self, content: str, context: Optional[Dict[str, Any]] = None) -> ScoreResult:
+    def score(self, content: str, context: dict[str, Any] | None = None) -> ScoreResult:
         """评分钩子质量
 
         Args:
@@ -176,7 +177,7 @@ class HookScorer(BaseScorer):
             ratio = max_len / length
             return 10.0 * ratio
 
-    def _generate_hook_suggestions(self, scores: Dict[str, float], hook: str) -> List[str]:
+    def _generate_hook_suggestions(self, scores: dict[str, float], hook: str) -> list[str]:
         """生成钩子改进建议"""
         suggestions = []
 

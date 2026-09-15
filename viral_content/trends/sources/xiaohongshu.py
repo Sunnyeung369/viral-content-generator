@@ -8,10 +8,10 @@ v4.0 - 从小红书获取热点话题
 GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
-from typing import Dict, Any, List, Optional
 from datetime import datetime
+from typing import Any
 
-from ..base import BaseTrendSource, Trend, TrendMetrics, TrendCategory
+from ..base import BaseTrendSource, Trend, TrendCategory, TrendMetrics
 
 
 class XiaohongshuTrendSource(BaseTrendSource):
@@ -21,7 +21,7 @@ class XiaohongshuTrendSource(BaseTrendSource):
     这里提供简化实现和模拟数据
     """
 
-    def __init__(self, config: Optional[Dict[str, Any]] = None):
+    def __init__(self, config: dict[str, Any] | None = None):
         """初始化小红书来源
 
         Args:
@@ -32,8 +32,8 @@ class XiaohongshuTrendSource(BaseTrendSource):
     def fetch(
         self,
         limit: int = 20,
-        category: Optional[str] = None
-    ) -> List[Trend]:
+        category: str | None = None
+    ) -> list[Trend]:
         """获取小红书热点话题
 
         Args:
@@ -70,7 +70,7 @@ class XiaohongshuTrendSource(BaseTrendSource):
 
         return trends
 
-    def _get_sample_trends(self) -> List[Dict[str, Any]]:
+    def _get_sample_trends(self) -> list[dict[str, Any]]:
         """获取示例小红书热点数据（模拟）"""
         return [
             {
@@ -130,7 +130,7 @@ class XiaohongshuTrendSource(BaseTrendSource):
             },
         ]
 
-    def _infer_category(self, topic: str, tags: List[str]) -> TrendCategory:
+    def _infer_category(self, topic: str, tags: list[str]) -> TrendCategory:
         """根据话题和标签推断分类"""
         fashion_keywords = ["穿搭", "时尚", "服装", "OOTD", "搭配"]
         beauty_keywords = ["美妆", "护肤", "彩妆", "美容", "妆容"]
@@ -140,13 +140,7 @@ class XiaohongshuTrendSource(BaseTrendSource):
 
         all_text = topic.lower() + " " + " ".join(tags).lower()
 
-        if any(kw in all_text for kw in fashion_keywords):
-            return TrendCategory.LIFESTYLE
-        elif any(kw in all_text for kw in beauty_keywords):
-            return TrendCategory.LIFESTYLE
-        elif any(kw in all_text for kw in lifestyle_keywords):
-            return TrendCategory.LIFESTYLE
-        elif any(kw in all_text for kw in food_keywords):
+        if any(kw in all_text for kw in fashion_keywords) or any(kw in all_text for kw in beauty_keywords) or any(kw in all_text for kw in lifestyle_keywords) or any(kw in all_text for kw in food_keywords):
             return TrendCategory.LIFESTYLE
         elif any(kw in all_text for kw in work_keywords):
             return TrendCategory.BUSINESS

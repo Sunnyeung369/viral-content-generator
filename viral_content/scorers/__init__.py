@@ -8,7 +8,8 @@ v4.0 - 爆款成交评分器
 GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
-from .base import BaseScorer, CompositeScorer, ScoreResult, ScoreLevel
+from .base import BaseScorer, CompositeScorer, ScoreLevel, ScoreResult
+
 
 class QualityScorer:
     """对外兼容的综合质量评分器。"""
@@ -20,13 +21,13 @@ class QualityScorer:
         return [tip for result in scores.values() for tip in result.suggestions]
 
 ScoringResult = ScoreResult
+from .compliance_scorer import ComplianceScorer
+from .conversion_scorer import ConversionScorer
 from .hook_scorer import HookScorer
+from .interaction_scorer import InteractionScorer
+from .trend_fit_scorer import AccountInfo, TrendFitScorer, TrendInfo
 from .trust_scorer import TrustScorer
 from .value_scorer import ValueScorer
-from .interaction_scorer import InteractionScorer
-from .conversion_scorer import ConversionScorer
-from .compliance_scorer import ComplianceScorer
-from .trend_fit_scorer import TrendFitScorer, TrendInfo, AccountInfo
 
 __all__ = [
     # 基类

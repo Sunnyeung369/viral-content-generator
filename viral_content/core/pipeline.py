@@ -8,29 +8,29 @@ v4.0 - 协调所有核心模块，完成从热点到内容的完整流程
 GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
-from typing import Dict, Any, List, Optional, Union
-from datetime import datetime
 import logging
+from datetime import datetime
+from typing import Any
 
+from ..core.account_fingerprint import AccountFingerprint
+from ..core.conversion_funnel import ConversionFunnelWriter, ConversionGoal
+from ..core.platform_adapter import ContentPlatform as Platform
+from ..core.platform_adapter import PlatformAdapter
+from ..core.prompt_compiler import PromptCompiler
+from ..core.style_mixer import StyleMixer
+from ..exceptions.custom import GenerationError, ValidationError
+from ..generators.factory import GeneratorFactory
 from ..models import (
+    Account,
     GenerationConfig,
     GenerationResult,
-    Account,
     Offer,
-    Trend,
     StyleProfile,
+    Trend,
 )
-from ..trends.base import TrendCategory
-from ..core.account_fingerprint import AccountFingerprint
-from ..core.style_mixer import StyleMixer
-from ..core.conversion_funnel import ConversionFunnelWriter, ConversionGoal
-from ..core.platform_adapter import PlatformAdapter, ContentPlatform as Platform
-from ..core.prompt_compiler import PromptCompiler
-from ..generators.factory import GeneratorFactory
-from ..scorers import QualityScorer, ScoringResult
+from ..scorers import QualityScorer
 from ..trends import TrendAggregator
-from ..exceptions.custom import ValidationError, GenerationError
-
+from ..trends.base import TrendCategory
 
 logger = logging.getLogger(__name__)
 
@@ -48,7 +48,7 @@ class ViralContentPipeline:
     7. 多平台适配（可选）
     """
 
-    def __init__(self, config: Optional[Dict[str, Any]] = None):
+    def __init__(self, config: dict[str, Any] | None = None):
         """初始化流程
 
         Args:
@@ -66,20 +66,20 @@ class ViralContentPipeline:
         self.trend_aggregator = TrendAggregator()
 
         # 缓存
-        self._account_cache: Dict[str, Account] = {}
-        self._offer_cache: Dict[str, Offer] = {}
-        self._style_cache: Dict[str, StyleProfile] = {}
+        self._account_cache: dict[str, Account] = {}
+        self._offer_cache: dict[str, Offer] = {}
+        self._style_cache: dict[str, StyleProfile] = {}
 
     def run(
         self,
         topic: str,
-        account: Union[str, Account],
-        offer: Union[str, Offer],
-        style_mix: Union[str, List[str]],
-        goal: Union[str, ConversionGoal],
-        platform: Union[str, Platform],
-        trend_data: Optional[Union[str, Trend, List[Trend]]] = None,
-        config: Optional[GenerationConfig] = None,
+        account: str | Account,
+        offer: str | Offer,
+        style_mix: str | list[str],
+        goal: str | ConversionGoal,
+        platform: str | Platform,
+        trend_data: str | Trend | list[Trend] | None = None,
+        config: GenerationConfig | None = None,
     ) -> GenerationResult:
         """执行完整流程
 
@@ -150,14 +150,14 @@ class ViralContentPipeline:
 
     def run_batch(
         self,
-        trends: List[Trend],
-        account: Union[str, Account],
-        offer: Union[str, Offer],
-        style_mix: Union[str, List[str]],
-        goal: Union[str, ConversionGoal],
-        platforms: List[Union[str, Platform]],
-        config: Optional[GenerationConfig] = None,
-    ) -> List[GenerationResult]:
+        trends: list[Trend],
+        account: str | Account,
+        offer: str | Offer,
+        style_mix: str | list[str],
+        goal: str | ConversionGoal,
+        platforms: list[str | Platform],
+        config: GenerationConfig | None = None,
+    ) -> list[GenerationResult]:
         """批量生成内容
 
         Args:
@@ -194,7 +194,7 @@ class ViralContentPipeline:
 
         return results
 
-    def _load_account(self, account: Union[str, Account]) -> Account:
+    def _load_account(self, account: str | Account) -> Account:
         """加载账号配置"""
         if isinstance(account, Account):
             return account
@@ -206,7 +206,7 @@ class ViralContentPipeline:
         self._account_cache[account] = loaded
         return loaded
 
-    def _load_offer(self, offer: Union[str, Offer]) -> Offer:
+    def _load_offer(self, offer: str | Offer) -> Offer:
         """加载产品配置"""
         if isinstance(offer, Offer):
             return offer
@@ -218,7 +218,7 @@ class ViralContentPipeline:
         self._offer_cache[offer] = loaded
         return loaded
 
-    def _load_styles(self, style_mix: Union[str, List[str]]) -> List[StyleProfile]:
+    def _load_styles(self, style_mix: str | list[str]) -> list[StyleProfile]:
         """加载风格配置"""
         if isinstance(style_mix, str):
             style_ids = [s.strip() for s in style_mix.split(",")]
@@ -236,13 +236,13 @@ class ViralContentPipeline:
 
         return profiles
 
-    def _parse_goal(self, goal: Union[str, ConversionGoal]) -> ConversionGoal:
+    def _parse_goal(self, goal: str | ConversionGoal) -> ConversionGoal:
         """解析成交目标"""
         if isinstance(goal, ConversionGoal):
             return goal
         return ConversionGoal(goal)
 
-    def _parse_platform(self, platform: Union[str, Platform]) -> Platform:
+    def _parse_platform(self, platform: str | Platform) -> Platform:
         """解析平台"""
         if isinstance(platform, Platform):
             return platform
@@ -251,7 +251,7 @@ class ViralContentPipeline:
     def _process_trend(
         self,
         topic: str,
-        trend_data: Optional[Union[str, Trend, List[Trend]]] = None
+        trend_data: str | Trend | list[Trend] | None = None
     ) -> Trend:
         """处理热点数据"""
         if isinstance(trend_data, Trend):
@@ -265,7 +265,7 @@ class ViralContentPipeline:
             import json
             try:
                 data = json.loads(trend_data)
-                if "trends" in data and data["trends"]:
+                if data.get("trends"):
                     return Trend.from_dict(data["trends"][0])
             except json.JSONDecodeError:
                 pass
@@ -289,7 +289,7 @@ class ViralContentPipeline:
         trend: Trend,
         account: Account,
         offer: Offer,
-        styles: List[StyleProfile],
+        styles: list[StyleProfile],
         goal: ConversionGoal,
         platform: Platform,
     ) -> str:
@@ -357,40 +357,40 @@ class PipelineBuilder:
 
     def __init__(self):
         """初始化构建器"""
-        self._config: Dict[str, Any] = {}
-        self._account: Optional[Union[str, Account]] = None
-        self._offer: Optional[Union[str, Offer]] = None
-        self._styles: Optional[Union[str, List[str]]] = None
-        self._goal: Optional[ConversionGoal] = None
-        self._platform: Optional[Platform] = None
-        self._generation_config: Optional[GenerationConfig] = None
+        self._config: dict[str, Any] = {}
+        self._account: str | Account | None = None
+        self._offer: str | Offer | None = None
+        self._styles: str | list[str] | None = None
+        self._goal: ConversionGoal | None = None
+        self._platform: Platform | None = None
+        self._generation_config: GenerationConfig | None = None
 
-    def with_config(self, config: Dict[str, Any]) -> "PipelineBuilder":
+    def with_config(self, config: dict[str, Any]) -> "PipelineBuilder":
         """设置全局配置"""
         self._config.update(config)
         return self
 
-    def with_account(self, account: Union[str, Account]) -> "PipelineBuilder":
+    def with_account(self, account: str | Account) -> "PipelineBuilder":
         """设置账号"""
         self._account = account
         return self
 
-    def with_offer(self, offer: Union[str, Offer]) -> "PipelineBuilder":
+    def with_offer(self, offer: str | Offer) -> "PipelineBuilder":
         """设置产品"""
         self._offer = offer
         return self
 
-    def with_styles(self, styles: Union[str, List[str]]) -> "PipelineBuilder":
+    def with_styles(self, styles: str | list[str]) -> "PipelineBuilder":
         """设置风格"""
         self._styles = styles
         return self
 
-    def with_goal(self, goal: Union[str, ConversionGoal]) -> "PipelineBuilder":
+    def with_goal(self, goal: str | ConversionGoal) -> "PipelineBuilder":
         """设置成交目标"""
         self._goal = goal if isinstance(goal, ConversionGoal) else ConversionGoal(goal)
         return self
 
-    def with_platform(self, platform: Union[str, Platform]) -> "PipelineBuilder":
+    def with_platform(self, platform: str | Platform) -> "PipelineBuilder":
         """设置平台"""
         self._platform = platform if isinstance(platform, Platform) else Platform(platform)
         return self
@@ -410,7 +410,7 @@ class PipelineBuilder:
 
         return pipeline
 
-    def generate(self, topic: str, trend_data: Optional[Union[str, Trend, List[Trend]]] = None) -> GenerationResult:
+    def generate(self, topic: str, trend_data: str | Trend | list[Trend] | None = None) -> GenerationResult:
         """快速生成（一步构建并执行）"""
         pipeline = self.build()
         return pipeline.run(

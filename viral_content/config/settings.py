@@ -8,14 +8,14 @@ v4.0 - 从YAML文件和环境变量加载配置
 GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
-import os
-from typing import Dict, Any, Optional, List
-from pathlib import Path
 import logging
+import os
+from pathlib import Path
+from typing import Any
+
 import yaml
 
 from ..exceptions.custom import ConfigurationError
-
 
 logger = logging.getLogger(__name__)
 
@@ -31,7 +31,7 @@ class Settings:
     """
 
     # 默认配置
-    DEFAULTS: Dict[str, Any] = {
+    DEFAULTS: dict[str, Any] = {
         # AI生成器配置
         "generator": {
             "provider": "openai",  # openai, claude, gemini
@@ -110,14 +110,14 @@ class Settings:
         },
     }
 
-    def __init__(self, config_file: Optional[str] = None):
+    def __init__(self, config_file: str | None = None):
         """初始化设置
 
         Args:
             config_file: 配置文件路径
         """
-        self._config: Dict[str, Any] = {}
-        self._config_file: Optional[str] = config_file
+        self._config: dict[str, Any] = {}
+        self._config_file: str | None = config_file
 
         # 加载配置
         self._load_defaults()
@@ -215,19 +215,19 @@ class Settings:
         """
         self._set_nested_value(self._config, keys, value)
 
-    def get_all(self) -> Dict[str, Any]:
+    def get_all(self) -> dict[str, Any]:
         """获取全部配置"""
         return self._deep_copy(self._config)
 
-    def get_generator_config(self) -> Dict[str, Any]:
+    def get_generator_config(self) -> dict[str, Any]:
         """获取生成器配置"""
         return self.get("generator", default={})
 
-    def get_paths(self) -> Dict[str, str]:
+    def get_paths(self) -> dict[str, str]:
         """获取路径配置"""
         return self.get("paths", default={})
 
-    def get_scoring_weights(self) -> Dict[str, float]:
+    def get_scoring_weights(self) -> dict[str, float]:
         """获取评分权重"""
         return self.get("scoring", "weights", default={})
 
@@ -235,11 +235,11 @@ class Settings:
         """是否启用合规检查"""
         return self.get("compliance", "enabled", default=True)
 
-    def get_banned_topics_file(self) -> Optional[str]:
+    def get_banned_topics_file(self) -> str | None:
         """获取禁止话题文件路径"""
         return self.get("compliance", "banned_topics_file")
 
-    def get_platform_config(self, platform: str) -> Dict[str, Any]:
+    def get_platform_config(self, platform: str) -> dict[str, Any]:
         """获取平台特定配置"""
         emoji_support = self.get("platforms", "emoji_support", default={})
         return {
@@ -253,7 +253,7 @@ class Settings:
         return copy.deepcopy(obj)
 
     @staticmethod
-    def _deep_merge(base: Dict[str, Any], update: Dict[str, Any]):
+    def _deep_merge(base: dict[str, Any], update: dict[str, Any]):
         """深度合并字典"""
         for key, value in update.items():
             if key in base and isinstance(base[key], dict) and isinstance(value, dict):
@@ -262,7 +262,7 @@ class Settings:
                 base[key] = value
 
     @staticmethod
-    def _set_nested_value(config: Dict[str, Any], path: List[str], value: Any):
+    def _set_nested_value(config: dict[str, Any], path: list[str], value: Any):
         """设置嵌套值"""
         current = config
         for key in path[:-1]:
@@ -273,10 +273,10 @@ class Settings:
 
 
 # 全局设置实例
-_global_settings: Optional[Settings] = None
+_global_settings: Settings | None = None
 
 
-def get_settings(config_file: Optional[str] = None) -> Settings:
+def get_settings(config_file: str | None = None) -> Settings:
     """获取全局设置实例
 
     Args:
@@ -291,7 +291,7 @@ def get_settings(config_file: Optional[str] = None) -> Settings:
     return _global_settings
 
 
-def reload_settings(config_file: Optional[str] = None) -> Settings:
+def reload_settings(config_file: str | None = None) -> Settings:
     """重新加载设置
 
     Args:

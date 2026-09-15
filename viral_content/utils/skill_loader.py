@@ -7,12 +7,11 @@ Skill 文件加载器（带缓存）
 GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
-import threading
 import logging
+import threading
 from pathlib import Path
-from typing import Optional
 
-from viral_content.config.constants import SKILL_V3_PATH, SKILL_FALLBACK_PATH
+from viral_content.config.constants import SKILL_FALLBACK_PATH, SKILL_V3_PATH
 from viral_content.exceptions.custom import SkillLoadError
 
 logger = logging.getLogger(__name__)
@@ -23,8 +22,8 @@ class SkillLoader:
 
     _instance = None
     _lock = threading.Lock()
-    _cached_content: Optional[str] = None
-    _cached_mtime: Optional[float] = None
+    _cached_content: str | None = None
+    _cached_mtime: float | None = None
 
     def __new__(cls):
         if cls._instance is None:

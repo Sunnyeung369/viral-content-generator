@@ -9,8 +9,9 @@ GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
 import re
-from typing import Dict, Any, List, Optional
-from .base import BaseScorer, ScoreResult, ScoreLevel
+from typing import Any
+
+from .base import BaseScorer, ScoreResult
 
 
 class TrustScorer(BaseScorer):
@@ -46,7 +47,7 @@ class TrustScorer(BaseScorer):
         """初始化信任度评分器"""
         super().__init__(threshold)
 
-    def score(self, content: str, context: Optional[Dict[str, Any]] = None) -> ScoreResult:
+    def score(self, content: str, context: dict[str, Any] | None = None) -> ScoreResult:
         """评分信任度
 
         Args:
@@ -182,7 +183,7 @@ class TrustScorer(BaseScorer):
         else:
             return 3.0
 
-    def _generate_trust_suggestions(self, scores: Dict[str, float]) -> List[str]:
+    def _generate_trust_suggestions(self, scores: dict[str, float]) -> list[str]:
         """生成信任度改进建议"""
         suggestions = []
 

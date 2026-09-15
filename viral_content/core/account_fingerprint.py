@@ -9,7 +9,8 @@ GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
 from pathlib import Path
-from typing import Dict, Any, Optional, List
+from typing import Any
+
 import yaml
 
 
@@ -23,15 +24,15 @@ class AccountFingerprint:
     4. 生成账号相关的提示词片段
     """
 
-    def __init__(self, account_path: Optional[Path] = None):
+    def __init__(self, account_path: Path | None = None):
         """初始化账号指纹
 
         Args:
             account_path: 账号配置文件路径
         """
         self.account_path = Path(account_path) if account_path else None
-        self._config: Dict[str, Any] = {}
-        self._accounts_dir: Optional[Path] = None
+        self._config: dict[str, Any] = {}
+        self._accounts_dir: Path | None = None
 
         if account_path:
             self.load(account_path)
@@ -44,7 +45,7 @@ class AccountFingerprint:
             self._accounts_dir = current_dir / "data" / "accounts"
         return self._accounts_dir
 
-    def load(self, account_path: Optional[Path] = None) -> Dict[str, Any]:
+    def load(self, account_path: Path | None = None) -> dict[str, Any]:
         """加载账号配置
 
         Args:
@@ -83,7 +84,7 @@ class AccountFingerprint:
         self._config = data["account"]
         return self._config
 
-    def validate(self) -> List[str]:
+    def validate(self) -> list[str]:
         """验证配置完整性
 
         Returns:
@@ -109,42 +110,42 @@ class AccountFingerprint:
         return self._config.get("identity", "")
 
     @property
-    def target_audience(self) -> List[str]:
+    def target_audience(self) -> list[str]:
         """目标用户"""
         return self._config.get("target_audience", [])
 
     @property
-    def pain_points(self) -> List[str]:
+    def pain_points(self) -> list[str]:
         """用户痛点"""
         return self._config.get("pain_points", [])
 
     @property
-    def authority_assets(self) -> List[str]:
+    def authority_assets(self) -> list[str]:
         """权威资产"""
         return self._config.get("authority_assets", [])
 
     @property
-    def business_goal(self) -> Dict[str, Any]:
+    def business_goal(self) -> dict[str, Any]:
         """商业目标"""
         return self._config.get("business_goal", {})
 
     @property
-    def offer_ladder(self) -> Dict[str, str]:
+    def offer_ladder(self) -> dict[str, str]:
         """产品阶梯"""
         return self._config.get("offer_ladder", {})
 
     @property
-    def tone_constraints(self) -> List[str]:
+    def tone_constraints(self) -> list[str]:
         """语气限制"""
         return self._config.get("tone_constraints", [])
 
     @property
-    def content_constraints(self) -> List[str]:
+    def content_constraints(self) -> list[str]:
         """内容限制"""
         return self._config.get("content_constraints", [])
 
     @property
-    def platform_preferences(self) -> Dict[str, List[str]]:
+    def platform_preferences(self) -> dict[str, list[str]]:
         """平台偏好"""
         return self._config.get("platform_preferences", {})
 
@@ -163,20 +164,20 @@ class AccountFingerprint:
             parts.append(f"**账号定位**: {self.identity}")
 
         if self.target_audience:
-            parts.append(f"**目标用户**:\n" + "\n".join(f"  - {u}" for u in self.target_audience[:3]))
+            parts.append("**目标用户**:\n" + "\n".join(f"  - {u}" for u in self.target_audience[:3]))
 
         if self.pain_points:
-            parts.append(f"**用户痛点**:\n" + "\n".join(f"  - {p}" for p in self.pain_points[:3]))
+            parts.append("**用户痛点**:\n" + "\n".join(f"  - {p}" for p in self.pain_points[:3]))
 
         if self.authority_assets:
-            parts.append(f"**权威资产**:\n" + "\n".join(f"  - {a}" for a in self.authority_assets[:3]))
+            parts.append("**权威资产**:\n" + "\n".join(f"  - {a}" for a in self.authority_assets[:3]))
 
         if self.tone_constraints:
-            parts.append(f"**语气要求**:\n" + "\n".join(f"  - {t}" for t in self.tone_constraints[:3]))
+            parts.append("**语气要求**:\n" + "\n".join(f"  - {t}" for t in self.tone_constraints[:3]))
 
         return "\n\n".join(parts)
 
-    def get_conversion_hints(self) -> Dict[str, Any]:
+    def get_conversion_hints(self) -> dict[str, Any]:
         """获取成交相关的提示信息
 
         Returns:
@@ -201,7 +202,7 @@ class AccountFingerprint:
         default_path = current_dir / "data" / "accounts" / "default_account.yaml"
         return cls(default_path)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         """转换为字典
 
         Returns:
@@ -210,7 +211,7 @@ class AccountFingerprint:
         return self._config.copy()
 
 
-def load_account(account_path: Optional[Path] = None) -> AccountFingerprint:
+def load_account(account_path: Path | None = None) -> AccountFingerprint:
     """便捷函数：加载账号配置
 
     Args:

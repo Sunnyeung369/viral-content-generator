@@ -12,34 +12,32 @@ __version__ = "4.0.1"
 __author__ = "Sunnyeung"
 
 # 核心模块
+# 配置
+from .config import Settings, get_settings
 from .core import (
-    ViralContentPipeline,
-    PipelineBuilder,
-    PromptCompiler,
     AccountFingerprint,
-    StyleMixer,
     ConversionFunnel,
-    PlatformAdapter,
     ConversionGoal,
+    PipelineBuilder,
+    PlatformAdapter,
+    PromptCompiler,
+    StyleMixer,
+    ViralContentPipeline,
 )
-
 from .core.platform_adapter import ContentPlatform as Platform
 
 # 数据模型
 from .models import (
+    Account,
     GenerationConfig,
     GenerationResult,
-    Account,
     Offer,
-    Trend,
     StyleProfile,
+    Trend,
 )
 
-# 配置
-from .config import get_settings, Settings
-
 # 工具
-from .utils import FileHandler, YamlFileLoader, Validator
+from .utils import FileHandler, Validator, YamlFileLoader
 
 __all__ = [
     # 版本

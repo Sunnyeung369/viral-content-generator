@@ -8,15 +8,14 @@ v4.0 - 验证输入参数和配置
 GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
-import re
-from typing import Any, Dict, List, Optional, Union
-from pathlib import Path
 import logging
+import re
+from pathlib import Path
+from typing import Any
 
-from ..exceptions.custom import ValidationError
 from ..core.conversion_funnel import ConversionGoal
 from ..core.platform_adapter import ContentPlatform as Platform
-
+from ..exceptions.custom import ValidationError
 
 logger = logging.getLogger(__name__)
 
@@ -62,7 +61,7 @@ class Validator:
             raise ValidationError(f"Invalid {field_name} format: {url}")
 
     @staticmethod
-    def validate_platform(platform: Union[str, Platform]):
+    def validate_platform(platform: str | Platform):
         """验证平台名称"""
         platform_value = platform.value if isinstance(platform, Platform) else platform
         if platform_value not in Validator.VALID_PLATFORMS:
@@ -72,7 +71,7 @@ class Validator:
             )
 
     @staticmethod
-    def validate_goal(goal: Union[str, ConversionGoal]):
+    def validate_goal(goal: str | ConversionGoal):
         """验证成交目标"""
         goal_value = goal.value if isinstance(goal, ConversionGoal) else goal
         if goal_value not in Validator.VALID_GOALS:
@@ -85,7 +84,7 @@ class Validator:
     def validate_file_path(
         path: str,
         must_exist: bool = True,
-        expected_extension: Optional[str] = None,
+        expected_extension: str | None = None,
         field_name: str = "file"
     ):
         """验证文件路径"""
@@ -100,7 +99,7 @@ class Validator:
             )
 
     @staticmethod
-    def validate_style_mix(styles: List[str], max_styles: int = 3):
+    def validate_style_mix(styles: list[str], max_styles: int = 3):
         """验证风格组合"""
         if not styles:
             raise ValidationError("At least one style must be specified")
@@ -123,7 +122,7 @@ class Validator:
             )
 
     @staticmethod
-    def validate_price(price: Union[int, float, str], field_name: str = "price"):
+    def validate_price(price: float | str, field_name: str = "price"):
         """验证价格"""
         try:
             price_value = float(price) if isinstance(price, str) else price
@@ -133,7 +132,7 @@ class Validator:
             raise ValidationError(f"Invalid {field_name}: {price}")
 
     @staticmethod
-    def validate_config_dict(config: Dict[str, Any], required_keys: List[str]):
+    def validate_config_dict(config: dict[str, Any], required_keys: list[str]):
         """验证配置字典"""
         missing_keys = [k for k in required_keys if k not in config]
         if missing_keys:
@@ -146,7 +145,7 @@ class ConfigValidator:
     """配置验证器"""
 
     @staticmethod
-    def validate_account_config(config: Dict[str, Any]):
+    def validate_account_config(config: dict[str, Any]):
         """验证账号配置"""
         required_fields = ["name", "identity"]
         Validator.validate_config_dict(config, required_fields)
@@ -164,7 +163,7 @@ class ConfigValidator:
                     raise ValidationError("business_goal must have 'primary' field")
 
     @staticmethod
-    def validate_offer_config(config: Dict[str, Any]):
+    def validate_offer_config(config: dict[str, Any]):
         """验证产品配置"""
         required_fields = ["name", "type"]
         Validator.validate_config_dict(config, required_fields)
@@ -186,7 +185,7 @@ class ConfigValidator:
             )
 
     @staticmethod
-    def validate_style_config(config: Dict[str, Any]):
+    def validate_style_config(config: dict[str, Any]):
         """验证风格配置"""
         required_fields = ["id", "label", "style_dna"]
         Validator.validate_config_dict(config, required_fields)
@@ -233,7 +232,7 @@ class TrendValidator:
     """热点数据验证器"""
 
     @staticmethod
-    def validate_trend_dict(trend: Dict[str, Any]):
+    def validate_trend_dict(trend: dict[str, Any]):
         """验证热点字典"""
         required_fields = ["topic", "source"]
         Validator.validate_config_dict(trend, required_fields)
@@ -242,7 +241,7 @@ class TrendValidator:
         Validator.validate_topic(trend.get("topic", ""))
 
     @staticmethod
-    def validate_trend_list(trends: List[Dict[str, Any]]):
+    def validate_trend_list(trends: list[dict[str, Any]]):
         """验证热点列表"""
         if not trends:
             raise ValidationError("Trend list cannot be empty")
@@ -261,7 +260,7 @@ class InputSanitizer:
     DANGEROUS_CHARS = ['<', '>', '&', '\x00', '\n', '\r']
 
     @staticmethod
-    def sanitize_string(value: str, max_length: Optional[int] = None) -> str:
+    def sanitize_string(value: str, max_length: int | None = None) -> str:
         """清洗字符串"""
         if not isinstance(value, str):
             return str(value)
@@ -281,7 +280,7 @@ class InputSanitizer:
         return InputSanitizer.sanitize_string(topic, max_length=500)
 
     @staticmethod
-    def sanitize_metadata(metadata: Dict[str, Any]) -> Dict[str, Any]:
+    def sanitize_metadata(metadata: dict[str, Any]) -> dict[str, Any]:
         """清洗元数据"""
         result = {}
         for key, value in metadata.items():

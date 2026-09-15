@@ -8,9 +8,9 @@ v4.0 - 评估内容的转化能力
 GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
-import re
-from typing import Dict, Any, List, Optional
-from .base import BaseScorer, ScoreResult, ScoreLevel
+from typing import Any
+
+from .base import BaseScorer, ScoreResult
 
 
 class ConversionScorer(BaseScorer):
@@ -60,7 +60,7 @@ class ConversionScorer(BaseScorer):
         super().__init__(threshold)
         self.goal = goal
 
-    def score(self, content: str, context: Optional[Dict[str, Any]] = None) -> ScoreResult:
+    def score(self, content: str, context: dict[str, Any] | None = None) -> ScoreResult:
         """评分转化能力
 
         Args:
@@ -96,7 +96,7 @@ class ConversionScorer(BaseScorer):
             passed=self._check_passed(total_score)
         )
 
-    def _get_weights_by_goal(self) -> Dict[str, float]:
+    def _get_weights_by_goal(self) -> dict[str, float]:
         """根据目标获取权重"""
         if self.goal == "sales":
             return {"cta": 0.3, "urgency": 0.25, "barrier": 0.15, "value": 0.2, "trust": 0.1}
@@ -182,7 +182,7 @@ class ConversionScorer(BaseScorer):
         else:
             return 3.0
 
-    def _generate_conversion_suggestions(self, scores: Dict[str, float]) -> List[str]:
+    def _generate_conversion_suggestions(self, scores: dict[str, float]) -> list[str]:
         """生成转化改进建议"""
         suggestions = []
 

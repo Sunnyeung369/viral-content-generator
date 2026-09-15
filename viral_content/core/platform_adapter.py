@@ -8,9 +8,9 @@ v4.0 - 一个热点输出全平台版本
 GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
-from typing import Dict, Any, List, Optional, Tuple
 from dataclasses import dataclass, field
 from enum import Enum
+from typing import Any
 
 
 class ContentPlatform(Enum):
@@ -29,13 +29,13 @@ class PlatformSpec:
     """平台规格"""
     name: str  # 平台名称
     content_type: str  # 内容类型（图文/短视频/长视频/短文）
-    length_range: Tuple[int, int]  # 长度范围（字数或秒）
+    length_range: tuple[int, int]  # 长度范围（字数或秒）
     structure_hint: str  # 结构提示
     cta_style: str  # CTA风格
     tone_hint: str  # 语气提示
     visual_hint: str  # 视觉提示
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         """转换为字典"""
         return {
             "name": self.name,
@@ -53,8 +53,8 @@ class PlatformPackage:
     """平台内容包"""
     platform: ContentPlatform
     content: str  # 生成的内容
-    metadata: Dict[str, Any] = field(default_factory=dict)  # 元数据
-    score: Optional[float] = None  # 评分（可选）
+    metadata: dict[str, Any] = field(default_factory=dict)  # 元数据
+    score: float | None = None  # 评分（可选）
 
 
 class PlatformAdapter:
@@ -67,7 +67,7 @@ class PlatformAdapter:
     """
 
     # 平台规格配置
-    PLATFORM_SPECS: Dict[ContentPlatform, PlatformSpec] = {
+    PLATFORM_SPECS: dict[ContentPlatform, PlatformSpec] = {
         ContentPlatform.WECHAT: PlatformSpec(
             name="公众号",
             content_type="图文长文",
@@ -151,10 +151,10 @@ class PlatformAdapter:
     def generate_package(
         self,
         topic: str,
-        platforms: Optional[List[ContentPlatform]] = None,
-        generator_func: Optional[callable] = None,
+        platforms: list[ContentPlatform] | None = None,
+        generator_func: callable | None = None,
         **kwargs
-    ) -> List[PlatformPackage]:
+    ) -> list[PlatformPackage]:
         """生成多平台内容包
 
         Args:
@@ -201,9 +201,9 @@ class PlatformAdapter:
         self,
         topic: str,
         spec: PlatformSpec,
-        style: Optional[str] = None,
-        account: Optional[Dict[str, Any]] = None,
-        goal: Optional[str] = None,
+        style: str | None = None,
+        account: dict[str, Any] | None = None,
+        goal: str | None = None,
         **kwargs
     ) -> str:
         """构建平台专属提示词
@@ -235,22 +235,22 @@ class PlatformAdapter:
 
         # 风格配置
         if style:
-            parts.append(f"\n## 风格配置")
+            parts.append("\n## 风格配置")
             parts.append(f"- 风格：{style}")
 
         # 账号配置
         if account:
-            parts.append(f"\n## 账号定位")
+            parts.append("\n## 账号定位")
             parts.append(f"- 账号：{account.get('name', '')}")
             parts.append(f"- 定位：{account.get('identity', '')}")
 
         # 成交目标
         if goal:
-            parts.append(f"\n## 成交目标")
+            parts.append("\n## 成交目标")
             parts.append(f"- 目标：{goal}")
 
         # 生成指令
-        parts.append(f"\n## 生成要求")
+        parts.append("\n## 生成要求")
         parts.append(f"请根据以上配置，为{spec.name}平台创作一篇关于「{topic}」的{spec.content_type}内容。")
         parts.append(f"内容长度控制在{spec.length_range[0]}-{spec.length_range[1]}之间，")
         parts.append(f"遵循{spec.structure_hint}的结构，")
@@ -308,8 +308,8 @@ class PlatformAdapter:
         self,
         content: str,
         from_platform: ContentPlatform,
-        to_platforms: Optional[List[ContentPlatform]] = None
-    ) -> List[PlatformPackage]:
+        to_platforms: list[ContentPlatform] | None = None
+    ) -> list[PlatformPackage]:
         """批量转换内容到多个平台
 
         Args:
@@ -345,7 +345,7 @@ class PlatformAdapter:
         self,
         topic: str,
         goal: str = "leads"
-    ) -> List[ContentPlatform]:
+    ) -> list[ContentPlatform]:
         """根据话题和目标推荐平台
 
         Args:
@@ -389,9 +389,9 @@ class PlatformAdapter:
         self,
         topic: str,
         primary_platform: ContentPlatform,
-        generator_func: Optional[callable] = None,
+        generator_func: callable | None = None,
         **kwargs
-    ) -> Dict[str, Any]:
+    ) -> dict[str, Any]:
         """创建内容矩阵
 
         以主平台为核心，自动适配到其他平台
@@ -441,7 +441,7 @@ class PlatformAdapter:
 
 
 # 全局单例
-_adapter_instance: Optional[PlatformAdapter] = None
+_adapter_instance: PlatformAdapter | None = None
 
 
 def get_platform_adapter() -> PlatformAdapter:

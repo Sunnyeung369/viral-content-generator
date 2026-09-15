@@ -8,9 +8,10 @@ v4.0 - 评分热点与账号的匹配度
 GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
-from typing import Dict, Any, List, Optional
 from dataclasses import dataclass
-from .base import BaseScorer, ScoreResult, ScoreLevel
+from typing import Any
+
+from .base import BaseScorer, ScoreLevel, ScoreResult
 
 
 @dataclass
@@ -18,9 +19,9 @@ class TrendInfo:
     """热点信息"""
     topic: str  # 话题
     description: str  # 描述
-    keywords: List[str]  # 关键词
+    keywords: list[str]  # 关键词
     category: str  # 分类
-    metrics: Optional[Dict[str, Any]] = None  # 热度指标
+    metrics: dict[str, Any] | None = None  # 热度指标
 
 
 @dataclass
@@ -28,10 +29,10 @@ class AccountInfo:
     """账号信息"""
     name: str  # 账号名
     identity: str  # 定位
-    target_audience: List[str]  # 目标用户
-    pain_points: List[str]  # 用户痛点
-    topics: List[str]  # 擅长话题
-    authority_assets: Optional[List[str]] = None  # 权威资产
+    target_audience: list[str]  # 目标用户
+    pain_points: list[str]  # 用户痛点
+    topics: list[str]  # 擅长话题
+    authority_assets: list[str] | None = None  # 权威资产
 
 
 class TrendFitScorer(BaseScorer):
@@ -58,7 +59,7 @@ class TrendFitScorer(BaseScorer):
     def score(
         self,
         content: str,
-        context: Optional[Dict[str, Any]] = None
+        context: dict[str, Any] | None = None
     ) -> ScoreResult:
         """评分匹配度
 
@@ -254,10 +255,10 @@ class TrendFitScorer(BaseScorer):
 
     def _generate_fit_suggestions(
         self,
-        scores: Dict[str, float],
+        scores: dict[str, float],
         trend: TrendInfo,
         account: AccountInfo
-    ) -> List[str]:
+    ) -> list[str]:
         """生成匹配度改进建议"""
         suggestions = []
 
@@ -289,9 +290,9 @@ class TrendFitScorer(BaseScorer):
 
     def batch_score(
         self,
-        trends: List[TrendInfo],
+        trends: list[TrendInfo],
         account: AccountInfo
-    ) -> List[ScoreResult]:
+    ) -> list[ScoreResult]:
         """批量评分多个热点与同一账号的匹配度
 
         Args:

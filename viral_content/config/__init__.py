@@ -4,10 +4,10 @@ v4.0
 """
 
 from .constants import (
-    # 风格分类
-    STYLE_CATEGORIES,
     # 成交目标类型
     CONVERSION_GOALS,
+    # 风格分类
+    STYLE_CATEGORIES,
 )
 from .settings import Settings, get_settings, reload_settings
 

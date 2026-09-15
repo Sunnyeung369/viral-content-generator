@@ -9,7 +9,8 @@ GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
 from pathlib import Path
-from typing import Dict, Any, Optional, List
+from typing import Any
+
 import yaml
 
 
@@ -23,15 +24,15 @@ class StyleMixer:
     4. 风格特征提取和组合
     """
 
-    def __init__(self, styles_dir: Optional[Path] = None):
+    def __init__(self, styles_dir: Path | None = None):
         """初始化风格混合器
 
         Args:
             styles_dir: 风格配置目录
         """
-        self._styles_dir: Optional[Path] = None
-        self._style_cache: Dict[str, Dict[str, Any]] = {}
-        self._compatibility_matrix: Dict[str, Dict[str, float]] = {}
+        self._styles_dir: Path | None = None
+        self._style_cache: dict[str, dict[str, Any]] = {}
+        self._compatibility_matrix: dict[str, dict[str, float]] = {}
 
         if styles_dir:
             self.styles_dir = styles_dir
@@ -50,7 +51,7 @@ class StyleMixer:
         self._styles_dir = Path(value)
         self._style_cache.clear()
 
-    def load_styles(self) -> Dict[str, Dict[str, Any]]:
+    def load_styles(self) -> dict[str, dict[str, Any]]:
         """加载所有风格配置
 
         Returns:
@@ -78,7 +79,7 @@ class StyleMixer:
 
         return self._style_cache
 
-    def get_style(self, style_id: str) -> Optional[Dict[str, Any]]:
+    def get_style(self, style_id: str) -> dict[str, Any] | None:
         """获取单个风格配置
 
         Args:
@@ -92,7 +93,7 @@ class StyleMixer:
 
         return self._style_cache.get(style_id)
 
-    def get_styles_by_category(self, category: str) -> List[Dict[str, Any]]:
+    def get_styles_by_category(self, category: str) -> list[dict[str, Any]]:
         """按分类获取风格
 
         Args:
@@ -165,9 +166,9 @@ class StyleMixer:
 
     def mix_styles(
         self,
-        style_ids: List[str],
-        weights: Optional[Dict[str, float]] = None
-    ) -> Dict[str, Any]:
+        style_ids: list[str],
+        weights: dict[str, float] | None = None
+    ) -> dict[str, Any]:
         """混合多个风格
 
         Args:
@@ -220,9 +221,9 @@ class StyleMixer:
 
     def _extract_mixed_features(
         self,
-        styles: List[Dict[str, Any]],
-        weights: Dict[str, float]
-    ) -> Dict[str, Any]:
+        styles: list[dict[str, Any]],
+        weights: dict[str, float]
+    ) -> dict[str, Any]:
         """提取混合特征
 
         Args:
@@ -278,7 +279,7 @@ class StyleMixer:
 
         return features
 
-    def get_prompt_context(self, mixed_style: Dict[str, Any]) -> str:
+    def get_prompt_context(self, mixed_style: dict[str, Any]) -> str:
         """获取混合风格的提示词上下文
 
         Args:
@@ -309,14 +310,14 @@ class StyleMixer:
 
         if features.get("hook_patterns"):
             hooks = [h for h, w in features["hook_patterns"][:3]]
-            parts.append(f"**钩子模式**:\n" + "\n".join(f"  - {h}" for h in hooks))
+            parts.append("**钩子模式**:\n" + "\n".join(f"  - {h}" for h in hooks))
 
         if features.get("avoid"):
-            parts.append(f"**避免事项**:\n" + "\n".join(f"  - {a}" for a in features["avoid"][:3]))
+            parts.append("**避免事项**:\n" + "\n".join(f"  - {a}" for a in features["avoid"][:3]))
 
         return "\n\n".join(parts)
 
-    def list_available_styles(self) -> List[str]:
+    def list_available_styles(self) -> list[str]:
         """列出所有可用的风格ID
 
         Returns:
@@ -327,7 +328,7 @@ class StyleMixer:
 
         return list(self._style_cache.keys())
 
-    def search_styles(self, keyword: str) -> List[Dict[str, Any]]:
+    def search_styles(self, keyword: str) -> list[dict[str, Any]]:
         """搜索风格
 
         Args:
@@ -349,7 +350,7 @@ class StyleMixer:
         ]
 
 
-def get_style_mixer(styles_dir: Optional[Path] = None) -> StyleMixer:
+def get_style_mixer(styles_dir: Path | None = None) -> StyleMixer:
     """便捷函数：获取风格混合器
 
     Args:

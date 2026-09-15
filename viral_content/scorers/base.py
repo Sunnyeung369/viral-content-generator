@@ -9,9 +9,9 @@ GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
 from abc import ABC, abstractmethod
-from typing import Dict, Any, List, Optional
 from dataclasses import dataclass
 from enum import Enum
+from typing import Any
 
 
 class ScoreLevel(Enum):
@@ -28,11 +28,11 @@ class ScoreResult:
     """评分结果"""
     score: float  # 总分 (0-10)
     level: ScoreLevel  # 等级
-    details: Dict[str, Any]  # 详细评分
-    suggestions: List[str]  # 改进建议
+    details: dict[str, Any]  # 详细评分
+    suggestions: list[str]  # 改进建议
     passed: bool  # 是否通过阈值
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         """转换为字典"""
         return {
             "score": self.score,
@@ -61,7 +61,7 @@ class BaseScorer(ABC):
         self.name = self.__class__.__name__
 
     @abstractmethod
-    def score(self, content: str, context: Optional[Dict[str, Any]] = None) -> ScoreResult:
+    def score(self, content: str, context: dict[str, Any] | None = None) -> ScoreResult:
         """评分内容
 
         Args:
@@ -71,7 +71,6 @@ class BaseScorer(ABC):
         Returns:
             评分结果
         """
-        pass
 
     def get_threshold(self) -> float:
         """获取通过阈值"""
@@ -121,8 +120,8 @@ class BaseScorer(ABC):
     def _generate_suggestions(
         self,
         score: float,
-        details: Dict[str, Any]
-    ) -> List[str]:
+        details: dict[str, Any]
+    ) -> list[str]:
         """生成改进建议（可被子类覆盖）
 
         Args:
@@ -149,8 +148,8 @@ class CompositeScorer(BaseScorer):
 
     def __init__(
         self,
-        scorers: List[BaseScorer],
-        weights: Optional[Dict[str, float]] = None,
+        scorers: list[BaseScorer],
+        weights: dict[str, float] | None = None,
         threshold: float = 7.0
     ):
         """初始化组合评分器
@@ -169,7 +168,7 @@ class CompositeScorer(BaseScorer):
 
         self.weights = weights
 
-    def score(self, content: str, context: Optional[Dict[str, Any]] = None) -> ScoreResult:
+    def score(self, content: str, context: dict[str, Any] | None = None) -> ScoreResult:
         """综合评分
 
         Args:

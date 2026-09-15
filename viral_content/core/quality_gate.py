@@ -1,16 +1,16 @@
 """Deterministic pre-publish checks for generated content."""
-from dataclasses import dataclass
 import re
-from typing import List
+from dataclasses import dataclass
+
 
 @dataclass
 class QualityGateResult:
     passed: bool
-    warnings: List[str]
+    warnings: list[str]
 
 class QualityGate:
-    PLACEHOLDER = re.compile(r"\[[^\]]+\]|\{\{[^}]+\}\}|TODO|TBD", re.I)
-    OVERCLAIM = re.compile(r"保证(爆款|第一|100%|稳赚)|零风险|绝对有效", re.I)
+    PLACEHOLDER = re.compile(r"\[[^\]]+\]|\{\{[^}]+\}\}|TODO|TBD", re.IGNORECASE)
+    OVERCLAIM = re.compile(r"保证(爆款|第一|100%|稳赚)|零风险|绝对有效", re.IGNORECASE)
     def check(self, content: str, *, require_cta: bool = False) -> QualityGateResult:
         warnings=[]
         if not content or len(content.strip()) < 80: warnings.append("内容过短，无法完成有效审核")

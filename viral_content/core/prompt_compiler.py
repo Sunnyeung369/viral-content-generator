@@ -9,9 +9,8 @@ GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
 from pathlib import Path
-from typing import Dict, Any, Optional, List
 from string import Template
-import yaml
+from typing import Any
 
 
 class PromptCompiler:
@@ -24,7 +23,7 @@ class PromptCompiler:
     4. 输出完整提示词
     """
 
-    def __init__(self, prompts_dir: Optional[Path] = None):
+    def __init__(self, prompts_dir: Path | None = None):
         """初始化编译器
 
         Args:
@@ -36,8 +35,8 @@ class PromptCompiler:
             prompts_dir = current_dir / "prompts"
 
         self.prompts_dir = Path(prompts_dir)
-        self._templates: Dict[str, str] = {}
-        self._cache: Dict[str, str] = {}
+        self._templates: dict[str, str] = {}
+        self._cache: dict[str, str] = {}
 
     def load_template(self, template_name: str) -> str:
         """加载模板文件
@@ -68,7 +67,7 @@ class PromptCompiler:
     def compile(
         self,
         template_name: str,
-        variables: Optional[Dict[str, Any]] = None,
+        variables: dict[str, Any] | None = None,
         **kwargs
     ) -> str:
         """编译单个模板
@@ -93,7 +92,7 @@ class PromptCompiler:
         template = Template(template_content)
         try:
             compiled = template.substitute(all_vars)
-        except KeyError as e:
+        except KeyError:
             # 如果有变量缺失，使用safe_substitute
             template = Template(template_content)
             compiled = template.safe_substitute(all_vars)
@@ -102,8 +101,8 @@ class PromptCompiler:
 
     def compose(
         self,
-        templates: List[str],
-        variables: Optional[Dict[str, Any]] = None,
+        templates: list[str],
+        variables: dict[str, Any] | None = None,
         separator: str = "\n\n---\n\n",
         **kwargs
     ) -> str:
@@ -128,9 +127,9 @@ class PromptCompiler:
     def build_system_prompt(
         self,
         topic: str,
-        style_config: Optional[Dict[str, Any]] = None,
-        account_config: Optional[Dict[str, Any]] = None,
-        offer_config: Optional[Dict[str, Any]] = None,
+        style_config: dict[str, Any] | None = None,
+        account_config: dict[str, Any] | None = None,
+        offer_config: dict[str, Any] | None = None,
         goal: str = "likes",
         platform: str = "wechat",
         **kwargs
@@ -207,7 +206,7 @@ class PromptCompiler:
 
         return base_prompt
 
-    def _format_style_config(self, style_config: Dict[str, Any]) -> str:
+    def _format_style_config(self, style_config: dict[str, Any]) -> str:
         """格式化风格配置"""
         parts = []
 
@@ -224,11 +223,11 @@ class PromptCompiler:
         if "hook_patterns" in style_config:
             hooks = style_config["hook_patterns"]
             if isinstance(hooks, list) and hooks:
-                parts.append(f"**钩子模式**:\n" + "\n".join(f"  - {h}" for h in hooks[:3]))
+                parts.append("**钩子模式**:\n" + "\n".join(f"  - {h}" for h in hooks[:3]))
 
         return "\n".join(parts)
 
-    def _format_account_config(self, account_config: Dict[str, Any]) -> str:
+    def _format_account_config(self, account_config: dict[str, Any]) -> str:
         """格式化账号配置"""
         parts = []
 
@@ -241,11 +240,11 @@ class PromptCompiler:
         if "target_audience" in account_config:
             audience = account_config["target_audience"]
             if isinstance(audience, list) and audience:
-                parts.append(f"**目标用户**:\n" + "\n".join(f"  - {a}" for a in audience[:3]))
+                parts.append("**目标用户**:\n" + "\n".join(f"  - {a}" for a in audience[:3]))
 
         return "\n".join(parts)
 
-    def _format_offer_config(self, offer_config: Dict[str, Any]) -> str:
+    def _format_offer_config(self, offer_config: dict[str, Any]) -> str:
         """格式化产品配置"""
         parts = []
 
@@ -255,12 +254,12 @@ class PromptCompiler:
         if "unique_value_proposition" in offer_config:
             uvp = offer_config["unique_value_proposition"]
             if isinstance(uvp, list) and uvp:
-                parts.append(f"**核心卖点**:\n" + "\n".join(f"  - {v}" for v in uvp[:3]))
+                parts.append("**核心卖点**:\n" + "\n".join(f"  - {v}" for v in uvp[:3]))
 
         if "pricing" in offer_config:
             pricing = offer_config["pricing"]
             if isinstance(pricing, dict):
-                parts.append(f"**价格阶梯**:\n" + "\n".join(f"  - {k}: {v}" for k, v in pricing.items()))
+                parts.append("**价格阶梯**:\n" + "\n".join(f"  - {k}: {v}" for k, v in pricing.items()))
 
         return "\n".join(parts)
 
@@ -275,10 +274,10 @@ class PromptCompiler:
 
 
 # 全局单例实例
-_compiler_instance: Optional[PromptCompiler] = None
+_compiler_instance: PromptCompiler | None = None
 
 
-def get_compiler(prompts_dir: Optional[Path] = None) -> PromptCompiler:
+def get_compiler(prompts_dir: Path | None = None) -> PromptCompiler:
     """获取编译器单例
 
     Args:
