@@ -595,7 +595,7 @@ def save_output(
         logger.info(f"内容已保存到: {file_path.absolute()}")
         return str(file_path.absolute())
 
-    except Exception as e:  # noqa: BLE001
+    except Exception as e:
         logger.error(f"保存文件失败: {e}")
         raise
 
