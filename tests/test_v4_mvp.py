@@ -404,7 +404,7 @@ def test_quality_gate_blocks_risky_copy():
 
 def test_quality_gate_accepts_reviewable_copy():
     from viral_content.core.quality_gate import QualityGate
-    result = QualityGate().check('这是一段面向小企业主的具体说明，用一个真实场景解释问题、限制和可执行步骤。评论区留下你的问题，我会补充案例和适用条件，方便你判断是否值得尝试。', require_cta=True)
+    result = QualityGate().check('This concrete explanation covers a real scenario, limits, and actionable steps for small business owners. Leave a question in the comments and I will add a sourced example so you can judge whether it fits your situation.', require_cta=True)
     assert result.passed
     assert result.warnings == []
 
