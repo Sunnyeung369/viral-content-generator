@@ -605,8 +605,8 @@ def main():
 
         return 0
 
-    except Exception as e:
-        logger.error(f"生成失败: {e}", exc_info=True)
+    except Exception:
+        logger.exception("生成失败")
         return 1
 
 

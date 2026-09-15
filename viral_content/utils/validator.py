@@ -151,16 +151,14 @@ class ConfigValidator:
         Validator.validate_config_dict(config, required_fields)
 
         # 验证目标用户
-        if "target_audience" in config:
-            if not isinstance(config["target_audience"], list):
-                raise ValidationError("target_audience must be a list")
+        if "target_audience" in config and not isinstance(config["target_audience"], list):
+            raise ValidationError("target_audience must be a list")
 
         # 验证成交目标
         if "business_goal" in config:
             goal = config["business_goal"]
-            if isinstance(goal, dict):
-                if "primary" not in goal:
-                    raise ValidationError("business_goal must have 'primary' field")
+            if isinstance(goal, dict) and "primary" not in goal:
+                raise ValidationError("business_goal must have 'primary' field")
 
     @staticmethod
     def validate_offer_config(config: dict[str, Any]):

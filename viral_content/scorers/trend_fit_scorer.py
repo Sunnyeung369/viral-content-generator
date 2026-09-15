@@ -136,15 +136,17 @@ class TrendFitScorer(BaseScorer):
             return 10.0
 
         # 话题匹配
-        if account.topics:
-            if any(topic in trend.topic or trend.topic in topic
-                   for topic in account.topics):
-                return 9.0
+        if account.topics and any(topic in trend.topic or trend.topic in topic
+               for topic in account.topics):
+            return 9.0
 
         # 分类匹配
-        if account.identity and trend.category:
-            if trend.category in account.identity or account.identity in trend.category:
-                return 8.0
+        if (
+            account.identity
+            and trend.category
+            and (trend.category in account.identity or account.identity in trend.category)
+        ):
+            return 8.0
 
         # 关键词匹配
         if trend.keywords:

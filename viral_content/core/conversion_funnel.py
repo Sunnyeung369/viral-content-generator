@@ -222,10 +222,7 @@ class ConversionFunnel:
         # 例如：调整CTA位置、增加互动钩子等
 
         lines = content.split("\n")
-        optimized = []
-
-        for line in lines:
-            optimized.append(line)
+        optimized = lines.copy()
 
         return "\n".join(optimized)
 

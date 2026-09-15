@@ -23,13 +23,13 @@ from .sources.xiaohongshu import XiaohongshuTrendSource
 __all__ = [
     # 基类
     "BaseTrendSource",
-    "TrendAggregator",
-    "Trend",
-    "TrendMetrics",
-    "TrendCategory",
+    "DouyinTrendSource",
     # 热点来源
     "GoogleTrendsSource",
     "TikTokTrendSource",
-    "DouyinTrendSource",
+    "Trend",
+    "TrendAggregator",
+    "TrendCategory",
+    "TrendMetrics",
     "XiaohongshuTrendSource",
 ]

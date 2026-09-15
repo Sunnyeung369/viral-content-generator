@@ -855,7 +855,7 @@ def main() -> int:
         return 130
 
     except Exception as e:
-        logger.exception(f"未预期的错误: {e}")
+        logger.exception("未预期的错误")
         print(f"\n❌ 发生错误: {e}\n", file=sys.stderr)
         return 1
 

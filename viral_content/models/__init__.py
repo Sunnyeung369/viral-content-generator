@@ -19,22 +19,22 @@ from .style import Style, StyleDNA, StyleMix, StyleProfile
 from .trend import Trend, TrendItem, TrendMetrics
 
 __all__ = [
-    # Generation
-    'GenerationConfig',
-    'GenerationResult',
-    'GenerationRequest',
-    'GenerationOutput',
     # Account
     'Account',
     'AccountFingerprint',
+    # Generation
+    'GenerationConfig',
+    'GenerationOutput',
+    'GenerationRequest',
+    'GenerationResult',
     # Offer
     'Offer',
     'OfferConfig',
     # Style
     'Style',
     'StyleDNA',
-    'StyleProfile',
     'StyleMix',
+    'StyleProfile',
     # Trend
     'Trend',
     'TrendItem',

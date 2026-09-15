@@ -12,9 +12,9 @@ from .constants import (
 from .settings import Settings, get_settings, reload_settings
 
 __all__ = [
+    "CONVERSION_GOALS",
     # Constants
     "STYLE_CATEGORIES",
-    "CONVERSION_GOALS",
     # Settings
     "Settings",
     "get_settings",
