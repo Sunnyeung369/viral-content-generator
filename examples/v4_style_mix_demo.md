@@ -22,7 +22,7 @@
 
 ## 单一风格示例
 
-### 风格1: 科技解释型 (global:tech_explainer)
+### 风格1: 科技解释型 (tech_explainer_global)
 
 **特征**：
 - 语气：清晰、兴奋、未来感
@@ -40,7 +40,7 @@
 
 ---
 
-### 风格2: 商业毒舌 (china:business_savage)
+### 风格2: 商业毒舌 (business_savage_china)
 
 **特征**：
 - 语气：犀利、直接、讽刺但有干货
@@ -62,7 +62,7 @@
 
 ### 科技解释 + 商业毒舌 = 犀利科技评论
 
-**风格组合**：`"global:tech_explainer,china:business_savage"`
+**风格组合**：`"tech_explainer_global,business_savage_china"`
 
 **混合效果**：
 - 保留科技感的清晰逻辑
@@ -84,7 +84,7 @@ AI正在偷走你的工作，你却还在刷抖音？
 
 ### 科技解释 + Newsletter作者 = 深度科技周刊
 
-**风格组合**：`"global:tech_explainer,writers_global:tech_newsletter"`
+**风格组合**：`"tech_explainer_global,tech_newsletter_daily"`
 
 **混合效果**：
 - 科技感的兴奋语气
@@ -116,7 +116,7 @@ Claude发布文档分析功能，这可能是我今年见过最实用的更新�
 
 ### 科技 + 商业 + 写作者 = 全方位科技商业评论
 
-**风格组合**：`"global:tech_explainer,china:business_savage,writers_global:tech_newsletter"`
+**风格组合**：`"tech_explainer_global,business_savage_china,tech_newsletter_daily"`
 
 **混合效果**：
 - 科技：前沿趋势感知
@@ -183,7 +183,7 @@ style_mix = "style1,style2,style3,style4"
 
 ```python
 # 主风格在前，辅助风格在后
-style_mix = "global:tech_explainer:0.7,china:business_savage:0.3"
+style_mix = "tech_explainer_global:0.7,business_savage_china:0.3"
 ```
 
 ---
@@ -194,26 +194,26 @@ style_mix = "global:tech_explainer:0.7,china:business_savage:0.3"
 
 ```python
 # 1. 犀利科技评论
-"global:tech_explainer,china:business_savage"
+"tech_explainer_global,business_savage_china"
 
 # 2. 深度科技分析
-"global:tech_explainer,writers_global:tech_newsletter"
+"tech_explainer_global,tech_newsletter_daily"
 
 # 3. 实用工具测评
-"global:tech_explainer,copywriting:value_first"
+"tech_explainer_global,copywriting_value_first"
 ```
 
 ### 商业博主常用组合
 
 ```python
 # 1. 商业故事讲述
-"china:business_savage,copywriting:story_sales"
+"business_savage_china,copywriting:story_sales"
 
 # 2. 商业毒舌点评
-"china:business_savage,copywriting:pas"
+"business_savage_china,copywriting:pas"
 
 # 3. 商业深度分析
-"china:business_savage,writers_global:business_strategy"
+"business_savage_china,writers_global:business_strategy"
 ```
 
 ### 生活方式博主常用组合
@@ -276,7 +276,7 @@ from viral_content import (
 result = (PipelineBuilder()
     .with_account("data/accounts/ai_consultant.yaml")
     .with_offer("data/offers/consulting.yaml")
-    .with_styles("global:tech_explainer,china:business_savage")
+    .with_styles("tech_explainer_global,business_savage_china")
     .with_goal(ConversionGoal.LEADS)
     .with_platform(Platform.XIAOHONGSHU)
     .generate("AI工具正在改变内容创作"))
@@ -294,9 +294,9 @@ all_styles = mixer.list_styles()
 
 # 测试不同组合
 combinations = [
-    ["global:tech_explainer"],
-    ["global:tech_explainer", "china:business_savage"],
-    ["global:tech_explainer", "china:business_savage", "writers_global:tech_newsletter"]
+    ["tech_explainer_global"],
+    ["tech_explainer_global", "business_savage_china"],
+    ["tech_explainer_global", "business_savage_china", "tech_newsletter_daily"]
 ]
 
 for styles in combinations:

@@ -308,7 +308,7 @@ python viral_content_cli.py \
 ```bash
 python viral_content_cli.py \
   --topic "马斯克2026访谈" \
-  --platforms douyin,xiaohongshu,wechat \
+  --platform douyin xiaohongshu wechat \
   --goal likes \
   --style podcast_host
 ```

@@ -35,7 +35,7 @@ result = pipeline.run(
     topic="AI正在改变内容创作",
     account="data/accounts/default_account.yaml",
     offer="data/offers/default_offer.yaml",
-    style_mix="global:tech_explainer",
+    style_mix="tech_explainer_global",
     goal="leads",
     platform="xiaohongshu"
 )
@@ -85,7 +85,7 @@ result = pipeline.run(
 | `topic` | str | 话题/热点描述 | "AI正在改变内容创作" |
 | `account` | str/Account | 账号配置或路径 | "data/accounts/ai_consultant.yaml" |
 | `offer` | str/Offer | 产品配置或路径 | "data/offers/consulting.yaml" |
-| `style_mix` | str/List | 风格组合 | "global:tech_explainer,china:business_savage" |
+| `style_mix` | str/List | 风格组合 | "tech_explainer_global,business_savage_china" |
 | `goal` | str/ConversionGoal | 成交目标 | ConversionGoal.LEADS |
 | `platform` | str/Platform | 目标平台 | Platform.XIAOHONGSHU |
 | `trend_data` | str/Trend/List | 热点数据（可选） | - |
@@ -105,7 +105,7 @@ from viral_content import PipelineBuilder, ConversionGoal, Platform
 result = (PipelineBuilder()
     .with_account("data/accounts/ai_consultant.yaml")
     .with_offer("data/offers/consulting.yaml")
-    .with_styles("global:tech_explainer,china:business_savage")
+    .with_styles("tech_explainer_global,business_savage_china")
     .with_goal(ConversionGoal.LEADS)
     .with_platform(Platform.XIAOHONGSHU)
     .generate("AI正在改变内容创作"))
@@ -156,7 +156,7 @@ from viral_content import StyleMixer
 mixer = StyleMixer()
 
 # 获取风格
-style = mixer.get_style("global:tech_explainer")
+style = mixer.get_style("tech_explainer_global")
 
 # 列出所有风格
 all_styles = mixer.list_styles()
@@ -165,7 +165,7 @@ all_styles = mixer.list_styles()
 results = mixer.search_styles(keyword="科技")
 
 # 混合风格
-mixed = mixer.mix_styles(["global:tech_explainer", "china:business_savage"])
+mixed = mixer.mix_styles(["tech_explainer_global", "business_savage_china"])
 ```
 
 #### PlatformAdapter
@@ -286,7 +286,7 @@ python viral_content_cli.py \
   --topic "你的话题" \
   --account data/accounts/ai_consultant.yaml \
   --offer data/offers/consulting.yaml \
-  --style-mix "global:tech_explainer,china:business_savage" \
+  --style-mix "tech_explainer_global,business_savage_china" \
   --goal leads \
   --platform xiaohongshu \
   --provider openai \
@@ -303,7 +303,7 @@ python viral_content_cli.py \
 | `--topic` | 话题（必需） | - | "AI正在改变内容创作" |
 | `--account` | 账号配置文件 | default_account.yaml | data/accounts/ai_consultant.yaml |
 | `--offer` | 产品配置文件 | default_offer.yaml | data/offers/consulting.yaml |
-| `--style-mix` | 风格组合 | tech_explainer_global | "global:tech_explainer,china:business_savage" |
+| `--style-mix` | 风格组合 | tech_explainer_global | "tech_explainer_global,business_savage_china" |
 | `--goal` | 成交目标 | leads | leads/comments/likes/sales |
 | `--platform` | 目标平台 | xiaohongshu | wechat/douyin/tiktok/etc |
 | `--provider` | AI提供商 | openai | openai/claude/gemini |
@@ -323,9 +323,9 @@ python viral_content_cli.py \
   --trend-file trends.json \
   --account data/accounts/ai_consultant.yaml \
   --offer data/offers/consulting.yaml \
-  --style-mix "global:tech_explainer" \
+  --style-mix "tech_explainer_global" \
   --goal leads \
-  --platform xiaohongshu,douyin \
+  --platform xiaohongshu douyin \
   --batch
 ```
 
@@ -490,7 +490,7 @@ for topic in topics:
         topic=topic,
         account="data/accounts/ai_consultant.yaml",
         offer="data/offers/consulting.yaml",
-        style_mix="global:tech_explainer",
+        style_mix="tech_explainer_global",
         goal="leads",
         platform="xiaohongshu"
     )
@@ -514,7 +514,7 @@ for platform in platforms:
         topic="AI正在改变内容创作",
         account="data/accounts/ai_consultant.yaml",
         offer="data/offers/consulting.yaml",
-        style_mix="global:tech_explainer",
+        style_mix="tech_explainer_global",
         goal="leads",
         platform=platform
     )

@@ -377,7 +377,7 @@ def parse_arguments():
     --offer data/offers/consulting.yaml \\
     --goal leads \\
     --platform xiaohongshu \\
-    --style-mix "global:tech_explainer,china:business_savage" \\
+    --style-mix "tech_explainer_global,business_savage_china" \\
     --output outputs/
 
   # 批量生成
@@ -389,7 +389,7 @@ def parse_arguments():
   # 多平台输出
   python viral_content_cli.py \\
     --topic "AI工具使用技巧" \\
-    --platforms douyin,xiaohongshu,wechat \\
+    --platform douyin xiaohongshu wechat \\
     --goal likes
         '''
     )
