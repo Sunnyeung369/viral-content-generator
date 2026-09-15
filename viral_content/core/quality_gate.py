@@ -16,5 +16,5 @@ class QualityGate:
         if not content or len(content.strip()) < 80: warnings.append("内容过短，无法完成有效审核")
         if self.PLACEHOLDER.search(content or ""): warnings.append("仍含占位符或待办标记")
         if self.OVERCLAIM.search(content or ""): warnings.append("包含未经证实的绝对化承诺")
-        if require_cta and not re.search(r"评论|私信|了解|领取|咨询|购买|行动", content or ""): warnings.append("缺少清晰的下一步行动")
+        if require_cta and not re.search(r"评论|私信|了解|领取|咨询|购买|行动|comment|contact|learn|download|buy|act", content or ""): warnings.append("缺少清晰的下一步行动")
         return QualityGateResult(not warnings, warnings)
