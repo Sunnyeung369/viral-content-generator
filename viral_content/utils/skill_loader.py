@@ -69,7 +69,7 @@ class SkillLoader:
 
         except SkillLoadError:
             raise
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - normalize filesystem and parser errors
             logger.error(f"加载Skill文件失败: {e}")
             raise SkillLoadError(f"加载Skill文件失败: {e}")
 

@@ -51,7 +51,7 @@ class FileHandler:
             raise FileOperationError(f"YAML parsing error in {path}: {e}")
         except FileNotFoundError:
             raise FileOperationError(f"File not found: {path}")
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - normalize filesystem and parser errors
             raise FileOperationError(f"Failed to read {path}: {e}")
 
     @staticmethod
@@ -84,7 +84,7 @@ class FileHandler:
 
             logger.debug(f"Wrote YAML to {path}")
 
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - normalize filesystem and parser errors
             raise FileOperationError(f"Failed to write {path}: {e}")
 
     @staticmethod
@@ -109,7 +109,7 @@ class FileHandler:
             raise FileOperationError(f"JSON parsing error in {path}: {e}")
         except FileNotFoundError:
             raise FileOperationError(f"File not found: {path}")
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - normalize filesystem and parser errors
             raise FileOperationError(f"Failed to read {path}: {e}")
 
     @staticmethod
@@ -138,7 +138,7 @@ class FileHandler:
 
             logger.debug(f"Wrote JSON to {path}")
 
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - normalize filesystem and parser errors
             raise FileOperationError(f"Failed to write {path}: {e}")
 
     @staticmethod
@@ -161,7 +161,7 @@ class FileHandler:
 
         except FileNotFoundError:
             raise FileOperationError(f"File not found: {path}")
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - normalize filesystem and parser errors
             raise FileOperationError(f"Failed to read {path}: {e}")
 
     @staticmethod
@@ -188,7 +188,7 @@ class FileHandler:
 
             logger.debug(f"Wrote text to {path}")
 
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - normalize filesystem and parser errors
             raise FileOperationError(f"Failed to write {path}: {e}")
 
     @staticmethod
@@ -282,7 +282,7 @@ class YamlFileLoader:
             try:
                 data = FileHandler.read_yaml(file_path)
                 results.append(data)
-            except Exception as e:
+            except Exception as e:  # noqa: BLE001 - normalize filesystem and parser errors
                 logger.warning(f"Failed to load {file_path}: {e}")
                 continue
 
