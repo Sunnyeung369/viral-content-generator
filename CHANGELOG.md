@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.0.1] - 2026-09-15
+
+### 修复与工程质量
+
+- 修复可选 `pytrends` 依赖未安装时的安全回退。
+- 补充打包资源、CLI 入口和反馈实验输出的回归测试。
+- 清理结构性 lint，并统一时间戳为带 UTC 时区的时间。
+- 明确 Python 3.10–3.12 支持范围。
+
 ---
 
 ## [4.0.0] - 2026-06-03
