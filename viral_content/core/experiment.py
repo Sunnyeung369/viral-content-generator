@@ -34,3 +34,32 @@ class CandidateRanker:
         self.quality_weight, self.gate_weight = weights or self.DEFAULT_WEIGHTS.get(goal, (0.5, 0.5))
     def rank(self, candidates: List[Candidate]) -> List[Candidate]:
         return sorted(candidates, key=lambda c: self.quality_weight * c.quality_score + self.gate_weight * (10.0 if c.passed_gate else 0.0), reverse=True)
+
+
+@dataclass
+class ExperimentSummary:
+    platform: str
+    sample_size: int
+    winner_index: Optional[int]
+    metrics: Dict[int, Dict[str, float]]
+    reliable: bool
+    note: str
+
+def summarize_feedback(records: List[FeedbackRecord], min_samples: int = 3) -> ExperimentSummary:
+    if not records:
+        return ExperimentSummary("unknown", 0, None, {}, False, "暂无发布反馈")
+    platform = records[0].platform
+    metrics = {}
+    for r in records:
+        denom = max(r.impressions or r.views or 0, 1)
+        metrics[r.candidate_index] = {
+            "engagement_rate": ((r.comments or 0) / denom) * 100,
+            "lead_rate": ((r.leads or 0) / denom) * 100,
+            "conversion_rate": ((r.conversions or 0) / denom) * 100,
+        }
+    def key(item):
+        m=item[1]; return (m["conversion_rate"], m["lead_rate"], m["engagement_rate"])
+    winner = max(metrics.items(), key=key)[0] if metrics else None
+    reliable = len(records) >= min_samples
+    note = "样本量达到最低建议值" if reliable else f"样本量不足，建议至少收集 {min_samples} 条记录"
+    return ExperimentSummary(platform, len(records), winner, metrics, reliable, note)

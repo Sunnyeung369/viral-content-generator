@@ -421,3 +421,12 @@ def test_feedback_record_serializes():
     record = FeedbackRecord(1, 'xiaohongshu', '2026-09-15', impressions=100)
     assert record.to_dict()['impressions'] == 100
 
+
+
+def test_feedback_summary_warns_on_small_sample():
+    from viral_content.core.experiment import FeedbackRecord, summarize_feedback
+    summary = summarize_feedback([FeedbackRecord(0, 'douyin', '2026-09-15', impressions=100, comments=5)])
+    assert summary.winner_index == 0
+    assert not summary.reliable
+    assert '样本量' in summary.note
+
