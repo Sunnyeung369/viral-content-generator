@@ -9,7 +9,7 @@ GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
 import re
-from typing import Any
+from typing import Any, ClassVar
 
 from .base import BaseScorer, ScoreResult
 
@@ -28,7 +28,7 @@ class ValueScorer(BaseScorer):
     """
 
     # 价值信号关键词
-    VALUE_SIGNALS = {
+    VALUE_SIGNALS: ClassVar = {
         "practical": [
             "方法", "技巧", "步骤", "策略", "建议", "可以",
             "如何", "怎样", "怎么做", "具体", "行动", "执行"

@@ -8,7 +8,7 @@ v4.0 - 评估内容的转化能力
 GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
-from typing import Any
+from typing import Any, ClassVar
 
 from .base import BaseScorer, ScoreResult
 
@@ -27,7 +27,7 @@ class ConversionScorer(BaseScorer):
     """
 
     # 转化信号关键词
-    CONVERSION_SIGNALS = {
+    CONVERSION_SIGNALS: ClassVar = {
         "cta": [
             "评论", "私信", "加微信", "关注", "购买", "下单",
             "领取", "获取", "咨询", "报名", "加入"

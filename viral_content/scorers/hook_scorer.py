@@ -9,7 +9,7 @@ GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
 import re
-from typing import Any
+from typing import Any, ClassVar
 
 from .base import BaseScorer, ScoreResult
 
@@ -28,7 +28,7 @@ class HookScorer(BaseScorer):
     """
 
     # 钩子模式正则表达式
-    HOOK_PATTERNS = {
+    HOOK_PATTERNS: ClassVar = {
         "question": r"[？?]",  # 疑问句
         "number": r"\d+[个项条人次万元%]",  # 数字+单位
         "contrast": r"(但是|然而|却|其实|反而)",  # 对比词

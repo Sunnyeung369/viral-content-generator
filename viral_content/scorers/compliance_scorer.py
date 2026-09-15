@@ -8,7 +8,7 @@ v4.0 - 评估内容的合规性
 GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
-from typing import Any
+from typing import Any, ClassVar
 
 from .base import BaseScorer, ScoreResult
 
@@ -27,7 +27,7 @@ class ComplianceScorer(BaseScorer):
     """
 
     # 禁止/敏感话题关键词（可根据需要扩展）
-    BANNED_TOPICS = {
+    BANNED_TOPICS: ClassVar = {
         "politics": ["政治", "选举", "抗议", "游行"],
         "violence": ["暴力", "恐怖", "杀人", "自杀"],
         "porn": ["色情", "淫秽", "裸聊"],
@@ -37,25 +37,25 @@ class ComplianceScorer(BaseScorer):
     }
 
     # 夸大宣传词汇
-    HYPE_WORDS = [
+    HYPE_WORDS: ClassVar = [
         "第一", "唯一", "独家", "最", "绝对", "保证",
         "百分百", "100%", "零风险", "无风险", "必定"
     ]
 
     # 违规引流词
-    SPAM_WORDS = [
+    SPAM_WORDS: ClassVar = [
         "加微信领", "私信领", "扫码领", "点击链接",
         "代购", "刷单", "兼职赚钱", "日赚"
     ]
 
     # 版权风险信号
-    COPYRIGHT_RISKS = [
+    COPYRIGHT_RISKS: ClassVar = [
         "破解版", "免费下载", "盗版", "资源分享",
         "全套教程", "网盘资源"
     ]
 
     # 不当表达
-    INAPPROPRIATE_LANGUAGE = [
+    INAPPROPRIATE_LANGUAGE: ClassVar = [
         "傻", "蠢", "白痴", "垃圾", "废物",
         "滚", "去死", "该死"
     ]

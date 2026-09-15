@@ -9,7 +9,7 @@ GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
 import re
-from typing import Any
+from typing import Any, ClassVar
 
 from .base import BaseScorer, ScoreResult
 
@@ -28,7 +28,7 @@ class InteractionScorer(BaseScorer):
     """
 
     # 互动信号关键词
-    INTERACTION_SIGNALS = {
+    INTERACTION_SIGNALS: ClassVar = {
         "question": [
             "你觉得", "你认为", "你怎么看", "你的观点", "你的看法",
             "呢吗", "吗", "呢", "有没有", "是不是"

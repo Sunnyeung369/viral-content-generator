@@ -9,7 +9,7 @@ GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
 import re
-from typing import Any
+from typing import Any, ClassVar
 
 from .base import BaseScorer, ScoreResult
 
@@ -28,7 +28,7 @@ class TrustScorer(BaseScorer):
     """
 
     # 信任信号关键词
-    TRUST_SIGNALS = {
+    TRUST_SIGNALS: ClassVar = {
         "authority": [
             "研究", "数据", "报告", "专家", "博士", "教授",
             "经验", "从业", "年", "项目", "案例", "实践"
