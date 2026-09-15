@@ -145,7 +145,7 @@ class Settings:
             self._deep_merge(self._config, file_config)
             logger.info(f"Loaded config from {config_file}")
 
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - normalize boundary errors for stable CLI/API behavior
             raise ConfigurationError(f"Failed to load config file: {e}")
 
     def _load_from_env(self):

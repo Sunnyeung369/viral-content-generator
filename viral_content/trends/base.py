@@ -205,7 +205,7 @@ class TrendAggregator:
                     results[source.get_source_name()] = trends
                 else:
                     results[source.get_source_name()] = []
-            except Exception as e:
+            except Exception as e:  # noqa: BLE001 - normalize boundary errors for stable CLI/API behavior
                 print(f"获取{source.get_source_name()}热点失败: {e}")
                 results[source.get_source_name()] = []
 

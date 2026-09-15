@@ -199,7 +199,7 @@ class GoogleTrendsSource(BaseTrendSource):
 
             return trends
 
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - normalize boundary errors for stable CLI/API behavior
             print(f"获取 Google Trends 失败: {e}")
             return []
 

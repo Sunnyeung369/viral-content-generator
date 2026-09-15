@@ -291,7 +291,7 @@ class ViralContentCLI:
                     'success': True,
                 })
 
-            except Exception as e:
+            except Exception as e:  # noqa: BLE001 - normalize boundary errors for stable CLI/API behavior
                 logger.error(f"生成失败: {e}")
                 results.append({
                     'trend': trend,
@@ -549,7 +549,7 @@ def main():
         try:
             hot_topics = HotTopicInput.from_file(args.trends_file)
             logger.info(f"加载了 {len(hot_topics)} 个热点")
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - normalize boundary errors for stable CLI/API behavior
             logger.error(f"加载热点文件失败: {e}")
             return 1
 

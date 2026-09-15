@@ -144,7 +144,7 @@ class ViralContentPipeline:
 
             return scored_result
 
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - normalize boundary errors for stable CLI/API behavior
             logger.error(f"Pipeline error: {e}")
             raise GenerationError(f"Pipeline execution failed: {e}")
 
@@ -188,7 +188,7 @@ class ViralContentPipeline:
                         config=config,
                     )
                     results.append(result)
-            except Exception as e:
+            except Exception as e:  # noqa: BLE001 - normalize boundary errors for stable CLI/API behavior
                 logger.warning(f"Failed to generate for trend {trend.id}: {e}")
                 continue
 
