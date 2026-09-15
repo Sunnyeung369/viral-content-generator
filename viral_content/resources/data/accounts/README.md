@@ -103,7 +103,7 @@ print(account)
 ### CLI
 
 ```bash
-python viral_content_cli_v4.py \
+python viral_content_cli.py \
   --topic "你的话题" \
   --account data/accounts/my_account.yaml \
   --offer data/offers/my_offer.yaml \

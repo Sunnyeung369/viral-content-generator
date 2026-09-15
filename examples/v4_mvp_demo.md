@@ -127,7 +127,7 @@ result = (PipelineBuilder()
 ### CLI 方式
 
 ```bash
-python viral_content_cli_v4.py \
+python viral_content_cli.py \
   --topic "Claude发布新功能，可以分析文档" \
   --account data/accounts/ai_consultant.yaml \
   --offer data/offers/consulting.yaml \
@@ -335,4 +335,4 @@ v4.0 MVP 核心价值：
 5. **多平台适配** - 一次生成，多平台使用
 6. **质量保障** - 内置评分系统确保质量
 
-**开始使用**: `python viral_content_cli_v4.py --help`
+**开始使用**: `python viral_content_cli.py --help`

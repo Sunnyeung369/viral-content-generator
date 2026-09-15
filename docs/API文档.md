@@ -276,13 +276,13 @@ trends = source.fetch(limit=20)
 ### 基本用法
 
 ```bash
-python viral_content_cli_v4.py "你的话题"
+python viral_content_cli.py "你的话题"
 ```
 
 ### 完整参数
 
 ```bash
-python viral_content_cli_v4.py \
+python viral_content_cli.py \
   --topic "你的话题" \
   --account data/accounts/ai_consultant.yaml \
   --offer data/offers/consulting.yaml \
@@ -319,7 +319,7 @@ python viral_content_cli_v4.py \
 
 ```bash
 # 从文件读取多个热点
-python viral_content_cli_v4.py \
+python viral_content_cli.py \
   --trend-file trends.json \
   --account data/accounts/ai_consultant.yaml \
   --offer data/offers/consulting.yaml \

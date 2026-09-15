@@ -98,7 +98,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 🔄 简单生成流程 → 完整内容作战系统
 
 **CLI 文件：**
-- 🔄 viral_article_cli.py → viral_content_cli_v4.py
+- 🔄 viral_article_cli.py → viral_content_cli.py
 - 🔄 新增包结构：viral_content/
 
 **依赖管理：**
@@ -139,7 +139,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 **CLI 用法变更：**
 - 旧：`python viral_article_cli.py "topic" --style xxx`
-- 新：`python viral_content_cli_v4.py --topic "topic" --style-mix xxx`
+- 新：`python viral_content_cli.py --topic "topic" --style-mix xxx`
 
 **配置方式变更：**
 - 风格从硬编码改为外置 YAML

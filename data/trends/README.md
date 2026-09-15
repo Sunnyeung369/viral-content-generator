@@ -132,7 +132,7 @@ trends = source.fetch(limit=20)
 ### CLI 使用
 
 ```bash
-python viral_content_cli_v4.py \
+python viral_content_cli.py \
   --topic "你的话题" \
   --trend-file trends.json \
   --batch
