@@ -15,6 +15,8 @@ GitHub: https://github.com/Sunnyeung369/viral-content-generator
 import os
 import sys
 import argparse
+import uuid
+import json
 import logging
 import json
 import yaml
@@ -180,7 +182,9 @@ class ViralContentCLI:
         Returns:
             生成的内容
         """
-        # 1. 加载配置
+        # 1. 建立可追踪实验身份
+        experiment_id = uuid.uuid4().hex[:12]
+        # 2. 加载配置
         style_config = None
         if style:
             style_config = self.style_mixer.get_style(style)
@@ -199,11 +203,11 @@ class ViralContentCLI:
                 data = yaml.safe_load(f)
                 offer_config = data.get('offer', {}) if isinstance(data, dict) else {}
 
-        # 2. 确定内容平台
+        # 3. 确定内容平台
         if content_platforms is None or not content_platforms:
             content_platforms = ['wechat']
 
-        # 3. 构建系统提示词
+        # 4. 构建系统提示词
         system_prompt = self.compiler.build_system_prompt(
             topic=topic,
             style_config=style_config,
@@ -213,7 +217,7 @@ class ViralContentCLI:
             platform=content_platforms[0],
         )
 
-        # 4. 创建生成器
+        # 5. 创建生成器
         generator = create_generator(
             platform=ai_platform,
             api_key=api_key,
@@ -253,9 +257,9 @@ class ViralContentCLI:
         if enable_scoring:
             logger.info(f"内容评分: {self._quick_score(content, goal)}/10")
 
-        # 8. 保存输出
+        # 9. 保存输出
         if output_path:
-            self._save_output(content, output_path, topic, goal, content_platforms[0])
+            self._save_output(content, output_path, topic, goal, content_platforms[0], experiment_id=experiment_id, candidate_count=candidate_count)
 
         return content
 
@@ -325,7 +329,7 @@ class ViralContentCLI:
         else:
             return 8.0
 
-    def _save_output(self, content: str, output_path: Path, topic: str, goal: str, platform: str):
+    def _save_output(self, content: str, output_path: Path, topic: str, goal: str, platform: str, *, experiment_id: str = "", candidate_count: int = 1):
         """保存输出
 
         Args:
@@ -349,6 +353,8 @@ class ViralContentCLI:
         # 写入文件
         with open(output_path, 'w', encoding='utf-8') as f:
             f.write(f"# {topic}\n\n")
+            f.write(f"**实验 ID**: {experiment_id}\n")
+            f.write(f"**候选数量**: {candidate_count}\n")
             f.write(f"**生成时间**: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
             f.write(f"**成交目标**: {goal}\n")
             f.write(f"**目标平台**: {platform}\n\n")
