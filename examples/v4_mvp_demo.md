@@ -106,7 +106,7 @@ result = pipeline.run(
     topic="Claude发布新功能，可以分析文档",
     account="data/accounts/ai_consultant.yaml",
     offer="data/offers/consulting.yaml",
-    style_mix="global:tech_explainer",
+    style_mix="tech_explainer_global",
     goal=ConversionGoal.LEADS,
     platform=Platform.XIAOHONGSHU
 )
@@ -118,7 +118,7 @@ print(result.scores)
 result = (PipelineBuilder()
     .with_account("data/accounts/ai_consultant.yaml")
     .with_offer("data/offers/consulting.yaml")
-    .with_styles("global:tech_explainer")
+    .with_styles("tech_explainer_global")
     .with_goal(ConversionGoal.LEADS)
     .with_platform(Platform.XIAOHONGSHU)
     .generate("Claude发布新功能，可以分析文档"))
@@ -131,7 +131,7 @@ python viral_content_cli.py \
   --topic "Claude发布新功能，可以分析文档" \
   --account data/accounts/ai_consultant.yaml \
   --offer data/offers/consulting.yaml \
-  --style-mix "global:tech_explainer" \
+  --style-mix "tech_explainer_global" \
   --goal leads \
   --platform xiaohongshu \
   --output outputs/demo/
@@ -199,7 +199,7 @@ python viral_content_cli.py \
 
 ```python
 # 混合多种风格
-style_mix = "global:tech_explainer,china:business_savage"
+style_mix = "tech_explainer_global,business_savage_china"
 result = pipeline.run(..., style_mix=style_mix)
 ```
 
@@ -305,7 +305,7 @@ results = pipeline.run_batch(
     trends=trends,
     account="data/accounts/ai_consultant.yaml",
     offer="data/offers/consulting.yaml",
-    style_mix="global:tech_explainer",
+    style_mix="tech_explainer_global",
     goal=ConversionGoal.LEADS,
     platforms=[Platform.XIAOHONGSHU, Platform.DOUYIN]
 )

@@ -217,7 +217,7 @@ from viral_content import (
 result = (PipelineBuilder()
     .with_account("data/accounts/ai_consultant.yaml")
     .with_offer("data/offers/consulting.yaml")
-    .with_styles("global:tech_explainer")
+    .with_styles("tech_explainer_global")
     .with_goal(ConversionGoal.LEADS)  # 关键参数
     .with_platform(Platform.XIAOHONGSHU)
     .generate("Claude发布新功能，可以分析文档"))
@@ -242,7 +242,7 @@ for goal in goals:
         topic=topic,
         account="data/accounts/ai_consultant.yaml",
         offer="data/offers/consulting.yaml",
-        style_mix="global:tech_explainer",
+        style_mix="tech_explainer_global",
         goal=goal,
         platform=Platform.XIAOHONGSHU
     )
