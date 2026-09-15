@@ -11,14 +11,16 @@ from pathlib import Path
 
 # 项目根目录
 PROJECT_ROOT = Path(__file__).parent.parent
+RESOURCES_ROOT = PROJECT_ROOT / "resources"
+SOURCE_ROOT = PROJECT_ROOT.parent
 
 # Skill 文件路径
-SKILL_V3_PATH = PROJECT_ROOT / "skill_v3.0.md"
-SKILL_FALLBACK_PATH = PROJECT_ROOT / "skill.md"
-PROMPTS_DIR = PROJECT_ROOT / "prompts"
+SKILL_V3_PATH = RESOURCES_ROOT / "skill_v3.0.md"
+SKILL_FALLBACK_PATH = RESOURCES_ROOT / "skill.md"
+PROMPTS_DIR = RESOURCES_ROOT / "prompts"
 
 # 数据目录
-DATA_DIR = PROJECT_ROOT / "data"
+DATA_DIR = RESOURCES_ROOT / "data"
 STYLES_DIR = DATA_DIR / "styles"
 ACCOUNTS_DIR = DATA_DIR / "accounts"
 OFFERS_DIR = DATA_DIR / "offers"

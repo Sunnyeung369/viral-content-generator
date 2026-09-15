@@ -1,0 +1,684 @@
+# 中文写作者风格基因库
+# v4.0 - 中文写作者风格卡 (20个)
+#
+# 每个风格描述可观察的风格特征，而非具体作者的复刻
+# 遵守：仅描述可公开观察的风格特征
+
+styles:
+  # ==================== 商业/财经评论 (10个) ====================
+
+  - id: business_commentary_china
+    label: "商业评论中国"
+    category: "business_commentator"
+    region: "china"
+    platform: "article"
+    reference_level: "publicly observable style traits only"
+
+    style_dna:
+      tone: "犀利、有深度、数据支撑"
+      structure: "商业现象 -> 深度分析 -> 趋势判断 -> 行动建议"
+      length_preference: "1500-3000字"
+      vocabulary: "商业术语 + 通俗表达"
+
+    hook_patterns:
+      - "这波商业浪潮背后的逻辑"
+      - "从数据看商业真相"
+      - "商业世界的底层规律"
+
+    logic_patterns:
+      - "商业现象 -> 深度分析 -> 可复用经验"
+
+    emotion_curve:
+      opening: "认知升级"
+      middle: "深度理解"
+      ending: "获得行动洞察"
+
+    avoid:
+      - "过度理论化"
+      - "脱离实战"
+
+    conversion_fit:
+      best_for: ["商业咨询", "企业服务", "高端社群"]
+      cta_style: "思想深度 + 专业服务"
+
+  - id: stock_analysis_practical
+    label: "实用股票分析"
+    category: "finance_commentator"
+    region: "china"
+    platform: "article"
+
+    style_dna:
+      tone: "理性、数据驱动、风险意识"
+      structure: "市场动态 -> 技术分析 -> 风险提示 -> 理性判断"
+      length_preference: "1200-2000字"
+      vocabulary: "股市术语 + 通俗解释"
+
+    hook_patterns:
+      - "这波行情的本质"
+      - "从K线看市场真相"
+      - "理性看待市场波动"
+
+    logic_patterns:
+      - "市场现象 -> 数据分析 -> 理性判断"
+
+    emotion_curve:
+      opening: "获取信息"
+      middle: "理性分析"
+      ending: "做出决策"
+
+    avoid:
+      - "投资建议"
+      - "过度乐观"
+
+    conversion_fit:
+      best_for: ["投资教育", "分析工具", "投资社群"]
+      cta_style: "分析价值 + 教育服务"
+
+  - id: economic_trends_china
+    label: "中国经济趋势"
+    category: "macro_commentator"
+    region: "china"
+    platform: "article"
+
+    style_dna:
+      tone: "专业、前瞻、数据支撑"
+      structure: "经济动态 -> 数据分析 -> 趋势预判 -> 启示建议"
+      length_preference: "1500-2500字"
+      vocabulary: "经济学术语"
+
+    hook_patterns:
+      - "中国经济正在发生什么"
+      - "从数据看经济趋势"
+      - "下一个增长点在哪里"
+
+    logic_patterns:
+      - "经济现象 -> 数据验证 -> 趋势预判"
+
+    emotion_curve:
+      opening: "获得认知"
+      middle: "深度理解"
+      ending: "把握机会"
+
+    avoid:
+      - "过度预测"
+      - "缺乏数据支撑"
+
+    conversion_fit:
+      best_for: ["经济咨询", "投资服务", "高端社群"]
+      cta_style: "专业深度 + 咨询服务"
+
+  - id: entrepreneurship_stories
+    label: "创业故事"
+    category: "business_commentator"
+    region: "china"
+    platform: "article"
+
+    style_dna:
+      tone: "真实、有温度、可启发的"
+      structure: "创业历程 -> 关键决策 -> 经验教训 -> 启示建议"
+      length_preference: "1500-2500字"
+      delivery: "故事化、有情感"
+
+    hook_patterns:
+      - "这段创业经历改变了我"
+      - "创业者最真实的记录"
+      - "从失败中学到的"
+
+    logic_patterns:
+      - "创业故事 -> 经验总结 -> 可复用教训"
+
+    emotion_curve:
+      opening: "共鸣"
+      middle: "深度理解"
+      ending: "获得启发"
+
+    avoid:
+      - "过度美化"
+      - "失去真实性"
+
+    conversion_fit:
+      best_for: ["创业服务", "商业课程", "创业社群"]
+      cta_style: "真实故事 + 服务推荐"
+
+  - id: management_wisdom_china
+    label: "中国管理智慧"
+    category: "business_commentator"
+    region: "china"
+    platform: "article"
+
+    style_dna:
+      tone: "智慧、东方哲学、现代应用"
+      structure: "管理困境 -> 传统智慧 -> 现代应用 -> 实践建议"
+      length_preference: "1200-2000字"
+      vocabulary: "管理术语 + 东方智慧"
+
+    hook_patterns:
+      - "东方智慧解决管理困境"
+      - "老祖宗的管理哲学"
+      - "中西管理智慧融合"
+
+    logic_patterns:
+      - "管理挑战 -> 传统智慧 -> 现代应用"
+
+    emotion_curve:
+      opening: "共鸣困境"
+      middle: "获得智慧"
+      ending: "想立刻应用"
+
+    avoid:
+      - "过度玄学"
+      - "脱离实际"
+
+    conversion_fit:
+      best_for: ["管理咨询", "企业培训", "高管社群"]
+      cta_style: "智慧深度 + 专业服务"
+
+  - id: marketing_cases_china
+    label: "中国营销案例"
+    category: "business_commentator"
+    region: "china"
+    platform: "article"
+
+    style_dna:
+      tone: "分析型、实战、可复用"
+      structure: "营销案例 -> 策略分析 -> 效果评估 -> 可复用经验"
+      length_preference: "1500-2500字"
+      vocabulary: "营销专业术语"
+
+    hook_patterns:
+      - "这个营销案例值得学习"
+      - "从顶级案例学营销"
+      - "营销背后的逻辑"
+
+    logic_patterns:
+      - "营销案例 -> 策略拆解 -> 可复用经验"
+
+    emotion_curve:
+      opening: "好奇"
+      middle: "深度理解"
+      ending: "想立刻应用"
+
+    avoid:
+      - "表面分析"
+      - "过度解读"
+
+    conversion_fit:
+      best_for: ["营销咨询", "品牌服务", "营销课程"]
+      cta_style: "案例深度 + 服务推荐"
+
+  - id: industry_research_china
+    label: "中国行业研究"
+    category: "business_commentator"
+    region: "china"
+    platform: "article"
+
+    style_dna:
+      tone: "专业、数据驱动、深度分析"
+      structure: "行业现状 -> 数据分析 -> 竞争格局 -> 趋势预判"
+      length_preference: "2000-3000字"
+      vocabulary: "行业专业术语"
+
+    hook_patterns:
+      - "这个行业正在经历什么"
+      - "深度解析XXX行业"
+      - "行业格局将如何演变"
+
+    logic_patterns:
+      - "行业现象 -> 数据验证 -> 趋势预判"
+
+    emotion_curve:
+      opening: "获得认知"
+      middle: "深度理解"
+      ending: "把握机会"
+
+    avoid:
+      - "浅尝辄止"
+      - "缺乏数据支撑"
+
+    conversion_fit:
+      best_for: ["行业咨询", "投资服务", "企业战略"]
+      cta_style: "专业深度 + 高端服务"
+
+  - id: investment_insights
+    label: "投资洞见"
+    category: "finance_commentator"
+    region: "china"
+    platform: "article"
+
+    style_dna:
+      tone: "理性、价值导向、长期主义"
+      structure: "投资现象 -> 价值分析 -> 风险评估 -> 理性决策"
+      length_preference: "1500-2500字"
+      vocabulary: "投资术语"
+
+    hook_patterns:
+      - "价值投资的本质"
+      - "从基本面看投资价值"
+      - "长期主义的投资智慧"
+
+    logic_patterns:
+      - "投资现象 -> 价值分析 -> 理性决策"
+
+    emotion_curve:
+      opening: "理性思考"
+      middle: "深度理解"
+      ending: "做出决策"
+
+    avoid:
+      - "短期投机"
+      - "投资建议"
+
+    conversion_fit:
+      best_for: ["投资教育", "价值投资社群", "咨询服务"]
+      cta_style: "理性价值 + 教育服务"
+
+  - id: business_biography
+    label: "商业传记"
+    category: "business_commentator"
+    region: "china"
+    platform: "article"
+
+    style_dna:
+      tone: "故事性、有深度、人物驱动"
+      structure: "人物背景 -> 关键决策 -> 商业成就 -> 启示总结"
+      length_preference: "2000-3000字"
+      delivery: "故事化、有情感"
+
+    hook_patterns:
+      - "他改变了一个行业"
+      - "从普通人到商业领袖"
+      - "商业世界的传奇人物"
+
+    logic_patterns:
+      - "人物故事 -> 关键决策 -> 可复用经验"
+
+    emotion_curve:
+      opening: "好奇"
+      middle: "情感共鸣"
+      ending: "获得启发"
+
+    avoid:
+      - "过度美化"
+      - "失去客观性"
+
+    conversion_fit:
+      best_for: ["商业内容", "领导力培训", "传记出版"]
+      cta_style: "人物深度 + 内容推荐"
+
+  - id: workplace_insights_china
+    label: "中国职场洞见"
+    category: "business_commentator"
+    region: "china"
+    platform: "article"
+
+    style_dna:
+      tone: "真实、接地气、保护导向"
+      structure: "职场困境 -> 现实分析 -> 生存策略 -> 发展建议"
+      length_preference: "1200-2000字"
+      delivery: "像职场前辈传授经验"
+
+    hook_patterns:
+      - "职场人最需要知道的真相"
+      - "这样避开职场陷阱"
+      - "职场生存与发展"
+
+    logic_patterns:
+      - "职场困境 -> 解决方案 -> 发展路径"
+
+    emotion_curve:
+      opening: "共鸣痛点"
+      middle: "获得方法"
+      ending: "信心提升"
+
+    avoid:
+      - "过度权谋"
+      - "失真建议"
+
+    conversion_fit:
+      best_for: ["职场培训", "职业咨询", "职场社群"]
+      cta_style: "实用价值 + 服务推荐"
+
+  # ==================== 文化/随笔类 (10个) ====================
+
+  - id: cultural_essay_china
+    label: "文化随笔中国"
+    category: "cultural_writer"
+    region: "china"
+    platform: "article"
+
+    style_dna:
+      tone: "雅致、有深度、文化底蕴"
+      structure: "文化现象 -> 深度思考 -> 价值反思 -> 文化传承"
+      length_preference: "1500-2500字"
+      vocabulary: "文学化、有古典底蕴"
+
+    hook_patterns:
+      - "这个文化现象值得深思"
+      - "从传统文化看现代"
+      - "文化需要这样传承"
+
+    logic_patterns:
+      - "文化现象 -> 深度分析 -> 价值反思"
+
+    emotion_curve:
+      opening: "文化共鸣"
+      middle: "深度思考"
+      ending: "获得文化自觉"
+
+    avoid:
+      - "过度学术化"
+      - "失去大众共鸣"
+
+    conversion_fit:
+      best_for: ["文化内容", "教育服务", "文化社群"]
+      cta_style: "文化深度 + 内容推荐"
+
+  - id: social_observation
+    label: "社会观察"
+    category: "cultural_writer"
+    region: "china"
+    platform: "article"
+
+    style_dna:
+      tone: "观察性、有温度、人文关怀"
+      structure: "社会现象 -> 多维分析 -> 人性思考 -> 社会建议"
+      length_preference: "1500-2500字"
+      vocabulary: "社会学词汇 + 日常表达"
+
+    hook_patterns:
+      - "这个社会现象背后..."
+      - "从普通人看社会"
+      - "社会需要更多关注"
+
+    logic_patterns:
+      - "社会现象 -> 深度分析 -> 人性反思"
+
+    emotion_curve:
+      opening: "关注"
+      middle: "深度理解"
+      ending: "形成观点"
+
+    avoid:
+      - "过度批判"
+      - "失去温度"
+
+    conversion_fit:
+      best_for: ["社会内容", "思想社群", "文化服务"]
+      cta_style: "思想深度 + 内容推荐"
+
+  - id: life_reflection
+    label: "生活感悟"
+    category: "cultural_writer"
+    region: "china"
+    platform: "article"
+
+    style_dna:
+      tone: "温暖、有感悟、生活智慧"
+      structure: "生活片段 -> 深度思考 -> 人生感悟 -> 智慧总结"
+      length_preference: "1000-1500字"
+      delivery: "像朋友聊天"
+
+    hook_patterns:
+      - "这件事让我明白..."
+      - "生活中的小智慧"
+      - "平凡生活的意义"
+
+    logic_patterns:
+      - "生活现象 -> 深度思考 -> 人生智慧"
+
+    emotion_curve:
+      opening: "共鸣"
+      middle: "获得启发"
+      ending: "温暖治愈"
+
+    avoid:
+      - "过度鸡汤"
+      - "失去真诚"
+
+    conversion_fit:
+      best_for: ["生活方式", "个人成长", "情感内容"]
+      cta_style: "情感共鸣 + 内容推荐"
+
+  - id: urban_stories
+    label: "城市故事"
+    category: "cultural_writer"
+    region: "china"
+    platform: "article"
+
+    style_dna:
+      tone: "都市感、真实、有温度"
+      structure: "城市场景 -> 人物故事 -> 时代印记 -> 城市记忆"
+      length_preference: "1500-2500字"
+      delivery: "故事化、有画面感"
+
+    hook_patterns:
+      - "这座城市的故事"
+      - "都市中的普通人"
+      - "城市记忆与人"
+
+    logic_patterns:
+      - "城市场景 -> 人物故事 -> 时代印记"
+
+    emotion_curve:
+      opening: "好奇"
+      middle: "情感共鸣"
+      ending: "获得城市记忆"
+
+    avoid:
+      - "过度悲情"
+      - "失去真实性"
+
+    conversion_fit:
+      best_for: ["城市内容", "文化服务", "故事社群"]
+      cta_style: "故事深度 + 内容推荐"
+
+  - id: nostalgia_writing
+    label: "怀旧写作"
+    category: "cultural_writer"
+    region: "china"
+    platform: "article"
+
+    style_dna:
+      tone: "温暖、怀旧、有共鸣"
+      structure: "记忆片段 -> 时代背景 -> 情感共鸣 -> 时代反思"
+      length_preference: "1200-2000字"
+      delivery: "情感充沛、有代入感"
+
+    hook_patterns:
+      - "那些年的记忆"
+      - "回不去的时光"
+      - "时代印记中的我们"
+
+    logic_patterns:
+      - "记忆片段 -> 时代背景 -> 情感共鸣"
+
+    emotion_curve:
+      opening: "怀旧"
+      middle: "情感共鸣"
+      ending: "温暖治愈"
+
+    avoid:
+      - "过度悲情"
+      - "失去现实意义"
+
+    conversion_fit:
+      best_for: ["文化内容", "情感社群", "时代记录"]
+      cta_style: "情感共鸣 + 内容推荐"
+
+  - id: family_narratives
+    label: "家庭叙事"
+    category: "cultural_writer"
+    region: "china"
+    platform: "article"
+
+    style_dna:
+      tone: "温暖、真实、有代际共鸣"
+      structure: "家庭故事 -> 代际关系 -> 情感纽带 -> 家族传承"
+      length_preference: "1500-2500字"
+      delivery: "有情感、接地气"
+
+    hook_patterns:
+      - "每个家庭都有这样的故事"
+      - "父母那一代的..."
+      - "家的意义"
+
+    logic_patterns:
+      - "家庭故事 -> 情感纽带 -> 时代意义"
+
+    emotion_curve:
+      opening: "共鸣"
+      middle: "情感涌动"
+      ending: "温暖治愈"
+
+    avoid:
+      - "过度隐私"
+      - "失去普遍性"
+
+    conversion_fit:
+      best_for: ["家庭内容", "情感社群", "文化服务"]
+      cta_style: "情感深度 + 内容推荐"
+
+  - id: travel_essay_china
+    label: "旅行随笔中国"
+    category: "cultural_writer"
+    region: "china"
+    platform: "article"
+
+    style_dna:
+      tone: "文艺、有画面感、文化思考"
+      structure: "旅行地点 -> 文化探索 -> 人文思考 -> 旅行意义"
+      length_preference: "1500-2500字"
+      delivery: "有诗意、有深度"
+
+    hook_patterns:
+      - "这趟旅行改变了我"
+      - "在路上遇见的自己"
+      - "旅行的意义"
+
+    logic_patterns:
+      - "旅行体验 -> 文化思考 -> 人生启发"
+
+    emotion_curve:
+      opening: "向往"
+      middle: "文化共鸣"
+      ending: "获得启发"
+
+    avoid:
+      - "过度攻略化"
+      - "失去深度"
+
+    conversion_fit:
+      best_for: ["旅行内容", "文化服务", "旅行社群"]
+      cta_style: "文化深度 + 内容推荐"
+
+  - id: food_culture_writing
+    label: "饮食文化写作"
+    category: "cultural_writer"
+    region: "china"
+    platform: "article"
+
+    style_dna:
+      tone: "温暖、有文化底蕴、生活化"
+      structure: "美食记忆 -> 文化背景 -> 人文思考 -> 时代印记"
+      length_preference: "1200-2000字"
+      delivery: "有温度、有故事"
+
+    hook_patterns:
+      - "这道菜背后的故事"
+      - "饮食中的文化传承"
+      - "家的味道"
+
+    logic_patterns:
+      - "美食体验 -> 文化背景 -> 人文思考"
+
+    emotion_curve:
+      opening: "食欲"
+      middle: "文化共鸣"
+      ending: "温暖治愈"
+
+    avoid:
+      - "过度商业化"
+      - "失去文化深度"
+
+    conversion_fit:
+      best_for: ["美食内容", "文化服务", "生活方式"]
+      cta_style: "文化深度 + 内容推荐"
+
+  - id: personal_growth_essay
+    label: "个人成长随笔"
+    category: "cultural_writer"
+    region: "china"
+    platform: "article"
+
+    style_dna:
+      tone: "真诚、有反思、可启发"
+      structure: "成长经历 -> 关键转折 -> 深度反思 -> 成长智慧"
+      length_preference: "1200-2000字"
+      delivery: "真诚、有温度"
+
+    hook_patterns:
+      - "这段经历让我成长"
+      - "成长的代价与收获"
+      - "成为更好的自己"
+
+    logic_patterns:
+      - "成长经历 -> 深度反思 -> 可复用经验"
+
+    emotion_curve:
+      opening: "共鸣"
+      middle: "受到启发"
+      ending: "想立刻改变"
+
+    avoid:
+      - "过度说教"
+      - "失去真诚"
+
+    conversion_fit:
+      best_for: ["成长内容", "教育服务", "成长社群"]
+      cta_style: "成长价值 + 服务推荐"
+
+  - id: book_review_china
+    label: "中国书评"
+    category: "cultural_writer"
+    region: "china"
+    platform: "article"
+
+    style_dna:
+      tone: "有深度、真诚、有启发性"
+      structure: "书籍介绍 -> 核心观点 -> 个人感悟 -> 阅读建议"
+      length_preference: "1200-2000字"
+      vocabulary: "文学化、有思想深度"
+
+    hook_patterns:
+      - "这本好书改变了我的思考"
+      - "深度解读XXX"
+      - "值得一读再读"
+
+    logic_patterns:
+      - "书籍内容 -> 深度分析 -> 价值判断"
+
+    emotion_curve:
+      opening: "好奇"
+      middle: "深度理解"
+      ending: "想立刻阅读"
+
+    avoid:
+      - "剧透过度"
+      - "失真评价"
+
+    conversion_fit:
+      best_for: ["图书推广", "阅读社群", "知识服务"]
+      cta_style: "深度价值 + 图书推荐"
+
+# 文件元数据
+metadata:
+  version: "4.0.0"
+  total_styles: 20
+  region: "china"
+  last_updated: "2026-06-03"
+  categories:
+    - business_commentator: 5
+    - finance_commentator: 2
+    - macro_commentator: 1
+    - cultural_writer: 10
+    - workplace_writer: 2

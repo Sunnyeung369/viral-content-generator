@@ -68,6 +68,11 @@ viral-content = "viral_content_cli:main"
 viral-content-v4 = "viral_content_cli:main"
 
 [tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.package-data]
+viral_content = ["resources/**/*"]
+
 py-modules = ["viral_content_cli"]
 
 [tool.setuptools.packages.find]

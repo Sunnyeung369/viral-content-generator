@@ -1,0 +1,140 @@
+# 留资磁铁配置模板
+# v4.0 - 用于获取线索的免费诱饵
+
+offer:
+  # 基本信息
+  name: "AI效率提升工具包"
+  type: "lead_magnet"
+  category: "资源包"
+
+  # 价格阶梯
+  pricing:
+    free: "¥0"
+    low_ticket: "¥99"  # 后续低价产品
+    mid_ticket: "¥499"
+    high_ticket: "¥2999"
+
+  # 核心卖点
+  unique_value_proposition:
+    - "100+精选AI工具，分类整理"
+    - "包含使用场景和推荐理由"
+    - "定期更新，跟上AI发展"
+    - "附带新手使用指南"
+
+  # 成交门槛
+  commitment_required:
+    time_investment: "5分钟"
+    skill_level: "无需任何基础"
+    tools_needed: "仅需微信号/邮箱"
+
+  # 目标客户匹配
+  ideal_customer_profile:
+    - "对AI感兴趣但不知道从哪开始"
+    - "想提升工作效率的职场人士"
+    - "内容创作者"
+    - "自由职业者"
+
+  # 磁铁内容
+  magnet_contents:
+    item1:
+      name: "AI工具清单Excel"
+      description: "100+工具分类整理，含链接"
+      value: "¥99"
+    item2:
+      name: "新手使用指南PDF"
+      description: "10分钟快速上手"
+      value: "¥49"
+    item3:
+      name: "常用提示词模板"
+      description: "50个可直接复制的提示词"
+      value: "¥199"
+    item4:
+      name: "工具使用视频教程"
+      description: "5个核心工具演示"
+      value: "¥99"
+
+  # 转化路径
+  conversion_path:
+    step1:
+      action: "关注公众号/添加微信"
+      barrier: "低（仅关注/加好友）"
+      next_step: "发送消息获取工具包"
+
+    step2:
+      action: "领取工具包"
+      barrier: "极低（回复关键词）"
+      next_step: "加入免费社群"
+
+    step3:
+      action: "加入免费社群"
+      barrier: "低（扫码入群）"
+      next_step: "群内持续种草"
+
+    step4:
+      action: "购买付费产品"
+      barrier: "中（需要付费决策）"
+      products:
+        - "¥99 AI工具速成课"
+        - "¥499 AI实战训练营"
+      next_step: "成为付费用户"
+
+    step5:
+      action: "成为合伙人"
+      barrier: "高（需要深度认可）"
+      next_step: "推广裂变"
+
+  # 获取方式
+  delivery_method:
+    - "关注公众号回复【AI工具】"
+    - "添加微信领取"
+    - "入群后自动发送"
+
+  # 后续跟进
+  follow_up:
+    day1:
+      - "发送工具包"
+      - "询问使用情况"
+    day3:
+      - "推荐工具使用教程"
+      - "邀请进免费社群"
+    day7:
+      - "分享使用案例"
+      - "推荐低价产品"
+    day14:
+      - "社群内种草"
+      - "限时优惠通知"
+
+  # 信任背书
+  social_proof:
+    download_count: "10,000+人领取"
+    testimonials:
+      - "工具包太实用了，节省了我大量找工具的时间"
+      - "分类很清晰，一目了然"
+      - "新手指南让我快速上手"
+
+  # 稀缺性元素
+  scarcity:
+    - "限时免费（原价¥99）"
+    - "仅限前1000名"
+
+  # 合规要求
+  compliance:
+    - "说明个人信息用途"
+    - "提供退订方式"
+    - "不过度营销"
+
+  # 数据收集
+  data_collection:
+    required:
+      - "微信号/邮箱"
+    optional:
+      - "职业"
+      - "使用场景"
+      - "主要需求"
+
+  # 成本分析
+  cost_analysis:
+    production_cost: "低（一次性制作）"
+    delivery_cost: "接近零（自动发送）"
+    follow_up_cost: "低（社群运营）"
+    expected_conversion: "3-5%转化到付费"

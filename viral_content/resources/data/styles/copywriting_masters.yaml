@@ -1,0 +1,661 @@
+# 成交文案风格基因库
+# v4.0 - 成交文案大师风格卡 (20个)
+#
+# 每个风格描述可观察的文案特征，而非具体文案大师的复刻
+# 遵守：仅描述可公开观察的文案框架和技巧
+
+styles:
+  # ==================== 经典框架 (10个) ====================
+
+  - id: copywriting_aida
+    label: "AIDA框架文案"
+    category: "classic_framework"
+    region: "global"
+    reference_level: "publicly observable framework traits only"
+
+    style_dna:
+      tone: "直接、有效、结果导向"
+      framework: "Attention -> Interest -> Desire -> Action"
+      cta_density: "结尾强化CTA"
+      structure: "标题抓人 -> 痛点激发 -> 解决渴望 -> 行动召唤"
+
+    hook_patterns:
+      - "你是否正在经历..."
+      - "如果有一个方法能..."
+      - "这就是你想要的..."
+
+    logic_patterns:
+      - "抓住注意 -> 激发兴趣 -> 制造渴望 -> 召唤行动"
+
+    emotion_curve:
+      opening: "注意"
+      middle: "兴趣和渴望"
+      ending: "行动冲动"
+
+    avoid:
+      - "逻辑跳跃"
+      - "CTA模糊"
+
+    conversion_fit:
+      best_for: ["B2C销售", "电商转化", "落地页"]
+      cta_style: "清晰直接 + 紧迫感"
+
+  - id: copywriting_pas
+    label: "PAS框架文案"
+    category: "classic_framework"
+    region: "global"
+
+    style_dna:
+      tone: "痛点导向、解决方案清晰"
+      framework: "Problem -> Agitate -> Solve"
+      cta_density: "结尾强化CTA"
+      structure: "问题提出 -> 痛点放大 -> 解决方案 -> 行动召唤"
+
+    hook_patterns:
+      - "你是否受困于..."
+      - "这个问题的代价是..."
+      - "现在有了解决方案"
+
+    logic_patterns:
+      - "识别问题 -> 放大痛点 -> 提供解决方案 -> 立刻行动"
+
+    emotion_curve:
+      opening: "识别痛点"
+      middle: "痛点加剧"
+      ending: "获得解决方案的安心"
+
+    avoid:
+      - "过度恐吓"
+      - "解决方案不具体"
+
+    conversion_fit:
+      best_for: ["B2B服务", "咨询转化", "问题解决型产品"]
+      cta_style: "解决方案 + 立即行动"
+
+  - id: copywriting_bab
+    label: "BAB框架文案"
+    category: "classic_framework"
+    region: "global"
+
+    style_dna:
+      tone: "对比清晰、改善明确"
+      framework: "Before -> After -> Bridge"
+      cta_density: "结尾强化CTA"
+      structure: "当前状态 -> 理想状态 -> 实现路径"
+
+    hook_patterns:
+      - "现在的你是这样..."
+      - "想象一下如果..."
+      - "从现在到那里，只需要..."
+
+    logic_patterns:
+      - "描述现状 -> 展示理想 -> 提供桥梁"
+
+    emotion_curve:
+      opening: "共鸣现状"
+      middle: "向往理想"
+      ending: "获得路径的希望"
+
+    avoid:
+      - "现状描述失真"
+      - "桥梁不具体"
+
+    conversion_fit:
+      best_for: ["转型服务", "教育培训", "成长产品"]
+      cta_style: "改善路径 + 开始行动"
+
+  - id: copywriting_story_sales
+    label: "故事销售文案"
+    category: "classic_framework"
+    region: "global"
+
+    style_dna:
+      tone: "故事化、有情感、可共鸣"
+      framework: "Hero's Journey应用于销售"
+      cta_density: "故事结尾自然引入"
+      structure: "角色困境 -> 转折点 -> 解决方案 -> 读者也能做到"
+
+    hook_patterns:
+      - "我曾经和你一样..."
+      - "直到那一天..."
+      - "这个故事可能改变你的想法"
+
+    logic_patterns:
+      - "共鸣困境 -> 转折故事 -> 解决方案 -> 读者应用"
+
+    emotion_curve:
+      opening: "共鸣"
+      middle: "情感起伏"
+      ending: "相信我也能做到"
+
+    avoid:
+      - "故事失真"
+      - "强行转折"
+
+    conversion_fit:
+      best_for: ["个人品牌", "知识付费", "社群转化"]
+      cta_style: "故事共鸣 + 我也能做到"
+
+  - id: copywriting_diagnosis
+    label: "诊断型销售文案"
+    category: "classic_framework"
+    region: "global"
+
+    style_dna:
+      tone: "专业诊断、权威建议"
+      framework: "诊断 -> 处方"
+      cta_density: "诊断后CTA"
+      structure: "症状识别 -> 深层原因 -> 专业诊断 -> 解决方案"
+
+    hook_patterns:
+      - "你的XXX可能存在以下问题"
+      - "我们来做个诊断"
+      - "这个症状背后..."
+
+    logic_patterns:
+      - "识别症状 -> 深层分析 -> 专业建议 -> 解决方案"
+
+    emotion_curve:
+      opening: "关注症状"
+      middle: "理解深层"
+      ending: "信任解决方案"
+
+    avoid:
+      - "过度恐吓"
+      - "诊断不专业"
+
+    conversion_fit:
+      best_for: ["专业服务", "B2B咨询", "高端产品"]
+      cta_style: "专业权威 + 咨询服务"
+
+  - id: copywriting_challenge
+    label: "挑战营转化文案"
+    category: "classic_framework"
+    region: "global"
+
+    style_dna:
+      tone: "激励、社群支持、结果导向"
+      framework: "挑战承诺 -> 社群支持 -> 结果展示"
+      cta_density: "高频CTA"
+      structure: "挑战目标 -> 痛点共鸣 -> 方法保障 -> 社群支持 -> 立刻加入"
+
+    hook_patterns:
+      - "XXX天挑战，改变XXX"
+      - "你是否试过很多方法都..."
+      - "这次不一样，因为..."
+
+    logic_patterns:
+      - "挑战目标 -> 为什么难 -> 我们的方法 -> 社群保障"
+
+    emotion_curve:
+      opening: "被挑战激发"
+      middle: "获得信心"
+      ending: "想立刻加入"
+
+    avoid:
+      - "过度承诺"
+      - "社群支持不明确"
+
+    conversion_fit:
+      best_for: ["在线课程", "社群运营", "挑战营"]
+      cta_style: "挑战激励 + 社群加入"
+
+  - id: copywriting_webinar
+    label: "直播间转化文案"
+    category: "classic_framework"
+    region: "global"
+
+    style_dna:
+      tone: "紧迫、稀缺、限时特惠"
+      framework: "价值预告 -> 直播交付 -> 限时优惠"
+      cta_density: "超高频率"
+      structure: "吸引报名 -> 直播价值 -> 限时优惠 -> 立刻行动"
+
+    hook_patterns:
+      - "仅限今晚，错过等一年"
+      - "直播间专属优惠"
+      - "最后X个名额"
+
+    logic_patterns:
+      - "价值预告 -> 稀缺营造 -> 紧迫制造 -> 立即行动"
+
+    emotion_curve:
+      opening: "好奇"
+      middle: "价值认同"
+      ending: "怕错过"
+
+    avoid:
+      - "虚假稀缺"
+      - "过度施压"
+
+    conversion_fit:
+      best_for: ["直播销售", "限时优惠", "新品发布"]
+      cta_style: "限时稀缺 + 立即下单"
+
+  - id: copywriting_dm_sales
+    label: "私信成交文案"
+    category: "classic_framework"
+    region: "global"
+
+    style_dna:
+      tone: "一对一、个性化、私密感"
+      framework: "建立信任 -> 了解需求 -> 专属方案 -> 成交"
+      cta_density: "个性化CTA"
+      structure: "寒暄 -> 建立信任 -> 需求挖掘 -> 方案提供 -> 成交"
+
+    hook_patterns:
+      - "你好，注意到你对XXX感兴趣"
+      - "根据你的情况，我建议..."
+      - "这个方案专为你定制"
+
+    logic_patterns:
+      - "建立关系 -> 了解需求 -> 个性化方案 -> 成交"
+
+    emotion_curve:
+      opening: "被关注"
+      middle: "被理解"
+      ending: "专属方案的价值"
+
+    avoid:
+      - "群发感"
+      - "过度推销"
+
+    conversion_fit:
+      best_for: ["高客单价", "私人服务", "高端产品"]
+      cta_style: "专属价值 + 私密成交"
+
+  - id: copywriting_community
+    label: "社群转化文案"
+    category: "classic_framework"
+    region: "global"
+
+    style_dna:
+      tone: "归属感、社群价值、人脉连接"
+      framework: "价值展示 -> 成员见证 -> 加入社群"
+      cta_density: "社群CTA"
+      structure: "社群价值 -> 成员收益 -> 加入理由 -> 立刻加入"
+
+    hook_patterns:
+      - "加入我们，一起XXX"
+      - "这个社群的成员都在..."
+      - "你也能成为其中一员"
+
+    logic_patterns:
+      - "社群价值 -> 成员见证 -> 归属营造 -> 加入行动"
+
+    emotion_curve:
+      opening: "向往社群"
+      middle: "想成为其中一员"
+      ending: "立刻加入"
+
+    avoid:
+      - "过度承诺"
+      - "社群价值模糊"
+
+    conversion_fit:
+      best_for: ["社群运营", "会员服务", "圈子产品"]
+      cta_style: "归属价值 + 社群加入"
+
+  - id: copywriting_consulting
+    label: "咨询顾问成交文案"
+    category: "classic_framework"
+    region: "global"
+
+    style_dna:
+      tone: "专业、权威、高价值感"
+      framework: "问题诊断 -> 专业方案 -> 价值展示 -> 咨询成交"
+      cta_density: "咨询CTA"
+      structure: "识别问题 -> 展示专业 -> 方案预告 -> 咨询邀请"
+
+    hook_patterns:
+      - "你的XXX问题可能需要专业诊断"
+      - "作为XXX领域的专家..."
+      - "让我们深入聊聊你的情况"
+
+    logic_patterns:
+      - "建立专业 -> 展示价值 -> 邀请咨询 -> 成交"
+
+    emotion_curve:
+      opening: "专业信任"
+      middle: "价值认同"
+      ending: "想获得专业帮助"
+
+    avoid:
+      - "过度推销"
+      - "专业感不足"
+
+    conversion_fit:
+      best_for: ["咨询服务", "高端服务", "专业服务"]
+      cta_style: "专业权威 + 咨询邀请"
+
+  # ==================== 现代变体 (10个) ====================
+
+  - id: copywriting_value_first
+    label: "价值先行文案"
+    category: "modern_framework"
+    region: "global"
+
+    style_dna:
+      tone: "利他、教育、先给后取"
+      framework: "免费价值 -> 信任建立 -> 付费升级"
+      cta_density: "价值后CTA"
+      structure: "痛点共鸣 -> 免费方案 -> 部分价值 -> 付费深度"
+
+    hook_patterns:
+      - "我先教你XXX（免费）"
+      - "这个方法我免费分享给你"
+      - "无需付费，先学会..."
+
+    logic_patterns:
+      - "提供价值 -> 建立信任 -> 展示深度 -> 付费升级"
+
+    emotion_curve:
+      opening: "获得免费价值"
+      middle: "信任建立"
+      ending: "想获得更深度内容"
+
+    avoid:
+      - "免费价值不足"
+      - "付费转化生硬"
+
+    conversion_fit:
+      best_for: ["知识付费", "在线课程", "内容营销"]
+      cta_style: "价值先行 + 深度付费"
+
+  - id: copywriting_education_based
+    label: "教育型销售文案"
+    category: "modern_framework"
+    region: "global"
+
+    style_dna:
+      tone: "教育性、理性、不做作"
+      framework: "教育引导 -> 理性决策"
+      cta_density: "教育后自然CTA"
+      structure: "市场教育 -> 理性分析 -> 产品对比 -> 理性选择"
+
+    hook_patterns:
+      - "在选择XXX之前，你需要知道..."
+      - "市场不会告诉你的真相"
+      - "理性消费指南"
+
+    logic_patterns:
+      - "教育市场 -> 理性分析 -> 突出差异 -> 理性选择"
+
+    emotion_curve:
+      opening: "学习欲望"
+      middle: "理性认知"
+      ending: "理性决策"
+
+    avoid:
+      - "过度情绪化"
+      - "失去教育价值"
+
+    conversion_fit:
+      best_for: ["理性消费产品", "B2B服务", "专业产品"]
+      cta_style: "理性价值 + 明智选择"
+
+  - id: copywriting_social_proof
+    label: "社会证明驱动文案"
+    category: "modern_framework"
+    region: "global"
+
+    style_dna:
+      tone: "真实、验证、从众心理"
+      framework: "展示证明 -> 你也能做到 -> 立即行动"
+      cta_density: "证明后强化CTA"
+      structure: "真实案例 -> 数据证明 -> 你能做到 -> 立即行动"
+
+    hook_patterns:
+      - "已有XXX人成功"
+      - "他们都在用XXX"
+      - "你也能和他们一样"
+
+    logic_patterns:
+      - "他人成功 -> 数据验证 -> 你能复制 -> 立即行动"
+
+    emotion_curve:
+      opening: "他人成功激发"
+      middle: "相信我也能"
+      ending: "想立刻尝试"
+
+    avoid:
+      - "虚假证明"
+      - "过度夸大"
+
+    conversion_fit:
+      best_for: ["大众产品", "社群产品", "口碑产品"]
+      cta_style: "他人成功 + 我也能行"
+
+  - id: copywriting_urgency_ethical
+    label: "合道德紧迫感文案"
+    category: "modern_framework"
+    region: "global"
+
+    style_dna:
+      tone: "紧迫但不失道德、真实稀缺"
+      framework: "真实稀缺 -> 时间紧迫 -> 立即行动"
+      cta_density: "高频紧迫CTA"
+      structure: "真实稀缺原因 -> 时间限制 -> 数量限制 -> 立即行动"
+
+    hook_patterns:
+      - "仅限XXX个名额"
+      - "优惠倒计时X小时"
+      - "这个原因让它真正稀缺"
+
+    logic_patterns:
+      - "真实稀缺 -> 紧迫营造 -> 合理理由 -> 立即行动"
+
+    emotion_curve:
+      opening: "稀缺警觉"
+      middle: "紧迫感"
+      ending: "怕错过"
+
+    avoid:
+      - "虚假稀缺"
+      - "过度施压"
+
+    conversion_fit:
+      best_for: ["限时优惠", "限量产品", "新品发布"]
+      cta_style: "真实紧迫 + 立即行动"
+
+  - id: copywriting_fomo_healthy
+    label: "健康FOMO文案"
+    category: "modern_framework"
+    region: "global"
+
+    style_dna:
+      tone: "正向FOMO、不想错过机会"
+      framework: "机会展示 -> 他人收获 -> 你能获得 -> 立即行动"
+      cta_density: "收获强化CTA"
+      structure: "独特机会 -> 他人正在收获 -> 你也能获得 -> 立即行动"
+
+    hook_patterns:
+      - "别人都在XXX，你还在等什么"
+      - "这个机会不会一直有"
+      - "现在行动的人都..."
+
+    logic_patterns:
+      - "机会价值 -> 他人收获 -> 你能获得 -> 立即行动"
+
+    emotion_curve:
+      opening: "机会注意"
+      middle: "不想错过"
+      ending: "立刻行动"
+
+    avoid:
+      - "负面比较"
+      - "过度焦虑"
+
+    conversion_fit:
+      best_for: ["趋势产品", "新兴机会", "限时活动"]
+      cta_style: "机会价值 + 不想错过"
+
+  - id: copywriting_scarcity_real
+    label: "真实稀缺性文案"
+    category: "modern_framework"
+    region: "global"
+
+    style_dna:
+      tone: "真实、透明、合理稀缺"
+      framework: "稀缺原因 -> 真实限制 -> 稀缺价值 -> 立即行动"
+      cta_density: "稀缺强化CTA"
+      structure: "为什么稀缺 -> 真实限制 -> 稀缺价值 -> 立即行动"
+
+    hook_patterns:
+      - "因为这个原因，只有XXX个"
+      - "真实稀缺，不是营销话术"
+      - "这个限制让它更珍贵"
+
+    logic_patterns:
+      - "稀缺原因 -> 真实限制 -> 价值提升 -> 立即行动"
+
+    emotion_curve:
+      opening: "理解稀缺"
+      middle: "认同价值"
+      ending: "想获得稀缺资源"
+
+    avoid:
+      - "虚假稀缺"
+      - "不合理限制"
+
+    conversion_fit:
+      best_for: ["限量产品", "高端服务", "独家内容"]
+      cta_style: "真实稀缺 + 立即行动"
+
+  - id: copywriting_personal_story
+    label: "个人故事型文案"
+    category: "modern_framework"
+    region: "global"
+
+    style_dna:
+      tone: "真实、共鸣、可复制"
+      framework: "个人故事 -> 读者应用 -> 立即行动"
+      cta_density: "故事后自然CTA"
+      structure: "个人经历 -> 关键转折 -> 成功方法 -> 你能复制"
+
+    hook_patterns:
+      - "我的故事可能对你有启发"
+      - "我曾经和你一样"
+      - "这个改变让我..."
+
+    logic_patterns:
+      - "个人故事 -> 可复用方法 -> 你能应用 -> 立即行动"
+
+    emotion_curve:
+      opening: "共鸣"
+      middle: "相信能复制"
+      ending: "想立刻尝试"
+
+    avoid:
+      - "故事失真"
+      - "方法不可复制"
+
+    conversion_fit:
+      best_for: ["个人品牌", "知识付费", "社群转化"]
+      cta_style: "真实故事 + 你也能做到"
+
+  - id: copywriting_problem_solution
+    label: "问题-解决方案文案"
+    category: "modern_framework"
+    region: "global"
+
+    style_dna:
+      tone: "清晰、直接、有效"
+      framework: "问题清晰 -> 方案具体 -> 结果明确"
+      cta_density: "方案后CTA"
+      structure: "问题描述 -> 解决方案 -> 实施步骤 -> 预期结果"
+
+    hook_patterns:
+      - "如果你正在面临XXX"
+      - "这个问题可以这样解决"
+      - "三步解决XXX"
+
+    logic_patterns:
+      - "问题识别 -> 方案提供 -> 实施指导 -> 结果预期"
+
+    emotion_curve:
+      opening: "问题共鸣"
+      middle: "获得方法"
+      ending: "相信能解决"
+
+    avoid:
+      - "问题描述模糊"
+      - "方案不具体"
+
+    conversion_fit:
+      best_for: ["问题解决型产品", "工具软件", "实用服务"]
+      cta_style: "问题解决 + 立即尝试"
+
+  - id: copywriting_transformation
+    label: "转变型文案"
+    category: "modern_framework"
+    region: "global"
+
+    style_dna:
+      tone: "转变、成长、前后对比"
+      framework: "转变前 -> 转变过程 -> 转变后"
+      cta_density: "转变期待后CTA"
+      structure: "当前状态 -> 转变承诺 -> 实现路径 -> 立即开始"
+
+    hook_patterns:
+      - "从XXX到XXX，你需要..."
+      - "这个转变可能改变你的人生"
+      - "想象一下转变后的你"
+
+    logic_patterns:
+      - "当前状态 -> 理想状态 -> 实现路径 -> 立即开始"
+
+    emotion_curve:
+      opening: "共鸣现状"
+      middle: "向往理想"
+      ending: "想立刻转变"
+
+    avoid:
+      - "过度承诺"
+      - "路径不清晰"
+
+    conversion_fit:
+      best_for: ["成长产品", "培训服务", "转型课程"]
+      cta_style: "转变承诺 + 立即开始"
+
+  - id: copywriting_community_first
+    label: "社区优先文案"
+    category: "modern_framework"
+    region: "global"
+
+    style_dna:
+      tone: "归属、共创、社区价值"
+      framework: "社区价值 -> 共创参与 -> 归属获得"
+      cta_density: "社区邀请CTA"
+      structure: "社区愿景 -> 成员收获 -> 你的角色 -> 加入社区"
+
+    hook_patterns:
+      - "我们正在建立一个XXX社区"
+      - "这个社区的成员都在..."
+      - "你的加入会让社区更完整"
+
+    logic_patterns:
+      - "社区愿景 -> 成员价值 -> 你的贡献 -> 加入社区"
+
+    emotion_curve:
+      opening: "被愿景吸引"
+      middle: "想成为其中一员"
+      ending: "立刻加入"
+
+    avoid:
+      - "社区价值模糊"
+      - "成员角色不清晰"
+
+    conversion_fit:
+      best_for: ["社区产品", "会员服务", "共创项目"]
+      cta_style: "社区价值 + 立即加入"
+
+# 文件元数据
+metadata:
+  version: "4.0.0"
+  total_styles: 20
+  region: "global"
+  last_updated: "2026-06-03"
+  categories:
+    - classic_framework: 10
+    - modern_framework: 10
