@@ -854,7 +854,7 @@ def main() -> int:
         print("\n\n⚠️  用户中断操作\n", file=sys.stderr)
         return 130
 
-    except Exception as e:  # noqa: BLE001
+    except Exception as e:
         logger.exception("未预期的错误")
         print(f"\n❌ 发生错误: {e}\n", file=sys.stderr)
         return 1
