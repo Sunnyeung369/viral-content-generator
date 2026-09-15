@@ -27,6 +27,8 @@ PROJECT_ROOT = Path(__file__).parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
 # 导入核心引擎
+from viral_content.core.quality_gate import QualityGate
+
 from viral_content.core import (
     PromptCompiler,
     AccountFingerprint,
@@ -231,12 +233,17 @@ class ViralContentCLI:
 
         content = result.content
 
-        # 6. 可选评分
+        # 6. 发布前确定性检查
+        gate = QualityGate().check(content, require_cta=goal in {"leads", "sales"})
+        if gate.warnings:
+            logger.warning("发布前检查: %s", "；".join(gate.warnings))
+
+        # 7. 可选评分
         if enable_scoring:
             score = self._quick_score(content, goal)
             logger.info(f"内容评分: {score}/10")
 
-        # 7. 保存输出
+        # 8. 保存输出
         if output_path:
             self._save_output(content, output_path, topic, goal, content_platforms[0])
 
