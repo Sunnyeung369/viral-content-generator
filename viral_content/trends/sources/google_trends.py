@@ -162,7 +162,7 @@ class GoogleTrendsSource(BaseTrendSource):
             热点列表
         """
         try:
-            
+
             pytrends = TrendReq(hl=self.language, tz=480)
 
             # 获取实时搜索趋势
