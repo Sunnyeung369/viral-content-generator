@@ -8,7 +8,7 @@ v4.0 - 从小红书获取热点话题
 GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Any
 
 from ..base import BaseTrendSource, Trend, TrendCategory, TrendMetrics
@@ -50,7 +50,7 @@ class XiaohongshuTrendSource(BaseTrendSource):
 
         for i, item in enumerate(sample_trends[:limit]):
             trend = Trend(
-                id=f"xhs_{datetime.now().strftime('%Y%m%d')}_{i}",
+                id=f"xhs_{datetime.now(timezone.utc).strftime('%Y%m%d')}_{i}",
                 topic=item["topic"],
                 description=item.get("description", ""),
                 source="小红书",
@@ -61,10 +61,10 @@ class XiaohongshuTrendSource(BaseTrendSource):
                     heat=item.get("likes", 0) // 1000,  # 将点赞数转换为热度
                     discussion_count=item.get("comments", 0) + item.get("collects", 0),
                     growth_rate=item.get("growth", 0.0),
-                    timestamp=datetime.now()
+                    timestamp=datetime.now(timezone.utc)
                 ),
                 content_snippet=item.get("snippet"),
-                created_at=datetime.now()
+                created_at=datetime.now(timezone.utc)
             )
             trends.append(trend)
 

@@ -8,7 +8,7 @@ v4.0 - 从 Google Trends 获取热点
 GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Any
 
 from ..base import BaseTrendSource, Trend, TrendCategory, TrendMetrics
@@ -60,7 +60,7 @@ class GoogleTrendsSource(BaseTrendSource):
 
         for i, item in enumerate(sample_trends[:limit]):
             trend = Trend(
-                id=f"gt_{datetime.now().strftime('%Y%m%d')}_{i}",
+                id=f"gt_{datetime.now(timezone.utc).strftime('%Y%m%d')}_{i}",
                 topic=item["topic"],
                 description=item.get("description", ""),
                 source="Google Trends",
@@ -71,9 +71,9 @@ class GoogleTrendsSource(BaseTrendSource):
                     heat=item.get("heat", 50),
                     discussion_count=item.get("discussion", 0),
                     growth_rate=item.get("growth", 0.0),
-                    timestamp=datetime.now()
+                    timestamp=datetime.now(timezone.utc)
                 ),
-                created_at=datetime.now()
+                created_at=datetime.now(timezone.utc)
             )
             trends.append(trend)
 
@@ -180,7 +180,7 @@ class GoogleTrendsSource(BaseTrendSource):
             trends = []
             for i, (topic, score) in enumerate(trending_searches.head(limit).iterrows()):
                 trend = Trend(
-                    id=f"gt_real_{datetime.now().strftime('%Y%m%d')}_{i}",
+                    id=f"gt_real_{datetime.now(timezone.utc).strftime('%Y%m%d')}_{i}",
                     topic=topic,
                     description="Google Trends 搜索趋势",
                     source="Google Trends (Real)",
@@ -191,9 +191,9 @@ class GoogleTrendsSource(BaseTrendSource):
                         heat=int(score) if score else 50,
                         discussion_count=0,  # Google Trends 不提供讨论量
                         growth_rate=0.0,
-                        timestamp=datetime.now()
+                        timestamp=datetime.now(timezone.utc)
                     ),
-                    created_at=datetime.now()
+                    created_at=datetime.now(timezone.utc)
                 )
                 trends.append(trend)
 

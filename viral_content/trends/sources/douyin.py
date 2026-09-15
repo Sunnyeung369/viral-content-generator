@@ -8,7 +8,7 @@ v4.0 - 从抖音获取热点话题
 GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Any
 
 from ..base import BaseTrendSource, Trend, TrendCategory, TrendMetrics
@@ -50,7 +50,7 @@ class DouyinTrendSource(BaseTrendSource):
 
         for i, item in enumerate(sample_trends[:limit]):
             trend = Trend(
-                id=f"douyin_{datetime.now().strftime('%Y%m%d')}_{i}",
+                id=f"douyin_{datetime.now(timezone.utc).strftime('%Y%m%d')}_{i}",
                 topic=item["topic"],
                 description=item.get("description", ""),
                 source="抖音",
@@ -61,10 +61,10 @@ class DouyinTrendSource(BaseTrendSource):
                     heat=item.get("heat", 50),
                     discussion_count=item.get("comments", 0) + item.get("shares", 0),
                     growth_rate=item.get("growth", 0.0),
-                    timestamp=datetime.now()
+                    timestamp=datetime.now(timezone.utc)
                 ),
                 content_snippet=item.get("snippet"),
-                created_at=datetime.now()
+                created_at=datetime.now(timezone.utc)
             )
             trends.append(trend)
 

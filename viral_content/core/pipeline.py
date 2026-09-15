@@ -9,7 +9,7 @@ GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
 import logging
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Any
 
 from ..core.account_fingerprint import AccountFingerprint
@@ -139,7 +139,7 @@ class ViralContentPipeline:
                 "goal": goal_obj.value,
                 "platform": platform_obj.value,
                 "trend_id": getattr(trend_obj, "id", None),
-                "generated_at": datetime.now().isoformat(),
+                "generated_at": datetime.now(timezone.utc).isoformat(),
             })
 
             return scored_result
@@ -272,7 +272,7 @@ class ViralContentPipeline:
 
         # 创建基础热点对象
         return Trend(
-            id=f"manual_{datetime.now().strftime('%Y%m%d_%H%M%S')}",
+            id=f"manual_{datetime.now(timezone.utc).strftime('%Y%m%d_%H%M%S')}",
             topic=topic,
             description="",
             source="manual_input",
@@ -281,7 +281,7 @@ class ViralContentPipeline:
             keywords=[],
             metrics=None,
             content_snippet=topic,
-            created_at=datetime.now()
+            created_at=datetime.now(timezone.utc)
         )
 
     def _compile_prompt(
