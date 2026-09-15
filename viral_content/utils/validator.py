@@ -255,7 +255,7 @@ class InputSanitizer:
     """输入清洗器"""
 
     # 危险字符（防止注入攻击）
-    DANGEROUS_CHARS = ['<', '>', '&', '\x00', '\n', '\r']
+    DANGEROUS_CHARS: ClassVar[list[str]] = ['<', '>', '&', '\x00', '\n', '\r']
 
     @staticmethod
     def sanitize_string(value: str, max_length: int | None = None) -> str:

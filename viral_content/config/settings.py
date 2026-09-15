@@ -11,7 +11,7 @@ GitHub: https://github.com/Sunnyeung369/viral-content-generator
 import logging
 import os
 from pathlib import Path
-from typing import Any
+from typing import Any, ClassVar
 
 import yaml
 
@@ -31,7 +31,7 @@ class Settings:
     """
 
     # 默认配置
-    DEFAULTS: dict[str, Any] = {
+    DEFAULTS: ClassVar[dict[str, Any]] = {
         # AI生成器配置
         "generator": {
             "provider": "openai",  # openai, claude, gemini

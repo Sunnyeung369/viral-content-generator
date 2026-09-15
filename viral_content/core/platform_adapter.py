@@ -10,7 +10,7 @@ GitHub: https://github.com/Sunnyeung369/viral-content-generator
 
 from dataclasses import dataclass, field
 from enum import Enum
-from typing import Any
+from typing import Any, ClassVar
 
 
 class ContentPlatform(Enum):
@@ -67,7 +67,7 @@ class PlatformAdapter:
     """
 
     # 平台规格配置
-    PLATFORM_SPECS: dict[ContentPlatform, PlatformSpec] = {
+    PLATFORM_SPECS: ClassVar[dict[ContentPlatform, PlatformSpec]] = {
         ContentPlatform.WECHAT: PlatformSpec(
             name="公众号",
             content_type="图文长文",

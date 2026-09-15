@@ -10,7 +10,7 @@ GitHub: https://github.com/Sunnyeung369/viral-content-generator
 
 from dataclasses import dataclass
 from enum import Enum
-from typing import Any
+from typing import Any, ClassVar
 
 
 class ConversionGoal(Enum):
@@ -47,7 +47,7 @@ class ConversionFunnel:
     """
 
     # 目标对应的配置
-    GOAL_CONFIGS: dict[ConversionGoal, ContentStructure] = {
+    GOAL_CONFIGS: ClassVar[dict[ConversionGoal, ContentStructure]] = {
         ConversionGoal.LIKES: ContentStructure(
             opening_ratio=0.15,
             body_ratio=0.70,
