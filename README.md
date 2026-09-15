@@ -4,7 +4,7 @@
 
 ![Version](https://img.shields.io/badge/version-4.0.1-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
-![Python](https://img.shields.io/badge/python-3.8+-blue)
+![Python](https://img.shields.io/badge/python-3.10+-blue)
 ![Platform](https://img.shields.io/badge/platform-全平台-orange)
 
 **热点与账号信息 × 风格约束 × 成交目标 = 可测试的内容草案**

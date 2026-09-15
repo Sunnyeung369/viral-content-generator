@@ -12,13 +12,11 @@
 GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
-import os
 import sys
 import argparse
 import uuid
 import json
 import logging
-import json
 import yaml
 from pathlib import Path
 from typing import Optional, Dict, Any, List
@@ -229,7 +227,7 @@ class ViralContentCLI:
         # 5. 生成内容
         user_prompt = f"请根据以上配置，为主题「{topic}」生成一篇{CONTENT_PLATFORMS.get(content_platforms[0], content_platforms[0])}内容。"
 
-        logger.info(f"开始生成内容...")
+        logger.info("开始生成内容...")
         # 5. 生成候选并按目标选择最佳版本
         candidate_count = max(1, min(int(variants or 1), 8))
         candidates = []
@@ -250,7 +248,6 @@ class ViralContentCLI:
 
         ranked = CandidateRanker(goal, platform=content_platforms[0]).rank([Candidate(content=c, quality_score=score, passed_gate=g.passed, index=i) for i, (score, c, g) in enumerate(candidates)])
         content = ranked[0].content
-        best_gate = next(g for _, c, g in candidates if c == content)
         logger.info("已从 %d 个候选中选择最佳版本（评分 %.1f/10）", candidate_count, candidates[0][0])
 
         # 6. 可选评分
