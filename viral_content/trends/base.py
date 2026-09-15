@@ -176,13 +176,13 @@ class TrendAggregator:
     从多个来源聚合热点数据
     """
 
-    def __init__(self, sources: List[BaseTrendSource]):
+    def __init__(self, sources: Optional[List[BaseTrendSource]] = None):
         """初始化聚合器
 
         Args:
             sources: 热点来源列表
         """
-        self.sources = sources
+        self.sources = sources or []
 
     def fetch_all(
         self,

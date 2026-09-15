@@ -10,8 +10,15 @@ GitHub: https://github.com/Sunnyeung369/viral-content-generator
 
 from .base import BaseScorer, CompositeScorer, ScoreResult, ScoreLevel
 
-# 兼容流水线旧命名
-QualityScorer = CompositeScorer
+class QualityScorer:
+    """对外兼容的综合质量评分器。"""
+    def __init__(self, scorers=None):
+        self.scorers = scorers or [HookScorer(), TrustScorer(), ValueScorer(), ComplianceScorer()]
+    def score_all(self, content, **context):
+        return {s.name: s.score(content, context) for s in self.scorers}
+    def get_improvement_suggestions(self, scores):
+        return [tip for result in scores.values() for tip in result.suggestions]
+
 ScoringResult = ScoreResult
 from .hook_scorer import HookScorer
 from .trust_scorer import TrustScorer
