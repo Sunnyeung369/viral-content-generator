@@ -225,23 +225,31 @@ class ViralContentCLI:
         user_prompt = f"请根据以上配置，为主题「{topic}」生成一篇{CONTENT_PLATFORMS.get(content_platforms[0], content_platforms[0])}内容。"
 
         logger.info(f"开始生成内容...")
-        result = generator.generate(
-            system_prompt=system_prompt,
-            user_prompt=user_prompt,
-            stream=stream,
-        )
+        # 5. 生成候选并按目标选择最佳版本
+        candidate_count = max(1, min(int(variants or 1), 8))
+        candidates = []
+        for index in range(candidate_count):
+            result = generator.generate(
+                system_prompt=system_prompt,
+                user_prompt=user_prompt + (f"\n这是第 {index + 1} 个候选，请使用不同的切入角度。" if candidate_count > 1 else ""),
+                stream=stream,
+            )
+            candidate = result.content
+            gate = QualityGate().check(candidate, require_cta=goal in {"leads", "sales"})
+            score = self._quick_score(candidate, goal)
+            # 有硬性问题的候选降权，但仍保留以便诊断
+            rank_score = score if gate.passed else score - 3.0
+            candidates.append((rank_score, candidate, gate))
+            if gate.warnings:
+                logger.warning("候选 %d 发布前检查: %s", index + 1, "；".join(gate.warnings))
 
-        content = result.content
+        candidates.sort(key=lambda item: item[0], reverse=True)
+        _, content, best_gate = candidates[0]
+        logger.info("已从 %d 个候选中选择最佳版本（评分 %.1f/10）", candidate_count, candidates[0][0])
 
-        # 6. 发布前确定性检查
-        gate = QualityGate().check(content, require_cta=goal in {"leads", "sales"})
-        if gate.warnings:
-            logger.warning("发布前检查: %s", "；".join(gate.warnings))
-
-        # 7. 可选评分
+        # 6. 可选评分
         if enable_scoring:
-            score = self._quick_score(content, goal)
-            logger.info(f"内容评分: {score}/10")
+            logger.info(f"内容评分: {self._quick_score(content, goal)}/10")
 
         # 8. 保存输出
         if output_path:
