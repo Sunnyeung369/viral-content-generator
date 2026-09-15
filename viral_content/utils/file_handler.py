@@ -11,7 +11,7 @@ GitHub: https://github.com/Sunnyeung369/viral-content-generator
 import json
 import logging
 from pathlib import Path
-from typing import Any
+from typing import Any, ClassVar
 
 import yaml
 
@@ -24,7 +24,7 @@ class FileHandler:
     """文件处理器"""
 
     # 支持的格式
-    SUPPORTED_FORMATS = {".yaml", ".yml", ".json", ".txt", ".md"}
+    SUPPORTED_FORMATS: ClassVar[set[str]] = {".yaml", ".yml", ".json", ".txt", ".md"}
 
     @staticmethod
     def read_yaml(file_path: str | Path) -> dict[str, Any]:

@@ -11,7 +11,7 @@ GitHub: https://github.com/Sunnyeung369/viral-content-generator
 import logging
 import re
 from pathlib import Path
-from typing import Any
+from typing import Any, ClassVar
 
 from ..core.conversion_funnel import ConversionGoal
 from ..core.platform_adapter import ContentPlatform as Platform
@@ -37,10 +37,10 @@ class Validator:
     )
 
     # 平台名称
-    VALID_PLATFORMS = {p.value for p in Platform}
+    VALID_PLATFORMS: ClassVar[set[str]] = {p.value for p in Platform}
 
     # 成交目标
-    VALID_GOALS = {g.value for g in ConversionGoal}
+    VALID_GOALS: ClassVar[set[str]] = {g.value for g in ConversionGoal}
 
     @staticmethod
     def validate_required(value: Any, field_name: str = "value"):

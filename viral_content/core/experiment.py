@@ -1,6 +1,7 @@
 """Candidate experiments and outcome feedback models."""
 import json
 from dataclasses import dataclass, field
+from typing import ClassVar
 
 
 @dataclass
@@ -28,8 +29,8 @@ class FeedbackRecord:
 
 class CandidateRanker:
     """Explainable ranking with goal-specific weights."""
-    DEFAULT_WEIGHTS = {"likes": (0.55, 0.45), "comments": (0.50, 0.50), "leads": (0.40, 0.60), "sales": (0.35, 0.65)}
-    PLATFORM_BIAS = {"douyin": 0.15, "xiaohongshu": 0.10, "bilibili": 0.05, "wechat": 0.0, "zhihu": -0.05}
+    DEFAULT_WEIGHTS: ClassVar[dict[str, tuple[float, float]]] = {"likes": (0.55, 0.45), "comments": (0.50, 0.50), "leads": (0.40, 0.60), "sales": (0.35, 0.65)}
+    PLATFORM_BIAS: ClassVar[dict[str, float]] = {"douyin": 0.15, "xiaohongshu": 0.10, "bilibili": 0.05, "wechat": 0.0, "zhihu": -0.05}
     def __init__(self, goal: str = "leads", platform: str = "wechat", weights: tuple | None = None):
         self.goal = goal
         bias = self.PLATFORM_BIAS.get(platform, 0.0)
