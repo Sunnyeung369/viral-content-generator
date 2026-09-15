@@ -13,6 +13,11 @@ from typing import Any
 
 from ..base import BaseTrendSource, Trend, TrendCategory, TrendMetrics
 
+try:
+    from pytrends.request import TrendReq
+except ImportError:  # Optional dependency; simulated trends remain available.
+    TrendReq = None
+
 
 class GoogleTrendsSource(BaseTrendSource):
     """Google Trends 热点来源
@@ -161,6 +166,10 @@ class GoogleTrendsSource(BaseTrendSource):
         Returns:
             热点列表
         """
+        if TrendReq is None:
+            print("pytrends 未安装，使用模拟数据")
+            return self.fetch(limit, category)
+
         try:
 
             pytrends = TrendReq(hl=self.language, tz=480)
@@ -190,18 +199,11 @@ class GoogleTrendsSource(BaseTrendSource):
 
             return trends
 
-        except ImportError:
-            print("pytrends 未安装，使用模拟数据")
-            return self.fetch(limit, category)
         except Exception as e:
             print(f"获取 Google Trends 失败: {e}")
             return []
 
     def is_available(self) -> bool:
         """检查 Google Trends 是否可用"""
-        try:
-                        return True
-        except ImportError:
-            return True  # 降级到模拟数据
-        except Exception:
-            return False
+        # The source is always available because fetch() provides sample data.
+        return True
