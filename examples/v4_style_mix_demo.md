@@ -183,7 +183,7 @@ style_mix = "style1,style2,style3,style4"
 
 ```python
 # 主风格在前，辅助风格在后
-style_mix = "tech_explainer_global:0.7,business_savage_china:0.3"
+style_mix = "tech_explainer_global,business_savage_china"
 ```
 
 ---
@@ -213,17 +213,17 @@ style_mix = "tech_explainer_global:0.7,business_savage_china:0.3"
 "business_savage_china,copywriting:pas"
 
 # 3. 商业深度分析
-"business_savage_china,writers_global:business_strategy"
+"business_savage_china,business_strategy_insights"
 ```
 
 ### 生活方式博主常用组合
 
 ```python
 # 1. 生活美学分享
-"china:lifestyle_aesthetic,writers_global:productivity"
+"lifestyle_aesthetic_xhs,writers_global:productivity"
 
 # 2. 实用生活技巧
-"china:lifestyle_aesthetic,copywriting:bab"
+"lifestyle_aesthetic_xhs,copywriting_bab"
 ```
 
 ---
