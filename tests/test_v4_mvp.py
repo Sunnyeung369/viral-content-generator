@@ -452,3 +452,10 @@ def test_feedback_report_exports_json(tmp_path):
     export_feedback_report([FeedbackRecord(0, 'wechat', '2026-09-15', views=100)], str(path))
     assert 'summary' in path.read_text(encoding='utf-8')
 
+
+
+def test_installed_resource_paths_exist():
+    from viral_content.config.constants import SKILL_FALLBACK_PATH, PROMPTS_DIR, STYLES_DIR
+    assert SKILL_FALLBACK_PATH.is_file()
+    assert (PROMPTS_DIR / "base_system.md").is_file()
+    assert any(STYLES_DIR.glob("*.yaml"))
