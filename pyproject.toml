@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "viral-content-generator"
-version = "4.0.0"
+version = "4.0.1"
 description = "热点风格成交引擎 - 155+风格基因卡 × 账号定位 × 成交目标 × 多平台适配"
 readme = "README.md"
 license = {text = "MIT"}

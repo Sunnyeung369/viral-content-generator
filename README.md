@@ -1,8 +1,8 @@
-# 🚀 热点风格成交引擎 v4.0
+# 🚀 热点风格成交引擎 v4.0.1
 
 <div align="center">
 
-![Version](https://img.shields.io/badge/version-4.0.0-blue)
+![Version](https://img.shields.io/badge/version-4.0.1-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Python](https://img.shields.io/badge/python-3.8+-blue)
 ![Platform](https://img.shields.io/badge/platform-全平台-orange)
