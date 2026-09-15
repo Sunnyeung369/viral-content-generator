@@ -15,7 +15,7 @@ from .generation import (
 )
 from .account import Account, AccountFingerprint
 from .offer import Offer, OfferConfig
-from .style import Style, StyleDNA, StyleMix
+from .style import Style, StyleDNA, StyleProfile, StyleMix
 from .trend import Trend, TrendItem, TrendMetrics
 
 __all__ = [
@@ -33,6 +33,7 @@ __all__ = [
     # Style
     'Style',
     'StyleDNA',
+    'StyleProfile',
     'StyleMix',
     # Trend
     'Trend',

@@ -19,14 +19,12 @@ from ..models import (
     Offer,
     Trend,
     StyleProfile,
-    ConversionGoal,
-    Platform,
 )
-from ..models.trend import TrendCategory
-from ..core.account_fingerprint import AccountFingerprintLoader
+from ..trends.base import TrendCategory
+from ..core.account_fingerprint import AccountFingerprint
 from ..core.style_mixer import StyleMixer
-from ..core.conversion_funnel import ConversionFunnelWriter
-from ..core.platform_adapter import PlatformAdapter
+from ..core.conversion_funnel import ConversionFunnelWriter, ConversionGoal
+from ..core.platform_adapter import PlatformAdapter, ContentPlatform as Platform
 from ..core.prompt_compiler import PromptCompiler
 from ..generators.factory import GeneratorFactory
 from ..scorers import QualityScorer, ScoringResult
@@ -59,7 +57,7 @@ class ViralContentPipeline:
         self.config = config or {}
 
         # 初始化各模块
-        self.account_loader = AccountFingerprintLoader()
+        self.account_loader = AccountFingerprint()
         self.style_mixer = StyleMixer()
         self.conversion_writer = ConversionFunnelWriter()
         self.platform_adapter = PlatformAdapter()

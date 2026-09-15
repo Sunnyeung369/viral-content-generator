@@ -58,7 +58,7 @@ def test_data_files():
         print(f"  - {f.name}")
 
     print("\n[PASS] 数据文件测试通过\n")
-    return True
+    return None
 
 
 def test_style_loading():
@@ -93,11 +93,11 @@ def test_style_loading():
             print("[WARN] 单个风格加载失败")
 
         print("\n[PASS] 风格加载测试通过\n")
-        return True
+        return None
 
     except Exception as e:
         print(f"[FAIL] 风格加载测试失败: {e}\n")
-        return False
+        raise AssertionError(str(e))
 
 
 def test_style_mixing():
@@ -125,11 +125,11 @@ def test_style_mixing():
         print(f"[OK] 提示词上下文生成成功（长度: {len(context)} 字符）")
 
         print("\n[PASS] 风格混合测试通过\n")
-        return True
+        return None
 
     except Exception as e:
         print(f"[FAIL] 风格混合测试失败: {e}\n")
-        return False
+        raise AssertionError(str(e))
 
 
 def test_account_loading():
@@ -155,13 +155,13 @@ def test_account_loading():
         print(f"[OK] 提示词上下文生成成功（长度: {len(context)} 字符）")
 
         print("\n[PASS] 账号加载测试通过\n")
-        return True
+        return None
 
     except Exception as e:
         print(f"[FAIL] 账号加载测试失败: {e}\n")
         import traceback
         traceback.print_exc()
-        return False
+        raise AssertionError(str(e))
 
 
 def test_prompt_compilation():
@@ -203,13 +203,13 @@ def test_prompt_compilation():
         print("[OK] 提示词内容验证通过")
 
         print("\n[PASS] 提示词编译测试通过\n")
-        return True
+        return None
 
     except Exception as e:
         print(f"[FAIL] 提示词编译测试失败: {e}\n")
         import traceback
         traceback.print_exc()
-        return False
+        raise AssertionError(str(e))
 
 
 def test_conversion_funnel():
@@ -235,13 +235,13 @@ def test_conversion_funnel():
             print(f"  - 内容结构: 开头{outline['开头']}字, 主体{outline['主体']}字, 结尾{outline['结尾']}字")
 
         print("\n[PASS] 成交漏斗测试通过\n")
-        return True
+        return None
 
     except Exception as e:
         print(f"[FAIL] 成交漏斗测试失败: {e}\n")
         import traceback
         traceback.print_exc()
-        return False
+        raise AssertionError(str(e))
 
 
 def test_hot_topic_input():
@@ -258,13 +258,13 @@ def test_hot_topic_input():
         print(f"[OK] 文本输入成功: {text_input[0]['topic']}")
 
         print("\n[PASS] 热点输入测试通过\n")
-        return True
+        return None
 
     except Exception as e:
         print(f"[FAIL] 热点输入测试失败: {e}\n")
         import traceback
         traceback.print_exc()
-        return False
+        raise AssertionError(str(e))
 
 
 def test_integration():
@@ -325,13 +325,13 @@ def test_integration():
         print("  [OK] 成交目标适配")
         print("  [OK] 热点输入处理")
 
-        return True
+        return None
 
     except Exception as e:
         print(f"\n[FAIL] 集成测试失败: {e}")
         import traceback
         traceback.print_exc()
-        return False
+        raise AssertionError(str(e))
 
 
 def main():
@@ -365,7 +365,7 @@ def main():
     print("测试结果汇总")
     print("=" * 60)
 
-    passed = sum(1 for _, result in results if result)
+    passed = sum(1 for _, result in results if result is not False)
     total = len(results)
 
     for name, result in results:

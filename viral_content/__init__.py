@@ -23,6 +23,8 @@ from .core import (
     ConversionGoal,
 )
 
+from .core.platform_adapter import ContentPlatform as Platform
+
 # 数据模型
 from .models import (
     GenerationConfig,
@@ -31,7 +33,6 @@ from .models import (
     Offer,
     Trend,
     StyleProfile,
-    Platform,
 )
 
 # 配置

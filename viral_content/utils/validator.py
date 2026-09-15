@@ -14,7 +14,8 @@ from pathlib import Path
 import logging
 
 from ..exceptions.custom import ValidationError
-from ..models import ConversionGoal, Platform
+from ..core.conversion_funnel import ConversionGoal
+from ..core.platform_adapter import ContentPlatform as Platform
 
 
 logger = logging.getLogger(__name__)

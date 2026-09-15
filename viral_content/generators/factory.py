@@ -99,3 +99,9 @@ def register_generator(platform: str, generator_class: Type[ContentGenerator]) -
         generator_class: 生成器类
     """
     GENERATOR_MAP[platform] = generator_class
+
+
+class GeneratorFactory:
+    """兼容旧版流水线的生成器工厂外观。"""
+    create = staticmethod(create_generator)
+    create_from_config = staticmethod(create_generator_from_config)

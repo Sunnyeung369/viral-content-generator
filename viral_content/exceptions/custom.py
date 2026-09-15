@@ -46,3 +46,11 @@ class OfferLoadError(ViralContentError):
 class StyleLoadError(ViralContentError):
     """风格配置加载错误"""
     pass
+
+
+# 兼容旧版命名
+ConfigurationError = ConfigError
+GenerationError = APIError
+
+FileOperationError = ViralContentError
+

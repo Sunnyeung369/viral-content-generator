@@ -9,6 +9,10 @@ GitHub: https://github.com/Sunnyeung369/viral-content-generator
 """
 
 from .base import BaseScorer, CompositeScorer, ScoreResult, ScoreLevel
+
+# 兼容流水线旧命名
+QualityScorer = CompositeScorer
+ScoringResult = ScoreResult
 from .hook_scorer import HookScorer
 from .trust_scorer import TrustScorer
 from .value_scorer import ValueScorer
@@ -23,6 +27,8 @@ __all__ = [
     "CompositeScorer",
     "ScoreResult",
     "ScoreLevel",
+    "QualityScorer",
+    "ScoringResult",
     # 专项评分器
     "HookScorer",
     "TrustScorer",

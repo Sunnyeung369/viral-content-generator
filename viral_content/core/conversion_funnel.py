@@ -257,3 +257,7 @@ def create_conversion_funnel(goal: str = "leads") -> ConversionFunnel:
         ConversionFunnel实例
     """
     return ConversionFunnel.from_string(goal)
+
+# 兼容旧版流水线名称
+ConversionFunnelWriter = ConversionFunnel
+

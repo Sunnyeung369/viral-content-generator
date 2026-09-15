@@ -51,5 +51,6 @@ class StyleMix:
     combination_rules: Dict[str, Any] = field(default_factory=dict)
 
 
-# 简化别名
+# 简化别名（兼容旧版与流水线类型名）
 Style = StyleDNA
+StyleProfile = StyleDNA
