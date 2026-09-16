@@ -271,6 +271,9 @@ print(system_prompt)
 | [data/offers/README.md](./data/offers/README.md) | 产品配置指南 | 商业用户 |
 | [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md) | 社区行为准则 | 所有贡献者 |
 | [CITATION.cff](./CITATION.cff) | 引用信息 | 研究与二次开发 |
+| [GOOD_FIRST_ISSUE.md](./GOOD_FIRST_ISSUE.md) | 5 分钟贡献路径 | 新贡献者 |
+| [docs/privacy.md](./docs/privacy.md) | 隐私与数据边界 | 所有用户 |
+| [docs/v4.1-roadmap.md](./docs/v4.1-roadmap.md) | 下一版路线图 | 贡献者 |
 
 Bug 反馈可直接使用 [Bug 模板](https://github.com/Sunnyeung369/viral-content-generator/issues/new?template=bug_report.md)，功能建议可使用 [Feature 模板](https://github.com/Sunnyeung369/viral-content-generator/issues/new?template=feature_request.md)。提交前请移除 API Key、账号凭据和其他敏感信息。
 

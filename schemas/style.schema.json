@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Viral Content Style Card",
+  "type": "object",
+  "required": ["id", "label", "style_dna"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+    "label": {"type": "string", "minLength": 1},
+    "category": {"type": "string"},
+    "style_dna": {"type": "object"},
+    "hook_patterns": {"type": "array", "items": {"type": "string"}},
+    "logic_patterns": {"type": "array", "items": {"type": "string"}},
+    "emotion_curve": {"type": "array"},
+    "avoid": {"type": "array", "items": {"type": "string"}},
+    "conversion_fit": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}
