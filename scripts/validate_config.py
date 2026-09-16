@@ -6,7 +6,6 @@ from typing import Any
 
 import yaml
 
-
 REQUIRED = {
     "account": ("name", "identity"),
     "offer": ("name", "type"),

@@ -8,7 +8,6 @@ v4.0 MVP 功能测试脚本
 """
 
 import sys
-import os
 from pathlib import Path
 
 # 设置UTF-8编码输出（Windows兼容）
@@ -58,7 +57,6 @@ def test_data_files():
         print(f"  - {f.name}")
 
     print("\n[PASS] 数据文件测试通过\n")
-    return None
 
 
 def test_style_loading():
@@ -77,7 +75,7 @@ def test_style_loading():
 
         # 按分类统计
         by_category = {}
-        for style_id, style in styles.items():
+        for style in styles.values():
             cat = style.get('category', 'unknown')
             by_category[cat] = by_category.get(cat, 0) + 1
 
@@ -93,9 +91,9 @@ def test_style_loading():
             print("[WARN] 单个风格加载失败")
 
         print("\n[PASS] 风格加载测试通过\n")
-        return None
+        return
 
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001
         print(f"[FAIL] 风格加载测试失败: {e}\n")
         raise AssertionError(str(e))
 
@@ -125,9 +123,9 @@ def test_style_mixing():
         print(f"[OK] 提示词上下文生成成功（长度: {len(context)} 字符）")
 
         print("\n[PASS] 风格混合测试通过\n")
-        return None
+        return
 
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001
         print(f"[FAIL] 风格混合测试失败: {e}\n")
         raise AssertionError(str(e))
 
@@ -155,9 +153,9 @@ def test_account_loading():
         print(f"[OK] 提示词上下文生成成功（长度: {len(context)} 字符）")
 
         print("\n[PASS] 账号加载测试通过\n")
-        return None
+        return
 
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001
         print(f"[FAIL] 账号加载测试失败: {e}\n")
         import traceback
         traceback.print_exc()
@@ -171,7 +169,7 @@ def test_prompt_compilation():
     print("=" * 60)
 
     try:
-        from viral_content.core import PromptCompiler, StyleMixer, AccountFingerprint
+        from viral_content.core import AccountFingerprint, PromptCompiler, StyleMixer
 
         compiler = PromptCompiler()
 
@@ -203,9 +201,9 @@ def test_prompt_compilation():
         print("[OK] 提示词内容验证通过")
 
         print("\n[PASS] 提示词编译测试通过\n")
-        return None
+        return
 
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001
         print(f"[FAIL] 提示词编译测试失败: {e}\n")
         import traceback
         traceback.print_exc()
@@ -219,7 +217,7 @@ def test_conversion_funnel():
     print("=" * 60)
 
     try:
-        from viral_content.core import ConversionFunnel, ConversionGoal
+        from viral_content.core import ConversionFunnel
 
         # 测试不同目标
         for goal_str in ["likes", "comments", "leads", "sales"]:
@@ -235,9 +233,9 @@ def test_conversion_funnel():
             print(f"  - 内容结构: 开头{outline['开头']}字, 主体{outline['主体']}字, 结尾{outline['结尾']}字")
 
         print("\n[PASS] 成交漏斗测试通过\n")
-        return None
+        return
 
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001
         print(f"[FAIL] 成交漏斗测试失败: {e}\n")
         import traceback
         traceback.print_exc()
@@ -258,9 +256,9 @@ def test_hot_topic_input():
         print(f"[OK] 文本输入成功: {text_input[0]['topic']}")
 
         print("\n[PASS] 热点输入测试通过\n")
-        return None
+        return
 
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001
         print(f"[FAIL] 热点输入测试失败: {e}\n")
         import traceback
         traceback.print_exc()
@@ -275,11 +273,11 @@ def test_integration():
 
     try:
         from viral_content.core import (
-            PromptCompiler,
-            StyleMixer,
             AccountFingerprint,
             ConversionFunnel,
             ConversionGoal,
+            PromptCompiler,
+            StyleMixer,
         )
 
         print("1. 初始化核心组件...")
@@ -325,9 +323,9 @@ def test_integration():
         print("  [OK] 成交目标适配")
         print("  [OK] 热点输入处理")
 
-        return None
+        return
 
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001
         print(f"\n[FAIL] 集成测试失败: {e}")
         import traceback
         traceback.print_exc()
@@ -356,7 +354,7 @@ def main():
         try:
             result = test_func()
             results.append((name, result))
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001
             print(f"[FAIL] 测试异常: {name} - {e}\n")
             results.append((name, False))
 
@@ -455,7 +453,11 @@ def test_feedback_report_exports_json(tmp_path):
 
 
 def test_installed_resource_paths_exist():
-    from viral_content.config.constants import SKILL_FALLBACK_PATH, PROMPTS_DIR, STYLES_DIR
+    from viral_content.config.constants import (
+        PROMPTS_DIR,
+        SKILL_FALLBACK_PATH,
+        STYLES_DIR,
+    )
     assert SKILL_FALLBACK_PATH.is_file()
     assert (PROMPTS_DIR / "base_system.md").is_file()
     assert any(STYLES_DIR.glob("*.yaml"))
