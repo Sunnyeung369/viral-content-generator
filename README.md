@@ -13,6 +13,8 @@
 
 [English README](./README.en.md)
 
+[Latest Release](https://github.com/Sunnyeung369/viral-content-generator/releases/tag/v4.0.1)
+
 </div>
 
 > **30 秒试用**：先运行 [examples/30-second-demo.md](examples/30-second-demo.md)，再按平台和目标修改输入。

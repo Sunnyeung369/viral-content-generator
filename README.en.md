@@ -22,6 +22,8 @@ python viral_content_cli.py --topic "AI agent workflow" --goal leads --platform 
 
 See the [Chinese README](./README.md), [30-second demo](./examples/30-second-demo.md), [case study](./examples/case-study.md), and [v4.1 roadmap](./docs/v4.1-roadmap.md).
 
+See the [commercial readiness checklist](./docs/commercial-readiness.md), [privacy boundaries](./docs/privacy.md), and [latest release](https://github.com/Sunnyeung369/viral-content-generator/releases/tag/v4.0.1).
+
 ## Contributing
 
 Start with [GOOD_FIRST_ISSUE.md](./GOOD_FIRST_ISSUE.md), use the issue and PR templates, and run `python -m pytest -q` before submitting changes.
