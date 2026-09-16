@@ -488,3 +488,4 @@ Made with ❤️ by [Sunnyeung](https://github.com/Sunnyeung369)
 
 </div>
 xamples/case-studies/ 提供匿名案例模板，data/styles/STYLE_CARD_TEMPLATE.yaml 提供风格卡贡献模板。
+维护者发布前请参阅 [GitHub 页面维护清单](./docs/github-maintainer-checklist.md)。
