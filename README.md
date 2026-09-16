@@ -15,6 +15,8 @@
 
 > **30 秒试用**：先运行 [examples/30-second-demo.md](examples/30-second-demo.md)，再按平台和目标修改输入。
 >
+> **无 API Key 演示**：运行 [examples/local_demo.py](examples/local_demo.py)，先验证本地规则和成交目标结构。
+>
 > **English keywords**: AI content generator · viral content workflow · social media copywriting · multi-platform content · conversion copy · Python CLI
 
 ---
@@ -274,6 +276,7 @@ print(system_prompt)
 | [GOOD_FIRST_ISSUE.md](./GOOD_FIRST_ISSUE.md) | 5 分钟贡献路径 | 新贡献者 |
 | [docs/privacy.md](./docs/privacy.md) | 隐私与数据边界 | 所有用户 |
 | [docs/v4.1-roadmap.md](./docs/v4.1-roadmap.md) | 下一版路线图 | 贡献者 |
+| [examples/case-study.md](./examples/case-study.md) | 前后对比案例 | 新用户 |
 
 Bug 反馈可直接使用 [Bug 模板](https://github.com/Sunnyeung369/viral-content-generator/issues/new?template=bug_report.md)，功能建议可使用 [Feature 模板](https://github.com/Sunnyeung369/viral-content-generator/issues/new?template=feature_request.md)。提交前请移除 API Key、账号凭据和其他敏感信息。
 
