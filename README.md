@@ -272,6 +272,8 @@ print(system_prompt)
 | [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md) | 社区行为准则 | 所有贡献者 |
 | [CITATION.cff](./CITATION.cff) | 引用信息 | 研究与二次开发 |
 
+Bug 反馈可直接使用 [Bug 模板](https://github.com/Sunnyeung369/viral-content-generator/issues/new?template=bug_report.md)，功能建议可使用 [Feature 模板](https://github.com/Sunnyeung369/viral-content-generator/issues/new?template=feature_request.md)。提交前请移除 API Key、账号凭据和其他敏感信息。
+
 ### 数据文件
 
 - `data/styles/` - 155+ 风格基因卡
