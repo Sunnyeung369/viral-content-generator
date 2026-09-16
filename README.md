@@ -193,12 +193,18 @@ account:
 **安装依赖**
 ```bash
 pip install -r requirements.txt
+
+# 推荐：以可安装包方式安装
+pip install .
 ```
 
 **基本使用**
 ```bash
 # 列出所有可用风格
 python viral_content_cli.py --list-styles
+
+# 安装后使用稳定 CLI 入口
+viral-content --list-styles
 
 # 基础用法（向后兼容 v3.1）
 python viral_content_cli.py "AI Agent Runtime崩溃" --style tech_explainer_global
