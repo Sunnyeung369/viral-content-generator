@@ -286,6 +286,8 @@ Bug 反馈可直接使用 [Bug 模板](https://github.com/Sunnyeung369/viral-con
 
 生成前可校验配置：`python scripts/validate_config.py data/accounts/default_account.yaml --kind account`。
 
+创建新风格卡：`python scripts/new_style.py founder_story --label "创始人故事"`，完成内容后再运行全量校验。
+
 ### 数据文件
 
 - `data/styles/` - 155+ 风格基因卡
