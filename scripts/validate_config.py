@@ -19,11 +19,20 @@ def validate(path: Path, kind: str) -> list[str]:
     if not isinstance(data, dict):
         return ["顶层内容必须是 YAML 对象"]
     target = data.get(kind, data)
-    if kind == "style" and isinstance(data.get("styles"), list):
-        target = data["styles"][0] if data["styles"] else {}
-    if not isinstance(target, dict):
-        return [f"未找到 {kind} 对象"]
-    return [f"缺少字段: {field}" for field in REQUIRED[kind] if field not in target]
+    targets = data.get("styles", []) if kind == "style" else [target]
+    if not isinstance(targets, list):
+        targets = [targets]
+    errors: list[str] = []
+    for index, item in enumerate(targets, start=1):
+        if not isinstance(item, dict):
+            errors.append(f"第 {index} 项不是对象")
+            continue
+        errors.extend(
+            f"第 {index} 项缺少字段: {field}"
+            for field in REQUIRED[kind]
+            if field not in item
+        )
+    return errors
 
 
 def main() -> int:
