@@ -1,0 +1,16 @@
+# Copy this file, rename it, and add it to a style library.
+id: example_style_id
+label: "示例风格"
+category: "示例分类"
+style_dna:
+  tone: "清晰、具体"
+  sentence_rhythm: "短句为主"
+hook_patterns:
+  - "一个可验证的开头"
+logic_patterns:
+  - "问题 -> 证据 -> 行动"
+emotion_curve: ["好奇", "理解", "行动"]
+avoid:
+  - "绝对化承诺"
+conversion_fit:
+  - "leads"

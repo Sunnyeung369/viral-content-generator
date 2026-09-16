@@ -483,3 +483,4 @@ Made with ❤️ by [Sunnyeung](https://github.com/Sunnyeung369)
 [⬆ 回到顶部](#-热点风格成交引擎-v40)
 
 </div>
+xamples/case-studies/ 提供匿名案例模板，data/styles/STYLE_CARD_TEMPLATE.yaml 提供风格卡贡献模板。
