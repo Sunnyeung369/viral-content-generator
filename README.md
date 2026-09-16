@@ -505,3 +505,4 @@ Made with ❤️ by [Sunnyeung](https://github.com/Sunnyeung369)
 商用部署请先阅读 [商用部署检查清单](./docs/commercial-readiness.md) 和 [支持政策](./SUPPORT.md)。
 
 生产部署还应阅读 [运行可观测性](./docs/observability.md) 与 [商用责任边界](./docs/legal-boundaries.md)。
+生产环境可设置 VIRAL_JSON_LOGS=1 启用 JSON 日志，并用 VIRAL_REQUEST_ID 传入链路 ID。

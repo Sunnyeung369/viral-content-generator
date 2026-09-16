@@ -38,6 +38,7 @@ from viral_content.core.quality_gate import QualityGate
 
 # 导入生成器（复用v3.1）
 from viral_content.generators.factory import create_generator
+from viral_content.utils.observability import configure_json_logging
 
 # 配置日志
 logging.basicConfig(
@@ -523,6 +524,8 @@ def parse_arguments():
 
 
 def main():
+    request_id = configure_json_logging()
+    logger.info("request_started request_id=%s", request_id)
     """主函数"""
     args = parse_arguments()
 
