@@ -280,6 +280,8 @@ print(system_prompt)
 
 Bug 反馈可直接使用 [Bug 模板](https://github.com/Sunnyeung369/viral-content-generator/issues/new?template=bug_report.md)，功能建议可使用 [Feature 模板](https://github.com/Sunnyeung369/viral-content-generator/issues/new?template=feature_request.md)。提交前请移除 API Key、账号凭据和其他敏感信息。
 
+维护者可在提交前运行 `python scripts/check_docs.py`，检查文档中的旧命令、旧风格 ID 和必要导航链接。
+
 ### 数据文件
 
 - `data/styles/` - 155+ 风格基因卡
