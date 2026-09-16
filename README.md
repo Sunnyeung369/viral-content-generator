@@ -11,6 +11,8 @@
 
 [快速开始](#快速开始) • [核心功能](#核心功能) • [使用文档](#使用文档) • [更新日志](./CHANGELOG.md) • [贡献指南](./CONTRIBUTING.md)
 
+[English README](./README.en.md)
+
 </div>
 
 > **30 秒试用**：先运行 [examples/30-second-demo.md](examples/30-second-demo.md)，再按平台和目标修改输入。
