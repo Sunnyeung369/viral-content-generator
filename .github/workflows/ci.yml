@@ -24,3 +24,6 @@ jobs:
       - run: python -m pytest -q
       - run: python -m compileall -q viral_content viral_content_cli.py viral_article_cli.py
       - run: python scripts/check_docs.py
+      - run: python scripts/validate_config.py data/accounts/default_account.yaml --kind account
+      - run: python scripts/validate_config.py data/offers/default_offer.yaml --kind offer
+      - run: python scripts/validate_config.py data/styles/global_creators.yaml --kind style

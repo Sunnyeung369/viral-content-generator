@@ -282,6 +282,8 @@ Bug 反馈可直接使用 [Bug 模板](https://github.com/Sunnyeung369/viral-con
 
 维护者可在提交前运行 `python scripts/check_docs.py`，检查文档中的旧命令、旧风格 ID 和必要导航链接。
 
+生成前可校验配置：`python scripts/validate_config.py data/accounts/default_account.yaml --kind account`。
+
 ### 数据文件
 
 - `data/styles/` - 155+ 风格基因卡
