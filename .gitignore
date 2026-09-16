@@ -114,3 +114,5 @@ pip-selfcheck.json
 *.msm
 *.msp
 *.lnk
+
+.ci-wheel-check/
