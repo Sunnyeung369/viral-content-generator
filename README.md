@@ -269,6 +269,8 @@ print(system_prompt)
 | [data/styles/README.md](./data/styles/README.md) | 风格库说明 | 高手 |
 | [data/accounts/README.md](./data/accounts/README.md) | 账号配置指南 | 运营者 |
 | [data/offers/README.md](./data/offers/README.md) | 产品配置指南 | 商业用户 |
+| [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md) | 社区行为准则 | 所有贡献者 |
+| [CITATION.cff](./CITATION.cff) | 引用信息 | 研究与二次开发 |
 
 ### 数据文件
 

@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+title: "Viral Content Generator"
+message: "If this project helps your work, please cite or link to the repository."
+type: software
+authors:
+  - family-names: "Sunnyeung"
+repository-code: "https://github.com/Sunnyeung369/viral-content-generator"
+license: MIT
+version: 4.0.1
+date-released: 2026-09-15
